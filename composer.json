@@ -1,6 +1,18 @@
 {
+    "name": "nimetu/ryzom_maps",
+    "type": "library",
+    "description": "Bmsite Ryzom Maps sources",
+    "keywords": ["ryzom"],
+    "homepage": "http://bmsite.net",
+    "license": "LGPL",
+    "authors": [
+        {
+            "name": "Meelis Mägi",
+            "email": "nimetu@gmail.com"
+        }
+    ],
     "require": {
-        "php": ">=5.4"
+        "php": ">=5.3"
     },
     "require-dev": {
         "symfony/console": "2.4.*",
