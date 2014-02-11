@@ -1,0 +1,15 @@
+{
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "symfony/console": "2.4.*",
+        "nimetu/ryzom_sheets": "dev-master"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "Bmsite": ["src"]
+        }
+    }
+}

@@ -1,0 +1,9 @@
+// ELabel.js 
+//
+//   This Javascript is provided by Mike Williams
+//   Community Church Javascript Team
+//   http://www.bisphamchurch.org.uk/   
+//   http://econym.org.uk/gmap/
+//
+//   This work is licenced under a Creative Commons Licence
+//   http://creativecommons.org/licenses/by/2.0/uk/
