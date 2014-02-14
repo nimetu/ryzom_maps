@@ -109,9 +109,7 @@ class Icon implements FeatureInterface
         $this->size = array($width, $height);
     }
 
-    /**
-     * @param resource $canvas
-     */
+    /** {@inheritdoc} */
     public function draw($canvas)
     {
         if ($this->map) {
@@ -128,7 +126,7 @@ class Icon implements FeatureInterface
 
         $icon = $this->loadIcon();
         if (!$icon) {
-            return;
+            return false;
         }
         $width = imagesx($icon);
         $height = imagesy($icon);
@@ -145,6 +143,8 @@ class Icon implements FeatureInterface
             imagecopy($canvas, $icon, $x, $y, 0, 0, $width, $height);
         }
         imagedestroy($icon);
+
+        return true;
     }
 
     /**

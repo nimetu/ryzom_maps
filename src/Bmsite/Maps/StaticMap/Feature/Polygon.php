@@ -58,9 +58,7 @@ class Polygon extends PointsCollection implements FeatureInterface
         $this->map = $map;
     }
 
-    /**
-     * @param resource $canvas
-     */
+    /** {@inheritdoc} */
     public function draw($canvas)
     {
         $scale = $this->map->getZoomScale();
@@ -86,7 +84,7 @@ class Polygon extends PointsCollection implements FeatureInterface
         // we need at least 2 points to draw a line
         $nbPoints = count($poly) / 2;
         if ($nbPoints < 2) {
-            return;
+            return false;
         }
 
         $xCenter = $xCenter / $nbPoints;
@@ -124,6 +122,8 @@ class Polygon extends PointsCollection implements FeatureInterface
             $label->setOutline(new Color(0, 0, 0), 1);
             $label->draw($canvas);
         }
+
+        return true;
     }
 
 }

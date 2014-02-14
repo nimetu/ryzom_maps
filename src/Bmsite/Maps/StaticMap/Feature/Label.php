@@ -151,9 +151,7 @@ class Label implements FeatureInterface
         return $this->fontPath.'/'.$this->fontFamily.'.ttf';
     }
 
-    /**
-     * @param resource $canvas
-     */
+    /** {@inheritdoc} */
     public function draw($canvas)
     {
         if ($this->map) {
@@ -200,6 +198,8 @@ class Label implements FeatureInterface
 
         $c = $this->color->allocate($canvas);
         imagettftext($canvas, $this->fontSize, 0, $x, $y, $c, $font, $this->text);
+
+        return true;
     }
 
     /**

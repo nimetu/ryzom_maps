@@ -27,7 +27,7 @@ interface FeatureInterface
     /**
      * @param resource $canvas
      *
-     * @return
+     * @return bool
      */
     public function draw($canvas);
 

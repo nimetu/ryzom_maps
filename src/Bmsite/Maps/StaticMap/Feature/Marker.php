@@ -168,6 +168,8 @@ class Marker extends PointsCollection implements FeatureInterface
                 $label->draw($canvas);
             }
         }
+
+        return true;
     }
 
     /**
