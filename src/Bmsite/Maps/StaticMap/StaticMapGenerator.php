@@ -56,7 +56,7 @@ class StaticMapGenerator
     private $zoom;
 
     /** @var int */
-    private $autoMaxZoom = 10;
+    private $autoMaxZoom = 7;
 
     /** @var string */
     private $mapmode = 'world';
