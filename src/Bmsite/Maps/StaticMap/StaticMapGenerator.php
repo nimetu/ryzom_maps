@@ -64,6 +64,9 @@ class StaticMapGenerator
     /** @var string */
     private $mapname = 'atys';
 
+    /** @var bool */
+    private $drawCenterLines = false;
+
     /** @var Marker[] */
     private $markers = array();
 
@@ -233,6 +236,14 @@ class StaticMapGenerator
                 }
             }
         }
+    }
+
+    /**
+     * @param bool $val
+     */
+    public function setDrawCenterLines($val)
+    {
+        $this->drawCenterLines = $val;
     }
 
     /**
@@ -472,13 +483,14 @@ class StaticMapGenerator
             $marker->draw($canvas);
         }
 
-        // FIXME: remove center lines
-        $halfWidth = $this->width / 2;
-        $halfHeight = $this->height / 2;
-        $y = imagecolorallocatealpha($canvas, 255, 255, 50, 100);
-        imagesetthickness($canvas, 1);
-        imageline($canvas, 0, $halfHeight, $this->width, $halfHeight, $y);
-        imageline($canvas, $halfWidth, 0, $halfWidth, $this->height, $y);
+        if ($this->drawCenterLines) {
+            $halfWidth = $this->width / 2;
+            $halfHeight = $this->height / 2;
+            $y = imagecolorallocatealpha($canvas, 255, 255, 50, 100);
+            imagesetthickness($canvas, 1);
+            imageline($canvas, 0, $halfHeight, $this->width, $halfHeight, $y);
+            imageline($canvas, $halfWidth, 0, $halfWidth, $this->height, $y);
+        }
     }
 
 }
