@@ -15,7 +15,7 @@
  * @param {Boolean} options.rzWorld - display world map (atys style tiles)
  * @param {Boolean} options.rzSatellite - display satellite map (atys_sp style tiles)
  * @param {String} options.rzLang - language tiles to use, set to false to disable
- * @param {String} options.rzTileUri - map tiles uri template to use, default is Ryzom.TILE_URI
+ * @param {String} options.rzTileUri - map tiles uri template to use, default is Ryzom.apiDomain+Ryzom.tilePath
  *
  * @return {L.Map}
  */
@@ -27,7 +27,7 @@ Ryzom.map = function(id, options) {
         rzWorld: true,
         rzSatellite: true,
         rzLang: 'en',
-        rzTileUri: Ryzom.TILE_URI,
+        rzTileUri: Ryzom.apiDomain + Ryzom.tilePath,
         //
         center: [6500, -12500],
         zoom: 5,

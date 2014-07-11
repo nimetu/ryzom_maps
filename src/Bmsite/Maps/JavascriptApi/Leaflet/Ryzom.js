@@ -13,30 +13,22 @@ window.Ryzom = {
     DEBUG: false,
 
     /**
-     * Map tileserver
+     * API base url
      */
-    TILE_URI: 'http://api.bmsite.net/maps/{mode}/{style}/{z}/{x}/{y}.{ext}',
+    apiDomain: 'http://api.bmsite.net/',
 
     /**
-     * Theme root url
+     * Map tiles url path relative to apiUrl
      */
-    theme: '/api/theme/',
-
-    /**
-     * function to turn icon url to selected icon url
-     */
-    selectedIcon: function (url) {
-        if (url.match(/icon=[^$]+_over/)) {
-            return url;
-        } else {
-            return url.replace(/icon=([^&]+)/, 'icon=$1_over');
-        }
-    },
+    tilePath: 'maps/{mode}/{style}/{z}/{x}/{y}.{ext}',
 
     /**
      * Project ingame x/y to world map
-     * @param x
-     * @param y
+     *
+     * @param {Number} x
+     * @param {Number} y
+     *
+     * @return {L.Point}
      */
     pixel: function (x, y) {
         var xy = Ryzom.XY.fromIngameToOutgame(x, y);
@@ -47,8 +39,10 @@ window.Ryzom = {
     /**
      * Project world map x/y back to ingame
      *
-     * @param x
-     * @param y
+     * @param {Number} x
+     * @param {Number} y
+     *
+     * @return {L.LatLng}
      */
     location: function (x, y) {
         var xy = Ryzom.XY.fromOutgameToIngame(x, y);
