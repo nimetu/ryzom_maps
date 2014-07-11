@@ -104,6 +104,7 @@ class JavascriptFactory
                 'Leaflet/OpenLayers.Geometry.js',
                 'Leaflet/Ryzom.js',
                 'Leaflet/Ryzom.XY.js',
+                'Leaflet/Ryzom.Map.js',
                 'Leaflet/control/MousePosition.js',
                 'Leaflet/geo/projection/RyzomServer.js',
                 'Leaflet/geo/projection/RyzomWorld.js',

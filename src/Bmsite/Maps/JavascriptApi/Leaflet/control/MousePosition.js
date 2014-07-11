@@ -26,19 +26,18 @@ L.Control.MousePosition = L.Control.extend({
     },
     _onMouseMove: function (e) {
         // server coordinates
-        var x = L.Util.formatNum(e.latlng.lat, 0);
-        var y = L.Util.formatNum(e.latlng.lng, 0);
-        var regions = Ryzom.XY.findIngameRegion(e.latlng.lat, e.latlng.lng);
-        var html = x + ', ' + y + ' (' + regions.join(',') + ')';
+        var x = Math.floor(e.latlng.lat);
+        var y = Math.floor(e.latlng.lng);
 
-        // this will give image coordinates for zoom level 10
-        var maxZoom = this._map.getMaxZoom();
-        var p = this._map.project(e.latlng, maxZoom);
-        html += "<br>Image coords at zoom " + maxZoom + " :" + L.Util.formatNum(p.x, 0) + ', ' + L.Util.formatNum(p.y, 0);
+        var regions = Ryzom.XY.findIngameRegion(e.latlng.lat, e.latlng.lng);
+        var html = 'x:' + x + ', y:' + y + ' (' + regions.join(',') + ')';
+
+        var p = this._map.project(e.latlng, 10);
+        html += "<br>Image @(zoom=10): x:" + Math.floor(p.x) + ', y:' + Math.floor(p.y);
 
         // convert image back to latlng
-        var l = this._map.unproject(p, maxZoom);
-        html += "<br>(new) latlng:" + L.Util.formatNum(l.lat, 0) + ', ' + L.Util.formatNum(l.lng, 0);
+        //var l = this._map.unproject(p, 10);
+        //html += "<br>(new) latlng:" + Math.floor(l.lat) + ', ' + Math.floor(l.lng);
 
         if (this.options.marker) {
             this.options.marker.setLatLng(l);

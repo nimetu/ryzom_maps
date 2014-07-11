@@ -15,7 +15,7 @@ window.Ryzom = {
     /**
      * Map tileserver
      */
-    MAPS_HOST: 'http://maps.bmsite.net/',
+    TILE_URI: 'http://api.bmsite.net/maps/{mode}/{style}/{z}/{x}/{y}.{ext}',
 
     /**
      * Theme root url
