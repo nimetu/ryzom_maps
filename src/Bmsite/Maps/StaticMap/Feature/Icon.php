@@ -109,6 +109,14 @@ class Icon implements FeatureInterface
         $this->size = array($width, $height);
     }
 
+    /**
+     * @return array
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
     /** {@inheritdoc} */
     public function draw($canvas)
     {

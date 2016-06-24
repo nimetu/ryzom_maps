@@ -120,7 +120,6 @@ class Marker extends PointsCollection implements FeatureInterface
             $label = new Label($this->label);
             $label->setColor($this->fontColor);
             $label->setOutline($this->fontOutline, 1);
-            $label->setOffset(0, 5);
             // background with same color as marker, but 50% transparency
             if ($this->color) {
                 $bg = clone $this->color;
@@ -164,7 +163,12 @@ class Marker extends PointsCollection implements FeatureInterface
             if ($label) {
                 $label->setPos($p);
 
-                // +5 is in pixel scale
+                // offset is in pixel scale
+                if ($icon) {
+                    $iconSize = $icon->getSize();
+                    $label->setOffset(0, $iconSize[1] / 2);
+                }
+
                 $label->draw($canvas);
             }
         }
