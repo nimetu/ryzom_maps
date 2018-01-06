@@ -423,7 +423,7 @@ class StaticMapGenerator
         if ($this->center === null) {
             if ($this->bounds === null) {
                 // no features on map, so take center point in world zone
-                $world = $this->proj->getZoneBounds('world');
+                $world = $this->proj->getZoneBounds($this->mapmode == 'world' ? 'world' : 'grid');
                 $this->bounds = clone $world;
             }
 

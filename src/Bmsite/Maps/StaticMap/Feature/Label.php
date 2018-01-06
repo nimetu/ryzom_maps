@@ -172,7 +172,7 @@ class Label implements FeatureInterface
 
         // bottom-left corner
         $x = $p->x - ($bbox->getWidth() / 2) - $bbox->left + $xOffset + $this->relOffsetX;
-        $y = $p->y + $bbox->getHeight() - $bbox->bottom + $yOffset + $this->relOffsetY;
+        $y = $p->y + ($bbox->getHeight() / 2) - $bbox->bottom + $yOffset + $this->relOffsetY;
 
         if ($this->background) {
             $s = $this->background->allocate($canvas);
