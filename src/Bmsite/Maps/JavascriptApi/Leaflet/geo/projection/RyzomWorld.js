@@ -29,4 +29,10 @@ L.Projection.RyzomWorld = {
     unproject: function (point) {
         return Ryzom.location(point.x, point.y);
     }
+
+    // leaflet 1.0
+    bounds: (function () {
+        return L.bounds([-100000, -100000], [100000, 100000]);
+    })()
 };
+
