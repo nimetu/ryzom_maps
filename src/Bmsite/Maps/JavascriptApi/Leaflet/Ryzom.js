@@ -15,7 +15,7 @@ window.Ryzom = {
     /**
      * API base url
      */
-    apiDomain: 'http://api.bmsite.net/',
+    apiDomain: 'https://api.bmsite.net/',
 
     /**
      * Map tiles url path relative to apiUrl
