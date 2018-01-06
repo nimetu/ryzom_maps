@@ -130,7 +130,9 @@ ryzom.maps.icon = new (function(){
 		karavan_tp  : {name: 'tp_karavan',  size:{w:24,h:28}, coord:[0,19,7,28,15,28,24,19,24,10,12,0,0,0]},
 		tribe       : {name: 'camp',        size:{w:24,h:24}, coord:[0,16,5,22,19,22,24,16,18,0,5,0,0,15]},
 		npc         : {name: 'npc',         size:{w:19,h:22}, coord:[0,16,5,22,14,22,19,16,13,0,5,0,0,16]},
-		resource    : {name: 'dig',         size:{w:24,h:24}, coord:[3,23,11,23,24,18,24,9,15,0,2,0]}
+		resource    : {name: 'dig',         size:{w:24,h:24}, coord:[3,23,11,23,24,18,24,9,15,0,2,0]},
+		egg         : {name: 'egg',         size:{w:24,h:24}, coord:[0,24,24,24,24,0,0,0]},
+		question    : {name: 'question',    size:{w:24,h:24}, coord:[0,24,24,24,24,0,0,0]}
 	};
 
 	return {
@@ -154,6 +156,9 @@ ryzom.maps.icon = new (function(){
 		//
 		DIG_RESOURCE: function(map, xy, opts){ return createMarker(map, xy, options.resource,   'ffffff', opts); },
 		DIG_MISSION : function(map, xy, opts){ return createMarker(map, xy, options.resource,   '9f9f9f', opts); },
+		//
+		EGG         : function(map, xy, opts){ return createMarker(map, xy, options.resource,   '',       opts); },
+		QUESTION    : function(map, xy, opts){ return createMarker(map, xy, options.marker,     '',       opts); },
 		//
 		getUrlFor: function url(name, color){
 			return MAPS_HOST+'api/icons.php?icon='+name+'&color='+color;

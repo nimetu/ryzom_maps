@@ -22,7 +22,8 @@ Ryzom.icon = function(name, color, size) {
     var iconNames = [
         'building', 'camp', 'dig', 'lm_marker',
         'mektoub', 'npc', 'op_townhall', 'portal',
-        'spawn', 'tp_kami', 'tp_karavan'
+        'spawn', 'tp_kami', 'tp_karavan',
+        'egg', 'question'
     ];
     var found = false;
     // var found = iconNames.indexOf(name) > -1;

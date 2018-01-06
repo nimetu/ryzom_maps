@@ -239,6 +239,8 @@ class StaticMap
                                 'spawn',
                                 'tp_kami',
                                 'tp_karavan',
+                                'egg',
+                                'question',
                                 // no-icon
                                 'none'
                             );
