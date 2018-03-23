@@ -18,12 +18,14 @@ $loader = new ResourceLoader();
 $serverZonesFile = $loader->getFilePath('server.json');
 $worldZonesFile = $loader->getFilePath('world.json');
 $labelsFile = $loader->getFilePath('labels.json');
+$areasFile = $loader->getFilePath('areas.json');
 
 $resources = new ResourceHelper();
 $resources->set('app.path', $appRoot);
 $resources->set('server.json.file', $serverZonesFile);
 $resources->set('world.json.file', $worldZonesFile);
 $resources->set('labels.json.file', $labelsFile);
+$resources->set('areas.json.file', $areasFile);
 
 $helperSet = new \Symfony\Component\Console\Helper\HelperSet();
 $helperSet->set($resources);

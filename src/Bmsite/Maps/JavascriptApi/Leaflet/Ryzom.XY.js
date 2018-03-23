@@ -60,6 +60,31 @@ Ryzom.XY = {
     },
 
     /**
+     * Match x,y to ingame areas
+     *
+     * Return sorted array of Object{key, order} where order is
+     * continent=0, region, capital, village, stable, place, street, outpost, unknown = 8
+     *
+     * e.g: xy [17162, -32906] returns [
+     *   {key: "place_fairhaven_p_1", order: 6},
+     *   {key: "place_fairhaven", order: 2},
+     *   {key: "region_libertylake", order: 1},
+     *   {key: "tryker", order: 0}
+     * ]
+     *
+     * @param {Number} x
+     * @param {Number} y
+     *
+     * @return {Array} [{key, order}]
+     */
+    findIngameAreas: function (x, y) {
+        var match = this._matchAreas(x, y, Ryzom.XY.ingame_areas);
+        return match.sort(function (a, b) {
+            return a.order < b.order;
+        });
+    },
+
+    /**
      * @param {Array} wz
      * @returns {Array}
      * @private
@@ -253,6 +278,66 @@ Ryzom.XY = {
         if (Ryzom.DEBUG) console.debug('(fromToZone) return', [left, top]);
 
         return {x: Math.round(left), y: Math.round(top)};
+    },
+
+    /**
+     * Recursivly match X,Y for area polygons
+     *
+     * @param {Number} x
+     * @param {Number} y
+     * @param {Object}
+     *
+     * @return {Array} {key, order}
+     */
+    _matchAreas: function (x, y, areas, match) {
+        match = match || [];
+        for (var prop in areas) {
+            if (areas.hasOwnProperty(prop)) {
+                var area = areas[prop];
+                if (this._inPolygon(x, y, area.points)) {
+                    match.push({
+                        key: prop,
+                        order: area.order
+                    });
+                    if (area.hasOwnProperty("areas")) {
+                        match = this._matchAreas(x, y, area.areas, match);
+                    }
+                }
+            }
+        }
+
+        return match;
+    },
+
+    /**
+     *  https://wrf.ecse.rpi.edu//Research/Short_Notes/pnpoly.html
+     *
+     * @param {Number} x
+     * @param {Number} y
+     * @param {Array} points flat array of x,y coordinates
+     *
+     * @return {Boolean}
+     */
+    _inPolygon: function (x, y, points) {
+        var nbPoints = points.length;
+        if (nbPoints < 6) {
+            return false;
+        }
+
+        var success = false;
+        for (var i = 0, j = nbPoints - 2; i < nbPoints; j = i, i += 2) {
+            var iX = points[i],
+                iY = points[i + 1];
+            var jX = points[j],
+                jY = points[j + 1];
+            if (((iY > y) != (jY > y)) &&
+                (x < (jX - iX) * (y - iY) / (jY - iY) + iX)
+            ) {
+                success = !success;
+            }
+        }
+
+        return success;
     },
 
     CLASS_NAME: 'Ryzom.XY'

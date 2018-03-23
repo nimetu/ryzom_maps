@@ -16,7 +16,8 @@
     },
     "require-dev": {
         "symfony/console": "2.4.*",
-        "nimetu/ryzom_sheets": "1.x"
+        "nimetu/ryzom_sheets": "1.x",
+        "meenie/javascript-packer": "dev-master"
     },
     "minimum-stability": "dev",
     "autoload": {

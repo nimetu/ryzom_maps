@@ -80,6 +80,11 @@ class BuildJsonFiles extends Command
         $this->buildLabels($continents, $sm, $helper->get('labels.json.file'));
         $output->writeln('');
 
+        // region polygons from lmconts
+        $output->write('<info>building areas.json</info>...');
+        $this->buildRegionPolys($continents, $sm, $helper->get('areas.json.file'));
+        $output->writeln('');
+
         // server.json
         $output->write('<info>building server.json</info>...');
 
@@ -190,6 +195,70 @@ class BuildJsonFiles extends Command
         }
 
         file_put_contents($outFile, json_encode($json, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+    }
+
+    /**
+     * Export polygon data from lmconts
+     *
+     * @param CContinent[] $continents
+     * @param StringsManager $sm
+     * @param string $outFile
+     */
+    protected function buildRegionPolys(array $continents, StringsManager $sm, $outFile)
+    {
+        // index = TContLMType enum
+        static $order = array(
+            'continent' => 0,
+            4 => 1, // region
+            0 => 2, // capital
+            1 => 3, // village
+            3 => 4, // stable
+            5 => 5, // place
+            6 => 6, // street
+            2 => 7, // outpost
+            'unknown' => 8,
+        );
+
+        $json = array();
+        foreach ($continents as $cont) {
+            // continent
+            $json[$cont->Name] = array(
+                'order' => $order['continent'],
+                'points' => $this->exportVPoints($cont->Zone->VPoints),
+                'areas' => array(),
+            );
+
+            // sub regions and areas
+            foreach ($cont->ContLandMarks as $lm) {
+                $json[$cont->Name]['areas'][$lm->TitleText] = array(
+                    'order' => isset($order[$lm->Type]) ? $order[$lm->Type] : $order['unknown'],
+                    'points' => $this->exportVPoints($lm->Zone->VPoints)
+                );
+            }
+        }
+
+        file_put_contents($outFile, json_encode($json, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+    }
+
+    /**
+     * Return flat array from CPrimVector objects
+     *
+     * @param CPrimVector[] $points
+     *
+     * @return array [X, Y, ... Xn, Yn]
+     */
+    private function exportVPoints(array $points)
+    {
+        $x = false;
+        $y = false;
+        $ret = array();
+        foreach($points as $point) {
+            // ingame X is always positive -> next highest
+            // ingame Y is always negative -> next lowest
+            $ret[] = ceil($point->X*100) / 100;
+            $ret[] = floor($point->Y*100) / 100;
+        }
+        return $ret;
     }
 
     /**
