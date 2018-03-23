@@ -1,5 +1,10 @@
 /.idea
+/.vscode
 /vendor
 /composer.lock
 /static-map-result.png
+bin/update.sh
+
+*.min.js
+*.min.js.txt
 

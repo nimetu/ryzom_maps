@@ -1,9 +1,21 @@
 # Ryzom Maps
 
 * Static Map generator
-* Javascript map using [Leaflet](http://leafletjs.com)
+* Javascript map using [Leaflet](https://leafletjs.com/)
 
 To generate tile images, you need to use [RyzomMapTiles](https://github.com/nimetu/ryzom_map_tiles.git) repository.
+
+To generate json files, run (--ryzom parameter points to directory where to find `*.bnp` files)
+
+```
+php bin/bmmaps.php bmmaps:json --ryzom=$HOME/.local/share/Ryzom/ryzom_live/data
+```
+
+To generate map-leaflet.js, run
+
+```
+php bin/build-map.php
+```
 
 ## License
 
