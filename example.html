@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Example map</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	    crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js" integrity="sha384-JguaQYjdUVs0XHRhkpHTNjd6j8IjEzgj5+1xeGYHCXQEaufKsYdtn9fgHVeVTLJu"
+	    crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css" integrity="sha384-odo87pn1N9OSsaqUCAOYH8ICyVxDZ4wtbGpSYO1oyg6LxyOjDuTeXTrVLuxUtFzv"
+	    crossorigin="anonymous">
+
+	<!-- testing using local file:// uri -->
+	<script src="map-leaflet.js"></script>
+	<script src="map-areas-leaflet.js"></script>
+
+	<script>
+		var MyMousePosition = L.Control.extend({
+			options: {
+				position: 'bottomright',
+				marker: null
+			},
+			onAdd: function (map) {
+				this._container = L.DomUtil.create('div', 'leaflet-control-mouseposition');
+				L.DomEvent.disableClickPropagation(this._container);
+				map.on('mousemove', this._onMouseMove, this);
+
+				return this._container;
+			},
+			onRemove: function (map) {
+				map.off('mousemove', this._onMouseMove);
+			},
+			_onMouseMove: function (e) {
+				// server coordinates
+				var x = Math.floor(e.latlng.lat);
+				var y = Math.floor(e.latlng.lng);
+
+				var regions = Ryzom.XY.findIngameRegion(e.latlng.lat, e.latlng.lng);
+				var html = 'x:' + x + ', y:' + y + ' (' + regions.join(',') + ')';
+
+				var p = this._map.project(e.latlng, 10);
+				html += "<br>Image @(zoom=10): x:" + Math.floor(p.x) + ', y:' + Math.floor(p.y);
+
+				if (this.options.marker) {
+					this.options.marker.setLatLng(e.latlng);
+				}
+
+				var areas = Ryzom.XY.findIngameAreas(x, y);
+				html += '<br>' + areas.reduce(function(a, v, i) {
+					return a + (i > 0 ? "<br>" : "") + "(" + v.order + ") " + v.key;
+				}, '');
+
+				this._container.innerHTML = html;
+			}
+		});
+
+		$(function () {
+			var fh = [17162, -32906];
+			var mm = L.marker(fh, { clickabke: false });
+
+			var map = Ryzom.map('map', {rzMode: 'server'});
+			mm.addTo(map);
+
+			map.addControl(new MyMousePosition({marker: mm}));
+
+			var marker = L.marker(fh, {
+				icon: Ryzom.icon('npc', 'FF9', 24),
+				title: 'Hello!'
+			}).addTo(map);
+			marker.bindPopup("Hello!");
+
+			map.setView(fh, 8);
+
+			function createPolygons(areas) {
+				for (var prop in areas) {
+					if (areas.hasOwnProperty(prop)) {
+						var points = areas[prop].points;
+						var poly = [];
+						for(var i = 0; i< points.length; i+=2) {
+							poly.push([points[i], points[i+1]]);
+						}
+
+						L.polygon(poly, {color: "red"}).addTo(map);
+
+						if (areas[prop].areas) {
+							createPolygons(areas[prop].areas);
+						}
+					}
+				}
+			}
+
+			// not all polys map to defined ingame regions
+			createPolygons(Ryzom.XY.ingame_areas);
+		});
+	</script>
+
+	<style>
+		html,
+		body,
+		#map {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+		.leaflet-control-mouseposition {
+			background-color: yellowgreen;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="map"></div>
+</body>
+
+</html>

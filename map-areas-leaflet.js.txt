@@ -1,0 +1,1 @@
+<script src="map-areas-leaflet.js" integrity="sha384-0qH6OcSDUOV09UL3bYEuWlJ89DAwKnrn4zUqGgRuPzA6d/2NHrBsrxFoRgyzg8LY" crossorigin="anonymous"></script>
