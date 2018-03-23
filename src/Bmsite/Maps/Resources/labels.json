@@ -40,7 +40,7 @@
             "text": {
                 "en": "West Saprun Research Center",
                 "fr": "Centre de Recherche de la Montée de Sève Ouest",
-                "de": "Forschungszentrum der Westlichen Sapquelle",
+                "de": "Forschungszentrum an der Westlichen Sapquelle",
                 "es": "Centro de Investigación de la Saprun del Oeste",
                 "ru": "Исследовательский центр западного Сэпотока"
             }
@@ -55,7 +55,7 @@
             "text": {
                 "en": "East Saprun Workshop",
                 "fr": "Atelier de la Montée de Sève Est",
-                "de": "Werkstatt der Östlichen Sapquelle",
+                "de": "Werkstatt an der Östlichen Sapquelle",
                 "es": "Taller de Saprun del Este",
                 "ru": "Мастерская восточного Сэпотока"
             }
@@ -70,7 +70,7 @@
             "text": {
                 "en": "Nexusgate Stronghold",
                 "fr": "Forteresse de la Porte du Nexus",
-                "de": "Festung der Nexuspforte",
+                "de": "Festung an der Nexuspforte",
                 "es": "Fortaleza de Nexusgate",
                 "ru": "Форт Врата Нексуса"
             }
@@ -267,7 +267,7 @@
             "text": {
                 "en": "Tutors' Sanctuary",
                 "fr": "Sanctuaire Tutors",
-                "de": "Tutor-Altar",
+                "de": "Tutoren-Altar",
                 "es": "Santuario del Tutor",
                 "ru": "Святилище Наставников"
             }
@@ -1259,7 +1259,7 @@
             "text": {
                 "en": "Highridges Diplomatic Outpost",
                 "fr": "Avant-Poste Diplomatique des Hauts Récifs",
-                "de": "Diplomatischer Außenposten des Hohen Riffs",
+                "de": "Diplomatischer Außenposten am Hohen Riff",
                 "es": "Puesto Diplomático Highridges",
                 "ru": "Дипломатическая миссия Вышние Хребты"
             }
@@ -1409,7 +1409,7 @@
             "text": {
                 "en": "North Dyron Stronghold",
                 "fr": "Forteresse de Dyron Nord",
-                "de": "Norddyron-Festung",
+                "de": "Nord-Dyron-Festung",
                 "es": "Fortaleza de Dyron del Norte",
                 "ru": "Форт Северный Дайрон"
             }
@@ -1461,8 +1461,8 @@
         },
         "place_lieudit_dunesofexile_1": {
             "pos": [
-                16513,
-                -25628
+                16474,
+                -24406
             ],
             "regionforce": 0,
             "lmtype": 5,
@@ -1544,7 +1544,7 @@
             "text": {
                 "en": "Thesos Springs Stronghold",
                 "fr": "Forteresse des Sources de Thesos",
-                "de": "Festung der Thesos-Quelle",
+                "de": "Festung an der Thesos-Quelle",
                 "es": "Fortaleza de los Manantiales de Thesos",
                 "ru": "Форт Родники Фессоса"
             }
@@ -1784,7 +1784,7 @@
             "text": {
                 "en": "Woodburn Magic Pole",
                 "fr": "Pôle Magique des Bois Calcifiés",
-                "de": "Holzbrand - Magischer Ort",
+                "de": "Magischer Ort am Holzbrand",
                 "es": "Polo Mágico de Woodburn",
                 "ru": "Очаг магии Пылающее Древо"
             }
@@ -1859,7 +1859,7 @@
             "text": {
                 "en": "North Pyr Stables",
                 "fr": "Etables Nord de Pyr",
-                "de": "Pyr Nord-Ställe",
+                "de": "Nord-Stall von Pyr ",
                 "es": "Establos al Norte de Pyr",
                 "ru": "Стойла Северного Пайра"
             }
@@ -1874,7 +1874,7 @@
             "text": {
                 "en": "South Pyr Stables",
                 "fr": "Etables Sud de Pyr",
-                "de": "Pyr Süd-Ställe",
+                "de": "Süd-Stall von Pyr",
                 "es": "Establos al Sur de Pyr",
                 "ru": "Стойла Южного Пайра"
             }
@@ -1889,7 +1889,7 @@
             "text": {
                 "en": "East Pyr Stables",
                 "fr": "Etables Est de Pyr",
-                "de": "Pyr Ost-Ställe",
+                "de": "Ost-Stall von Pyr",
                 "es": "Establos al Este de Pyr",
                 "ru": "Стойла Восточного Пайра"
             }
@@ -1904,7 +1904,7 @@
             "text": {
                 "en": "Dyron Stables",
                 "fr": "Etables de Dyron",
-                "de": "Dyron Ställe",
+                "de": "Stall von Dyron",
                 "es": "Establos de Dyron",
                 "ru": "Стойла Дайрона"
             }
@@ -1919,7 +1919,7 @@
             "text": {
                 "en": "Thesos Stables",
                 "fr": "Etables de Thesos",
-                "de": "Thesos Ställe",
+                "de": "Stall von Thesos",
                 "es": "Establos de Thesos",
                 "ru": "Стойла Фессоса"
             }
@@ -1951,7 +1951,7 @@
             "text": {
                 "en": "<fyros islets 1 (pvp)>",
                 "fr": "Ilôt fyros 1 (pvp)",
-                "de": "< fyros insel 1 (pvp)>",
+                "de": "Fyros Insel 1 PvP",
                 "es": "<isletas fyros 1 (pvp)>",
                 "ru": "<fyros islets 1 (pvp)>"
             }
@@ -1966,7 +1966,7 @@
             "text": {
                 "en": "<fyros islets 2>",
                 "fr": "Ilôt fyros 2",
-                "de": "< fyros insel 2>",
+                "de": "Fyros Insel 2",
                 "es": "<isletas fyros 2>",
                 "ru": "<fyros islets 2>"
             }
@@ -2135,7 +2135,7 @@
             "text": {
                 "en": "a building",
                 "fr": "bâtiment",
-                "de": "ein Gebäude",
+                "de": "Gebäude",
                 "es": "un edificio ",
                 "ru": "здание"
             }
@@ -2514,7 +2514,7 @@
             "text": {
                 "en": "Little Mountain Workshop",
                 "fr": "Atelier de la Petite Montagne",
-                "de": "Werkstatt des Kleinen Berges",
+                "de": "Werkstatt am Kleinen Berg",
                 "es": "Taller de la Montana Pequeña",
                 "ru": "Мастерская у Малой Горы"
             }
@@ -2529,7 +2529,7 @@
             "text": {
                 "en": "Little Mountain Stronghold",
                 "fr": "Forteresse de la Petite Montagne",
-                "de": "Festung des Kleinen Berges",
+                "de": "Festung am Kleinen Berg",
                 "es": "Fortaleza de la Montana Pequeña",
                 "ru": "Форт у Малой Горы"
             }
@@ -2634,8 +2634,8 @@
             "text": {
                 "en": "Marauder Camp",
                 "fr": "Camp Maraudeur",
-                "de": "Marodeure-Lager",
-                "es": "place_marauder_camp",
+                "de": "Marodeur-Lager",
+                "es": "Campamento Merodeador",
                 "ru": "place_marauder_camp"
             }
         },
@@ -2649,8 +2649,8 @@
             "text": {
                 "en": "Marauder Arena",
                 "fr": "Arène Maraudeur",
-                "de": "Marodeure-Arena",
-                "es": "place_lieudit_marauder_arena",
+                "de": "Marodeur-Arena",
+                "es": "Arena Merodeadora",
                 "ru": "place_lieudit_marauder_arena"
             }
         },
@@ -2679,7 +2679,7 @@
             "text": {
                 "en": "Folly Farm",
                 "fr": "Ferme de la Folie",
-                "de": "Hof der Ebene der Torheit",
+                "de": "Hof in der Ebene der Torheit",
                 "es": "Granja de la Locura",
                 "ru": "Ферма Причуд"
             }
@@ -2694,14 +2694,14 @@
             "text": {
                 "en": "Greenpool Workshop",
                 "fr": "Atelier de la Mare Verte",
-                "de": "Werkstatt des Grünen Beckens",
+                "de": "Werkstatt im Grünen Becken",
                 "es": "Taller Piscina Verde",
                 "ru": "Мастерская Зеленого Пруда"
             }
         },
         "place_outpost_matis_13": {
             "pos": [
-                5676,
+                5675,
                 -7282
             ],
             "regionforce": 0,
@@ -2949,7 +2949,7 @@
             "text": {
                 "en": "Dryland Gate Stronghold",
                 "fr": "Forteresse de la Porte des Terres Arides",
-                "de": "Festung der Ödlandpforte",
+                "de": "Festung an der Ödlandpforte",
                 "es": "Puerta de la Fortaleza de la Tierra Seca ",
                 "ru": "Форт Врата Засухи"
             }
@@ -2979,7 +2979,7 @@
             "text": {
                 "en": "Ryecliff Stronghold",
                 "fr": "Forteresse de la Falaise de Rye",
-                "de": "Festung der Klippe von Rye",
+                "de": "Festung an der Klippe von Rye",
                 "es": "Fortaleza Ryecliff",
                 "ru": "Форт Ржавого Утеса"
             }
@@ -2994,7 +2994,7 @@
             "text": {
                 "en": "Torbak Hill Farm",
                 "fr": "Ferme de la Colline des Torbaks",
-                "de": "Hof der Anhöhe der Torbaks",
+                "de": "Hof an der Anhöhe der Torbaks",
                 "es": "Granja La Colina de Torbak",
                 "ru": "Фирма Холма Торбаков"
             }
@@ -3324,7 +3324,7 @@
             "text": {
                 "en": "The Rising Border Post",
                 "fr": "Poste Frontière de la Poussée",
-                "de": "Grenzposten der Erhebung",
+                "de": "Grenzposten bei der Erhebung",
                 "es": "El Puesto Fronterizo Creciente",
                 "ru": "Пограничная застава На Возвышенности"
             }
@@ -3369,7 +3369,7 @@
             "text": {
                 "en": "Trove Workshop",
                 "fr": "Atelier du Trésor",
-                "de": "Werkstatt des Horts",
+                "de": "Werkstatt am Hort",
                 "es": "Taller de Trove",
                 "ru": "Мастерская Сокровищницы"
             }
@@ -3384,7 +3384,7 @@
             "text": {
                 "en": "Kami Circle Magic Pole",
                 "fr": "Pôle Magique du Cercle Kamic",
-                "de": "Magischer Ort des Kami-Kreises",
+                "de": "Magischer Ort am Kami-Kreis",
                 "es": "Polo del Circulo Mágico Kami",
                 "ru": "Магический Полюс Ками"
             }
@@ -3459,8 +3459,8 @@
             "text": {
                 "en": "Marauder Stables",
                 "fr": "Etables Maraudeurs",
-                "de": "Marodeure-Ställe",
-                "es": "marauder_stable",
+                "de": "Marodeur-Stall",
+                "es": "Establos Merodeadores",
                 "ru": "marauder_stable"
             }
         },
@@ -3474,7 +3474,7 @@
             "text": {
                 "en": "Yrkanis Stables",
                 "fr": "Etables d'Yrkanis",
-                "de": "Stall",
+                "de": "Stall von Yrkanis",
                 "es": "Establos Yrkanis ",
                 "ru": "Стойла Мектубов Ирканиса"
             }
@@ -3489,7 +3489,7 @@
             "text": {
                 "en": "Natae Stables",
                 "fr": "Etables de Natae",
-                "de": "Natae Ställe",
+                "de": "Stall von Natae",
                 "es": "Establos de Natae",
                 "ru": "Стойла Нэтея"
             }
@@ -3504,7 +3504,7 @@
             "text": {
                 "en": "Davae Stables",
                 "fr": "Etables de Davae",
-                "de": "Davae Ställe",
+                "de": "Stall von Davae",
                 "es": "Establos de Davae",
                 "ru": "Стойла Дэвея"
             }
@@ -3519,7 +3519,7 @@
             "text": {
                 "en": "Avalae Stables",
                 "fr": "Etables d'Avalae",
-                "de": "Avalae Ställe",
+                "de": "Stall von Avalae",
                 "es": "Establos de Avalae",
                 "ru": "Стойла Эвелея"
             }
@@ -3536,7 +3536,7 @@
             "text": {
                 "en": "",
                 "fr": "",
-                "de": "",
+                "de": "Almati-Wald",
                 "es": "",
                 "ru": ""
             }
@@ -3641,7 +3641,7 @@
             "text": {
                 "en": "",
                 "fr": "",
-                "de": "",
+                "de": "Almati-Insel",
                 "es": "",
                 "ru": ""
             }
@@ -3671,7 +3671,7 @@
             "text": {
                 "en": "Dante's Peak",
                 "fr": "Pic de Dante",
-                "de": "Dante's Gipfel",
+                "de": "Dantes Gipfel",
                 "es": "Pico de Dante",
                 "ru": "Пик Данте"
             }
@@ -3686,7 +3686,7 @@
             "text": {
                 "en": "",
                 "fr": "",
-                "de": "",
+                "de": "Ranger-Insel",
                 "es": "",
                 "ru": ""
             }
@@ -3703,7 +3703,7 @@
             "text": {
                 "en": "Matis Island",
                 "fr": "Ile Matis",
-                "de": "Matis-Insel",
+                "de": "Matis-Startinsel",
                 "es": "Isla Matis",
                 "ru": "Земли Матисов"
             }
@@ -3718,7 +3718,7 @@
             "text": {
                 "en": "Matis Island",
                 "fr": "Ile Matis",
-                "de": "Matis-Insel",
+                "de": "Matisianische Insel",
                 "es": "Isla de los Matis",
                 "ru": "Земли матисов"
             }
@@ -3825,7 +3825,7 @@
             "text": {
                 "en": "Lands to Explore",
                 "fr": "Contrées à explorer",
-                "de": "Die Entdeckenswerten Gefilde",
+                "de": "Entdeckenswerte Gefilde",
                 "es": "Tierras para Explorar",
                 "ru": "Малоизученные Земли "
             }
@@ -4097,7 +4097,7 @@
             "text": {
                 "en": "Destiny's End Diplomatic Outpost",
                 "fr": "Avant-Poste Diplomatique de la Fin de la Destinée",
-                "de": "Schicksalsende - Diplomatischer Außenposten",
+                "de": "Diplomatischer Außenposten am Schicksalsende",
                 "es": "Puesto Diplomático Final del Destino",
                 "ru": "Дипломатическая миссия Роковой Предел"
             }
@@ -4234,8 +4234,8 @@
             "regionforce": 0,
             "lmtype": -1,
             "text": {
-                "en": "continent_r2_forest",
-                "fr": "continent_r2_forest",
+                "en": "Leewind Lands",
+                "fr": "Terres Sous le Vent",
                 "de": "continent_r2_forest",
                 "es": "continent_r2_forest",
                 "ru": "continent_r2_forest"
@@ -4379,7 +4379,7 @@
             "text": {
                 "en": "Ruins of Leron Workshop",
                 "fr": "Atelier des Ruines de Léron",
-                "de": "Werkstatt der Ruinen von Leron",
+                "de": "Werkstatt in den Ruinen von Leron",
                 "es": "Taller de las Ruinas de Lerong",
                 "ru": "Мастерская Руин Лернона"
             }
@@ -4394,7 +4394,7 @@
             "text": {
                 "en": "Halls of Darkring Research Center",
                 "fr": "Centre de Recherche des Salles de la Bague Noire",
-                "de": "Forschungszentrum der Hallen des Schwarzen Rings",
+                "de": "Forschungszentrum in den Hallen des Schwarzen Rings",
                 "es": "Centro de Investigación del Pasillo del Anillo Oscuro",
                 "ru": "Исследовательский центр Залы темного кольца "
             }
@@ -4619,7 +4619,7 @@
             "text": {
                 "en": "Alleyways Bluff Stronghold",
                 "fr": "Forteresse de la Ruelle",
-                "de": "Festung des Klippendurchgangs",
+                "de": "Festung am Klippendurchgang",
                 "es": "Fortaleza de los Callejones del Acantilado",
                 "ru": "Форт Утеса Проулков"
             }
@@ -4634,7 +4634,7 @@
             "text": {
                 "en": "High Henge Research Center",
                 "fr": "Centre de Recherche du Cromlech Supérieur",
-                "de": "Forschungszentrum des Oberen Steinkreises",
+                "de": "Forschungszentrum am Oberen Steinkreis",
                 "es": "Centro de Investigación de Henge Alto",
                 "ru": "Исследовательский центр Высокие Мезолиты "
             }
@@ -4649,7 +4649,7 @@
             "text": {
                 "en": "Lowhills Stronghold",
                 "fr": "Forteresse des Basses Collines",
-                "de": "Festung der Kleinen Hügel",
+                "de": "Festung in den Kleinen Hügeln",
                 "es": "Fortaleza de las Colinas Bajas",
                 "ru": "Форт Малохолмья"
             }
@@ -4664,7 +4664,7 @@
             "text": {
                 "en": "Lowhills Research Center",
                 "fr": "Centre de Recherche des Basses Collines",
-                "de": "Forschungszentrum der Kleinen Hügel",
+                "de": "Forschungszentrum in den Kleinen Hügeln",
                 "es": "Centro de Investigación de las Colinas Altas",
                 "ru": "Исследовательский центр Малохолмья"
             }
@@ -4694,7 +4694,7 @@
             "text": {
                 "en": "High Henge",
                 "fr": "Cromlech Supérieur",
-                "de": "Oberer Steinkreis",
+                "de": "Oberer Pfeilerkreis",
                 "es": "Altura Henge",
                 "ru": "Высокие Мезолиты"
             }
@@ -4739,7 +4739,7 @@
             "text": {
                 "en": "Eerie Valley Magic Pole",
                 "fr": "Pôle Magique de la Vallée Sinistre",
-                "de": "Schauriges Tal - Magischer Ort",
+                "de": "Magischer Ort im Schaurigen Tal",
                 "es": "Polo Mágico del Valle de Eerie",
                 "ru": "Очаг Магии Долина Ужаса"
             }
@@ -4861,7 +4861,7 @@
             "text": {
                 "en": "Deadtree Stronghold",
                 "fr": "Forteresse de l'Arbre Mort",
-                "de": "Festung des Toten Baumes",
+                "de": "Festung am Toten Baum",
                 "es": "Fortaleza del Árbol Muerto",
                 "ru": "Форт Мертводрева"
             }
@@ -4891,7 +4891,7 @@
             "text": {
                 "en": "Shooting Meadow Border Post",
                 "fr": "Poste Frontière du Pré Lancinant",
-                "de": "Grenzposten der Stechenden Wiese",
+                "de": "Grenzposten in der Stechenden Wiese",
                 "es": "Puesto Fronterizo de la Pradera de Tiro",
                 "ru": "Пограничная застава Луг Стрелков"
             }
@@ -5020,7 +5020,7 @@
         },
         "region_forbidden_depths": {
             "pos": [
-                2147,
+                2146,
                 -15178
             ],
             "regionforce": 250,
@@ -5058,7 +5058,7 @@
             "text": {
                 "en": "Cursed Cavern Stronghold",
                 "fr": "Forteresse de la Caverne Maudite",
-                "de": "Festung der Verfluchten Höhle",
+                "de": "Festung in der Verfluchten Höhle",
                 "es": "Fortaleza de la Caverna Maldita",
                 "ru": "Форт Проклятой Пещеры"
             }
@@ -5088,7 +5088,7 @@
             "text": {
                 "en": "Wings of Spite Farm",
                 "fr": "Ferme des Ailes du Dépit",
-                "de": "Hof des Flügels der Feindschaft",
+                "de": "Hof im Flügel der Feindschaft",
                 "es": "Granja de las Alas de la Malevolencia",
                 "ru": "Ферма Крылья Досады"
             }
@@ -5193,7 +5193,7 @@
             "text": {
                 "en": "Saplake Major Stronghold",
                 "fr": "Forteresse du Lac Majeure de Sève",
-                "de": "Festung des Großen Sapsees",
+                "de": "Festung am Großen Sapsee",
                 "es": "Fortaleza del Lago de la Savia Mayor",
                 "ru": "Форт Большое Сэпозеро"
             }
@@ -5298,7 +5298,7 @@
             "text": {
                 "en": "Ruins of Cryton Farm",
                 "fr": "Ferme des Ruines de Cryton",
-                "de": "Hof der Ruinen von Cryton",
+                "de": "Hof an den Ruinen von Cryton",
                 "es": "Granja de las Ruinas de Cryton",
                 "ru": "Ферма Руины Крайтона"
             }
@@ -5313,7 +5313,7 @@
             "text": {
                 "en": "Hall of the Mountain Bane Stronghold",
                 "fr": "Forteresse de la Salle de la Montagne Empoisonnée",
-                "de": "Festung des vergifteten Berges",
+                "de": "Festung am Vergifteten Berg",
                 "es": "Fortaleza de la Sala de la Montana de la Perdición",
                 "ru": "Форт залов горного Бедствия"
             }
@@ -5384,8 +5384,8 @@
     "tryker": {
         "continent_tryker": {
             "pos": [
-                16917,
-                -32115
+                16899,
+                -32106
             ],
             "regionforce": 0,
             "lmtype": -1,
@@ -5587,7 +5587,7 @@
             "text": {
                 "en": "Gusty Gorge Workshop",
                 "fr": "Atelier de la Gorge des Vents",
-                "de": "Werkstatt der Stürmischen Schlucht",
+                "de": "Werkstatt in der Stürmischen Schlucht",
                 "es": "Taller del Barranco Borrascoso",
                 "ru": "Мастерская Теснины Ветров"
             }
@@ -5647,7 +5647,7 @@
             "text": {
                 "en": "Loriagate Border Post",
                 "fr": "Poste d'Echange de Port-Loria",
-                "de": "Grenzposten des Tors von Loria",
+                "de": "Grenzposten am Tor von Loria",
                 "es": "Puesto Fronterizo Loriagate",
                 "ru": "Пограничная застава Врата Лории"
             }
@@ -5707,7 +5707,7 @@
             "text": {
                 "en": "Musemere Workshop",
                 "fr": "Atelier de l'Etang de la Contemplation",
-                "de": "Werkstatt der Verträumten Seen",
+                "de": "Werkstatt an den Verträumten Seen",
                 "es": "Taller Musemere",
                 "ru": "Мастерская Озера Муз"
             }
@@ -5797,7 +5797,7 @@
             "text": {
                 "en": "Liberty Gateway Border Post",
                 "fr": "Poste Frontière de la Porte de la Liberté",
-                "de": "Grenzposten des Tors zur Freiheit",
+                "de": "Grenzposten am Tor zur Freiheit",
                 "es": "Puesto Fronterizo Puerta de la Libertad",
                 "ru": "Пограничная застава Врата Свободы"
             }
@@ -5812,7 +5812,7 @@
             "text": {
                 "en": "Cute Springs Twining Stronghold",
                 "fr": "Forteresse des Sources Agitées des Cutes",
-                "de": "Festung der Sprudelnden Cute-Quellen",
+                "de": "Festung an den Sprudelnden Cute-Quellen",
                 "es": "Fortaleza del Hermanamiento de los Manantiales Bonitos",
                 "ru": "Форт Плетения Кьют"
             }
@@ -6007,7 +6007,7 @@
             "text": {
                 "en": "Ponders End Workshop",
                 "fr": "Atelier des Colonnes de la Méditation",
-                "de": "Werkstatt der Säulen der Besinnung",
+                "de": "Werkstatt an den Säulen der Besinnung",
                 "es": "Taller Final de la Reflexión ",
                 "ru": "Мастерская Предел Раздумий"
             }
@@ -6097,7 +6097,7 @@
             "text": {
                 "en": "Tippy Peaks Diplomatic Outpost",
                 "fr": "Avant-Poste Diplomatique des Pics Instables",
-                "de": "Diplomatischer Außenposten der Brüchigen Gipfel",
+                "de": "Diplomatischer Außenposten auf den Brüchigen Gipfeln",
                 "es": "Puesto Diplomático de los Picos Tippy",
                 "ru": "Дипломатическая миссия Острые Пики"
             }
@@ -6112,7 +6112,7 @@
             "text": {
                 "en": "Sinking Sands Workshop",
                 "fr": "Atelier des Sables de la Perdition",
-                "de": "Werkstatt des Sinkenden Sandes",
+                "de": "Werkstatt im Sinkenden Sand",
                 "es": "Taller de las Arenas Movedizas",
                 "ru": "Мастерская Зыбучие пески"
             }
@@ -6127,7 +6127,7 @@
             "text": {
                 "en": "Eastshore Magic Pole",
                 "fr": "Pôle Magique de la Rivest",
-                "de": "Magischer Ort der Ostküste",
+                "de": "Magischer Ort an der Ostküste",
                 "es": "Polo Mágico de la Costa del Este",
                 "ru": "Очаг Магии Истхорн"
             }
@@ -6157,7 +6157,7 @@
             "text": {
                 "en": "Mire of the Dire Stronghold",
                 "fr": "Forteresse du Bourbier de la Misère",
-                "de": "Festung des Grässlichen Morasts",
+                "de": "Festung im Grässlichen Morast",
                 "es": "Fortaleza del Fango de lo Fatal",
                 "ru": "Форт Зловещей Трясины"
             }
@@ -6262,7 +6262,7 @@
             "text": {
                 "en": "Dainty Isle Workshop",
                 "fr": "Atelier de l'Ile de la Fragilité",
-                "de": "Werkstatt der Anmutigen Insel",
+                "de": "Werkstatt auf der Anmutigen Insel",
                 "es": "Taller de la Isla Delicada",
                 "ru": "Мастерская Острова Дайнти"
             }
@@ -6562,7 +6562,7 @@
             "text": {
                 "en": "Rigan Road",
                 "fr": "Route de Rigan",
-                "de": "Rigan-Strasse",
+                "de": "Rigan-Straße",
                 "es": "Carretera Rigan",
                 "ru": "Риган Роуд"
             }
@@ -6682,7 +6682,7 @@
             "text": {
                 "en": "Windermeer Stables",
                 "fr": "Etables de Windermeer",
-                "de": "Windermeer Ställe",
+                "de": "Stall von Windermeer ",
                 "es": "Establos de Windermeer",
                 "ru": "Стойла Виндермеера"
             }
@@ -6697,7 +6697,7 @@
             "text": {
                 "en": "Fairhaven Stables",
                 "fr": "Etables de Fairhaven",
-                "de": "Fairhaven Ställe",
+                "de": "Stall von Fairhaven ",
                 "es": "Establos de Fairhaven",
                 "ru": "Стойла Фэрхевена"
             }
@@ -6712,7 +6712,7 @@
             "text": {
                 "en": "Crystabell Stables",
                 "fr": "Etables de Crystabell",
-                "de": "Crystabell Ställe",
+                "de": "Stall von Crystabell ",
                 "es": "Establos de Crystabell",
                 "ru": "Стойла Кристабелла"
             }
@@ -6727,7 +6727,7 @@
             "text": {
                 "en": "Avendale Stables",
                 "fr": "Etables d'Avendale",
-                "de": "Avendale Ställe",
+                "de": "Stall von Avendale ",
                 "es": "Establos de Avendale",
                 "ru": "Стойла Эвендейла"
             }
@@ -6789,7 +6789,7 @@
             "text": {
                 "en": "<tryker islet 1>",
                 "fr": "Ilôt tryker 1",
-                "de": "<tryker Insel 1>",
+                "de": "Tryker Insel 1",
                 "es": "<islote tryker1>",
                 "ru": "<tryker islet 1>"
             }
@@ -6804,7 +6804,7 @@
             "text": {
                 "en": "<tryker islet 2>",
                 "fr": "Ilôt tryker 2",
-                "de": "<tryker Insel 2>",
+                "de": "Tryker Insel 2",
                 "es": "<islote tryker 2>",
                 "ru": "<tryker islet 2>"
             }
@@ -6819,7 +6819,7 @@
             "text": {
                 "en": "<tryker islet 3>",
                 "fr": "Ilôt tryker 3",
-                "de": "<tryker Inseln 3>",
+                "de": "Tryker Inseln 3",
                 "es": "<islote tryker3>",
                 "ru": "<tryker islet 3>"
             }
@@ -6849,7 +6849,7 @@
             "text": {
                 "en": "<tryker islet 5>",
                 "fr": "Ilôt tryker 5",
-                "de": "<tryker Inseln 5>",
+                "de": "Tryker Inseln 5",
                 "es": "<islote tryker5>",
                 "ru": "<tryker islet 5>"
             }
@@ -7108,7 +7108,7 @@
             "text": {
                 "en": "Doomed Maze Farm",
                 "fr": "Ferme du Labyrinthe Condamné",
-                "de": "Hof des Verdammten Labyrinths",
+                "de": "Hof am Verdammten Labyrinth",
                 "es": "Granja del Laberinto de los Condenados",
                 "ru": "Ферма Лабиринт Обреченных"
             }
@@ -7378,7 +7378,7 @@
             "text": {
                 "en": "Cemetery District",
                 "fr": "Cimetière",
-                "de": "Friedhof",
+                "de": "Friedhof von Zora",
                 "es": "Distrito del Cementerio",
                 "ru": "Кладбище"
             }
@@ -7528,7 +7528,7 @@
             "text": {
                 "en": "Bighand Border Post",
                 "fr": "Poste Frontière de la Main Géante",
-                "de": "Grenzposten der Großen Hand",
+                "de": "Grenzposten an der Großen Hand",
                 "es": "Puesto Fronterizo Mano Grande",
                 "ru": "Пограничная Застава Тяжелая Рука"
             }
@@ -7708,7 +7708,7 @@
             "text": {
                 "en": "Witherstock Farm",
                 "fr": "Ferme de la Souche Flétrie",
-                "de": "Hof des Verdorrten Stamms",
+                "de": "Hof am Verdorrten Stamm",
                 "es": "Granja Whiterstock",
                 "ru": "Ферма у Заброшенного Кладезя"
             }
@@ -7798,7 +7798,7 @@
             "text": {
                 "en": "Fustylake Workshop",
                 "fr": "Atelier du Lac Poussiéreux",
-                "de": "Werkstatt am Stickenden See",
+                "de": "Werkstatt am Stinkenden See",
                 "es": "Taller Fustylake",
                 "ru": "Мастерская Затхлого Озера"
             }
@@ -7963,7 +7963,7 @@
             "text": {
                 "en": "Desertstock Farm",
                 "fr": "Ferme de Désertstock",
-                "de": "Hof des Trockenen Stamms",
+                "de": "Hof am Trockenen Stamm",
                 "es": "Granja Desertstock",
                 "ru": "Ферма Пустынный Кладезь"
             }
@@ -8098,7 +8098,7 @@
             "text": {
                 "en": "Zora Stables",
                 "fr": "Etables de Zora",
-                "de": "Stall",
+                "de": "Stall von Zora",
                 "es": "Establos Zora",
                 "ru": "Стойла Мектубов Зоры"
             }
@@ -8113,7 +8113,7 @@
             "text": {
                 "en": "Hoï-Cho Stables",
                 "fr": "Etables d'Hoi Cho",
-                "de": "Hoi-Cho-Ställe",
+                "de": "Stall von Hoï-Cho ",
                 "es": "Establo de Hoi Cho ",
                 "ru": "Стойла Хоа Шо"
             }
@@ -8128,7 +8128,7 @@
             "text": {
                 "en": "Jen-Laï Stables",
                 "fr": "Etables de Jen Lai",
-                "de": "Jen-Lai-Ställe",
+                "de": "Stall von Jen-Laï",
                 "es": "Establos de Jen Lai ",
                 "ru": "Стойла Джен Лай"
             }
@@ -8143,7 +8143,7 @@
             "text": {
                 "en": "Min-Cho Stables",
                 "fr": "Etables de Min Cho",
-                "de": "Min-Cho-Ställe",
+                "de": "Stall von Min-Cho",
                 "es": "Establos de Min Cho ",
                 "ru": "Стойла Мин Хо"
             }
@@ -8160,7 +8160,7 @@
             "text": {
                 "en": "<zoraï islets>",
                 "fr": "Ilôts zoraï",
-                "de": "<zorai Inseln>",
+                "de": "Zorai Inseln",
                 "es": "<isletas zoraï>",
                 "ru": "<zorai islets>"
             }
@@ -8175,7 +8175,7 @@
             "text": {
                 "en": "<zoraï islet 1>",
                 "fr": "Ilôt zoraï 1",
-                "de": "<Insel zorai 1>",
+                "de": "Zorai Insel 1",
                 "es": "<isleta zoraï 1>",
                 "ru": "<zorai islet 1>"
             }
@@ -8190,7 +8190,7 @@
             "text": {
                 "en": "<zoraï islet 2>",
                 "fr": "Ilôt zoraï 2",
-                "de": "<Insel zorai 2>",
+                "de": "Zorai Insel 2",
                 "es": "<isleta zoraï 2>",
                 "ru": "<zorai islet 2>"
             }
@@ -8205,7 +8205,7 @@
             "text": {
                 "en": "<zoraï islet 3>",
                 "fr": "Ilôt zoraï 3",
-                "de": "<Insel zorai 3>",
+                "de": "Zorai Insel 3",
                 "es": "<isleta zoraï 3>",
                 "ru": "<zorai islet 3>"
             }
@@ -8220,7 +8220,7 @@
             "text": {
                 "en": "<zoraï islet 4>",
                 "fr": "Ilôt zoraï 4",
-                "de": "<Insel zorai 4>",
+                "de": "Zorai Insel 4",
                 "es": "<isleta zoraï 4>",
                 "ru": "<zorai islet 4>"
             }
@@ -8237,7 +8237,7 @@
             "text": {
                 "en": "Zoraï Island",
                 "fr": "Ile Zoraï",
-                "de": "Zoraï-Insel",
+                "de": "Zoraï-Startinsel",
                 "es": "fIsla Zoraï",
                 "ru": "Земли Зораи"
             }
