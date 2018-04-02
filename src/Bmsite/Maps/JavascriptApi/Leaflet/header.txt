@@ -1,0 +1,15 @@
+/**
+ * Ryzom Maps
+ *
+ * @author Meelis Mägi <nimetu@gmail.com>
+ * @copyright (c) 2014 Meelis Mägi
+ * @license http://opensource.org/licenses/LGPL-3.0
+ */
+/*
+ * Function: OpenLayers.Geometry
+ *
+ * Copyright (c) 2006-2013 by OpenLayers Contributors (see authors.txt for
+ * full list of contributors). Published under the 2-clause BSD license.
+ * See license.txt in the OpenLayers distribution or repository for the
+ * full text of the license. */
+

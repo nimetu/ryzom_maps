@@ -2,58 +2,112 @@
 
 require_once dirname(__DIR__).'/vendor/autoload.php';
 
-$version = 'leaflet';
+/**
+ * Simple wrapper around JavascriptPacker
+ */
+class JsMinifier implements \Bmsite\Maps\JavascriptApi\MinifyInterface
+{
+    public function minify($str) {
+        $packer = new JavascriptPacker($str);
+        return $packer->pack();
+    }
+}
 
-$factory = new \Bmsite\Maps\JavascriptApi\JavascriptFactory($version);
-$js = $factory->dump();
-save_js("map-{$version}.js", $js, true);
+// javascript
+$ver = 'leaflet';
+$mapjs = get_mapjs($ver);
+save_js($mapjs['js'],    $mapjs['hash'],    "map-{$ver}.js");
+save_js($mapjs['jsmin'], $mapjs['hashmin'], "map-{$ver}.min.js");
 
-// prepare map areas loader
-$loader = new \Bmsite\Maps\ResourceLoader;
-use Bmsite\Maps\Tools\Console\Helper\ResourceHelper;
+$mapjs_areas = get_mapjs_areas();
+save_js($mapjs_areas['js'],    $mapjs_areas['hash'],     "map-areas-{$ver}.js");
+save_js($mapjs_areas['jsmin'], $mapjs_areas['hashmin'], "map-areas-{$ver}.min.js");
 
-$areasFile = $loader->getFilePath('areas.json');
-$areas = file_get_contents($areasFile);
-
-$js = <<<EOF
-(function() {
-	Ryzom.XY.ingame_areas = $areas;
-})();
-EOF;
-
-save_js("map-areas-${version}.js", $js, true);
-
-// all done
 exit;
 
+function save_js($js, $hash, $file) {
+    echo "Writing $file";
+    file_put_contents($file, $js);
+
+    $txt = js_script($file, $hash);
+
+    file_put_contents($file.'.txt', $txt);
+    echo ": {$hash}\n";
+}
+
 /**
- * Save content of the $js into $file and calculate subresource integrity hash
- * which is saved in .txt file
+ * Build map.js.
  *
- * If minify is true, then save minified version to ${file}.min.js
+ * Return normal and minified versions
  *
- * @see https://www.srihash.org/
+ * @param string $ver
+ *
+ * @return string[] [js, min]
+ */
+function get_mapjs($ver = 'leaflet') {
+    $factory = new \Bmsite\Maps\JavascriptApi\JavascriptFactory($ver, new JsMinifier);
+
+    $ret = [];
+    $ret['js'] = $factory->dump();
+    $ret['hash'] = $factory->integrity();
+
+    $ret['jsmin'] = $factory->minify();
+    $ret['hashmin'] = $factory->integrity(true);
+
+    return $ret;
+}
+
+/**
+ * Build areas.json loader
+ *
+ * Return normal and minified versions
+ *
+ * @return string[] [js, min]
+ */
+function get_mapjs_areas() {
+    $minify = new JsMinifier;
+    // prepare map areas loader
+    $loader = new \Bmsite\Maps\ResourceLoader;
+
+    $areasFile = $loader->getFilePath('areas.json');
+    $areas = file_get_contents($areasFile);
+
+    $js = "(function() {\n\tRyzom.XY.ingame_areas = $areas;\n})();";
+    $hash = integrity_hash($js);
+
+    $jsmin = $minify->minify($js);
+    $hashmin = integrity_hash($jsmin);
+
+    return [
+        'js' => $js,
+        'hash' => $hash,
+        'jsmin' => $jsmin,
+        'hashmin' => $hashmin,
+    ];
+}
+
+/**
+ * Calculate integrity hash for given string
+ *
+ * @param string $js
+ *
+ * @return string
+ */
+function integrity_hash($js) {
+    $type = 'sha384';
+    $hash = base64_encode(hash($type, $js, true));
+    return "$type-$hash";
+}
+
+/**
+ * Return html <script> tag for js file
  *
  * @param string $file
- * @param string $js
- * @param bool $minify
+ * @param string $hash
+ *
+ * @return string
  */
-function save_js($file, $js, $minify = false) {
-	echo "Writing $file";
-	file_put_contents($file, $js);
-
-	$type = 'sha384';
-	$hash = base64_encode(hash($type, $js, true));
-	$txt = '<script src="'.$file.'" integrity="'.$type.'-'.$hash.'" crossorigin="anonymous"></script>';
-	file_put_contents($file.'.txt', $txt);
-	echo ": {$type}-{$hash}\n";
-
-	if ($minify) {
-		$packer = new JavascriptPacker($js);
-		$js = $packer->pack();
-
-		$file = substr($file, 0, -3).'.min.js';
-		save_js($file, $js, false);
-	}
+function js_script($file, $hash) {
+    return '<script src="'.$file.'" integrity="'.$hash.'" crossorigin="anonymous"></script>';
 }
 

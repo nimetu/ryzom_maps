@@ -23,11 +23,24 @@ class JavascriptFactory
     /** @var int */
     protected $lastModified;
 
+    /** @var \Bmsite\Maps\MinifyInterface */
+    protected $minifier;
+
+    /** @var string */
+    protected $header;
+
+    /** @var string */
+    private $jscache;
+
+    /** @var string */
+    protected $mincache;
+
     /**
      * @param string $version
      */
-    public function __construct($version = 'leaflet')
+    public function __construct($version = 'leaflet', MinifyInterface $minify = null)
     {
+        $this->minifier = $minify;
         $this->buildAssets($version);
     }
 
@@ -44,12 +57,81 @@ class JavascriptFactory
      */
     public function dump()
     {
-        // TODO: cache
+        if (empty($this->jscache)) {
+            $this->cachejs();
+        }
+
+        return $this->jscache;
+    }
+
+    /**
+     * Return minified version from js
+     *
+     * @return string
+     *
+     * @throws \RuntimeException if minifier not set
+     */
+    public function minify()
+    {
+        if ($this->minifier === null) {
+            throw new \RuntimeException("Minifier not set");
+        }
+
+        if (empty($this->jscache) || empty($this->mincache)) {
+            $this->cachejs();
+            $this->cachemin();
+        }
+
+        return $this->mincache;
+
+    }
+
+    /**
+     * Return html script tag integrity hash
+     *
+     * @param bool $minified
+     * @param string $type
+     *
+     * @return string
+     */
+    public function integrity($minified = false, $type = 'sha384')
+    {
+        if (empty($this->jscache)) {
+            $this->cachejs();
+        }
+        if ($minified && empty($this->mincache)) {
+            $this->cachemin();
+        }
+
+        $js = $minified ? $this->mincache : $this->jscache;
+        $hash = base64_encode(hash($type, $js, true));
+        return "$type-$hash";
+    }
+
+    /**
+     * Rebuild js cache from $js files array
+     */
+    protected function cachejs()
+    {
         $result = '';
         foreach ($this->js as $file) {
             $result .= file_get_contents($file);
         }
-        return $result;
+
+        $this->jscache = $result;
+    }
+
+    /**
+     * Rebuild minified js cache with header
+     */
+    protected function cachemin()
+    {
+        if (!empty($this->jscache)) {
+            $this->cachejs();
+        }
+
+        $this->mincache = $this->header;
+        $this->mincache .= $this->minifier->minify($this->jscache);
     }
 
     /**
@@ -101,6 +183,7 @@ class JavascriptFactory
             ),
             // http://leafletjs.com/
             'leaflet' => array(
+                '__header' => 'Leaflet/header.txt',
                 'Leaflet/OpenLayers.Geometry.js',
                 'Leaflet/Ryzom.js',
                 'Leaflet/Ryzom.XY.js',
@@ -122,8 +205,16 @@ class JavascriptFactory
 
         $this->js = array();
         $this->lastModified = 0;
-        foreach ($jsFiles[$version] as $file) {
+        $this->jscache = '';
+        $this->mincache = '';
+        $this->header = '';
+
+        foreach ($jsFiles[$version] as $k => $file) {
             $filename = __DIR__.'/'.$file;
+            if ($k === '__header') {
+                $this->header = file_get_contents($filename);
+                continue;
+            }
 
             $mtime = filemtime($filename);
             if ($mtime > $this->lastModified) {
@@ -134,3 +225,4 @@ class JavascriptFactory
         }
     }
 }
+
