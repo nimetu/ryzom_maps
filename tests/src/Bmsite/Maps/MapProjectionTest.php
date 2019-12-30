@@ -14,7 +14,7 @@ use Bmsite\Maps\BaseTypes\Point;
 /**
  * Class MapProjectionTest
  */
-class MapProjectionTest extends \PHPUnit_Framework_TestCase
+class MapProjectionTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var MapProjection
@@ -103,20 +103,20 @@ class MapProjectionTest extends \PHPUnit_Framework_TestCase
 
     public function testUnknownZone()
     {
-        $this->setExpectedException('\InvalidArgumentException', 'Coordinates outside known server zone');
+        $this->expectException('\InvalidArgumentException', 'Coordinates outside known server zone');
 
         $this->proj->project(new Point(0, 1));
     }
 
     public function testMissingServerZone()
     {
-        $this->setExpectedException('\InvalidArgumentException', 'Unknown server zone (unknown-server-zone)');
+        $this->expectException('\InvalidArgumentException', 'Unknown server zone (unknown-server-zone)');
         $this->proj->projectZone('unknown-server-zone');
     }
 
     public function testMissingWorldZone()
     {
-        $this->setExpectedException(
+        $this->expectException(
             '\InvalidArgumentException',
             'Missing server to world zone projection (unknown-world-zone)'
         );

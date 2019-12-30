@@ -9,7 +9,7 @@
 namespace Bmsite\Maps\BaseTypes;
 
 
-class BoundsTest extends \PHPUnit_Framework_TestCase
+class BoundsTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testPositiveBox()
