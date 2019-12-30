@@ -241,6 +241,7 @@ class StaticMap
                                 'tp_karavan',
                                 'egg',
                                 'question',
+                                'map_event',
                                 // no-icon
                                 'none'
                             );
