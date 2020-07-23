@@ -239,6 +239,7 @@ class StaticMap
                                 'spawn',
                                 'tp_kami',
                                 'tp_karavan',
+                                'tp_marauder',
                                 'egg',
                                 'question',
                                 'map_event',
