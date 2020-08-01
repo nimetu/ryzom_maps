@@ -809,25 +809,6 @@ Ryzom.tileLayer = function(uri, options) {
 Ryzom.icon = function(name, color, size) {
     name = name || 'lm_marker';
 
-    // verify name for api
-    var iconNames = [
-        'building', 'camp', 'dig', 'lm_marker',
-        'mektoub', 'npc', 'op_townhall', 'portal',
-        'spawn', 'tp_kami', 'tp_karavan',
-        'egg', 'question'
-    ];
-    var found = false;
-    // var found = iconNames.indexOf(name) > -1;
-    for (var i=0;i<iconNames.length;++i) {
-        if (iconNames[i] == name) {
-            found = true;
-            break;
-        }
-    }
-    if (!found) {
-        name = 'lm_marker';
-    }
-
     if (typeof color == "number") {
         size = color;
         color = false;

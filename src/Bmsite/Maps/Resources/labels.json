@@ -2266,8 +2266,8 @@
     "matis": {
         "continent_matis": {
             "pos": [
-                3242,
-                -3880
+                3245,
+                -3878
             ],
             "regionforce": 0,
             "lmtype": -1,
@@ -2634,7 +2634,7 @@
             "text": {
                 "en": "Marauder Camp",
                 "fr": "Camp Maraudeur",
-                "de": "Marodeur-Lager",
+                "de": "Lager der Marodeure",
                 "es": "Campamento Merodeador",
                 "ru": "place_marauder_camp"
             }
@@ -2649,7 +2649,7 @@
             "text": {
                 "en": "Marauder Arena",
                 "fr": "Arène Maraudeur",
-                "de": "Marodeur-Arena",
+                "de": "Arena der Marodeure",
                 "es": "Arena Merodeadora",
                 "ru": "place_lieudit_marauder_arena"
             }
@@ -3459,7 +3459,7 @@
             "text": {
                 "en": "Marauder Stables",
                 "fr": "Etables Maraudeurs",
-                "de": "Marodeur-Stall",
+                "de": "Stall der Marodeure",
                 "es": "Establos Merodeadores",
                 "ru": "marauder_stable"
             }
@@ -3573,8 +3573,8 @@
         },
         "region_matis_island_1_cont": {
             "pos": [
-                14744,
-                -849
+                14730,
+                -863
             ],
             "regionforce": 0,
             "lmtype": -1,
@@ -3588,8 +3588,8 @@
         },
         "region_matis_island_1": {
             "pos": [
-                14744,
-                -849
+                14730,
+                -863
             ],
             "regionforce": 0,
             "lmtype": 4,
@@ -4179,8 +4179,8 @@
         },
         "place_lieudit_nexus_3": {
             "pos": [
-                8560,
-                -7088
+                8567,
+                -7286
             ],
             "regionforce": 0,
             "lmtype": 5,
@@ -4217,11 +4217,506 @@
             "regionforce": 0,
             "lmtype": -1,
             "text": {
-                "en": "continent_r2_desert",
-                "fr": "continent_r2_desert",
-                "de": "continent_r2_desert",
+                "en": "Unexplored Desert",
+                "fr": "Inexploré Desert",
+                "de": "Unerforschte Desert",
                 "es": "continent_r2_desert",
                 "ru": "continent_r2_desert"
+            }
+        },
+        "uir2_deserts35": {
+            "pos": [
+                23360,
+                -2506
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_deserts35",
+                "fr": "uir2_deserts35",
+                "de": "uir2_deserts35",
+                "es": "uir2_deserts35",
+                "ru": "uir2_deserts35"
+            }
+        },
+        "uir2_deserts34": {
+            "pos": [
+                21614,
+                -2628
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_deserts34",
+                "fr": "uir2_deserts34",
+                "de": "uir2_deserts34",
+                "es": "uir2_deserts34",
+                "ru": "uir2_deserts34"
+            }
+        },
+        "uir2_deserts33": {
+            "pos": [
+                30560,
+                -1279
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Meditations of the Mace Master",
+                "fr": "Réflexions sur le maître des massues",
+                "de": "Meditationen des Streitkolbenmeisters",
+                "es": "uir2_deserts33",
+                "ru": "uir2_deserts33"
+            }
+        },
+        "uir2_deserts32": {
+            "pos": [
+                28956,
+                -1325
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Shalah Footprints",
+                "fr": "Empreintes de Shalah",
+                "de": "Shalah Fußabdrücke",
+                "es": "uir2_deserts32",
+                "ru": "uir2_deserts32"
+            }
+        },
+        "uir2_deserts31": {
+            "pos": [
+                25442,
+                -2138
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Furrow",
+                "fr": "Le sillon",
+                "de": "Die Furche",
+                "es": "uir2_deserts31",
+                "ru": "uir2_deserts31"
+            }
+        },
+        "uir2_deserts30": {
+            "pos": [
+                26801,
+                -2605
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Two Halls",
+                "fr": "Les deux chambres",
+                "de": "Die zwei Hallen",
+                "es": "uir2_deserts30",
+                "ru": "uir2_deserts30"
+            }
+        },
+        "uir2_deserts29": {
+            "pos": [
+                30560,
+                -2080
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Dark Pathway",
+                "fr": "Le sentier obscur",
+                "de": "Der dunkle Durchgang",
+                "es": "uir2_deserts29",
+                "ru": "uir2_deserts29"
+            }
+        },
+        "uir2_deserts28": {
+            "pos": [
+                23680,
+                -1283
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Treacherous Passage",
+                "fr": "Passage perfide",
+                "de": "Verräterischer Durchgang",
+                "es": "uir2_deserts28",
+                "ru": "uir2_deserts28"
+            }
+        },
+        "uir2_deserts27": {
+            "pos": [
+                21519,
+                -1203
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Hidden Reserves",
+                "fr": "Réserves secrètes",
+                "de": "Versteckte Reserven",
+                "es": "uir2_deserts27",
+                "ru": "uir2_deserts27"
+            }
+        },
+        "uir2_deserts26": {
+            "pos": [
+                26031,
+                -2521
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Hive",
+                "fr": "La ruche",
+                "de": "Der Bienenstock",
+                "es": "uir2_deserts26",
+                "ru": "uir2_deserts26"
+            }
+        },
+        "uir2_deserts25": {
+            "pos": [
+                28108,
+                -1897
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Great Circuit",
+                "fr": "Le grand circuit",
+                "de": "Das große Circuit",
+                "es": "uir2_deserts25",
+                "ru": "uir2_deserts25"
+            }
+        },
+        "uir2_deserts24": {
+            "pos": [
+                23762,
+                -2042
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Height of Serenity",
+                "fr": "Sommet de la sérénité",
+                "de": "Anhöhe der Lässigkeit",
+                "es": "uir2_deserts24",
+                "ru": "uir2_deserts24"
+            }
+        },
+        "uir2_deserts23": {
+            "pos": [
+                27517,
+                -2112
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Connected Paths",
+                "fr": "Chemins reliés",
+                "de": "Verbundene Pfade",
+                "es": "uir2_deserts23",
+                "ru": "uir2_deserts23"
+            }
+        },
+        "uir2_deserts22": {
+            "pos": [
+                29759,
+                -1280
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Sands of Solitude",
+                "fr": "Sables de la solitude",
+                "de": "Sande der Einsamkeit",
+                "es": "uir2_deserts22",
+                "ru": "uir2_deserts22"
+            }
+        },
+        "uir2_deserts21": {
+            "pos": [
+                22614,
+                -2479
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Ambush",
+                "fr": "L`embuscade",
+                "de": "Der Hinterhalt",
+                "es": "uir2_deserts21",
+                "ru": "uir2_deserts21"
+            }
+        },
+        "uir2_deserts20": {
+            "pos": [
+                24435,
+                -1277
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Labyrinth",
+                "fr": "Le labyrinthe",
+                "de": "Das Labyrinth",
+                "es": "uir2_deserts20",
+                "ru": "uir2_deserts20"
+            }
+        },
+        "uir2_deserts19": {
+            "pos": [
+                26988,
+                -1962
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Struggle for Power",
+                "fr": "Lutte de pouvoirs",
+                "de": "Kampf um die Macht",
+                "es": "uir2_deserts19",
+                "ru": "uir2_deserts19"
+            }
+        },
+        "uir2_deserts18": {
+            "pos": [
+                25279,
+                -1280
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Crown",
+                "fr": "La couronne",
+                "de": "Die Krone",
+                "es": "uir2_deserts18",
+                "ru": "uir2_deserts18"
+            }
+        },
+        "uir2_deserts17": {
+            "pos": [
+                27581,
+                -2667
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Three Branches",
+                "fr": "Trois branches",
+                "de": "Drei äste",
+                "es": "uir2_deserts17",
+                "ru": "uir2_deserts17"
+            }
+        },
+        "uir2_deserts16": {
+            "pos": [
+                25000,
+                -2670
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Lair in the Heights",
+                "fr": "Repaire aux sommets",
+                "de": "Unterschlupf in den Höhen",
+                "es": "uir2_deserts16",
+                "ru": "uir2_deserts16"
+            }
+        },
+        "uir2_deserts15": {
+            "pos": [
+                21745,
+                -1894
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Trail of Initiation",
+                "fr": "La piste initiatique",
+                "de": "Der Schweif der Einweihung",
+                "es": "uir2_deserts15",
+                "ru": "uir2_deserts15"
+            }
+        },
+        "uir2_deserts14": {
+            "pos": [
+                28152,
+                -2492
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Wooded Canyon",
+                "fr": "Canyon boisé",
+                "de": "Bewaldeter Canyon",
+                "es": "uir2_deserts14",
+                "ru": "uir2_deserts14"
+            }
+        },
+        "uir2_deserts13": {
+            "pos": [
+                23181,
+                -1816
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Dunes of Temperance",
+                "fr": "Dunes de la sagesse",
+                "de": "Dünen der Mässigung",
+                "es": "uir2_deserts13",
+                "ru": "uir2_deserts13"
+            }
+        },
+        "uir2_deserts12": {
+            "pos": [
+                24559,
+                -2004
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Dragon Valley",
+                "fr": "Vallée du dragon",
+                "de": "Drachental",
+                "es": "uir2_deserts12",
+                "ru": "uir2_deserts12"
+            }
+        },
+        "uir2_deserts11": {
+            "pos": [
+                27635,
+                -1280
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Blue Oasis",
+                "fr": "Oasis bleue",
+                "de": "Blaue Oase",
+                "es": "uir2_deserts11",
+                "ru": "uir2_deserts11"
+            }
+        },
+        "uir2_deserts10": {
+            "pos": [
+                28756,
+                -2080
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Ancient Hollow",
+                "fr": "Caverne antique",
+                "de": "Alte Höhle",
+                "es": "uir2_deserts10",
+                "ru": "uir2_deserts10"
+            }
+        },
+        "uir2_deserts9": {
+            "pos": [
+                29694,
+                -2241
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_deserts9",
+                "fr": "uir2_deserts9",
+                "de": "uir2_deserts9",
+                "es": "uir2_deserts9",
+                "ru": "uir2_deserts9"
+            }
+        },
+        "uir2_deserts8": {
+            "pos": [
+                25996,
+                -1276
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_deserts8",
+                "fr": "uir2_deserts8",
+                "de": "uir2_deserts8",
+                "es": "uir2_deserts8",
+                "ru": "uir2_deserts8"
+            }
+        },
+        "uir2_deserts7": {
+            "pos": [
+                22916,
+                -1200
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_deserts7",
+                "fr": "uir2_deserts7",
+                "de": "uir2_deserts7",
+                "es": "uir2_deserts7",
+                "ru": "uir2_deserts7"
+            }
+        },
+        "uir2_deserts6": {
+            "pos": [
+                22482,
+                -1908
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_deserts6",
+                "fr": "uir2_deserts6",
+                "de": "uir2_deserts6",
+                "es": "uir2_deserts6",
+                "ru": "uir2_deserts6"
+            }
+        },
+        "uir2_deserts5": {
+            "pos": [
+                26204,
+                -1951
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_deserts5",
+                "fr": "uir2_deserts5",
+                "de": "uir2_deserts5",
+                "es": "uir2_deserts5",
+                "ru": "uir2_deserts5"
+            }
+        },
+        "uir2_deserts4": {
+            "pos": [
+                22239,
+                -1280
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_deserts4",
+                "fr": "uir2_deserts4",
+                "de": "uir2_deserts4",
+                "es": "uir2_deserts4",
+                "ru": "uir2_deserts4"
+            }
+        },
+        "uir2_deserts3": {
+            "pos": [
+                26719,
+                -1283
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_deserts3",
+                "fr": "uir2_deserts3",
+                "de": "uir2_deserts3",
+                "es": "uir2_deserts3",
+                "ru": "uir2_deserts3"
             }
         }
     },
@@ -4236,9 +4731,699 @@
             "text": {
                 "en": "Leewind Lands",
                 "fr": "Terres Sous le Vent",
-                "de": "continent_r2_forest",
-                "es": "continent_r2_forest",
+                "de": "Leewindsteg",
+                "es": "Cumbres Borrascosas",
                 "ru": "continent_r2_forest"
+            }
+        },
+        "uir2_forest48": {
+            "pos": [
+                29551,
+                -12800
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_forest48",
+                "fr": "uir2_forest48",
+                "de": "uir2_forest48",
+                "es": "uir2_forest48",
+                "ru": "uir2_forest48"
+            }
+        },
+        "uir2_forest47": {
+            "pos": [
+                27099,
+                -12750
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_forest47",
+                "fr": "uir2_forest47",
+                "de": "uir2_forest47",
+                "es": "uir2_forest47",
+                "ru": "uir2_forest47"
+            }
+        },
+        "uir2_forest46": {
+            "pos": [
+                24779,
+                -14080
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Wild Ravine",
+                "fr": "Le ravin sauvage",
+                "de": "Die wilde Klamm",
+                "es": "uir2_forest46",
+                "ru": "uir2_forest46"
+            }
+        },
+        "uir2_forest45": {
+            "pos": [
+                21695,
+                -12635
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Barkcleft",
+                "fr": "Fendécorce",
+                "de": "Rindenspalte",
+                "es": "uir2_forest45",
+                "ru": "uir2_forest45"
+            }
+        },
+        "uir2_forest44": {
+            "pos": [
+                22942,
+                -12760
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Grove of Jen-Mawk",
+                "fr": "Bosquet de Jen-Mawk",
+                "de": "Hain des Jen-Mawk",
+                "es": "uir2_forest44",
+                "ru": "uir2_forest44"
+            }
+        },
+        "uir2_forest43": {
+            "pos": [
+                30403,
+                -12800
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Serene Forest",
+                "fr": "Forêt de la sérénité",
+                "de": "Lässiger Wald",
+                "es": "uir2_forest43",
+                "ru": "uir2_forest43"
+            }
+        },
+        "uir2_forest42": {
+            "pos": [
+                25436,
+                -12799
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Lush Forest",
+                "fr": "Forêt luxuriante",
+                "de": "üppiger Wakd",
+                "es": "uir2_forest42",
+                "ru": "uir2_forest42"
+            }
+        },
+        "uir2_forest41": {
+            "pos": [
+                27384,
+                -13995
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Mage Tower",
+                "fr": "Tour du Mage",
+                "de": "Magierturm",
+                "es": "uir2_forest41",
+                "ru": "uir2_forest41"
+            }
+        },
+        "uir2_forest40": {
+            "pos": [
+                25599,
+                -11262
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Madakam Track",
+                "fr": "Piste des Madakams",
+                "de": "Madakam Spur",
+                "es": "uir2_forest40",
+                "ru": "uir2_forest40"
+            }
+        },
+        "uir2_forest39": {
+            "pos": [
+                24704,
+                -12800
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Three Clearings",
+                "fr": "Trois clairières",
+                "de": "Drei Lichtungen",
+                "es": "uir2_forest39",
+                "ru": "uir2_forest39"
+            }
+        },
+        "uir2_forest38": {
+            "pos": [
+                21284,
+                -11999
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Garden of Reward",
+                "fr": "Jardin des récompenses",
+                "de": "Garten der Belohnung",
+                "es": "uir2_forest38",
+                "ru": "uir2_forest38"
+            }
+        },
+        "uir2_forest37": {
+            "pos": [
+                28641,
+                -11120
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Beyond the Jungle",
+                "fr": "Au-delà de la Jungle",
+                "de": "Hinter dem Dschungel",
+                "es": "uir2_forest37",
+                "ru": "uir2_forest37"
+            }
+        },
+        "uir2_forest36": {
+            "pos": [
+                27994,
+                -11118
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Last Well",
+                "fr": "Le dernier puits",
+                "de": "Der letzte Brunnen",
+                "es": "uir2_forest36",
+                "ru": "uir2_forest36"
+            }
+        },
+        "uir2_forest35": {
+            "pos": [
+                25919,
+                -12075
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Wall of Bark",
+                "fr": "Mur d`écorce",
+                "de": "Mauer aus Rinde",
+                "es": "uir2_forest35",
+                "ru": "uir2_forest35"
+            }
+        },
+        "uir2_forest34": {
+            "pos": [
+                28240,
+                -12073
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Jaws of the Tobak",
+                "fr": "Lacération des Tobaks",
+                "de": "Kiefer des Tobaks",
+                "es": "uir2_forest34",
+                "ru": "uir2_forest34"
+            }
+        },
+        "uir2_forest33": {
+            "pos": [
+                23680,
+                -11999
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Chasm of the Kincher",
+                "fr": "Gouffre des Kinchers",
+                "de": "Kluft des Kinchers",
+                "es": "uir2_forest33",
+                "ru": "uir2_forest33"
+            }
+        },
+        "uir2_forest32": {
+            "pos": [
+                24393,
+                -11955
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Dried-up Springs",
+                "fr": "Souches asséchées",
+                "de": "Ausgetrocknete Quellen",
+                "es": "uir2_forest32",
+                "ru": "uir2_forest32"
+            }
+        },
+        "uir2_forest31": {
+            "pos": [
+                29920,
+                -11057
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Mere of dreams",
+                "fr": "Etang des rêves",
+                "de": "Teich der Träume",
+                "es": "uir2_forest31",
+                "ru": "uir2_forest31"
+            }
+        },
+        "uir2_forest30": {
+            "pos": [
+                26397,
+                -11200
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Crag of chaos",
+                "fr": "Rocher du chaos",
+                "de": "Fels des Chaos",
+                "es": "uir2_forest30",
+                "ru": "uir2_forest30"
+            }
+        },
+        "uir2_forest29": {
+            "pos": [
+                23706,
+                -12800
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Woods of wonder",
+                "fr": "Bois des merveilles",
+                "de": "Wälder der Verwunderung",
+                "es": "uir2_forest29",
+                "ru": "uir2_forest29"
+            }
+        },
+        "uir2_forest28": {
+            "pos": [
+                23199,
+                -11203
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Cliff of Clouds",
+                "fr": "Falaise des nuages",
+                "de": "Klippe der Wolken",
+                "es": "uir2_forest28",
+                "ru": "uir2_forest28"
+            }
+        },
+        "uir2_forest27": {
+            "pos": [
+                27200,
+                -11200
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Forgotten Plateau",
+                "fr": "Plateau oublié",
+                "de": "Vergessene Ebene",
+                "es": "uir2_forest27",
+                "ru": "uir2_forest27"
+            }
+        },
+        "uir2_forest26": {
+            "pos": [
+                22083,
+                -12000
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Long-Island",
+                "fr": "Ile infinie",
+                "de": "Lange-Insel",
+                "es": "uir2_forest26",
+                "ru": "uir2_forest26"
+            }
+        },
+        "uir2_forest25": {
+            "pos": [
+                22918,
+                -12002
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Gorge of the Dance",
+                "fr": "Gorge de la danse",
+                "de": "Schlucht des Tanzes",
+                "es": "uir2_forest25",
+                "ru": "uir2_forest25"
+            }
+        },
+        "uir2_forest24": {
+            "pos": [
+                23084,
+                -13519
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Northern Island",
+                "fr": "Ile du nord",
+                "de": "Nördliche Insel",
+                "es": "uir2_forest24",
+                "ru": "uir2_forest24"
+            }
+        },
+        "uir2_forest23": {
+            "pos": [
+                29283,
+                -11199
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Empty Passage",
+                "fr": "Passage vide",
+                "de": "Leerer Durchgang",
+                "es": "uir2_forest23",
+                "ru": "uir2_forest23"
+            }
+        },
+        "uir2_forest22": {
+            "pos": [
+                29135,
+                -11998
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Fang-Island",
+                "fr": "Ile aux crocs",
+                "de": "Fang-Insel",
+                "es": "uir2_forest22",
+                "ru": "uir2_forest22"
+            }
+        },
+        "uir2_forest21": {
+            "pos": [
+                22260,
+                -13285
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Passage of the Pit",
+                "fr": "Passage de la mine",
+                "de": "Durchgang des Schachts",
+                "es": "uir2_forest21",
+                "ru": "uir2_forest21"
+            }
+        },
+        "uir2_forest20": {
+            "pos": [
+                22297,
+                -12643
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Darkpass",
+                "fr": "Passage sinistre",
+                "de": "Dunkelpass",
+                "es": "uir2_forest20",
+                "ru": "uir2_forest20"
+            }
+        },
+        "uir2_forest19": {
+            "pos": [
+                26640,
+                -12021
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Haunted Corridor",
+                "fr": "Couloir hanté",
+                "de": "Verfluchter Korridor",
+                "es": "uir2_forest19",
+                "ru": "uir2_forest19"
+            }
+        },
+        "uir2_forest18": {
+            "pos": [
+                21604,
+                -11205
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Plain of Spines",
+                "fr": "Prairie des épines",
+                "de": "Ebene der Stacheln",
+                "es": "uir2_forest18",
+                "ru": "uir2_forest18"
+            }
+        },
+        "uir2_forest17": {
+            "pos": [
+                27996,
+                -12794
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Bawaab Ridge",
+                "fr": "Crête des Bawaabs",
+                "de": "Bawaab First",
+                "es": "uir2_forest17",
+                "ru": "uir2_forest17"
+            }
+        },
+        "uir2_forest16": {
+            "pos": [
+                24002,
+                -13600
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Whirlmount",
+                "fr": "Mont du tourbillon",
+                "de": "Wirbelberg",
+                "es": "uir2_forest16",
+                "ru": "uir2_forest16"
+            }
+        },
+        "uir2_forest15": {
+            "pos": [
+                21120,
+                -12640
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Kitins Ridge",
+                "fr": "Crête des Kitins",
+                "de": "Kitin First",
+                "es": "uir2_forest15",
+                "ru": "uir2_forest15"
+            }
+        },
+        "uir2_forest14": {
+            "pos": [
+                24799,
+                -11237
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Great Arena",
+                "fr": "Grande arène",
+                "de": "Große Arena",
+                "es": "uir2_forest14",
+                "ru": "uir2_forest14"
+            }
+        },
+        "uir2_forest13": {
+            "pos": [
+                28785,
+                -12773
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Winter Pier",
+                "fr": "La jetée de l`hiver",
+                "de": "Der Winter Steg",
+                "es": "uir2_forest13",
+                "ru": "uir2_forest13"
+            }
+        },
+        "uir2_forest12": {
+            "pos": [
+                21318,
+                -13362
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Confined Clearing",
+                "fr": "Clairière perdue",
+                "de": "Begrenzte Lichtung",
+                "es": "uir2_forest12",
+                "ru": "uir2_forest12"
+            }
+        },
+        "uir2_forest11": {
+            "pos": [
+                25114,
+                -12082
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Madakam Ridge",
+                "fr": "Crête des Madakams",
+                "de": "Madakam First",
+                "es": "uir2_forest11",
+                "ru": "uir2_forest11"
+            }
+        },
+        "uir2_forest10": {
+            "pos": [
+                26395,
+                -12717
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Roots of Memory",
+                "fr": "Racines de la mémoire",
+                "de": "Wurweln der Erinnerung",
+                "es": "uir2_forest10",
+                "ru": "uir2_forest10"
+            }
+        },
+        "uir2_forest9": {
+            "pos": [
+                29844,
+                -11915
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_forest9",
+                "fr": "uir2_forest9",
+                "de": "uir2_forest9",
+                "es": "uir2_forest9",
+                "ru": "uir2_forest9"
+            }
+        },
+        "uir2_forest8": {
+            "pos": [
+                30577,
+                -11845
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_forest8",
+                "fr": "uir2_forest8",
+                "de": "uir2_forest8",
+                "es": "uir2_forest8",
+                "ru": "uir2_forest8"
+            }
+        },
+        "uir2_forest7": {
+            "pos": [
+                24004,
+                -11200
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_forest7",
+                "fr": "uir2_forest7",
+                "de": "uir2_forest7",
+                "es": "uir2_forest7",
+                "ru": "uir2_forest7"
+            }
+        },
+        "uir2_forest6": {
+            "pos": [
+                25840,
+                -13839
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_forest6",
+                "fr": "uir2_forest6",
+                "de": "uir2_forest6",
+                "es": "uir2_forest6",
+                "ru": "uir2_forest6"
+            }
+        },
+        "uir2_forest5": {
+            "pos": [
+                27355,
+                -12080
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_forest5",
+                "fr": "uir2_forest5",
+                "de": "uir2_forest5",
+                "es": "uir2_forest5",
+                "ru": "uir2_forest5"
+            }
+        },
+        "uir2_forest4": {
+            "pos": [
+                30574,
+                -11120
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_forest4",
+                "fr": "uir2_forest4",
+                "de": "uir2_forest4",
+                "es": "uir2_forest4",
+                "ru": "uir2_forest4"
+            }
+        },
+        "uir2_forest3": {
+            "pos": [
+                22320,
+                -11201
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_forest3",
+                "fr": "uir2_forest3",
+                "de": "uir2_forest3",
+                "es": "uir2_forest3",
+                "ru": "uir2_forest3"
             }
         }
     },
@@ -4251,11 +5436,746 @@
             "regionforce": 0,
             "lmtype": -1,
             "text": {
-                "en": "continent_r2_jungle",
-                "fr": "continent_r2_jungle",
-                "de": "continent_r2_jungle",
+                "en": "Unexplored Jungle",
+                "fr": "Inexploré Jungle",
+                "de": "Unerforscht Jungle",
                 "es": "continent_r2_jungle",
                 "ru": "continent_r2_jungle"
+            }
+        },
+        "uir2_jungle51": {
+            "pos": [
+                32365,
+                -12686
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Green Spirit",
+                "fr": "Esprit verdoyant",
+                "de": "Grüner Geist",
+                "es": "uir2_jungle51",
+                "ru": "uir2_jungle51"
+            }
+        },
+        "uir2_jungle50": {
+            "pos": [
+                35359,
+                -13519
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Spoiled Spring",
+                "fr": "Source souillée",
+                "de": "Verdorbene Quelle",
+                "es": "uir2_jungle50",
+                "ru": "uir2_jungle50"
+            }
+        },
+        "uir2_jungle49": {
+            "pos": [
+                36959,
+                -12880
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Chain",
+                "fr": "La chaîne",
+                "de": "Die Kette",
+                "es": "uir2_jungle49",
+                "ru": "uir2_jungle49"
+            }
+        },
+        "uir2_jungle48": {
+            "pos": [
+                34270,
+                -12847
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Rock of Flowers",
+                "fr": "Pierre de fleurs",
+                "de": "Fels der Blumen",
+                "es": "uir2_jungle48",
+                "ru": "uir2_jungle48"
+            }
+        },
+        "uir2_jungle47": {
+            "pos": [
+                39199,
+                -12880
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Range of the Brave",
+                "fr": "Région des braves",
+                "de": "Gebirgskette der Mutigen",
+                "es": "uir2_jungle47",
+                "ru": "uir2_jungle47"
+            }
+        },
+        "uir2_jungle46": {
+            "pos": [
+                38234,
+                -11886
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Fall",
+                "fr": "La chute",
+                "de": "Der Herbst",
+                "es": "uir2_jungle46",
+                "ru": "uir2_jungle46"
+            }
+        },
+        "uir2_jungle45": {
+            "pos": [
+                32239,
+                -11997
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Homin`s Plain",
+                "fr": "Prairie des homins",
+                "de": "Homins Ebene",
+                "es": "uir2_jungle45",
+                "ru": "uir2_jungle45"
+            }
+        },
+        "uir2_jungle44": {
+            "pos": [
+                31361,
+                -11120
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Rock of Tears",
+                "fr": "Rocher des lamentations",
+                "de": "Fels der Tränen",
+                "es": "uir2_jungle44",
+                "ru": "uir2_jungle44"
+            }
+        },
+        "uir2_jungle43": {
+            "pos": [
+                37517,
+                -13596
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Mysterious Forest",
+                "fr": "La forêt mystérieuse",
+                "de": "Der geheimnisvolle Wald",
+                "es": "uir2_jungle43",
+                "ru": "uir2_jungle43"
+            }
+        },
+        "uir2_jungle42": {
+            "pos": [
+                32324,
+                -11199
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Enclave",
+                "fr": "L`enclave",
+                "de": "Die Enklave",
+                "es": "uir2_jungle42",
+                "ru": "uir2_jungle42"
+            }
+        },
+        "uir2_jungle41": {
+            "pos": [
+                33600,
+                -13550
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Great Kami Plain",
+                "fr": "Grande prairie des Kamis",
+                "de": "Große Kami-Ebene",
+                "es": "uir2_jungle41",
+                "ru": "uir2_jungle41"
+            }
+        },
+        "uir2_jungle40": {
+            "pos": [
+                31362,
+                -12001
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_jungle40",
+                "fr": "uir2_jungle40",
+                "de": "uir2_jungle40",
+                "es": "uir2_jungle40",
+                "ru": "uir2_jungle40"
+            }
+        },
+        "uir2_jungle39": {
+            "pos": [
+                32804,
+                -13520
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Wombaï`s passage",
+                "fr": "Passage de Wombaï",
+                "de": "Wombaïs Durchgang",
+                "es": "uir2_jungle39",
+                "ru": "uir2_jungle39"
+            }
+        },
+        "uir2_jungle38": {
+            "pos": [
+                34994,
+                -12032
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Twin Ponds",
+                "fr": "Mares jumelles",
+                "de": "Zwillingsteiche",
+                "es": "uir2_jungle38",
+                "ru": "uir2_jungle38"
+            }
+        },
+        "uir2_jungle37": {
+            "pos": [
+                35360,
+                -11236
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_jungle37",
+                "fr": "uir2_jungle37",
+                "de": "uir2_jungle37",
+                "es": "uir2_jungle37",
+                "ru": "uir2_jungle37"
+            }
+        },
+        "uir2_jungle36": {
+            "pos": [
+                31236,
+                -12679
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Forgotten Lagoon",
+                "fr": "Le lagon oublié",
+                "de": "Die vergessene Lagune",
+                "es": "uir2_jungle36",
+                "ru": "uir2_jungle36"
+            }
+        },
+        "uir2_jungle35": {
+            "pos": [
+                36643,
+                -12002
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Plain of Desolation",
+                "fr": "Prairie de la désolation",
+                "de": "Ebene der Verwüstung",
+                "es": "uir2_jungle35",
+                "ru": "uir2_jungle35"
+            }
+        },
+        "uir2_jungle34": {
+            "pos": [
+                33119,
+                -11191
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Plateau of Goo",
+                "fr": "Plateau de Goo",
+                "de": "Plateau des Goo",
+                "es": "uir2_jungle34",
+                "ru": "uir2_jungle34"
+            }
+        },
+        "uir2_jungle33": {
+            "pos": [
+                38477,
+                -12876
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Cave",
+                "fr": "La grotte",
+                "de": "Der Keller",
+                "es": "uir2_jungle33",
+                "ru": "uir2_jungle33"
+            }
+        },
+        "uir2_jungle32": {
+            "pos": [
+                36045,
+                -13566
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Goo Patches",
+                "fr": "Taches de Goo",
+                "de": "Goo Stellen",
+                "es": "uir2_jungle32",
+                "ru": "uir2_jungle32"
+            }
+        },
+        "uir2_jungle31": {
+            "pos": [
+                35161,
+                -12758
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Small Circle",
+                "fr": "Petit cercle",
+                "de": "Kleiner Kreis",
+                "es": "uir2_jungle31",
+                "ru": "uir2_jungle31"
+            }
+        },
+        "uir2_jungle30": {
+            "pos": [
+                33115,
+                -12878
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Great Dale",
+                "fr": "Grand vallon",
+                "de": "Großes Tal",
+                "es": "uir2_jungle30",
+                "ru": "uir2_jungle30"
+            }
+        },
+        "uir2_jungle29": {
+            "pos": [
+                38913,
+                -13551
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Waterside",
+                "fr": "Berge",
+                "de": "Wasserseite",
+                "es": "uir2_jungle29",
+                "ru": "uir2_jungle29"
+            }
+        },
+        "uir2_jungle28": {
+            "pos": [
+                33716,
+                -12800
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Small Spring",
+                "fr": "Petite source",
+                "de": "Kleiner Brunnen",
+                "es": "uir2_jungle28",
+                "ru": "uir2_jungle28"
+            }
+        },
+        "uir2_jungle27": {
+            "pos": [
+                36766,
+                -13600
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Empty Valley",
+                "fr": "Vallée vierge",
+                "de": "Leeres Tal",
+                "es": "uir2_jungle27",
+                "ru": "uir2_jungle27"
+            }
+        },
+        "uir2_jungle26": {
+            "pos": [
+                31679,
+                -12560
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Further Goes the Goo",
+                "fr": "Avancée de la Goo",
+                "de": "Weiter geht das Goo",
+                "es": "uir2_jungle26",
+                "ru": "uir2_jungle26"
+            }
+        },
+        "uir2_jungle25": {
+            "pos": [
+                31273,
+                -13475
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Circle",
+                "fr": "Le cercle",
+                "de": "Der Kreis",
+                "es": "uir2_jungle25",
+                "ru": "uir2_jungle25"
+            }
+        },
+        "uir2_jungle24": {
+            "pos": [
+                39998,
+                -11201
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Mountainside",
+                "fr": "Versant de la montagne",
+                "de": "Bergseite",
+                "es": "uir2_jungle24",
+                "ru": "uir2_jungle24"
+            }
+        },
+        "uir2_jungle23": {
+            "pos": [
+                38150,
+                -13680
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Mountain Bamboos",
+                "fr": "Bambous des montages",
+                "de": "Berg Bambus",
+                "es": "uir2_jungle23",
+                "ru": "uir2_jungle23"
+            }
+        },
+        "uir2_jungle22": {
+            "pos": [
+                34000,
+                -12037
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Tropical Corridor",
+                "fr": "Couloir des tropiques",
+                "de": "Tropischer Korridor",
+                "es": "uir2_jungle22",
+                "ru": "uir2_jungle22"
+            }
+        },
+        "uir2_jungle21": {
+            "pos": [
+                31756,
+                -12960
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Uneven and Variety",
+                "fr": "Irrégularité et diversité",
+                "de": "Uneben und Vielfalt",
+                "es": "uir2_jungle21",
+                "ru": "uir2_jungle21"
+            }
+        },
+        "uir2_jungle20": {
+            "pos": [
+                34557,
+                -11197
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_jungle20",
+                "fr": "uir2_jungle20",
+                "de": "uir2_jungle20",
+                "es": "uir2_jungle20",
+                "ru": "uir2_jungle20"
+            }
+        },
+        "uir2_jungle19": {
+            "pos": [
+                33119,
+                -11964
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Aquatic Jungle",
+                "fr": "Jungle aquatique",
+                "de": "Wasserdschungel",
+                "es": "uir2_jungle19",
+                "ru": "uir2_jungle19"
+            }
+        },
+        "uir2_jungle18": {
+            "pos": [
+                40635,
+                -12000
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Heart of the Jungle",
+                "fr": "Coeur de la jungle",
+                "de": "Herz des Dschungels",
+                "es": "uir2_jungle18",
+                "ru": "uir2_jungle18"
+            }
+        },
+        "uir2_jungle17": {
+            "pos": [
+                38441,
+                -11120
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Promontories and Ridges",
+                "fr": "Promontoires et crêtes",
+                "de": "Promontories und Firsten",
+                "es": "uir2_jungle17",
+                "ru": "uir2_jungle17"
+            }
+        },
+        "uir2_jungle16": {
+            "pos": [
+                35999,
+                -12801
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "High-Plateau",
+                "fr": "Haut Plateau",
+                "de": "Hoch-Plateau",
+                "es": "uir2_jungle16",
+                "ru": "uir2_jungle16"
+            }
+        },
+        "uir2_jungle15": {
+            "pos": [
+                37439,
+                -11986
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Soiled Plain",
+                "fr": "Prairie boueuse",
+                "de": "Beschmutzte Ebene",
+                "es": "uir2_jungle15",
+                "ru": "uir2_jungle15"
+            }
+        },
+        "uir2_jungle14": {
+            "pos": [
+                40716,
+                -11203
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Vegetable Diversity",
+                "fr": "Diversité végétale",
+                "de": "Pflanzliche Vielfalt",
+                "es": "uir2_jungle14",
+                "ru": "uir2_jungle14"
+            }
+        },
+        "uir2_jungle13": {
+            "pos": [
+                39598,
+                -13566
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Mirror of Goo",
+                "fr": "Miroir de la Goo",
+                "de": "Spiegel des Goo",
+                "es": "uir2_jungle13",
+                "ru": "uir2_jungle13"
+            }
+        },
+        "uir2_jungle12": {
+            "pos": [
+                31838,
+                -13372
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Ways of the Maze",
+                "fr": "Couloirs du labyrinthe",
+                "de": "Wege des Irrgartens",
+                "es": "uir2_jungle12",
+                "ru": "uir2_jungle12"
+            }
+        },
+        "uir2_jungle11": {
+            "pos": [
+                36194,
+                -11233
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Bald Plateau",
+                "fr": "Plateau vierge",
+                "de": "Kahle Ebene",
+                "es": "uir2_jungle11",
+                "ru": "uir2_jungle11"
+            }
+        },
+        "uir2_jungle10": {
+            "pos": [
+                39074,
+                -12037
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_jungle10",
+                "fr": "uir2_jungle10",
+                "de": "uir2_jungle10",
+                "es": "uir2_jungle10",
+                "ru": "uir2_jungle10"
+            }
+        },
+        "uir2_jungle9": {
+            "pos": [
+                39837,
+                -12003
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_jungle9",
+                "fr": "uir2_jungle9",
+                "de": "uir2_jungle9",
+                "es": "uir2_jungle9",
+                "ru": "uir2_jungle9"
+            }
+        },
+        "uir2_jungle8": {
+            "pos": [
+                33844,
+                -11280
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_jungle8",
+                "fr": "uir2_jungle8",
+                "de": "uir2_jungle8",
+                "es": "uir2_jungle8",
+                "ru": "uir2_jungle8"
+            }
+        },
+        "uir2_jungle7": {
+            "pos": [
+                39202,
+                -11201
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_jungle7",
+                "fr": "uir2_jungle7",
+                "de": "uir2_jungle7",
+                "es": "uir2_jungle7",
+                "ru": "uir2_jungle7"
+            }
+        },
+        "uir2_jungle6": {
+            "pos": [
+                34445,
+                -13681
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_jungle6",
+                "fr": "uir2_jungle6",
+                "de": "uir2_jungle6",
+                "es": "uir2_jungle6",
+                "ru": "uir2_jungle6"
+            }
+        },
+        "uir2_jungle5": {
+            "pos": [
+                40724,
+                -12800
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_jungle5",
+                "fr": "uir2_jungle5",
+                "de": "uir2_jungle5",
+                "es": "uir2_jungle5",
+                "ru": "uir2_jungle5"
+            }
+        },
+        "uir2_jungle4": {
+            "pos": [
+                33836,
+                -10961
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_jungle4",
+                "fr": "uir2_jungle4",
+                "de": "uir2_jungle4",
+                "es": "uir2_jungle4",
+                "ru": "uir2_jungle4"
+            }
+        },
+        "uir2_jungle3": {
+            "pos": [
+                36957,
+                -11197
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_jungle3",
+                "fr": "uir2_jungle3",
+                "de": "uir2_jungle3",
+                "es": "uir2_jungle3",
+                "ru": "uir2_jungle3"
             }
         }
     },
@@ -4268,11 +6188,596 @@
             "regionforce": 0,
             "lmtype": -1,
             "text": {
-                "en": "continent_r2_lakes",
-                "fr": "continent_r2_lakes",
-                "de": "continent_r2_lakes",
+                "en": "Unexplored Lakes",
+                "fr": "Inexploré Lakes",
+                "de": "Unerforscht Lakes",
                 "es": "continent_r2_lakes",
                 "ru": "continent_r2_lakes"
+            }
+        },
+        "uir2_lakes41": {
+            "pos": [
+                38353,
+                -3631
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_lakes41",
+                "fr": "uir2_lakes41",
+                "de": "uir2_lakes41",
+                "es": "uir2_lakes41",
+                "ru": "uir2_lakes41"
+            }
+        },
+        "uir2_lakes40": {
+            "pos": [
+                33438,
+                -3839
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The High Plains",
+                "fr": "Les hautes plaines",
+                "de": "The High Plains",
+                "es": "uir2_lakes40",
+                "ru": "uir2_lakes40"
+            }
+        },
+        "uir2_lakes39": {
+            "pos": [
+                35680,
+                -1107
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Bolas",
+                "fr": "Les Bolas",
+                "de": "Die Bolas",
+                "es": "uir2_lakes39",
+                "ru": "uir2_lakes39"
+            }
+        },
+        "uir2_lakes38": {
+            "pos": [
+                31360,
+                -1282
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Niches",
+                "fr": "Les niches",
+                "de": "Die Nischen",
+                "es": "uir2_lakes38",
+                "ru": "uir2_lakes38"
+            }
+        },
+        "uir2_lakes37": {
+            "pos": [
+                33968,
+                -3008
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Excavations",
+                "fr": "Les excavations",
+                "de": "Die Ausgrabungen",
+                "es": "uir2_lakes37",
+                "ru": "uir2_lakes37"
+            }
+        },
+        "uir2_lakes36": {
+            "pos": [
+                38334,
+                -2064
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Raskous Corner",
+                "fr": "Coin de Raskous",
+                "de": "Raskous Ecke",
+                "es": "uir2_lakes36",
+                "ru": "uir2_lakes36"
+            }
+        },
+        "uir2_lakes35": {
+            "pos": [
+                32638,
+                -2955
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Two Caches",
+                "fr": "Les deux cachettes",
+                "de": "Die zwei Lager",
+                "es": "uir2_lakes35",
+                "ru": "uir2_lakes35"
+            }
+        },
+        "uir2_lakes34": {
+            "pos": [
+                36036,
+                -2080
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The winding maze",
+                "fr": "Le labyrinthe sinueux",
+                "de": "Der gewundene Irrgarten",
+                "es": "uir2_lakes34",
+                "ru": "uir2_lakes34"
+            }
+        },
+        "uir2_lakes33": {
+            "pos": [
+                33338,
+                -2962
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Narrow staircase",
+                "fr": "L`escalier étroit",
+                "de": "Das schmale Treppenhaus",
+                "es": "uir2_lakes33",
+                "ru": "uir2_lakes33"
+            }
+        },
+        "uir2_lakes32": {
+            "pos": [
+                37584,
+                -3766
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Sunny Path",
+                "fr": "Chemin ensoleillé",
+                "de": "Sonniger Pfad",
+                "es": "uir2_lakes32",
+                "ru": "uir2_lakes32"
+            }
+        },
+        "uir2_lakes31": {
+            "pos": [
+                38286,
+                -2880
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Clash",
+                "fr": "Le conflit",
+                "de": "Der Zusammenprall",
+                "es": "uir2_lakes31",
+                "ru": "uir2_lakes31"
+            }
+        },
+        "uir2_lakes30": {
+            "pos": [
+                32012,
+                -3735
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The K",
+                "fr": "Le K",
+                "de": "Das K",
+                "es": "uir2_lakes30",
+                "ru": "uir2_lakes30"
+            }
+        },
+        "uir2_lakes29": {
+            "pos": [
+                34367,
+                -1969
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Clopper`s claw",
+                "fr": "Griffe du Clopper",
+                "de": "Clopper Klaue",
+                "es": "uir2_lakes29",
+                "ru": "uir2_lakes29"
+            }
+        },
+        "uir2_lakes28": {
+            "pos": [
+                36316,
+                -2881
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Tears of Sky",
+                "fr": "Larmes des cieux",
+                "de": "Tränen des Himmels",
+                "es": "uir2_lakes28",
+                "ru": "uir2_lakes28"
+            }
+        },
+        "uir2_lakes27": {
+            "pos": [
+                34240,
+                -3840
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Dacoco Beach",
+                "fr": "Plage Dacoco",
+                "de": "Dacoco Strand",
+                "es": "uir2_lakes27",
+                "ru": "uir2_lakes27"
+            }
+        },
+        "uir2_lakes26": {
+            "pos": [
+                38722,
+                -1298
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Hike",
+                "fr": "La randonnée",
+                "de": "Die Wanderung",
+                "es": "uir2_lakes26",
+                "ru": "uir2_lakes26"
+            }
+        },
+        "uir2_lakes25": {
+            "pos": [
+                37138,
+                -1298
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Gorges of Sitra",
+                "fr": "Gorges de Sitra",
+                "de": "Schluchten von Sitra",
+                "es": "uir2_lakes25",
+                "ru": "uir2_lakes25"
+            }
+        },
+        "uir2_lakes24": {
+            "pos": [
+                32162,
+                -2208
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Neck",
+                "fr": "Le collet",
+                "de": "Der Nacken",
+                "es": "uir2_lakes24",
+                "ru": "uir2_lakes24"
+            }
+        },
+        "uir2_lakes23": {
+            "pos": [
+                35275,
+                -2082
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Yubo Cave",
+                "fr": "La grotte des Yubos",
+                "de": "Der Yubo Keller",
+                "es": "uir2_lakes23",
+                "ru": "uir2_lakes23"
+            }
+        },
+        "uir2_lakes22": {
+            "pos": [
+                32571,
+                -3771
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Hidden crannies",
+                "fr": "Failles cachées",
+                "de": "Versteckte Verstecke",
+                "es": "uir2_lakes22",
+                "ru": "uir2_lakes22"
+            }
+        },
+        "uir2_lakes21": {
+            "pos": [
+                35395,
+                -2862
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Voyage of Dreams",
+                "fr": "Voyage féerique",
+                "de": "Reise der Träume",
+                "es": "uir2_lakes21",
+                "ru": "uir2_lakes21"
+            }
+        },
+        "uir2_lakes20": {
+            "pos": [
+                32084,
+                -3001
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Hundred Ways",
+                "fr": "Les cent chemins",
+                "de": "Hundert Wege",
+                "es": "uir2_lakes20",
+                "ru": "uir2_lakes20"
+            }
+        },
+        "uir2_lakes19": {
+            "pos": [
+                32158,
+                -1280
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Hidden Valley",
+                "fr": "Vallée cachée",
+                "de": "Verstecktes Tal",
+                "es": "uir2_lakes19",
+                "ru": "uir2_lakes19"
+            }
+        },
+        "uir2_lakes18": {
+            "pos": [
+                37567,
+                -2124
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Liberty Land",
+                "fr": "Terre de la liberté",
+                "de": "Freiheitsland",
+                "es": "uir2_lakes18",
+                "ru": "uir2_lakes18"
+            }
+        },
+        "uir2_lakes17": {
+            "pos": [
+                35044,
+                -3697
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Through the Cliff",
+                "fr": "A travers la falaise",
+                "de": "Durch die Felswand",
+                "es": "uir2_lakes17",
+                "ru": "uir2_lakes17"
+            }
+        },
+        "uir2_lakes16": {
+            "pos": [
+                34622,
+                -2872
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Reclaimed Dunes",
+                "fr": "Dunes reconquises",
+                "de": "Verlangte Dünen",
+                "es": "uir2_lakes16",
+                "ru": "uir2_lakes16"
+            }
+        },
+        "uir2_lakes15": {
+            "pos": [
+                31343,
+                -2126
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Inland Sea",
+                "fr": "La mer intérieure",
+                "de": "Der Inlandssee",
+                "es": "uir2_lakes15",
+                "ru": "uir2_lakes15"
+            }
+        },
+        "uir2_lakes14": {
+            "pos": [
+                33042,
+                -1218
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Archway",
+                "fr": "La voûte",
+                "de": "Der Torbogen",
+                "es": "uir2_lakes14",
+                "ru": "uir2_lakes14"
+            }
+        },
+        "uir2_lakes13": {
+            "pos": [
+                34827,
+                -1090
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_lakes13",
+                "fr": "uir2_lakes13",
+                "de": "uir2_lakes13",
+                "es": "uir2_lakes13",
+                "ru": "uir2_lakes13"
+            }
+        },
+        "uir2_lakes12": {
+            "pos": [
+                37280,
+                -2946
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Vale of Ponds",
+                "fr": "Vallée des mares",
+                "de": "Tal der Teiche",
+                "es": "uir2_lakes12",
+                "ru": "uir2_lakes12"
+            }
+        },
+        "uir2_lakes11": {
+            "pos": [
+                31423,
+                -3903
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Trident",
+                "fr": "Le trident",
+                "de": "Der Dreizack",
+                "es": "uir2_lakes11",
+                "ru": "uir2_lakes11"
+            }
+        },
+        "uir2_lakes10": {
+            "pos": [
+                35760,
+                -3760
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Mystic Mere",
+                "fr": "Etang mystique",
+                "de": "Mystischer Weiher",
+                "es": "uir2_lakes10",
+                "ru": "uir2_lakes10"
+            }
+        },
+        "uir2_lakes9": {
+            "pos": [
+                34000,
+                -1152
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_lakes9",
+                "fr": "uir2_lakes9",
+                "de": "uir2_lakes9",
+                "es": "uir2_lakes9",
+                "ru": "uir2_lakes9"
+            }
+        },
+        "uir2_lakes8": {
+            "pos": [
+                33520,
+                -2160
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_lakes8",
+                "fr": "uir2_lakes8",
+                "de": "uir2_lakes8",
+                "es": "uir2_lakes8",
+                "ru": "uir2_lakes8"
+            }
+        },
+        "uir2_lakes7": {
+            "pos": [
+                37924,
+                -1284
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_lakes7",
+                "fr": "uir2_lakes7",
+                "de": "uir2_lakes7",
+                "es": "uir2_lakes7",
+                "ru": "uir2_lakes7"
+            }
+        },
+        "uir2_lakes6": {
+            "pos": [
+                36353,
+                -1182
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_lakes6",
+                "fr": "uir2_lakes6",
+                "de": "uir2_lakes6",
+                "es": "uir2_lakes6",
+                "ru": "uir2_lakes6"
+            }
+        },
+        "uir2_lakes5": {
+            "pos": [
+                31311,
+                -2961
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_lakes5",
+                "fr": "uir2_lakes5",
+                "de": "uir2_lakes5",
+                "es": "uir2_lakes5",
+                "ru": "uir2_lakes5"
+            }
+        },
+        "uir2_lakes4": {
+            "pos": [
+                36767,
+                -2102
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_lakes4",
+                "fr": "uir2_lakes4",
+                "de": "uir2_lakes4",
+                "es": "uir2_lakes4",
+                "ru": "uir2_lakes4"
+            }
+        },
+        "uir2_lakes3": {
+            "pos": [
+                36545,
+                -3847
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "uir2_lakes3",
+                "fr": "uir2_lakes3",
+                "de": "uir2_lakes3",
+                "es": "uir2_lakes3",
+                "ru": "uir2_lakes3"
             }
         }
     },
@@ -4285,11 +6790,446 @@
             "regionforce": 0,
             "lmtype": -1,
             "text": {
-                "en": "continent_r2_roots",
-                "fr": "continent_r2_roots",
-                "de": "continent_r2_roots",
+                "en": "Unexplored Prims",
+                "fr": "Inexploré Prims",
+                "de": "Unerforschte Prims",
                 "es": "continent_r2_roots",
                 "ru": "continent_r2_roots"
+            }
+        },
+        "uir2_primes30": {
+            "pos": [
+                33723,
+                -22802
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "An Ancient Hide",
+                "fr": "Une ancienne cachette",
+                "de": "Ein altes Versteck",
+                "es": "uir2_primes30",
+                "ru": "uir2_primes30"
+            }
+        },
+        "uir2_primes22": {
+            "pos": [
+                37521,
+                -22080
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Mount of Curses",
+                "fr": "Mont des malédictions",
+                "de": "Hügel der Verfluchungen",
+                "es": "uir2_primes22",
+                "ru": "uir2_primes22"
+            }
+        },
+        "uir2_primes21": {
+            "pos": [
+                36841,
+                -22080
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Springs of Life",
+                "fr": "Sources de vie",
+                "de": "Quellen des Lebens",
+                "es": "uir2_primes21",
+                "ru": "uir2_primes21"
+            }
+        },
+        "uir2_primes23": {
+            "pos": [
+                38197,
+                -22082
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Unknown Mound",
+                "fr": "Monticule mystérieux",
+                "de": "Unbekannter Hügel",
+                "es": "uir2_primes23",
+                "ru": "uir2_primes23"
+            }
+        },
+        "uir2_primes15": {
+            "pos": [
+                32159,
+                -22039
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Stalagmites of Quietude",
+                "fr": "Stalagmites de la tranquillité",
+                "de": "Stalagmiten der Ruhe",
+                "es": "uir2_primes15",
+                "ru": "uir2_primes15"
+            }
+        },
+        "uir2_primes05": {
+            "pos": [
+                34081,
+                -21277
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Bath of Sap",
+                "fr": "Le bain de sève",
+                "de": "Bad aus Sap",
+                "es": "uir2_primes05",
+                "ru": "uir2_primes05"
+            }
+        },
+        "uir2_primes29": {
+            "pos": [
+                32960,
+                -22882
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Shining Cave",
+                "fr": "La grotte scintillante",
+                "de": "Der scheinende Keller",
+                "es": "uir2_primes29",
+                "ru": "uir2_primes29"
+            }
+        },
+        "uir2_primes20": {
+            "pos": [
+                35853,
+                -22080
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Valley of Death",
+                "fr": "Vallée de la mort",
+                "de": "Tal des Todes",
+                "es": "uir2_primes20",
+                "ru": "uir2_primes20"
+            }
+        },
+        "uir2_primes01": {
+            "pos": [
+                31200,
+                -21282
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Hall of Destiny",
+                "fr": "Salle du destin",
+                "de": "Halle des Schicksals",
+                "es": "uir2_primes01",
+                "ru": "uir2_primes01"
+            }
+        },
+        "uir2_primes19": {
+            "pos": [
+                35194,
+                -22115
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Tunnels of Oblvion",
+                "fr": "Galeries de l`oubli",
+                "de": "Tunnel von Oblvion",
+                "es": "uir2_primes19",
+                "ru": "uir2_primes19"
+            }
+        },
+        "uir2_primes09": {
+            "pos": [
+                37196,
+                -21199
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "River of Doubts",
+                "fr": "Fleuve des doutes",
+                "de": "Fluss der Zweifel",
+                "es": "uir2_primes09",
+                "ru": "uir2_primes09"
+            }
+        },
+        "uir2_primes14": {
+            "pos": [
+                31359,
+                -22080
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Sanctuary",
+                "fr": "Sanctuaire",
+                "de": "Heiligenstätte",
+                "es": "uir2_primes14",
+                "ru": "uir2_primes14"
+            }
+        },
+        "uir2_primes16": {
+            "pos": [
+                32881,
+                -22000
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Eye of Ma-Duk",
+                "fr": "Oeil de Ma-Duk",
+                "de": "Auge des Ma-Duk",
+                "es": "uir2_primes16",
+                "ru": "uir2_primes16"
+            }
+        },
+        "uir2_primes25": {
+            "pos": [
+                39920,
+                -22159
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Maro`s Steps",
+                "fr": "Marches de Maro",
+                "de": "Maros Schritte",
+                "es": "uir2_primes25",
+                "ru": "uir2_primes25"
+            }
+        },
+        "uir2_primes28": {
+            "pos": [
+                32160,
+                -22883
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Forest of Light",
+                "fr": "Forêt de la lumière",
+                "de": "Wald des Lichts",
+                "es": "uir2_primes28",
+                "ru": "uir2_primes28"
+            }
+        },
+        "uir2_primes27": {
+            "pos": [
+                31359,
+                -22879
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Fallen Stump",
+                "fr": "Souche brisée",
+                "de": "Gefallener Stumpf",
+                "es": "uir2_primes27",
+                "ru": "uir2_primes27"
+            }
+        },
+        "uir2_primes18": {
+            "pos": [
+                34402,
+                -22037
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "To the End of the Nightmare",
+                "fr": "A la fin du cauchemar",
+                "de": "zumEnde des Albtraums",
+                "es": "uir2_primes18",
+                "ru": "uir2_primes18"
+            }
+        },
+        "uir2_primes10": {
+            "pos": [
+                38000,
+                -21274
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Kitins Lair",
+                "fr": "Repaire des Kitins",
+                "de": "Kitin-Unterschlupf",
+                "es": "uir2_primes10",
+                "ru": "uir2_primes10"
+            }
+        },
+        "uir2_primes08": {
+            "pos": [
+                36321,
+                -21280
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Nest",
+                "fr": "Le nid",
+                "de": "Das Nest",
+                "es": "uir2_primes08",
+                "ru": "uir2_primes08"
+            }
+        },
+        "uir2_primes26": {
+            "pos": [
+                40559,
+                -22160
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Neverending Walk",
+                "fr": "Marche éternelle",
+                "de": "Unendlicher Spaziergang",
+                "es": "uir2_primes26",
+                "ru": "uir2_primes26"
+            }
+        },
+        "uir2_primes03": {
+            "pos": [
+                32480,
+                -21278
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Green-cave",
+                "fr": "Grotte-verte",
+                "de": "Grüner-Keller",
+                "es": "uir2_primes03",
+                "ru": "uir2_primes03"
+            }
+        },
+        "uir2_primes13": {
+            "pos": [
+                40318,
+                -21486
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Arena",
+                "fr": "L`arène",
+                "de": "Die Arena",
+                "es": "uir2_primes13",
+                "ru": "uir2_primes13"
+            }
+        },
+        "uir2_primes17": {
+            "pos": [
+                33599,
+                -22077
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Abandoned Cave",
+                "fr": "Grotte abandonnée",
+                "de": "Verlassener Keller",
+                "es": "uir2_primes17",
+                "ru": "uir2_primes17"
+            }
+        },
+        "uir2_primes06": {
+            "pos": [
+                34800,
+                -21237
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Pillars",
+                "fr": "Les statues",
+                "de": "Die Pfeiler",
+                "es": "uir2_primes06",
+                "ru": "uir2_primes06"
+            }
+        },
+        "uir2_primes04": {
+            "pos": [
+                33279,
+                -21280
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Plain of Torments",
+                "fr": "Prairie des tourments",
+                "de": "Ebene der Qualen",
+                "es": "uir2_primes04",
+                "ru": "uir2_primes04"
+            }
+        },
+        "uir2_primes24": {
+            "pos": [
+                39113,
+                -22080
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Kitin Desolation",
+                "fr": "Désolation des Kitins",
+                "de": "Kitin Verwüstung",
+                "es": "uir2_primes24",
+                "ru": "uir2_primes24"
+            }
+        },
+        "uir2_primes07": {
+            "pos": [
+                35519,
+                -21284
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Ruins of the Past",
+                "fr": "Ruines du passé",
+                "de": "Ruinen der Vergangenheit",
+                "es": "uir2_primes07",
+                "ru": "uir2_primes07"
+            }
+        },
+        "uir2_primes11": {
+            "pos": [
+                38720,
+                -21281
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Valley of Spores",
+                "fr": "Vallée des spores",
+                "de": "Tal der Sporen",
+                "es": "uir2_primes11",
+                "ru": "uir2_primes11"
+            }
+        },
+        "uir2_primes12": {
+            "pos": [
+                39520,
+                -21280
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "The Hive",
+                "fr": "La ruche",
+                "de": "Der Bienenstock",
+                "es": "uir2_primes12",
+                "ru": "uir2_primes12"
             }
         }
     },
@@ -4975,7 +7915,7 @@
     "terre": {
         "continent_terre": {
             "pos": [
-                1592,
+                1589,
                 -14475
             ],
             "regionforce": 0,
@@ -4990,7 +7930,7 @@
         },
         "region_the_land_of_continuty": {
             "pos": [
-                1009,
+                1005,
                 -14080
             ],
             "regionforce": 250,
@@ -5422,7 +8362,7 @@
             "text": {
                 "en": "Winds of Muse",
                 "fr": "Vents du Songe",
-                "de": "Winde der Musen",
+                "de": "Winde der Musen (WoM)",
                 "es": "Vientos de la Musa",
                 "ru": "Ветра Муз"
             }
@@ -6672,34 +9612,19 @@
                 "ru": "Лягушачья улица"
             }
         },
-        "windermeer_stable": {
+        "avendale_stable": {
             "pos": [
-                15657,
-                -33002
+                18186,
+                -31097
             ],
             "regionforce": 0,
             "lmtype": 3,
             "text": {
-                "en": "Windermeer Stables",
-                "fr": "Etables de Windermeer",
-                "de": "Stall von Windermeer ",
-                "es": "Establos de Windermeer",
-                "ru": "Стойла Виндермеера"
-            }
-        },
-        "fairhaven_stable": {
-            "pos": [
-                17260,
-                -32937
-            ],
-            "regionforce": 0,
-            "lmtype": 3,
-            "text": {
-                "en": "Fairhaven Stables",
-                "fr": "Etables de Fairhaven",
-                "de": "Stall von Fairhaven ",
-                "es": "Establos de Fairhaven",
-                "ru": "Стойла Фэрхевена"
+                "en": "Avendale Stables",
+                "fr": "Etables d'Avendale",
+                "de": "Stall von Avendale ",
+                "es": "Establos de Avendale",
+                "ru": "Стойла Эвендейла"
             }
         },
         "crystabell_stable": {
@@ -6717,19 +9642,34 @@
                 "ru": "Стойла Кристабелла"
             }
         },
-        "avendale_stable": {
+        "fairhaven_stable": {
             "pos": [
-                18186,
-                -31097
+                17260,
+                -32937
             ],
             "regionforce": 0,
             "lmtype": 3,
             "text": {
-                "en": "Avendale Stables",
-                "fr": "Etables d'Avendale",
-                "de": "Stall von Avendale ",
-                "es": "Establos de Avendale",
-                "ru": "Стойла Эвендейла"
+                "en": "Fairhaven Stables",
+                "fr": "Etables de Fairhaven",
+                "de": "Stall von Fairhaven ",
+                "es": "Establos de Fairhaven",
+                "ru": "Стойла Фэрхевена"
+            }
+        },
+        "windermeer_stable": {
+            "pos": [
+                15657,
+                -33002
+            ],
+            "regionforce": 0,
+            "lmtype": 3,
+            "text": {
+                "en": "Windermeer Stables",
+                "fr": "Etables de Windermeer",
+                "de": "Stall von Windermeer ",
+                "es": "Establos de Windermeer",
+                "ru": "Стойла Виндермеера"
             }
         }
     },
@@ -7453,7 +10393,7 @@
             "text": {
                 "en": "Daïsha Estate",
                 "fr": "Domaine de Daïsha",
-                "de": "Daïsha-Viertel",
+                "de": "Daïsha-Distrikt",
                 "es": "Hacienda de Daïsha ",
                 "ru": "Имение Даиши"
             }
@@ -7468,7 +10408,7 @@
             "text": {
                 "en": "Win-Cho Estate",
                 "fr": "Domaine de Win-Cho",
-                "de": "Win-Cho-Viertel",
+                "de": "Win-Cho-Distrikt",
                 "es": "Hacienda de Win-Cho ",
                 "ru": "Имение Вин-Чо"
             }
@@ -8158,71 +11098,26 @@
             "regionforce": 0,
             "lmtype": -1,
             "text": {
-                "en": "<zoraï islets>",
-                "fr": "Ilôts zoraï",
+                "en": "Oflovak Road",
+                "fr": "Route d’Oflovak",
                 "de": "Zorai Inseln",
-                "es": "<isletas zoraï>",
+                "es": "Camino de Oflovak",
                 "ru": "<zorai islets>"
             }
         },
-        "region_zorai_island1": {
+        "region_zorai_islands": {
             "pos": [
-                14224,
-                -4166
+                16322,
+                -4162
             ],
             "regionforce": 0,
             "lmtype": 4,
             "text": {
-                "en": "<zoraï islet 1>",
-                "fr": "Ilôt zoraï 1",
-                "de": "Zorai Insel 1",
-                "es": "<isleta zoraï 1>",
-                "ru": "<zorai islet 1>"
-            }
-        },
-        "region_zorai_island2": {
-            "pos": [
-                15029,
-                -4166
-            ],
-            "regionforce": 0,
-            "lmtype": 4,
-            "text": {
-                "en": "<zoraï islet 2>",
-                "fr": "Ilôt zoraï 2",
-                "de": "Zorai Insel 2",
-                "es": "<isleta zoraï 2>",
-                "ru": "<zorai islet 2>"
-            }
-        },
-        "region_zorai_island3": {
-            "pos": [
-                16630,
-                -3843
-            ],
-            "regionforce": 0,
-            "lmtype": 4,
-            "text": {
-                "en": "<zoraï islet 3>",
-                "fr": "Ilôt zoraï 3",
-                "de": "Zorai Insel 3",
-                "es": "<isleta zoraï 3>",
-                "ru": "<zorai islet 3>"
-            }
-        },
-        "region_zorai_island4": {
-            "pos": [
-                18225,
-                -4166
-            ],
-            "regionforce": 0,
-            "lmtype": 4,
-            "text": {
-                "en": "<zoraï islet 4>",
-                "fr": "Ilôt zoraï 4",
-                "de": "Zorai Insel 4",
-                "es": "<isleta zoraï 4>",
-                "ru": "<zorai islet 4>"
+                "en": "Oflovak Road -- Jungle",
+                "fr": "Route d’Oflovak – Jungle",
+                "de": "Oflovak's Straße - Dschungel",
+                "es": "Camino de Oflovak -- Jungla",
+                "ru": "region_zorai_islands"
             }
         }
     },

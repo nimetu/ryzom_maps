@@ -38,13 +38,32 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
         'place_pyr' => array(array(18400, -24720), array(19040, -24240)),
         'place_yrkanis' => array(array(4640, -3680), array(4800, -3200)),
         'grid' => array(array(0, -47520), array(108000, 0))
+	);
+
+    private $serverAreas = array(
+        'sources' => [
+            'order' => 0,
+            'points' => [ 3046.25, -9640.7, 2519.27, -10223.71, 2445.95, -10941.11, 3011.5, -11437.4, 3548.51, -11400.74, 3901.13, -10752.59, 3901.09, -10223.71, 3777.78, -9626.95],
+            'areas' => [
+                'region_the_under_spring' => [
+                    'order' => 1,
+                    'points' => [3129.56, -9685.19, 2559.13, -10244.1, 2559.13, -10879.91, 3040.93, -11363.91, 3516.13, -11361.71, 3841.73, -10714.91, 3841.73, -10239.71, 3681.13, -9680.9],
+                ],
+                'place_outpost_pr_17' => [
+                    'order' => 7,
+                    'points' => [3145.09, -10100.68, 3080.79, -10121.28, 3070.46, -10171.58, 3110.11, -10220.17, 3174.98, -10189.07, 3174.03, -10116.22],
+                ],
+            ],
+        ],
     );
+
 
     public function setUp()
     {
         $this->proj = new MapProjection();
         $this->proj->setWorldZones($this->worldZones);
-        $this->proj->setServerZones($this->serverZones);
+		$this->proj->setServerZones($this->serverZones);
+		$this->proj->setServerAreas($this->serverAreas);
     }
 
     public function testSetWorldZones()
@@ -99,7 +118,23 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
             $point->asArray(),
             "Failed to translate server coordinates {$latlng} to world coordinates {$expectedPoint}, got {$point}"
         );
-    }
+	}
+
+    /**
+     * @param Point $latlng
+     * @param array $expectedRegions
+     *
+     * @dataProvider areasProvider
+     */
+	public function testTargetAreas(Point $latlng, $expectedAreas = null)
+	{
+		$areas = $this->proj->getTargetAreas($latlng);
+		$this->assertEquals(
+			$expectedAreas,
+			$areas,
+			"Target areas for point {$latlng} are not whats expected (".var_export($expectedAreas, true)."), got [".var_export($areas, true)."]"
+		);
+	}
 
     public function testUnknownZone()
     {
@@ -174,6 +209,29 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
             array(new Point(100, -2000), new Point(-107900, 2000), array('grid')),
             // closest to zones - FIXME: this breaks test as 'closest' is not implemented
             //array(new Point(300, -2000), new Point(7740, 2032), array('matis', 'grid')),
+        );
+	}
+
+    /**
+     * @return array
+     */
+    public function areasProvider()
+    {
+        return array(
+			array(new Point(3110, -10190), array(
+				array('key' => 'place_outpost_pr_17', 'order' => 7),
+				array('key' => 'region_the_under_spring', 'order' => 1),
+				array('key' => 'sources', 'order' => 0),
+			)),
+			array(new Point(3200, -10300), array(
+				array('key' => 'region_the_under_spring', 'order' => 1),
+				array('key' => 'sources', 'order' => 0),
+			)),
+			array(new Point(3047, -9641), array(
+				array('key' => 'sources', 'order' => 0),
+			)),
+            // outside any zone
+            array(new Point(0, 0), array()),
         );
     }
 }

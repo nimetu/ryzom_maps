@@ -27,6 +27,7 @@ namespace Bmsite\Maps;
 
 use Bmsite\Maps\BaseTypes\Bounds;
 use Bmsite\Maps\BaseTypes\Point;
+use Bmsite\Maps\BaseTypes\Polygon;
 
 /**
  * Class MapProjection
@@ -38,6 +39,9 @@ class MapProjection
 
     /** @var Bounds[] */
     protected $serverZones = array();
+
+    /** @var array[] */
+    protected $serverAreas = array();
 
     /** @var int */
     protected $baseZoom = 10;
@@ -68,6 +72,22 @@ class MapProjection
         $this->serverZones = array();
         foreach ($zones as $key => $pos) {
             $this->serverZones[$key] = new Bounds($pos[0][0], $pos[0][1], $pos[1][0], $pos[1][1]);
+        }
+    }
+
+    /**
+     * @param array $areas
+     */
+    public function setServerAreas(array $areas)
+    {
+        $this->serverAreas = array();
+        foreach($areas as $key => $area) {
+            $this->serverAreas[$key] = array('name' => $key, 'order' => $area['order'], 'polygon' => new Polygon($area['points']));
+            if (!empty($area['areas'])) {
+                foreach($area['areas'] as $subkey => $subarea) {
+                    $this->serverAreas[$key]['areas'][$subkey] = array('name' => $subkey, 'order' => $subarea['order'], 'polygon' => new Polygon($subarea['points']));
+                }
+            }
         }
     }
 
@@ -177,6 +197,42 @@ class MapProjection
         //}
 
         return array_keys($result);
+    }
+
+    /**
+     * Finds matching areas using server coords.
+     * Uses polygons from areas.json
+     *
+     * Returns sorted array of [key, order] where key is area name and order is type.
+     * continent=0, region=1, capital=2, village=3, stable=4, place=5, street=6, outpost=7, unknown = 8
+     *
+     * @param Point $point
+     *
+     * @return array[]
+     */
+    public function getTargetAreas(Point $point)
+    {
+        $match = array();
+        $sk = array();
+        foreach($this->serverAreas as $area) {
+            if ($area['polygon']->contains($point->x, $point->y)) {
+                $match[] = array('key' => $area['name'], 'order' => $area['order']);
+                $sk[] = $area['order'];
+                if (!empty($area['areas'])) {
+                    foreach($area['areas'] as $subarea) {
+                        if ($subarea['polygon']->contains($point->x, $point->y)) {
+                            $match[] = array('key' => $subarea['name'], 'order' => $subarea['order']);
+                            $sk[] = $subarea['order'];
+                        }
+                    }
+                }
+            }
+        }
+
+        array_multisort($sk, SORT_NUMERIC, SORT_DESC, $match);
+        // TODO: should return match = [ 0 => [zones...], 1 => [areas....] ] ? 'kitiniere' is in duplicate
+
+        return $match;
     }
 
     /**
