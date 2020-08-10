@@ -37,19 +37,36 @@ class Icon implements FeatureInterface
     /** @var array */
     private $size;
 
+    /** @var bool */
+    private $over;
+
     /**
      * @param string $icon
      * @param Point $pos
      * @param Color $color
+     * @param bool $over;
      */
-    public function __construct($icon, Point $pos = null, Color $color = null)
+    public function __construct($icon, Point $pos = null, Color $color = null, $over = false)
     {
         $this->icon = $icon;
         $this->pos = $pos;
         $this->color = $color;
         $this->size = array(24, 24);
+        $this->over = $over;
 
         $this->iconPath = __DIR__.'/../../Resources/icons';
+    }
+
+    /**
+     * Return true if image file exists
+     *
+     * @return bool
+     */
+    public function isSupported()
+    {
+        return $this->over
+            ? file_exists($this->getIconFullPath('_over.png'))
+            : file_exists($this->getIconFullPath());
     }
 
     /**
@@ -85,11 +102,13 @@ class Icon implements FeatureInterface
     }
 
     /**
+     * @param string $ext
+     *
      * @return string
      */
-    public function getIconFullPath()
+    public function getIconFullPath($ext = '.png')
     {
-        return $this->iconPath.'/'.$this->icon.'/image.png';
+        return $this->iconPath.'/'.$this->icon.'/image'.$ext;
     }
 
     /**
@@ -107,6 +126,14 @@ class Icon implements FeatureInterface
     public function setSize($width, $height)
     {
         $this->size = array($width, $height);
+    }
+
+    /**
+     * @param bool $b
+     */
+    public function setOver($b)
+    {
+        $this->over = $b;
     }
 
     /**
@@ -162,7 +189,7 @@ class Icon implements FeatureInterface
      */
     private function loadIcon()
     {
-        $imgFile = $this->getIconFullPath();
+        $imgFile = $this->getIconFullPath($this->over ? '_over.png'  : '.png');
         if (!file_exists($imgFile)) {
             return false;
         }
@@ -180,7 +207,7 @@ class Icon implements FeatureInterface
      */
     private function colorize($icon)
     {
-        $maskFile = substr($this->getIconFullPath(), 0, -4).'_mask.png';
+        $maskFile = $this->getIconFullPath('_mask.png');
         if (!file_exists($maskFile)) {
             return;
         }

@@ -226,28 +226,8 @@ class StaticMap
                             }
                             break;
                         case 'icon':
-                            // following icons are supported by icon generator
-                            $allowed = array(
-                                'building',
-                                'camp',
-                                'dig',
-                                'lm_marker',
-                                'npc',
-                                'op_townhall',
-                                'mektoub',
-                                'portal',
-                                'spawn',
-                                'tp_kami',
-                                'tp_karavan',
-                                'tp_marauder',
-                                'egg',
-                                'question',
-                                'map_event',
-                                // no-icon
-                                'none'
-                            );
                             $pairs[1] = trim($pairs[1]);
-                            if (in_array($pairs[1], $allowed)) {
+                            if (preg_match('/^([a-zA-Z0-9_]+)?$/', $pairs[1])) {
                                 $marker->setIcon($pairs[1]);
                             }
                             break;

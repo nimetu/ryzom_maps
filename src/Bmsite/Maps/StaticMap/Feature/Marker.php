@@ -109,7 +109,17 @@ class Marker extends PointsCollection implements FeatureInterface
     {
         $icon = false;
         if ($this->icon && $this->icon !== 'none') {
-            $icon = new Icon($this->icon);
+            $over = substr($this->icon, -5) === '_over';
+            if ($over) {
+                $icon = new Icon(substr($this->icon, 0, -5));
+            } else {
+                $icon = new Icon($this->icon);
+            }
+            if (!$icon->isSupported()) {
+                $icon->setIcon('lm_marker');
+            }
+            $icon->setOver($over);
+
             if ($this->color) {
                 $icon->setColor($this->color);
             }
