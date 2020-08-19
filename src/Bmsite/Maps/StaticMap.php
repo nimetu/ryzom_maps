@@ -395,14 +395,9 @@ class StaticMap
         }
 
         if (preg_match('/^(?:#|0x)?([a-z0-9]{2})([a-z0-9]{2})([a-z0-9]{2})([a-z0-9]{2})?$/', $color, $matches)) {
-            $result = new Color();
-            $result->r = hexdec($matches[1]);
-            $result->g = hexdec($matches[2]);
-            $result->b = hexdec($matches[3]);
+            $result = new Color(hexdec($matches[1]), hexdec($matches[2]), hexdec($matches[3]));
             if (!empty($matches[4])) {
-                $result->a = 127 - hexdec($matches[4]) / 255 * 127;
-            } else {
-                $result->a = 0; // fully visible
+                $result->a = hexdec($matches[4]);
             }
             return $result;
         } else {

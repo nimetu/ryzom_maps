@@ -25,7 +25,7 @@ class Color
      * @param int $b
      * @param int $a
      */
-    function __construct($r = 0, $g = 0, $b = 0, $a = 0)
+    function __construct($r = 0, $g = 0, $b = 0, $a = 255)
     {
         $this->r = $r;
         $this->g = $g;
@@ -40,6 +40,6 @@ class Color
      */
     public function allocate($canvas)
     {
-        return imagecolorallocatealpha($canvas, $this->r, $this->g, $this->b, $this->a / 255 * 127);
+        return imagecolorallocatealpha($canvas, $this->r, $this->g, $this->b, 127 - ($this->a >> 1));
     }
 }
