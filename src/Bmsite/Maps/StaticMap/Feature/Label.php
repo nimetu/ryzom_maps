@@ -60,7 +60,7 @@ class Label implements FeatureInterface
         $this->setOutline(new Color(0, 0, 0), 1);
 
         $this->fontSize = 7;
-        $this->fontFamily = 'Vera';
+        $this->fontFamily = 'ryzom';
         $this->fontPath = __DIR__.'/../../Resources/fonts';
 
         $this->relOffsetX = 0;
