@@ -217,7 +217,7 @@ class Icon implements FeatureInterface
         $cb = $this->color->b;
 
         $w = imagesx($mask);
-        $h = imagesx($mask);
+        $h = imagesy($mask);
         for ($x = 0; $x < $w; $x++) {
             for ($y = 0; $y < $h; $y++) {
                 $rgba = imagecolorsforindex($mask, imagecolorat($mask, $x, $y));
