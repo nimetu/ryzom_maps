@@ -30,7 +30,17 @@ class Polygon extends PointsCollection implements FeatureInterface
      */
     public $fillcolor;
 
+    /** @var string */
     public $label;
+
+    /** @var int */
+    public $label_size;
+
+    /** @var Color */
+    public $label_color;
+
+    /** @var Color */
+    public $label_outline;
 
     /** @var StaticMapGenerator */
     private $map;
@@ -47,6 +57,9 @@ class Polygon extends PointsCollection implements FeatureInterface
         $this->fillcolor = $fillcolor;
         $this->xy = array();
         $this->label = false;
+        $this->label_size = false;
+        $this->label_color = false;
+        $this->label_outline = false;
         $this->bbox = false;
     }
 
@@ -115,11 +128,28 @@ class Polygon extends PointsCollection implements FeatureInterface
         }
 
         if ($this->label) {
-            // white/black
             $label = new Label($this->label);
+            if ($this->label_size) {
+                $label->setFontSize($this->label_size);
+            }
             $label->setPos(new Point($xCenter, $yCenter));
-            $label->setColor($this->color);
-            $label->setOutline(new Color(0, 0, 0), 1);
+
+            if ($this->label_color) {
+                $label->setColor($this->label_color);
+            } else {
+                $color = $this->color;
+                $color->a = 255;
+                $label->setColor($color);
+            }
+
+            if ($this->label_outline) {
+                $label->setOutline($this->label_outline, 1);
+            } elseif ($this->label_color) {
+                $label->setOutline(new Color(0, 0, 0, $this->label_color->a), 1);
+            } else {
+                $label->setOutline(new Color(0,0,0), 1);
+            }
+
             $label->draw($canvas);
         }
 

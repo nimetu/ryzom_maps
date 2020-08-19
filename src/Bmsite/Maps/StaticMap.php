@@ -297,6 +297,21 @@ class StaticMap
                         case 'label':
                             $poly->label = trim($pairs[1]);
                             break;
+                        case 'label_size':
+                            $poly->label_size = max(3, min((int)$pairs[1], 20));
+                            break;
+                        case 'label_color':
+                            $fc = $this->parseColor($pairs[1]);
+                            if ($fc !== false) {
+                                $poly->label_color = $fc;
+                            }
+                            break;
+                        case 'label_outline':
+                            $fc = $this->parseColor(trim($pairs[1]));
+                            if ($fc !== false) {
+                                $poly->label_outline = $fc;
+                            }
+                            break;
                         case 'color':
                             $fc = $this->parseColor($pairs[1]);
                             if ($fc !== false) {
