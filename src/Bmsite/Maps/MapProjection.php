@@ -168,6 +168,47 @@ class MapProjection
     }
 
     /**
+     * Convert image coords at given zoom level into server coords.
+     *
+     * Point in smaller area in overlaping zones
+     * (ie nexus/matis) is returned.
+     *
+     * @param Point $p
+     * @param int $zoom zoom level to use
+     *
+     * @throws \InvalidArgumentException
+     * @return Point|bool
+     */
+    public function unproject(Point $p, $zoom = null)
+    {
+        if ($zoom !== null) {
+            var_dump('convet to base zoom', $p, $zoom);
+            $scale = $this->scale($zoom);
+            $p->x = $p->x / $scale;
+            $p->y = $p->y / $scale;
+            var_dump('->', $p, $scale);
+        }
+
+        $zone = false;
+        $minsize = false;
+        foreach($this->zones as $k => $v) {
+            if ($v->contains($p->x, $p->y)) {
+                $size = $v->getWidth() * $v->getHeight();
+                if ($minsize === false || $size < $minsize) {
+                    $minsize = $size;
+                    $zone = $k;
+                }
+            }
+        }
+        if ($zone === false || empty($this->serverZones[$zone])) {
+            // TODO: try to map into closest zone
+            return false;
+        }
+
+        return $this->translate($p, $this->zones[$zone], $this->serverZones[$zone]);
+    }
+
+    /**
      * Return all regions where point lands
      * Sorted by smallest
      *
