@@ -316,7 +316,7 @@ class BuildJsonFiles extends Command
 
         $textArray = array();
         foreach ($langs as $lang) {
-            if (isset($strings[$lang][$key])) {
+            if (isset($strings[$lang][$key]['name'])) {
                 $textArray[$lang] = $strings[$lang][$key]['name'];
             } else {
                 $textArray[$lang] = $key;
