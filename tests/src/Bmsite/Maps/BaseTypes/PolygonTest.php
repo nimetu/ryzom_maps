@@ -8,13 +8,14 @@
  */
 namespace Bmsite\Maps\BaseTypes;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 
-class PlygonTest extends \PHPUnit\Framework\TestCase
+class PolygonTest extends \PHPUnit\Framework\TestCase
 {
 
     public $polygon;
 
-    public function setUp() {
+    public function setUp(): void {
         $this->polygon = new Polygon([
             0, 0, 10, 0, 10,10,
             7,10,  5, 5,  3,10,
@@ -22,15 +23,13 @@ class PlygonTest extends \PHPUnit\Framework\TestCase
         ]);
     }
 
-    /**
-     * @dataProvider polygonPoints
-     */
+    #[DataProvider('polygonPoints')]
     public function testPolygon($expected, $x, $y)
     {
         $this->assertEquals($this->polygon->contains($x,$y), $expected);
     }
 
-    public function polygonPoints()
+    public static function polygonPoints()
     {
         return [
             [true, 1,1], // in

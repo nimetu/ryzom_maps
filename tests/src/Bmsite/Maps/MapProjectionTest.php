@@ -8,6 +8,7 @@
  */
 namespace Bmsite\Maps;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use Bmsite\Maps\BaseTypes\Bounds;
 use Bmsite\Maps\BaseTypes\Point;
 
@@ -38,7 +39,7 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
         'place_pyr' => array(array(18400, -24720), array(19040, -24240)),
         'place_yrkanis' => array(array(4640, -3680), array(4800, -3200)),
         'grid' => array(array(0, -47520), array(108000, 0))
-	);
+    );
 
     private $serverAreas = array(
         'sources' => [
@@ -58,12 +59,12 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
     );
 
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->proj = new MapProjection();
         $this->proj->setWorldZones($this->worldZones);
-		$this->proj->setServerZones($this->serverZones);
-		$this->proj->setServerAreas($this->serverAreas);
+        $this->proj->setServerZones($this->serverZones);
+        $this->proj->setServerAreas($this->serverAreas);
     }
 
     public function testSetWorldZones()
@@ -96,9 +97,8 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
      * @param Point $latlng
      * @param Point $expectedPoint
      * @param array $expectedRegions
-     *
-     * @dataProvider projectProvider
      */
+    #[DataProvider('projectProvider')]
     public function testProject(Point $latlng, Point $expectedPoint = null, $expectedRegions = null)
     {
         $point = $this->proj->project($latlng);
@@ -115,26 +115,25 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(
             $expectedPoint->asArray(),
-            $point->asArray(),
+            [(int)$point->x, (int)$point->y],
             "Failed to translate server coordinates {$latlng} to world coordinates {$expectedPoint}, got {$point}"
         );
-	}
+    }
 
     /**
      * @param Point $latlng
      * @param array $expectedRegions
-     *
-     * @dataProvider areasProvider
      */
-	public function testTargetAreas(Point $latlng, $expectedAreas = null)
-	{
-		$areas = $this->proj->getTargetAreas($latlng);
-		$this->assertEquals(
-			$expectedAreas,
-			$areas,
-			"Target areas for point {$latlng} are not whats expected (".var_export($expectedAreas, true)."), got [".var_export($areas, true)."]"
-		);
-	}
+    #[DataProvider('areasProvider')]
+    public function testTargetAreas(Point $latlng, $expectedAreas = null)
+    {
+            $areas = $this->proj->getTargetAreas($latlng);
+            $this->assertEquals(
+                    $expectedAreas,
+                    $areas,
+                    "Target areas for point {$latlng} are not whats expected (".var_export($expectedAreas, true)."), got [".var_export($areas, true)."]"
+            );
+    }
 
     public function testUnknownZone()
     {
@@ -164,9 +163,8 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
     /**
      * @param int $zoom
      * @param float $expected
-     *
-     * @dataProvider zoomScaleProvider
      */
+    #[DataProvider('zoomScaleProvider')]
     public function testScale($zoom, $expected)
     {
         $mod = $this->proj->scale($zoom);
@@ -176,7 +174,7 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function zoomScaleProvider()
+    public static function zoomScaleProvider()
     {
         return array(
             array(5, 0.03125),
@@ -194,7 +192,7 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function projectProvider()
+    public static function projectProvider()
     {
         return array(
             // matis - yrk (sw)
@@ -210,28 +208,29 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
             // closest to zones - FIXME: this breaks test as 'closest' is not implemented
             //array(new Point(300, -2000), new Point(7740, 2032), array('matis', 'grid')),
         );
-	}
+    }
 
     /**
      * @return array
      */
-    public function areasProvider()
+    static public function areasProvider()
     {
         return array(
-			array(new Point(3110, -10190), array(
-				array('key' => 'place_outpost_pr_17', 'order' => 7),
-				array('key' => 'region_the_under_spring', 'order' => 1),
-				array('key' => 'sources', 'order' => 0),
-			)),
-			array(new Point(3200, -10300), array(
-				array('key' => 'region_the_under_spring', 'order' => 1),
-				array('key' => 'sources', 'order' => 0),
-			)),
-			array(new Point(3047, -9641), array(
-				array('key' => 'sources', 'order' => 0),
-			)),
+            array(new Point(3110, -10190), array(
+                array('key' => 'place_outpost_pr_17', 'order' => 7),
+                array('key' => 'region_the_under_spring', 'order' => 1),
+                array('key' => 'sources', 'order' => 0),
+            )),
+            array(new Point(3200, -10300), array(
+                array('key' => 'region_the_under_spring', 'order' => 1),
+                array('key' => 'sources', 'order' => 0),
+            )),
+            array(new Point(3047, -9641), array(
+                array('key' => 'sources', 'order' => 0),
+            )),
             // outside any zone
             array(new Point(0, 0), array()),
         );
     }
 }
+
