@@ -11,6 +11,7 @@
  * Define Zoom Level 10 as 1:1 scale for X/Y coordinates
  */
 L.CRS.RyzomServer = L.extend({}, L.CRS, {
+    infinite: true,
     projection: L.Projection.RyzomServer,
     transformation: new L.Transformation(1, 0, -1, 0),
 

@@ -80,6 +80,10 @@ OpenLayers.Geometry.distanceSquaredToSegment = function (point, segment) {
         along: along
     };
 };
+
+// 2024-10-17: Nimetu: This allows tests to run under node
+window.OpenLayers = window.OpenLayers || OpenLayers;
+
 /**
  * Ryzom Maps
  *
@@ -90,6 +94,11 @@ OpenLayers.Geometry.distanceSquaredToSegment = function (point, segment) {
 
 window.Ryzom = {
     /**
+     * version information
+     */
+    version: '2.0.0',
+
+    /**
      * Display debug in firebug console
      */
     DEBUG: false,
@@ -97,12 +106,21 @@ window.Ryzom = {
     /**
      * API base url
      */
-    apiDomain: 'https://api.bmsite.net/',
+    apiDomain: 'https://api.bmsite.net',
 
     /**
      * Map tiles url path relative to apiUrl
      */
-    tilePath: 'maps/{mode}/{style}/{z}/{x}/{y}.{ext}',
+    tilePath: '/maps/{ver}/{mode}/{style}/{z}/{x}/{y}.{ext}',
+
+    /**
+     * Return tile url using apiDomain and tilePath
+     *
+     * @return {String}
+     */
+    getTileUrl: function() {
+        return this.apiDomain + this.tilePath;
+    },
 
     /**
      * Project ingame x/y to world map
@@ -191,7 +209,7 @@ Ryzom.XY = {
      * @return Object{x, y}
      */
     fromOutgameToIngame: function (x, y) {
-        return this._project(x, y, this.outgame_coordinates, this.ingame_coordinates);
+        return this._project(x, y, this.outgame_coordinates, this.ingame_coordinates, 0);
     },
 
     /**
@@ -350,7 +368,7 @@ Ryzom.XY = {
         // if no match or match is against grid, then check how close we are to defined zone
         // some prime root portal/spawn are little outside the zone
         if (closest && (matches.length == 0 || matches[0] == 'grid')) {
-            if (Ryzom.DEBUG) console.debug('>> zone match not found, try to find closest zone');
+            if (Ryzom.DEBUG) console.debug('>> zone match not found, try to find closest zone to ', x, y, zones, closest);
             var match = this._findClosest(x, y, zones);
             if (matches.length == 0 || match.distance <= closest) {
                 matches = [match.name, 'grid'];
@@ -368,16 +386,18 @@ Ryzom.XY = {
      * @param {Number} y   coordinate in src system
      * @param {Object} src array of zones to map from
      * @param {Object} dst array of zones to map into
+     * @param {Number} closest find closest region if no match otherwise (default 0)
+     *                         scale is in src coordinates
      *
      * @return Object{x, y}
      */
-    _project: function (x, y, src, dst) {
+    _project: function (x, y, src, dst, closest) {
         if (Ryzom.DEBUG) console.debug('(fromToZone)', [x, y]);
 
         var srczone, dstzone, zonename;
 
         // where is this point located
-        var regions = this._belongsTo(x, y, src);
+        var regions = this._belongsTo(x, y, src, closest);
 
         // which of those we have mapped in destination
         for (var i = 0; i < regions.length; i++) {
@@ -480,187 +500,633 @@ Ryzom.XY = {
 
 // this must be called immediately
 (function () {
-    console.debug('Ryzom.XY.initialize');
+    // @mapjs-world-start@
     var worldZones = {
-        "world": [
-            [0, 14160 ],
-            [14160, 0]
-        ],
-        "continent_fyros": [
-            [2920, 3836 ],
-            [7400, 636]
-        ],
-        "continent_matis": [
-            [7760, 7872 ],
-            [13680, 352]
-        ],
-        "continent_tryker": [
-            [7716, 13664 ],
-            [13956, 8224]
-        ],
-        "continent_zorai": [
-            [188, 13800 ],
-            [5788, 8840 ]
-        ],
-        "continent_nexus": [
-            [8196, 7896 ],
-            [10116, 5656 ]
-        ],
-        "continent_bagne": [
-            [8392, 5340 ],
-            [9512, 3740 ]
-        ],
-        "continent_route_gouffre": [
-            [5792, 11504 ],
-            [7712, 4144]
-        ],
-        "continent_terre": [
-            [2372, 7680 ],
-            [5252, 4960 ]
-        ],
-        "continent_sources": [
-            [692, 8600 ],
-            [1972, 7000 ]
-        ],
-        "cont_newbieland": [
-            [0, 16380 ],
-            [3200, 14300 ]
-        ],
-        "cont_kitiniere": [
-            [5000, 15880 ],
-            [6280, 14600 ]
-        ],
-        "place_matis_island_1": [
-            [8500, 15880 ],
-            [9780, 14600 ]
-        ],
-        "place_matis_island_2": [
-            [12880, 15880 ],
-            [13840, 14600 ]
-        ],
-        "grid": [
-            [-108000, 47520],
-            [0, 0]
-        ]
-    };
+    "world": [
+        [0, 15000],
+        [20000, 0]
+    ],
+    "continent_fyros": [
+        [3504, 3836],
+        [7984, 636]
+    ],
+    "continent_matis": [
+        [8800, 8236],
+        [14720, 716]
+    ],
+    "continent_tryker": [
+        [8300, 14500],
+        [14540, 9060]
+    ],
+    "continent_zorai": [
+        [772, 13800],
+        [6372, 8840]
+    ],
+    "continent_sources": [
+        [1276, 8600],
+        [2556, 7000]
+    ],
+    "continent_terre": [
+        [2956, 7680],
+        [5836, 4960]
+    ],
+    "continent_route_gouffre": [
+        [6376, 11504],
+        [8296, 4144]
+    ],
+    "continent_bagne": [
+        [8960, 5340],
+        [10080, 3740]
+    ],
+    "continent_nexus": [
+        [8488, 9016],
+        [11848, 5496]
+    ],
+    "cont_undernexus": [
+        [8488, 9176],
+        [11848, 8056]
+    ],
+    "place_matis_island_1": [
+        [14632, 3340],
+        [15912, 2060]
+    ],
+    "cont_newbieland": [
+        [15820, 2280],
+        [19020, 200]
+    ],
+    "cont_kitiniere": [
+        [15272, 7212],
+        [18916, 3568]
+    ],
+    "grid": [
+        [-108000, 47520],
+        [0, 0]
+    ]};
+// @mapjs-world-end@
+    // @mapjs-server-start@
     var serverZones = {
-        "grid": [
-            [0, -47520],
-            [108000, 0]
+    "grid": [
+        [
+            0,
+            -47520
         ],
-        "continent_fyros": [
-            [15840, -27040],
-            [20320, -23840]
-        ],
-        "continent_matis": [
-            [320, -7840],
-            [6240, -320]
-        ],
-        "continent_tryker": [
-            [13760, -34880],
-            [20000, -29440]
-        ],
-        "continent_zorai": [
-            [6880, -5920],
-            [12480, -960]
-        ],
-        "place_pyr": [
-            [18400, -24720],
-            [19040, -24240]
-        ],
-        "continent_bagne": [
-            [480, -11360],
-            [1600, -9760]
-        ],
-        "continent_route_gouffre": [
-            [5440, -16960],
-            [7360, -9600]
-        ],
-        "continent_sources": [
-            [2560, -11360],
-            [3840, -9760]
-        ],
-        "continent_terre": [
-            [160, -15840],
-            [3040, -13120]
-        ],
-        "continent_nexus": [
-            [7840, -8320],
-            [9760, -6080]
-        ],
-        "place_yrkanis": [
-            [4640, -3680],
-            [4800, -3200]
-        ],
-        "place_natae": [
-            [3600, -3840],
-            [3840, -3680]
-        ],
-        "place_davae": [
-            [4160, -4240],
-            [4320, -4000]
-        ],
-        "place_avalae": [
-            [4800, -4480],
-            [4960, -4320]
-        ],
-        "place_dyron": [
-            [16480, -24800],
-            [16720, -24480]
-        ],
-        "place_thesos": [
-            [19520, -26400],
-            [19760, -26080]
-        ],
-        "place_avendale": [
-            [18000, -31200],
-            [18240, -30960]
-        ],
-        "place_crystabell": [
-            [17760, -32000],
-            [18000, -31760]
-        ],
-        "place_fairhaven": [
-            [16960, -33280],
-            [17440, -32720]
-        ],
-        "place_windermeer": [
-            [15440, -33120],
-            [15760, -32880]
-        ],
-        "place_zora": [
-            [8480, -3040],
-            [8800, -2720]
-        ],
-        "place_hoi_cho": [
-            [9440, -3680],
-            [9680, -3360]
-        ],
-        "place_jen_lai": [
-            [8640, -3840],
-            [8960, -3520]
-        ],
-        "place_min_cho": [
-            [9760, -4320],
-            [10080, -4000]
-        ],
-        "place_matis_island_1": [
-            [14080, -1600],
-            [15360, -320]
-        ],
-        "place_matis_island_2": [
-            [15680, -1600],
-            [16640, -320]
-        ],
-        "cont_newbieland": [
-            [8160, -12320],
-            [11360, -10240]
-        ],
-        "cont_kitiniere": [
-            [1760, -17440],
-            [3040, -16160]
+        [
+            108000,
+            0
         ]
-    };
+    ],
+    "world": [
+        [
+            160,
+            160
+        ],
+        [
+            768,
+            640
+        ]
+    ],
+    "continent_fyros_newbie": [
+        [
+            20960,
+            -27040
+        ],
+        [
+            23200,
+            -25280
+        ]
+    ],
+    "continent_matis_newbie": [
+        [
+            320,
+            -7680
+        ],
+        [
+            2720,
+            -5760
+        ]
+    ],
+    "continent_tryker_newbie": [
+        [
+            20800,
+            -34880
+        ],
+        [
+            23200,
+            -32960
+        ]
+    ],
+    "continent_zorai_newbie": [
+        [
+            7040,
+            -5600
+        ],
+        [
+            8960,
+            -4160
+        ]
+    ],
+    "continent_fyros": [
+        [
+            15840,
+            -27040
+        ],
+        [
+            20320,
+            -23840
+        ]
+    ],
+    "continent_matis": [
+        [
+            320,
+            -7840
+        ],
+        [
+            6240,
+            -320
+        ]
+    ],
+    "continent_tryker": [
+        [
+            13760,
+            -34880
+        ],
+        [
+            20000,
+            -29440
+        ]
+    ],
+    "continent_zorai": [
+        [
+            6880,
+            -5920
+        ],
+        [
+            12480,
+            -960
+        ]
+    ],
+    "place_pyr": [
+        [
+            18400,
+            -24720
+        ],
+        [
+            19040,
+            -24240
+        ]
+    ],
+    "continent_bagne": [
+        [
+            480,
+            -11360
+        ],
+        [
+            1600,
+            -9760
+        ]
+    ],
+    "continent_route_gouffre": [
+        [
+            5440,
+            -16960
+        ],
+        [
+            7360,
+            -9600
+        ]
+    ],
+    "continent_sources": [
+        [
+            2560,
+            -11360
+        ],
+        [
+            3840,
+            -9760
+        ]
+    ],
+    "continent_terre": [
+        [
+            160,
+            -15840
+        ],
+        [
+            3040,
+            -13120
+        ]
+    ],
+    "continent_nexus": [
+        [
+            7680,
+            -9440
+        ],
+        [
+            11040,
+            -5920
+        ]
+    ],
+    "place_marauder_city": [
+        [
+            10560,
+            -8320
+        ],
+        [
+            10880,
+            -7840
+        ]
+    ],
+    "cont_undernexus": [
+        [
+            7680,
+            -9600
+        ],
+        [
+            11040,
+            -8480
+        ]
+    ],
+    "place_yrkanis": [
+        [
+            4640,
+            -3680
+        ],
+        [
+            4800,
+            -3200
+        ]
+    ],
+    "place_natae": [
+        [
+            3600,
+            -3840
+        ],
+        [
+            3840,
+            -3680
+        ]
+    ],
+    "place_davae": [
+        [
+            4160,
+            -4240
+        ],
+        [
+            4320,
+            -4000
+        ]
+    ],
+    "place_avalae": [
+        [
+            4800,
+            -4480
+        ],
+        [
+            4960,
+            -4320
+        ]
+    ],
+    "place_dyron": [
+        [
+            16480,
+            -24800
+        ],
+        [
+            16720,
+            -24480
+        ]
+    ],
+    "place_thesos": [
+        [
+            19520,
+            -26400
+        ],
+        [
+            19760,
+            -26080
+        ]
+    ],
+    "place_avendale": [
+        [
+            18000,
+            -31200
+        ],
+        [
+            18240,
+            -30960
+        ]
+    ],
+    "place_crystabell": [
+        [
+            17760,
+            -32000
+        ],
+        [
+            18000,
+            -31760
+        ]
+    ],
+    "place_fairhaven": [
+        [
+            16960,
+            -33280
+        ],
+        [
+            17440,
+            -32720
+        ]
+    ],
+    "place_windermeer": [
+        [
+            15440,
+            -33120
+        ],
+        [
+            15760,
+            -32880
+        ]
+    ],
+    "place_zora": [
+        [
+            8480,
+            -3040
+        ],
+        [
+            8800,
+            -2720
+        ]
+    ],
+    "place_hoi_cho": [
+        [
+            9440,
+            -3680
+        ],
+        [
+            9680,
+            -3360
+        ]
+    ],
+    "place_jen_lai": [
+        [
+            8640,
+            -3840
+        ],
+        [
+            8960,
+            -3520
+        ]
+    ],
+    "place_min_cho": [
+        [
+            9760,
+            -4320
+        ],
+        [
+            10080,
+            -4000
+        ]
+    ],
+    "place_matis_island_1": [
+        [
+            14080,
+            -1600
+        ],
+        [
+            15360,
+            -320
+        ]
+    ],
+    "place_matis_island_2": [
+        [
+            15680,
+            -1600
+        ],
+        [
+            16640,
+            -320
+        ]
+    ],
+    "region_matis_island_3": [
+        [
+            16960,
+            -1440
+        ],
+        [
+            18399,
+            -320
+        ]
+    ],
+    "continent_tryker_island": [
+        [
+            21120,
+            -30560
+        ],
+        [
+            27200,
+            -29440
+        ]
+    ],
+    "region_tryker_island1": [
+        [
+            21120,
+            -29920
+        ],
+        [
+            21760,
+            -29440
+        ]
+    ],
+    "region_tryker_island2": [
+        [
+            22080,
+            -30240
+        ],
+        [
+            22720,
+            -29440
+        ]
+    ],
+    "region_tryker_island3": [
+        [
+            23040,
+            -30240
+        ],
+        [
+            24320,
+            -29440
+        ]
+    ],
+    "region_tryker_island4": [
+        [
+            24800,
+            -30560
+        ],
+        [
+            25760,
+            -29600
+        ]
+    ],
+    "region_tryker_island5": [
+        [
+            26240,
+            -30400
+        ],
+        [
+            27200,
+            -29440
+        ]
+    ],
+    "continent_zorai_island": [
+        [
+            13920,
+            -4800
+        ],
+        [
+            18720,
+            -3520
+        ]
+    ],
+    "continent_fyros_island": [
+        [
+            21120,
+            -24960
+        ],
+        [
+            25920,
+            -23840
+        ]
+    ],
+    "region_fyros_island1pvp 3": [
+        [
+            21120,
+            -24960
+        ],
+        [
+            22240,
+            -23840
+        ]
+    ],
+    "region_fyros_island2": [
+        [
+            22720,
+            -24799
+        ],
+        [
+            24320,
+            -23840
+        ]
+    ],
+    "region_fyros_island3": [
+        [
+            24800,
+            -24480
+        ],
+        [
+            25920,
+            -23840
+        ]
+    ],
+    "cont_newbieland": [
+        [
+            8160,
+            -12320
+        ],
+        [
+            11360,
+            -10240
+        ]
+    ],
+    "place_starting_zone_starting_city": [
+        [
+            10224,
+            -11904
+        ],
+        [
+            10495,
+            -11648
+        ]
+    ],
+    "cont_corrupted_moor": [
+        [
+            12480,
+            -12160
+        ],
+        [
+            15840,
+            -9440
+        ]
+    ],
+    "cont_kitiniere": [
+        [
+            1760,
+            -17440
+        ],
+        [
+            3040,
+            -16160
+        ]
+    ],
+    "indoors": [
+        [
+            20000,
+            -640
+        ],
+        [
+            21280,
+            -320
+        ]
+    ],
+    "r2_roots": [
+        [
+            30960,
+            -30800
+        ],
+        [
+            40960,
+            -20800
+        ]
+    ],
+    "r2_desert": [
+        [
+            20960,
+            -10800
+        ],
+        [
+            30960,
+            -800
+        ]
+    ],
+    "r2_lakes": [
+        [
+            30960,
+            -10800
+        ],
+        [
+            40960,
+            -800
+        ]
+    ],
+    "r2_forest": [
+        [
+            20960,
+            -20800
+        ],
+        [
+            30960,
+            -10800
+        ]
+    ],
+    "r2_jungle": [
+        [
+            30960,
+            -20800
+        ],
+        [
+            40960,
+            -10800
+        ]
+    ]
+};
+// @mapjs-server-end@
 
     // world conflict with grid.
     // (only used in php tile generator)
@@ -685,7 +1151,8 @@ Ryzom.XY = {
  * @param {Boolean} options.rzWorld - display world map (atys style tiles)
  * @param {Boolean} options.rzSatellite - display satellite map (atys_sp style tiles)
  * @param {String} options.rzLang - language tiles to use, set to false to disable
- * @param {String} options.rzTileUri - map tiles uri template to use, default is Ryzom.apiDomain+Ryzom.tilePath
+ * @param {String} options.rzTileUri - map tiles uri template to use, default is Ryzom.geTileUrl()
+ * @param {Array}  options.layers - array of tile layers, if not set add 'atys', 'atys_sp', 'lang_en'
  *
  * @return {L.Map}
  */
@@ -697,57 +1164,62 @@ Ryzom.map = function(id, options) {
         rzWorld: true,
         rzSatellite: true,
         rzLang: 'en',
-        rzTileUri: Ryzom.apiDomain + Ryzom.tilePath,
+        rzTileUri: Ryzom.getTileUrl(),
         //
         center: [6500, -12500],
         zoom: 5,
         minZoom: 3,
-        maxZoom: 12,
-        layers: []
+        maxZoom: 12
     }, options);
 
     // select coordinate systems for used in tiles
-    if (options.rzMode == 'world') {
-        options.crs = L.CRS.RyzomWorld;
-    } else {
-        options.crs = L.CRS.RyzomServer;
+    if (options.crs === undefined) {
+        if (options.rzMode === 'world') {
+            options.crs = L.CRS.RyzomWorld;
+        } else {
+            options.crs = L.CRS.RyzomServer;
+        }
     }
 
-    var tileLayers = {};
-    var overlays = {};
+    let tileLayers = {};
+    let overlays = {};
 
-    var worldLayer = false, satLayer = false, langLayer = false;
-    if (options.rzWorld) {
-        worldLayer = Ryzom.tileLayer(options.rzTileUri, {
-            mode: options.rzMode
-        });
-        options.layers.push(worldLayer);
-        tileLayers['Atys'] = worldLayer;
-    }
+    if (options.layers === undefined) {
+        options.layers = [];
 
-    if (options.rzSatellite) {
-        satLayer = Ryzom.tileLayer(options.rzTileUri, {
-            mode: options.rzMode,
-            style: 'atys_sp'
-        });
-        if (!options.rzWorld) {
-            options.layers.push(satLayer);
+        let worldLayer = false, satLayer = false, langLayer = false;
+        if (options.rzWorld) {
+            worldLayer = Ryzom.tileLayer(options.rzTileUri, {
+                mode: options.rzMode
+            });
+            options.layers.push(worldLayer);
+            tileLayers['Atys'] = worldLayer;
         }
 
-        tileLayers['Satellite'] = satLayer;
+        if (options.rzSatellite) {
+            satLayer = Ryzom.tileLayer(options.rzTileUri, {
+                mode: options.rzMode,
+                style: 'atys_sp'
+            });
+            if (!options.rzWorld) {
+                options.layers.push(satLayer);
+            }
+
+            tileLayers['Satellite'] = satLayer;
+        }
+
+        if (options.rzLang) {
+            langLayer = Ryzom.tileLayer(options.rzTileUri, {
+                mode: options.rzMode,
+                style: 'lang_' + options.rzLang
+            });
+            options.layers.push(langLayer);
+
+            overlays['Labels'] = langLayer;
+        }
     }
 
-    if (options.rzLang) {
-        langLayer = Ryzom.tileLayer(options.rzTileUri, {
-            mode: options.rzMode,
-            style: 'lang_' + options.rzLang
-        });
-        options.layers.push(langLayer);
-
-        overlays['Labels'] = langLayer;
-    }
-
-    var map = new L.Map(id, options);
+    let map = L.map(id, options);
     if (tileLayers['Atys'] && tileLayers['Satellite']) {
         L.control.layers(tileLayers, overlays).addTo(map);
     }
@@ -757,7 +1229,7 @@ Ryzom.map = function(id, options) {
 /**
  * Creates new Ryzom tile layer.
  *
- * @param {String} uri - tile uri template, default is Ryzom.TILE_URI
+ * @param {String} uri - tile uri template, default is Ryzom.getTileUrl()
  * @param {Object} options - options passed to leaflet L.TileLayer
  * @param {String} options.mode - tile coordinate mode, either 'world' (default) or 'server'
  * @param {String} options.style - tile style, 'atys' (default) or 'atys_sp', 'lang_en', etc
@@ -768,24 +1240,21 @@ Ryzom.map = function(id, options) {
 Ryzom.tileLayer = function(uri, options) {
     if (typeof uri == "object") {
         options = uri;
-        uri = Ryzom.TILE_URI;
+        uri = Ryzom.getTileUrl();
     }
+    let isLang = options.style && options.style.match(/^lang_/);
     options = L.extend({
-        // ryzom options
+        // ryzom options used in tileUrl placeholders
+        ver: 'v' + Ryzom.version.substring(0,1),
         mode: 'world',
         style: 'atys',
         // leaflet options
-        continuousWorld: true,
+        // native zoom select range for rendered tiles
+        minNativeZoom: 5,
+        maxNativeZoom: isLang ? 12 : 10,
+        ext: isLang ? 'png' : 'jpg',
         zIndex: 1
     }, options);
-
-    var isLang = options.style && options.style.match(/^lang_/);
-    if (!options.maxNativeZoom) {
-        options.maxNativeZoom = isLang ? 12 : 11;
-    }
-    if (!options.ext) {
-        options.ext = isLang ? 'png' : 'jpg';
-    }
     return L.tileLayer(uri, options);
 };
 
@@ -828,7 +1297,7 @@ Ryzom.icon = function(name, color, size) {
     }
 
     var halfSize = Math.floor(size /2) ;
-    var uri = Ryzom.apiDomain + 'maps/icon/' + size + '/';
+    var uri = Ryzom.apiDomain + '/maps/icon/' + size + '/';
     if (color) {
         uri += color + '/';
     }
@@ -929,12 +1398,7 @@ L.Projection.RyzomServer = {
     unproject: function (point) {
         // TODO: do proper from grid projection
         return new L.LatLng(point.x, point.y);
-    },
-
-    // leaflet 1.0
-    bounds: (function () {
-        return L.bounds([-100000, -100000], [100000, 100000]);
-    })()
+    }
 };
 
 /**
@@ -967,12 +1431,7 @@ L.Projection.RyzomWorld = {
      */
     unproject: function (point) {
         return Ryzom.location(point.x, point.y);
-    },
-
-    // leaflet 1.0
-    bounds: (function () {
-        return L.bounds([-100000, -100000], [100000, 100000]);
-    })()
+    }
 };
 
 /**
@@ -988,6 +1447,7 @@ L.Projection.RyzomWorld = {
  * Define Zoom Level 10 as 1:1 scale for X/Y coordinates
  */
 L.CRS.RyzomServer = L.extend({}, L.CRS, {
+    infinite: true,
     projection: L.Projection.RyzomServer,
     transformation: new L.Transformation(1, 0, -1, 0),
 
@@ -1012,6 +1472,7 @@ L.CRS.RyzomServer = L.extend({}, L.CRS, {
  * Uses Ryzom World map zone placement
  */
 L.CRS.RyzomWorld = L.extend({}, L.CRS.RyzomServer, {
+    infinite: true,
     projection: L.Projection.RyzomWorld,
     transformation: new L.Transformation(1, 0, 1, 0)
 });

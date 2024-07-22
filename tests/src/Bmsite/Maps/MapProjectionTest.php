@@ -25,7 +25,8 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
     private $worldZones = array(
         'world' => array(array(0, 14160), array(14160, 0)),
         'fyros' => array(array(2920, 3836), array(7400, 636)),
-        'matis' => array(array(7760, 7872), array(13680, 352)),
+		'matis' => array(array(7760, 7872), array(13680, 352)),
+		'kitiniere' => array(array(15272, 7212), array(18916, 3568)),
         'grid' => array(array(-108000, 47520), array(0, 0))
     );
     private $worldProj = array(
@@ -37,7 +38,8 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
         'fyros' => array(array(15840, -27040), array(20320, -23840)),
         'matis' => array(array(320, -7840), array(6240, -320)),
         'place_pyr' => array(array(18400, -24720), array(19040, -24240)),
-        'place_yrkanis' => array(array(4640, -3680), array(4800, -3200)),
+		'place_yrkanis' => array(array(4640, -3680), array(4800, -3200)),
+		'kitiniere' => array(array(1760, -17440), array(3040, -16160)),
         'grid' => array(array(0, -47520), array(108000, 0))
     );
 
@@ -117,6 +119,23 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
             $expectedPoint->asArray(),
             [(int)$point->x, (int)$point->y],
             "Failed to translate server coordinates {$latlng} to world coordinates {$expectedPoint}, got {$point}"
+        );
+    }
+
+    /**
+     * Usualy all zones should be 1:1 at zoom 10, but kitiniere is exception
+     */
+    public function testZoneNotOneToOneScale()
+    {
+        $ig = new Point(2540,-17400);
+        $point = $this->proj->project($ig);
+        $regions = $this->proj->gettargetRegions($ig);
+
+        $expected = new Point(17492, 7098);
+        $this->assertEquals(
+            $expected->asArray(),
+            [(int)$point->x, (int)$point->y],
+            "Failed to translate server coordinates {$ig} to world coordinates {$expected}, got {$point}"
         );
     }
 
@@ -213,7 +232,7 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    static public function areasProvider()
+    public static function areasProvider()
     {
         return array(
             array(new Point(3110, -10190), array(

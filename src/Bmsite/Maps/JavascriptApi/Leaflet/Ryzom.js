@@ -8,6 +8,11 @@
 
 window.Ryzom = {
     /**
+     * version information
+     */
+    version: '2.0.0',
+
+    /**
      * Display debug in firebug console
      */
     DEBUG: false,
@@ -15,12 +20,21 @@ window.Ryzom = {
     /**
      * API base url
      */
-    apiDomain: 'https://api.bmsite.net/',
+    apiDomain: 'https://api.bmsite.net',
 
     /**
      * Map tiles url path relative to apiUrl
      */
-    tilePath: 'maps/{mode}/{style}/{z}/{x}/{y}.{ext}',
+    tilePath: '/maps/{ver}/{mode}/{style}/{z}/{x}/{y}.{ext}',
+
+    /**
+     * Return tile url using apiDomain and tilePath
+     *
+     * @return {String}
+     */
+    getTileUrl: function() {
+        return this.apiDomain + this.tilePath;
+    },
 
     /**
      * Project ingame x/y to world map

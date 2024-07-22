@@ -19,10 +19,11 @@ use Bmsite\Maps\Tiles\TileStorageInterface;
  */
 class TileLayer
 {
-	protected $debug = true;
+    /** @var bool */
+    protected $debug = true;
 
-	/** @var StaticMapGenerator */
-	protected $map;
+    /** @var StaticMapGenerator */
+    protected $map;
 
     /** @var MapProjection */
     protected $proj;
@@ -34,7 +35,10 @@ class TileLayer
     protected $tileExtension = 'jpg';
 
     /** @var int */
-    protected $zoom;
+    protected $zoom = 5;
+
+    /** @var int */
+    protected $minZoom;
 
     /** @var int */
     protected $maxZoom;
@@ -43,13 +47,14 @@ class TileLayer
      * @param \Bmsite\Maps\StaticMap\StaticMapGenerator $map
      * @param int $maxZoom
      */
-    public function __construct(StaticMapGenerator $map, $maxZoom)
+    public function __construct(StaticMapGenerator $map, $minZoom, $maxZoom)
     {
         $this->map = $map;
         $this->proj = $map->getProjection();
         $this->debug = $map->getDebug();
         $this->mapname = $map->getMapName();
 
+        $this->minZoom = $minZoom;
         $this->maxZoom = $maxZoom;
     }
 
@@ -67,7 +72,9 @@ class TileLayer
     public function getTileSize()
     {
         $size = TileStorageInterface::TILE_SIZE;
-        if ($this->zoom > $this->maxZoom) {
+        if ($this->zoom < $this->minZoom) {
+            $size = $this->proj->scale($this->zoom) / $this->proj->scale($this->minZoom) * $size;
+        } elseif ($this->zoom > $this->maxZoom) {
             $size = $this->proj->scale($this->zoom) / $this->proj->scale($this->maxZoom) * $size;
         }
         return $size;
@@ -86,18 +93,18 @@ class TileLayer
 
         $this->zoom = $zoom;
 
-        $tileSize = $this->getTileSize($this->zoom);
-        $tileZoom = min($this->zoom, $this->maxZoom);
+        $tileSize = $this->getTileSize();
+        $tileZoom = max($this->minZoom, min($this->zoom, $this->maxZoom));
 
         // tile offset (px)
         $vpOffsetX = floor($vp->left / $tileSize) * $tileSize - $vp->left;
         $vpOffsetY = floor($vp->top / $tileSize) * $tileSize - $vp->top;
 
         // tiles affected
-        $tx1 = floor($vp->left / $tileSize);
-        $ty1 = floor($vp->top / $tileSize);
-        $tx2 = ceil($vp->right / $tileSize);
-        $ty2 = ceil($vp->bottom / $tileSize);
+        $tx1 = (int)floor($vp->left / $tileSize);
+        $ty1 = (int)floor($vp->top / $tileSize);
+        $tx2 = (int)ceil($vp->right / $tileSize);
+        $ty2 = (int)ceil($vp->bottom / $tileSize);
 
         for ($i = $tx1; $i < $tx2; $i++) {
             for ($j = $ty1; $j < $ty2; $j++) {
@@ -106,9 +113,9 @@ class TileLayer
                     $img = $this->debugTile($tileZoom, $i, $j);
                 }
 
-                if ($img) {
-                    $x1 = $vpOffsetX + ($i - $tx1) * $tileSize;
-                    $y1 = $vpOffsetY + ($j - $ty1) * $tileSize;
+                if ($img !== null) {
+                    $x1 = (int)($vpOffsetX + ($i - $tx1) * $tileSize);
+                    $y1 = (int)($vpOffsetY + ($j - $ty1) * $tileSize);
                     imagecopyresampled(
                         $canvas,
                         $img,

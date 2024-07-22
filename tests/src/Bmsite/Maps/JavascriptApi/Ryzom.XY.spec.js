@@ -5,9 +5,9 @@
  * @copyright (c) 2014 Meelis Mägi
  * @license http://opensource.org/licenses/LGPL-3.0
  */
+require('./imports.js');
 
 describe("Map projection", function () {
-
     describe("un-mapped server coordinates", function () {
         it("server top-left", function () {
             var xy = Ryzom.XY.fromIngameToOutgame(0, 0);
@@ -59,14 +59,14 @@ describe("Map projection", function () {
             expect(parseInt(igc.distance)).toBe(10);
 
             var xy = Ryzom.XY.fromIngameToOutgame(640, -11370);
-            expect(xy).toEqual({x: 8552, y: 5350});
+            expect(xy).toEqual({x: 9120, y: 5350});
 
             var igr = Ryzom.XY.findIngameRegion(640, -11370);
-            expect(igr).toEqual(['bagne', 'grid']);
+            expect(igr).toEqual(['continent_bagne', 'grid']);
 
             // as location is outside bagne, then zone from image coordinates are unreliable
-            var ogr = Ryzom.XY.findOutgameRegion(8552, 5350);
-            expect(ogr).toEqual(['matis', 'grid']);
+            var ogr = Ryzom.XY.findOutgameRegion(9120, 5350);
+            expect(ogr).toEqual(['continent_matis', 'grid']);
         });
     });
 
@@ -82,13 +82,13 @@ describe("Map projection", function () {
             expect(ogr).toEqual(['grid']);
         });
         it("grid bottom-right", function () {
-            var xy = Ryzom.XY.fromOutgameToIngame(14160, 14160);
-            expect(xy).toEqual({x: 122160, y: -14160});
+            var xy = Ryzom.XY.fromOutgameToIngame(20000, 15000);
+            expect(xy).toEqual({x: 128000, y: -15000});
 
-            var igr = Ryzom.XY.findIngameRegion(122160, -14160);
+            var igr = Ryzom.XY.findIngameRegion(128000, -15000);
             expect(igr).toEqual(['grid']);
 
-            var ogr = Ryzom.XY.findOutgameRegion(14160, 14160);
+            var ogr = Ryzom.XY.findOutgameRegion(20000, 15000);
             expect(ogr).toEqual(['grid']);
         });
         it("coordinates outside grid (negative)", function () {
@@ -118,12 +118,12 @@ describe("Map projection", function () {
         describe("server to world", function () {
             it("region matches fyros/grid", function () {
                 var result = Ryzom.XY.findIngameRegion(19000, -25000);
-                expect(result).toEqual(['fyros', 'grid']);
+                expect(result).toEqual(['continent_fyros', 'grid']);
             });
 
             it("region matches pyr/fyros/grid", function () {
                 var result = Ryzom.XY.findIngameRegion(18400, -24720);
-                expect(result).toEqual(['place_pyr', 'fyros', 'grid']);
+                expect(result).toEqual(['place_pyr', 'continent_fyros', 'grid']);
             });
 
             it("fyros server coordinates to image coordinates", function () {
@@ -131,8 +131,8 @@ describe("Map projection", function () {
                 var ne = Ryzom.XY.fromIngameToOutgame(20320, -23840);
 
                 var expected = [
-                    [2920,3836  ],
-                    [7400, 636 ]
+                    [3504, 3836],
+                    [7984, 636]
                 ];
                 var result = [
                     [sw.x, sw.y],
@@ -145,8 +145,8 @@ describe("Map projection", function () {
                 var sw = Ryzom.XY.fromIngameToOutgame(18400, -24720);
                 var ne = Ryzom.XY.fromIngameToOutgame(19040, -24240);
                 var expected = [
-                    [5480,1516 ],
-                    [6120,1036 ]
+                    [6064, 1516],
+                    [6704, 1036]
                 ];
                 var result = [
                     [sw.x, sw.y],
@@ -158,13 +158,13 @@ describe("Map projection", function () {
 
         describe("world to server", function () {
             it("region matches fyros/grid", function () {
-                var result = Ryzom.XY.findOutgameRegion(3000, 3000);
-                expect(result).toEqual(['fyros', 'grid']);
+                var result = Ryzom.XY.findOutgameRegion(6000, 2000);
+                expect(result).toEqual(['continent_fyros', 'grid']);
             });
 
             it("server projection", function () {
-                var bl = new L.Point(2920, 3836);
-                var tr = new L.Point(7400, 636);
+                var bl = new L.Point(3504, 3836);
+                var tr = new L.Point(7984, 636);
                 var sw = Ryzom.XY.fromOutgameToIngame(bl.x, bl.y);
                 var ne = Ryzom.XY.fromOutgameToIngame(tr.x, tr.y);
 
@@ -188,7 +188,7 @@ describe("Map projection", function () {
                 var xy = Ryzom.XY.findClosestIngameRegion(0, 0);
                 xy.distance = parseInt(xy.distance);
                 var expected = {
-                    name: 'matis',
+                    name: 'continent_matis',
                     distance: 452,
                     x: 320,
                     y: -320
@@ -200,7 +200,7 @@ describe("Map projection", function () {
                 var xy = Ryzom.XY.findClosestIngameRegion(16000, -23500);
                 xy.distance = parseInt(xy.distance);
                 var expected = {
-                    name: 'fyros',
+                    name: 'continent_fyros',
                     distance: 340,
                     x: 16000,
                     y: -23840
@@ -210,49 +210,24 @@ describe("Map projection", function () {
         });
         describe("world location", function () {
             it("closest point is fyros north-west corner", function () {
-                // fyros = [2920, 3836], [7400, 636]
                 var xy = Ryzom.XY.findClosestOutgameRegion(0, 0);
                 xy.distance = parseInt(xy.distance);
                 var expected = {
-                    name: 'fyros',
-                    distance: 2988,
-                    x: 2920,
+                    name: 'continent_fyros',
+                    distance: 3561,
+                    x: 3504,
                     y: 636
                 };
                 expect(xy).toEqual(expected);
             });
             it("closest point is along nexus south border", function () {
-                // nexus = [8196, 7896], [10116, 5656]
-                var xy = Ryzom.XY.findClosestOutgameRegion(8200, 7900);
+                var xy = Ryzom.XY.findClosestOutgameRegion(8500, 9020);
                 xy.distance = parseInt(xy.distance);
                 var expected = {
-                    name: 'nexus',
+                    name: 'continent_nexus',
                     distance: 4,
-                    x: 8200,
-                    y: 7896
-                };
-                expect(xy).toEqual(expected);
-            });
-            it("closest point is west from nexus, inside matis zone", function () {
-                var xy = Ryzom.XY.findClosestOutgameRegion(8190, 6000);
-                xy.distance = parseInt(xy.distance);
-                var expected = {
-                    name: 'nexus',
-                    distance: 6,
-                    x: 8196,
-                    y: 6000
-                };
-                expect(xy).toEqual(expected);
-            });
-            it("closest point is matis west border, right west from nexus", function () {
-                // matis = [7760, 7872], [13680, 352]
-                var xy = Ryzom.XY.findClosestOutgameRegion(7800, 6000);
-                xy.distance = parseInt(xy.distance);
-                var expected = {
-                    name: 'matis',
-                    distance: 40,
-                    x: 7760,
-                    y: 6000
+                    x: 8500,
+                    y: 9016
                 };
                 expect(xy).toEqual(expected);
             });
@@ -261,18 +236,20 @@ describe("Map projection", function () {
 
     it("coords from phpunit", function () {
         var data = [
-            // matis - yrk (sw)
-            [new L.Point(4640, -3680), new L.Point(12080, 3712), ['place_yrkanis', 'matis', 'grid']],
-            // matis - yrk (ne)
-            [new L.Point(4800, -3200), new L.Point(12240, 3232), ['place_yrkanis', 'matis', 'grid']],
+            // matis - yrk (nw)
+            [new L.Point(4640, -3200), new L.Point(13120, 3596), ['place_yrkanis', 'continent_matis', 'grid']],
+            // matis - yrk (se)
+            [new L.Point(4800, -3680), new L.Point(13280, 4076), ['place_yrkanis', 'continent_matis', 'grid']],
             // matis - random spot
-            [new L.Point(600, -7000), new L.Point(8040, 7032), ['matis', 'grid']],
+            [new L.Point(600, -7000), new L.Point(9080, 7396), ['continent_matis_newbie', 'continent_matis', 'grid']],
             // fyros - random spot
-            [new L.Point(17000, -25000), new L.Point(4080, 1796), ['fyros', 'grid']],
+            [new L.Point(17000, -25000), new L.Point(4664, 1796), ['continent_fyros', 'grid']],
             // closest to zone
-            [new L.Point(300, -2000), new L.Point(7740, 2032), ['matis', 'grid']],
+            [new L.Point(300, -2000), new L.Point(8780, 2396), ['continent_matis', 'grid']],
             // outside any zone
-            [new L.Point(100, -2000), new L.Point(-107900, 2000), ['grid']]
+            [new L.Point(100, -2000), new L.Point(-107900, 2000), ['grid']],
+            // kitiniere
+            [new L.Point(2540,-17400), new L.Point(17493, 7098), ['cont_kitiniere', 'grid']],
         ];
         for (var i = 0; i < data.length; i++) {
             var p = data[i][0];

@@ -10,6 +10,7 @@
  * Uses Ryzom World map zone placement
  */
 L.CRS.RyzomWorld = L.extend({}, L.CRS.RyzomServer, {
+    infinite: true,
     projection: L.Projection.RyzomWorld,
     transformation: new L.Transformation(1, 0, 1, 0)
 });

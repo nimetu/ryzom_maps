@@ -31,11 +31,6 @@ L.Projection.RyzomServer = {
     unproject: function (point) {
         // TODO: do proper from grid projection
         return new L.LatLng(point.x, point.y);
-    },
-
-    // leaflet 1.0
-    bounds: (function () {
-        return L.bounds([-100000, -100000], [100000, 100000]);
-    })()
+    }
 };
 

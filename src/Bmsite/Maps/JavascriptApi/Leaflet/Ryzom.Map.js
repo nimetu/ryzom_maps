@@ -15,7 +15,8 @@
  * @param {Boolean} options.rzWorld - display world map (atys style tiles)
  * @param {Boolean} options.rzSatellite - display satellite map (atys_sp style tiles)
  * @param {String} options.rzLang - language tiles to use, set to false to disable
- * @param {String} options.rzTileUri - map tiles uri template to use, default is Ryzom.apiDomain+Ryzom.tilePath
+ * @param {String} options.rzTileUri - map tiles uri template to use, default is Ryzom.geTileUrl()
+ * @param {Array}  options.layers - array of tile layers, if not set add 'atys', 'atys_sp', 'lang_en'
  *
  * @return {L.Map}
  */
@@ -27,57 +28,62 @@ Ryzom.map = function(id, options) {
         rzWorld: true,
         rzSatellite: true,
         rzLang: 'en',
-        rzTileUri: Ryzom.apiDomain + Ryzom.tilePath,
+        rzTileUri: Ryzom.getTileUrl(),
         //
         center: [6500, -12500],
         zoom: 5,
         minZoom: 3,
-        maxZoom: 12,
-        layers: []
+        maxZoom: 12
     }, options);
 
     // select coordinate systems for used in tiles
-    if (options.rzMode == 'world') {
-        options.crs = L.CRS.RyzomWorld;
-    } else {
-        options.crs = L.CRS.RyzomServer;
+    if (options.crs === undefined) {
+        if (options.rzMode === 'world') {
+            options.crs = L.CRS.RyzomWorld;
+        } else {
+            options.crs = L.CRS.RyzomServer;
+        }
     }
 
-    var tileLayers = {};
-    var overlays = {};
+    let tileLayers = {};
+    let overlays = {};
 
-    var worldLayer = false, satLayer = false, langLayer = false;
-    if (options.rzWorld) {
-        worldLayer = Ryzom.tileLayer(options.rzTileUri, {
-            mode: options.rzMode
-        });
-        options.layers.push(worldLayer);
-        tileLayers['Atys'] = worldLayer;
-    }
+    if (options.layers === undefined) {
+        options.layers = [];
 
-    if (options.rzSatellite) {
-        satLayer = Ryzom.tileLayer(options.rzTileUri, {
-            mode: options.rzMode,
-            style: 'atys_sp'
-        });
-        if (!options.rzWorld) {
-            options.layers.push(satLayer);
+        let worldLayer = false, satLayer = false, langLayer = false;
+        if (options.rzWorld) {
+            worldLayer = Ryzom.tileLayer(options.rzTileUri, {
+                mode: options.rzMode
+            });
+            options.layers.push(worldLayer);
+            tileLayers['Atys'] = worldLayer;
         }
 
-        tileLayers['Satellite'] = satLayer;
+        if (options.rzSatellite) {
+            satLayer = Ryzom.tileLayer(options.rzTileUri, {
+                mode: options.rzMode,
+                style: 'atys_sp'
+            });
+            if (!options.rzWorld) {
+                options.layers.push(satLayer);
+            }
+
+            tileLayers['Satellite'] = satLayer;
+        }
+
+        if (options.rzLang) {
+            langLayer = Ryzom.tileLayer(options.rzTileUri, {
+                mode: options.rzMode,
+                style: 'lang_' + options.rzLang
+            });
+            options.layers.push(langLayer);
+
+            overlays['Labels'] = langLayer;
+        }
     }
 
-    if (options.rzLang) {
-        langLayer = Ryzom.tileLayer(options.rzTileUri, {
-            mode: options.rzMode,
-            style: 'lang_' + options.rzLang
-        });
-        options.layers.push(langLayer);
-
-        overlays['Labels'] = langLayer;
-    }
-
-    var map = new L.Map(id, options);
+    let map = L.map(id, options);
     if (tileLayers['Atys'] && tileLayers['Satellite']) {
         L.control.layers(tileLayers, overlays).addTo(map);
     }
@@ -87,7 +93,7 @@ Ryzom.map = function(id, options) {
 /**
  * Creates new Ryzom tile layer.
  *
- * @param {String} uri - tile uri template, default is Ryzom.TILE_URI
+ * @param {String} uri - tile uri template, default is Ryzom.getTileUrl()
  * @param {Object} options - options passed to leaflet L.TileLayer
  * @param {String} options.mode - tile coordinate mode, either 'world' (default) or 'server'
  * @param {String} options.style - tile style, 'atys' (default) or 'atys_sp', 'lang_en', etc
@@ -98,24 +104,21 @@ Ryzom.map = function(id, options) {
 Ryzom.tileLayer = function(uri, options) {
     if (typeof uri == "object") {
         options = uri;
-        uri = Ryzom.TILE_URI;
+        uri = Ryzom.getTileUrl();
     }
+    let isLang = options.style && options.style.match(/^lang_/);
     options = L.extend({
-        // ryzom options
+        // ryzom options used in tileUrl placeholders
+        ver: 'v' + Ryzom.version.substring(0,1),
         mode: 'world',
         style: 'atys',
         // leaflet options
-        continuousWorld: true,
+        // native zoom select range for rendered tiles
+        minNativeZoom: 5,
+        maxNativeZoom: isLang ? 12 : 10,
+        ext: isLang ? 'png' : 'jpg',
         zIndex: 1
     }, options);
-
-    var isLang = options.style && options.style.match(/^lang_/);
-    if (!options.maxNativeZoom) {
-        options.maxNativeZoom = isLang ? 12 : 11;
-    }
-    if (!options.ext) {
-        options.ext = isLang ? 'png' : 'jpg';
-    }
     return L.tileLayer(uri, options);
 };
 

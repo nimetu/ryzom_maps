@@ -1,0 +1,23 @@
+# coords scale from GIMP world map compared to server
+# ie. 0.5 == server coords are 2x bigger than these
+scale: 0.5
+#--
+   0    0 10000 7500 world
+#--
+1752  318  2240 1600 continent_fyros
+4400  358  2960 3760 continent_matis
+4150 4530  3120 2720 continent_tryker
+ 386 4420  2800 2480 continent_zorai
+#--
+ 638 3500   640  800 continent_sources
+1478 2480  1440 1360 continent_terre
+3188 2072   960 3680 continent_route_gouffre
+4480 1870   560  800 continent_bagne
+4244 2748  1680 1760 continent_nexus
+4244 4028  1680  560 cont_undernexus
+#--
+# todo: I think this got renamed
+7316 1030   640  640 place_matis_island_1
+7910  100  1600 1040 cont_newbieland
+# real kitiniere size is 1280x1280 meters, but world ends up 2.84x bigger
+7636 1784  1822 1822 cont_kitiniere

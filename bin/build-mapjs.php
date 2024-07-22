@@ -15,6 +15,12 @@ class JsMinifier implements \Bmsite\Maps\JavascriptApi\MinifyInterface
 
 $path = dirname(__DIR__);
 
+// update world/server coords in Ryzom.XY.js
+update_ryzomxy(
+    dirname(__DIR__).'/src/Bmsite/Maps/Resources',
+    dirname(__DIR__).'/src/Bmsite/Maps/JavascriptApi/Leaflet/Ryzom.XY.js'
+);
+
 // javascript
 $ver = 'leaflet';
 $mapjs = get_mapjs($ver);
@@ -27,11 +33,28 @@ save_js($mapjs_areas['jsmin'], $mapjs_areas['hashmin'], "${path}/map-areas-{$ver
 
 exit;
 
+function update_ryzomxy($inPath, $outFile) {
+    $jsonServer = trim(file_get_contents($inPath.'/server.json'));
+    $jsonWorld  = trim(file_get_contents($inPath.'/world.json'));
+	$search = [
+		'|(// @mapjs-server-start@).*(// @mapjs-server-end@)|ms',
+		'|(// @mapjs-world-start@).*(// @mapjs-world-end@)|ms',
+	];
+	$replace = [
+		"\\1\n    var serverZones = $jsonServer;\n\\2",
+		"\\1\n    var worldZones = $jsonWorld;\n\\2",
+    ];
+
+    $js = file_get_contents($outFile);
+    $js = preg_replace($search, $replace, $js, 1);
+    file_put_contents($outFile, $js);
+}
+
 function save_js($js, $hash, $file) {
     echo "Writing $file";
     file_put_contents($file, $js);
 
-    $txt = js_script($file, $hash);
+    $txt = js_script(basename($file), $hash);
 
     file_put_contents($file.'.txt', $txt);
     echo ": {$hash}\n";

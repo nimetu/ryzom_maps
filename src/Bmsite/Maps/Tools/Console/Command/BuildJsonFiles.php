@@ -27,6 +27,10 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class BuildJsonFiles extends Command
 {
+    // exclude continents from server.json
+    protected $exclude = array(
+        'testroom',
+    );
 
     protected function configure()
     {
@@ -105,53 +109,37 @@ class BuildJsonFiles extends Command
      */
     protected function buildServerZones(WorldSheet $world, $outFile)
     {
-        $include = array(
-            'continent_fyros',
-            'continent_matis',
-            'continent_tryker',
-            'continent_zorai',
-            'continent_bagne',
-            'continent_route_gouffre',
-            'continent_sources',
-            'continent_terre',
-            'continent_nexus',
-            'cont_newbieland',
-            'cont_kitiniere',
-            'place_matis_island_1',
-            'place_matis_island_2',
-            'place_pyr',
-            'place_dyron',
-            'place_thesos',
-            'place_yrkanis',
-            'place_natae',
-            'place_davae',
-            'place_avalae',
-            'place_avendale',
-            'place_crystabell',
-            'place_fairhaven',
-            'place_windermeer',
-            'place_zora',
-            'place_hoi_cho',
-            'place_jen_lai',
-			'place_min_cho',
-			'place_starting_zone_starting_city',
-        );
-
         $json = array(
             'grid' => array(array(0, -47520), array(108000, 0))
         );
+        $continents = array();
         foreach ($world->Maps as $map) {
             $key = strtolower($map->Name);
-
-            if (in_array($key, $include, true)) {
-                //echo " + ({$key}, {$map->ContinentName})\n";
-                $json[$key] = array(
-                    array((int)$map->MinX, (int)$map->MinY),
-                    array((int)$map->MaxX, (int)$map->MaxY),
-                );
-            } else {
-                //echo " - ({$key}, {$map->ContinentName})\n";
+            if (in_array($key, $this->exclude)) {
+                continue;
             }
+
+            $continents[$map->ContinentName] = true;
+
+            $json[$key] = array(
+                array((int)$map->MinX, (int)$map->MinY),
+                array((int)$map->MaxX, (int)$map->MaxY),
+            );
+        }
+        // also include continents that does not have map texture (ie r2 maps)
+        foreach ($world->ContLocs as $map) {
+            $key = strtolower($map->SelectionName);
+            if (isset($continents[$key]) || in_array($key, $this->exclude)) {
+                continue;
+            }
+            $area = ($map->MaxX - $map->MinX) * ($map->MaxY - $map->MinY);
+            if ($area === 0) {
+                continue;
+            }
+            $json[$key] = array(
+                array((int)$map->MinX, (int)$map->MinY),
+                array((int)$map->MaxX, (int)$map->MaxY),
+            );
         }
         file_put_contents($outFile, json_encode($json, JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT));
     }

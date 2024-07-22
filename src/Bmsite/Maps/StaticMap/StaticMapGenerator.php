@@ -30,11 +30,18 @@ class StaticMapGenerator
      */
     const MIN_ZOOM = 1;
     const MAX_ZOOM = 12;
+
     /**
-     * max zoom for generated tile images
+     * Zoom ranges for generated tile images
      */
-    const MAP_TILE_ZOOM = 11;
-    const LANG_TILE_ZOOM = 12;
+    /** @var int */
+    private $tileLayerMinZoom = 5;
+    /** @var int */
+    private $tileLayerMaxZoom = 10;
+    /** @var int */
+    private $textLayerMinZoom = 5;
+    /** @var int */
+    private $textLayerMaxZoom = 12;
 
     /** @var bool */
     private $debug = false;
@@ -42,18 +49,23 @@ class StaticMapGenerator
     /** @var string */
     private $format = 'jpg';
 
-    /** @var string */
+    /** @var string|bool */
     private $lang = false;
+
+    /** @var string[] */
     private $languages = array('en', 'fr', 'de', 'es', 'ru');
 
+    /** @var int */
     private $width = 256;
-    private $height = 256;
-
-    /** @var Point */
-    private $center;
 
     /** @var int */
-    private $zoom;
+    private $height = 256;
+
+    /** @var Point|null */
+    private $center = null;
+
+    /** @var int|null */
+    private $zoom = null;
 
     /** @var int */
     private $autoMaxZoom = 7;
@@ -79,8 +91,10 @@ class StaticMapGenerator
     /** @var Bounds */
     public $bounds;
 
-    /** margins for automatic zoom (+5 pixels on either side) */
+    /** @var int */
     public $hMargin = 10;
+
+    /** @var int */
     public $vMargin = 10;
 
     /** @var \Bmsite\Maps\MapProjection */
@@ -461,12 +475,12 @@ class StaticMapGenerator
     protected function draw($canvas)
     {
         // background map layer with maxZoom = 9
-        $layer = new TileLayer($this, self::MAP_TILE_ZOOM);
+        $layer = new TileLayer($this, $this->tileLayerMinZoom, $this->tileLayerMaxZoom);
         $layer->draw($canvas, $this->viewport, $this->zoom);
 
-        if ($this->lang) {
+        if ($this->lang !== false) {
             // background text layer with maxZoom = 10
-            $textLayer = new LangTileLayer($this, self::LANG_TILE_ZOOM);
+            $textLayer = new LangTileLayer($this, $this->textLayerMinZoom, $this->textLayerMaxZoom);
             $textLayer->setLanguage($this->lang);
             $textLayer->draw($canvas, $this->viewport, $this->zoom);
         }

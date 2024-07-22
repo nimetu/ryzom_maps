@@ -37,7 +37,7 @@ Ryzom.icon = function(name, color, size) {
     }
 
     var halfSize = Math.floor(size /2) ;
-    var uri = Ryzom.apiDomain + 'maps/icon/' + size + '/';
+    var uri = Ryzom.apiDomain + '/maps/icon/' + size + '/';
     if (color) {
         uri += color + '/';
     }

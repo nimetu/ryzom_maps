@@ -56,7 +56,7 @@ Ryzom.XY = {
      * @return Object{x, y}
      */
     fromOutgameToIngame: function (x, y) {
-        return this._project(x, y, this.outgame_coordinates, this.ingame_coordinates);
+        return this._project(x, y, this.outgame_coordinates, this.ingame_coordinates, 0);
     },
 
     /**
@@ -215,7 +215,7 @@ Ryzom.XY = {
         // if no match or match is against grid, then check how close we are to defined zone
         // some prime root portal/spawn are little outside the zone
         if (closest && (matches.length == 0 || matches[0] == 'grid')) {
-            if (Ryzom.DEBUG) console.debug('>> zone match not found, try to find closest zone');
+            if (Ryzom.DEBUG) console.debug('>> zone match not found, try to find closest zone to ', x, y, zones, closest);
             var match = this._findClosest(x, y, zones);
             if (matches.length == 0 || match.distance <= closest) {
                 matches = [match.name, 'grid'];
@@ -233,16 +233,18 @@ Ryzom.XY = {
      * @param {Number} y   coordinate in src system
      * @param {Object} src array of zones to map from
      * @param {Object} dst array of zones to map into
+     * @param {Number} closest find closest region if no match otherwise (default 0)
+     *                         scale is in src coordinates
      *
      * @return Object{x, y}
      */
-    _project: function (x, y, src, dst) {
+    _project: function (x, y, src, dst, closest) {
         if (Ryzom.DEBUG) console.debug('(fromToZone)', [x, y]);
 
         var srczone, dstzone, zonename;
 
         // where is this point located
-        var regions = this._belongsTo(x, y, src);
+        var regions = this._belongsTo(x, y, src, closest);
 
         // which of those we have mapped in destination
         for (var i = 0; i < regions.length; i++) {
@@ -345,187 +347,633 @@ Ryzom.XY = {
 
 // this must be called immediately
 (function () {
-    console.debug('Ryzom.XY.initialize');
+    // @mapjs-world-start@
     var worldZones = {
-        "world": [
-            [0, 14160 ],
-            [14160, 0]
-        ],
-        "continent_fyros": [
-            [2920, 3836 ],
-            [7400, 636]
-        ],
-        "continent_matis": [
-            [7760, 7872 ],
-            [13680, 352]
-        ],
-        "continent_tryker": [
-            [7716, 13664 ],
-            [13956, 8224]
-        ],
-        "continent_zorai": [
-            [188, 13800 ],
-            [5788, 8840 ]
-        ],
-        "continent_nexus": [
-            [8196, 7896 ],
-            [10116, 5656 ]
-        ],
-        "continent_bagne": [
-            [8392, 5340 ],
-            [9512, 3740 ]
-        ],
-        "continent_route_gouffre": [
-            [5792, 11504 ],
-            [7712, 4144]
-        ],
-        "continent_terre": [
-            [2372, 7680 ],
-            [5252, 4960 ]
-        ],
-        "continent_sources": [
-            [692, 8600 ],
-            [1972, 7000 ]
-        ],
-        "cont_newbieland": [
-            [0, 16380 ],
-            [3200, 14300 ]
-        ],
-        "cont_kitiniere": [
-            [5000, 15880 ],
-            [6280, 14600 ]
-        ],
-        "place_matis_island_1": [
-            [8500, 15880 ],
-            [9780, 14600 ]
-        ],
-        "place_matis_island_2": [
-            [12880, 15880 ],
-            [13840, 14600 ]
-        ],
-        "grid": [
-            [-108000, 47520],
-            [0, 0]
-        ]
-    };
+    "world": [
+        [0, 15000],
+        [20000, 0]
+    ],
+    "continent_fyros": [
+        [3504, 3836],
+        [7984, 636]
+    ],
+    "continent_matis": [
+        [8800, 8236],
+        [14720, 716]
+    ],
+    "continent_tryker": [
+        [8300, 14500],
+        [14540, 9060]
+    ],
+    "continent_zorai": [
+        [772, 13800],
+        [6372, 8840]
+    ],
+    "continent_sources": [
+        [1276, 8600],
+        [2556, 7000]
+    ],
+    "continent_terre": [
+        [2956, 7680],
+        [5836, 4960]
+    ],
+    "continent_route_gouffre": [
+        [6376, 11504],
+        [8296, 4144]
+    ],
+    "continent_bagne": [
+        [8960, 5340],
+        [10080, 3740]
+    ],
+    "continent_nexus": [
+        [8488, 9016],
+        [11848, 5496]
+    ],
+    "cont_undernexus": [
+        [8488, 9176],
+        [11848, 8056]
+    ],
+    "place_matis_island_1": [
+        [14632, 3340],
+        [15912, 2060]
+    ],
+    "cont_newbieland": [
+        [15820, 2280],
+        [19020, 200]
+    ],
+    "cont_kitiniere": [
+        [15272, 7212],
+        [18916, 3568]
+    ],
+    "grid": [
+        [-108000, 47520],
+        [0, 0]
+    ]};
+// @mapjs-world-end@
+    // @mapjs-server-start@
     var serverZones = {
-        "grid": [
-            [0, -47520],
-            [108000, 0]
+    "grid": [
+        [
+            0,
+            -47520
         ],
-        "continent_fyros": [
-            [15840, -27040],
-            [20320, -23840]
-        ],
-        "continent_matis": [
-            [320, -7840],
-            [6240, -320]
-        ],
-        "continent_tryker": [
-            [13760, -34880],
-            [20000, -29440]
-        ],
-        "continent_zorai": [
-            [6880, -5920],
-            [12480, -960]
-        ],
-        "place_pyr": [
-            [18400, -24720],
-            [19040, -24240]
-        ],
-        "continent_bagne": [
-            [480, -11360],
-            [1600, -9760]
-        ],
-        "continent_route_gouffre": [
-            [5440, -16960],
-            [7360, -9600]
-        ],
-        "continent_sources": [
-            [2560, -11360],
-            [3840, -9760]
-        ],
-        "continent_terre": [
-            [160, -15840],
-            [3040, -13120]
-        ],
-        "continent_nexus": [
-            [7840, -8320],
-            [9760, -6080]
-        ],
-        "place_yrkanis": [
-            [4640, -3680],
-            [4800, -3200]
-        ],
-        "place_natae": [
-            [3600, -3840],
-            [3840, -3680]
-        ],
-        "place_davae": [
-            [4160, -4240],
-            [4320, -4000]
-        ],
-        "place_avalae": [
-            [4800, -4480],
-            [4960, -4320]
-        ],
-        "place_dyron": [
-            [16480, -24800],
-            [16720, -24480]
-        ],
-        "place_thesos": [
-            [19520, -26400],
-            [19760, -26080]
-        ],
-        "place_avendale": [
-            [18000, -31200],
-            [18240, -30960]
-        ],
-        "place_crystabell": [
-            [17760, -32000],
-            [18000, -31760]
-        ],
-        "place_fairhaven": [
-            [16960, -33280],
-            [17440, -32720]
-        ],
-        "place_windermeer": [
-            [15440, -33120],
-            [15760, -32880]
-        ],
-        "place_zora": [
-            [8480, -3040],
-            [8800, -2720]
-        ],
-        "place_hoi_cho": [
-            [9440, -3680],
-            [9680, -3360]
-        ],
-        "place_jen_lai": [
-            [8640, -3840],
-            [8960, -3520]
-        ],
-        "place_min_cho": [
-            [9760, -4320],
-            [10080, -4000]
-        ],
-        "place_matis_island_1": [
-            [14080, -1600],
-            [15360, -320]
-        ],
-        "place_matis_island_2": [
-            [15680, -1600],
-            [16640, -320]
-        ],
-        "cont_newbieland": [
-            [8160, -12320],
-            [11360, -10240]
-        ],
-        "cont_kitiniere": [
-            [1760, -17440],
-            [3040, -16160]
+        [
+            108000,
+            0
         ]
-    };
+    ],
+    "world": [
+        [
+            160,
+            160
+        ],
+        [
+            768,
+            640
+        ]
+    ],
+    "continent_fyros_newbie": [
+        [
+            20960,
+            -27040
+        ],
+        [
+            23200,
+            -25280
+        ]
+    ],
+    "continent_matis_newbie": [
+        [
+            320,
+            -7680
+        ],
+        [
+            2720,
+            -5760
+        ]
+    ],
+    "continent_tryker_newbie": [
+        [
+            20800,
+            -34880
+        ],
+        [
+            23200,
+            -32960
+        ]
+    ],
+    "continent_zorai_newbie": [
+        [
+            7040,
+            -5600
+        ],
+        [
+            8960,
+            -4160
+        ]
+    ],
+    "continent_fyros": [
+        [
+            15840,
+            -27040
+        ],
+        [
+            20320,
+            -23840
+        ]
+    ],
+    "continent_matis": [
+        [
+            320,
+            -7840
+        ],
+        [
+            6240,
+            -320
+        ]
+    ],
+    "continent_tryker": [
+        [
+            13760,
+            -34880
+        ],
+        [
+            20000,
+            -29440
+        ]
+    ],
+    "continent_zorai": [
+        [
+            6880,
+            -5920
+        ],
+        [
+            12480,
+            -960
+        ]
+    ],
+    "place_pyr": [
+        [
+            18400,
+            -24720
+        ],
+        [
+            19040,
+            -24240
+        ]
+    ],
+    "continent_bagne": [
+        [
+            480,
+            -11360
+        ],
+        [
+            1600,
+            -9760
+        ]
+    ],
+    "continent_route_gouffre": [
+        [
+            5440,
+            -16960
+        ],
+        [
+            7360,
+            -9600
+        ]
+    ],
+    "continent_sources": [
+        [
+            2560,
+            -11360
+        ],
+        [
+            3840,
+            -9760
+        ]
+    ],
+    "continent_terre": [
+        [
+            160,
+            -15840
+        ],
+        [
+            3040,
+            -13120
+        ]
+    ],
+    "continent_nexus": [
+        [
+            7680,
+            -9440
+        ],
+        [
+            11040,
+            -5920
+        ]
+    ],
+    "place_marauder_city": [
+        [
+            10560,
+            -8320
+        ],
+        [
+            10880,
+            -7840
+        ]
+    ],
+    "cont_undernexus": [
+        [
+            7680,
+            -9600
+        ],
+        [
+            11040,
+            -8480
+        ]
+    ],
+    "place_yrkanis": [
+        [
+            4640,
+            -3680
+        ],
+        [
+            4800,
+            -3200
+        ]
+    ],
+    "place_natae": [
+        [
+            3600,
+            -3840
+        ],
+        [
+            3840,
+            -3680
+        ]
+    ],
+    "place_davae": [
+        [
+            4160,
+            -4240
+        ],
+        [
+            4320,
+            -4000
+        ]
+    ],
+    "place_avalae": [
+        [
+            4800,
+            -4480
+        ],
+        [
+            4960,
+            -4320
+        ]
+    ],
+    "place_dyron": [
+        [
+            16480,
+            -24800
+        ],
+        [
+            16720,
+            -24480
+        ]
+    ],
+    "place_thesos": [
+        [
+            19520,
+            -26400
+        ],
+        [
+            19760,
+            -26080
+        ]
+    ],
+    "place_avendale": [
+        [
+            18000,
+            -31200
+        ],
+        [
+            18240,
+            -30960
+        ]
+    ],
+    "place_crystabell": [
+        [
+            17760,
+            -32000
+        ],
+        [
+            18000,
+            -31760
+        ]
+    ],
+    "place_fairhaven": [
+        [
+            16960,
+            -33280
+        ],
+        [
+            17440,
+            -32720
+        ]
+    ],
+    "place_windermeer": [
+        [
+            15440,
+            -33120
+        ],
+        [
+            15760,
+            -32880
+        ]
+    ],
+    "place_zora": [
+        [
+            8480,
+            -3040
+        ],
+        [
+            8800,
+            -2720
+        ]
+    ],
+    "place_hoi_cho": [
+        [
+            9440,
+            -3680
+        ],
+        [
+            9680,
+            -3360
+        ]
+    ],
+    "place_jen_lai": [
+        [
+            8640,
+            -3840
+        ],
+        [
+            8960,
+            -3520
+        ]
+    ],
+    "place_min_cho": [
+        [
+            9760,
+            -4320
+        ],
+        [
+            10080,
+            -4000
+        ]
+    ],
+    "place_matis_island_1": [
+        [
+            14080,
+            -1600
+        ],
+        [
+            15360,
+            -320
+        ]
+    ],
+    "place_matis_island_2": [
+        [
+            15680,
+            -1600
+        ],
+        [
+            16640,
+            -320
+        ]
+    ],
+    "region_matis_island_3": [
+        [
+            16960,
+            -1440
+        ],
+        [
+            18399,
+            -320
+        ]
+    ],
+    "continent_tryker_island": [
+        [
+            21120,
+            -30560
+        ],
+        [
+            27200,
+            -29440
+        ]
+    ],
+    "region_tryker_island1": [
+        [
+            21120,
+            -29920
+        ],
+        [
+            21760,
+            -29440
+        ]
+    ],
+    "region_tryker_island2": [
+        [
+            22080,
+            -30240
+        ],
+        [
+            22720,
+            -29440
+        ]
+    ],
+    "region_tryker_island3": [
+        [
+            23040,
+            -30240
+        ],
+        [
+            24320,
+            -29440
+        ]
+    ],
+    "region_tryker_island4": [
+        [
+            24800,
+            -30560
+        ],
+        [
+            25760,
+            -29600
+        ]
+    ],
+    "region_tryker_island5": [
+        [
+            26240,
+            -30400
+        ],
+        [
+            27200,
+            -29440
+        ]
+    ],
+    "continent_zorai_island": [
+        [
+            13920,
+            -4800
+        ],
+        [
+            18720,
+            -3520
+        ]
+    ],
+    "continent_fyros_island": [
+        [
+            21120,
+            -24960
+        ],
+        [
+            25920,
+            -23840
+        ]
+    ],
+    "region_fyros_island1pvp 3": [
+        [
+            21120,
+            -24960
+        ],
+        [
+            22240,
+            -23840
+        ]
+    ],
+    "region_fyros_island2": [
+        [
+            22720,
+            -24799
+        ],
+        [
+            24320,
+            -23840
+        ]
+    ],
+    "region_fyros_island3": [
+        [
+            24800,
+            -24480
+        ],
+        [
+            25920,
+            -23840
+        ]
+    ],
+    "cont_newbieland": [
+        [
+            8160,
+            -12320
+        ],
+        [
+            11360,
+            -10240
+        ]
+    ],
+    "place_starting_zone_starting_city": [
+        [
+            10224,
+            -11904
+        ],
+        [
+            10495,
+            -11648
+        ]
+    ],
+    "cont_corrupted_moor": [
+        [
+            12480,
+            -12160
+        ],
+        [
+            15840,
+            -9440
+        ]
+    ],
+    "cont_kitiniere": [
+        [
+            1760,
+            -17440
+        ],
+        [
+            3040,
+            -16160
+        ]
+    ],
+    "indoors": [
+        [
+            20000,
+            -640
+        ],
+        [
+            21280,
+            -320
+        ]
+    ],
+    "r2_roots": [
+        [
+            30960,
+            -30800
+        ],
+        [
+            40960,
+            -20800
+        ]
+    ],
+    "r2_desert": [
+        [
+            20960,
+            -10800
+        ],
+        [
+            30960,
+            -800
+        ]
+    ],
+    "r2_lakes": [
+        [
+            30960,
+            -10800
+        ],
+        [
+            40960,
+            -800
+        ]
+    ],
+    "r2_forest": [
+        [
+            20960,
+            -20800
+        ],
+        [
+            30960,
+            -10800
+        ]
+    ],
+    "r2_jungle": [
+        [
+            30960,
+            -20800
+        ],
+        [
+            40960,
+            -10800
+        ]
+    ]
+};
+// @mapjs-server-end@
 
     // world conflict with grid.
     // (only used in php tile generator)

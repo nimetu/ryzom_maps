@@ -18,6 +18,7 @@ class FileTileStorage implements TileStorageInterface
     /** @var string */
     protected $tiledir;
 
+    /** @var string */
     protected $ext = 'jpg';
 
     /** @var string */

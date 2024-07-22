@@ -6,7 +6,7 @@ use Bmsite\Maps\StaticMap;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-$tiledir = '/srv/websites/maps/htdocs/webroot/api/tiles';
+$tiledir = __DIR__.'/../../ryzom_map_tiles.git/tiles';
 
 $params = array(
     'maptype' => 'atys',
@@ -32,6 +32,18 @@ $proj = new MapProjection();
 $proj->setServerZones($loader->loadJson('server.json'));
 $proj->setWorldZones($loader->loadJson('world.json'));
 
+// $params = [
+//     //'center' => '17235,-32991', // Fairhaven, city map
+//     'center' => '18383,-32882', // Blackwater, east of Fairhaven
+//     'zoom' => 12,
+//     'language' => 'en',
+//     'size' => '1024x1024',
+// ];
+
+$params = [
+    'markers' => '17201,-32970|17300,-32870|17300,-32970',
+    'zoom' => 10,
+];
 $map = new StaticMap($tiledir, $proj);
 $map->configure($params);
 $etag = $map->etag();

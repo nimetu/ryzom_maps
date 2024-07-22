@@ -149,7 +149,7 @@
                 "fr": "Lieu de repos dAnlor Winn",
                 "de": "Anlor Winn Ruheplatz",
                 "es": "Lugar de Descanso de Anlor Winn",
-                "ru": "Место упокоения Анлора Винна"
+                "ru": "Место Упокоения Анлора Винна"
             }
         },
         "region_start_of_the_collapse": {
@@ -164,7 +164,7 @@
                 "fr": "Début de l'effondrement",
                 "de": "Beginn des Zusammenbruchs",
                 "es": "Inicio del Colapso",
-                "ru": "Начало коллапса"
+                "ru": "Начало Коллапса"
             }
         },
         "region_lacerated_plains": {
@@ -194,7 +194,7 @@
                 "fr": "Champs de décomposition",
                 "de": "Felder des Verfalls",
                 "es": "Campos de Decadencia",
-                "ru": "Поля распада"
+                "ru": "Поля Распада"
             }
         },
         "region_dark_breeding_ground": {
@@ -209,7 +209,7 @@
                 "fr": "Pépinière du mal",
                 "de": "Dunkle Nährboden",
                 "es": "Criadero de Oscuridad",
-                "ru": "Темная питательная среда"
+                "ru": "Темная Питательная Среда"
             }
         },
         "region_the_forbidden_secret": {
@@ -224,7 +224,7 @@
                 "fr": "Secret interdit",
                 "de": "Verbotene Geheimnis",
                 "es": "El Secreto Prohibido",
-                "ru": "Запретный секрет"
+                "ru": "Запретный Секрет"
             }
         },
         "place_tcm_bloody_arena": {
@@ -239,7 +239,7 @@
                 "fr": "Arène sanglante",
                 "de": "Blutige Arena",
                 "es": "Arena Sangrienta",
-                "ru": "Кровавая арена"
+                "ru": "Кровавая Арена"
             }
         }
     },
@@ -1080,7 +1080,7 @@
                 "en": "Route of the Flaming Forest",
                 "fr": "Route de la Forêt Enflammée",
                 "de": "Weg des verbrannten Waldes",
-                "es": "Ruta de la Llama Ardiente",
+                "es": "Ruta del Bosque Llameante",
                 "ru": "Путь в пылающий лес"
             }
         },
@@ -1800,7 +1800,7 @@
                 "en": "Flaming Forest",
                 "fr": "Forêt Enflammée",
                 "de": "Flammender Wald",
-                "es": "Bosque en Llamas",
+                "es": "Bosque Llameante",
                 "ru": "Пылающая Чаща"
             }
         },
@@ -5134,11 +5134,11 @@
             "regionforce": 0,
             "lmtype": 4,
             "text": {
-                "en": "Mere of dreams",
-                "fr": "Étang des rêves",
-                "de": "Teich der Träume",
-                "es": "Solo de Sueños",
-                "ru": "uir2_forest31"
+                "en": "Atysmas Isle",
+                "fr": "île d'Atysmas",
+                "de": "Atysmas-Insel",
+                "es": "Isla de Atysmas",
+                "ru": "Остров Атисмас"
             }
         },
         "uir2_forest30": {
@@ -8603,7 +8603,7 @@
                 "en": "Watergate Border Post",
                 "fr": "Poste Frontière de la Porte des Eaux",
                 "de": "Wasserpforte-Grenzposten",
-                "es": "Puerto Fronterizo de Puerta del Agua",
+                "es": "Puerto Fronterizo Watergate",
                 "ru": "Пограничная застава Врата Вод"
             }
         },

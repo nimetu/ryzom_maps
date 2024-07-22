@@ -5,10 +5,12 @@
  * @copyright (c) 2014 Meelis Mägi
  * @license http://opensource.org/licenses/LGPL-3.0
  */
+require('./imports.js');
 
 describe("Leaflet map Ryzom CRS", function () {
-    var xyWorld = L.point(7400, 636);
-    var xyServer = L.point(20320, -23840);
+    // center point
+    var xyWorld = L.point(10000, 7500);
+    var xyServer = L.point(9192, -7924);
 
     describe("world projection", function () {
         it("server to world", function () {

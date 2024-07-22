@@ -80,3 +80,7 @@ OpenLayers.Geometry.distanceSquaredToSegment = function (point, segment) {
         along: along
     };
 };
+
+// 2024-10-17: Nimetu: This allows tests to run under node
+window.OpenLayers = window.OpenLayers || OpenLayers;
+
