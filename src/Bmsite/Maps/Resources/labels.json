@@ -41,7 +41,7 @@
                 "en": "West Saprun Research Center",
                 "fr": "Centre de Recherche de la Montée de Sève Ouest",
                 "de": "Forschungszentrum an der Westlichen Sapquelle",
-                "es": "Centro de Investigación de la Saprun del Oeste",
+                "es": "Centro de Investigación Montaña de Savia Oeste",
                 "ru": "Исследовательский центр западного Сэпотока"
             }
         },
@@ -56,7 +56,7 @@
                 "en": "East Saprun Workshop",
                 "fr": "Atelier de la Montée de Sève Est",
                 "de": "Werkstatt an der Östlichen Sapquelle",
-                "es": "Taller de Saprun del Este",
+                "es": "Taller de Montaña de Savia Este",
                 "ru": "Мастерская восточного Сэпотока"
             }
         },
@@ -71,7 +71,7 @@
                 "en": "Nexusgate Stronghold",
                 "fr": "Forteresse de la Porte du Nexus",
                 "de": "Festung an der Nexuspforte",
-                "es": "Fortaleza de Nexusgate",
+                "es": "Fortaleza Puerta del Nexo",
                 "ru": "Форт Врата Нексуса"
             }
         },
@@ -86,7 +86,7 @@
                 "en": "Hallowed Mountain",
                 "fr": "Montagne Sacrée",
                 "de": "Heiliger Berg",
-                "es": "Montana Sagrada",
+                "es": "Montaña Sagrada",
                 "ru": "Священная Гора"
             }
         },
@@ -101,7 +101,7 @@
                 "en": "Saprun Watch",
                 "fr": "Guet de la Montée de Sève",
                 "de": "Sapquellen-Wacht",
-                "es": "Reloj Saprun",
+                "es": "Vigilancia de Montaña de Savia",
                 "ru": "Вахта Текущего Сэпа"
             }
         },
@@ -116,7 +116,7 @@
                 "en": "Templedoom",
                 "fr": "Temple Maudit",
                 "de": "Tempel der Verdammnis",
-                "es": "Templedoom",
+                "es": "Templo de Perdición",
                 "ru": "Храм Обреченных"
             }
         }
@@ -132,8 +132,8 @@
             "text": {
                 "en": "Corrupted Moors",
                 "fr": "Landes corrompues",
-                "de": "Verseuchte Heiden",
-                "es": "Paramos Corruptos",
+                "de": "Verseuchtes Ödland",
+                "es": "Páramos Corruptos",
                 "ru": "Трясины Тления"
             }
         },
@@ -193,7 +193,7 @@
                 "en": "Fyros Old City",
                 "fr": "Ancienne cité Fyros",
                 "de": "Alte Fyros-Stadt",
-                "es": "Antigua Ciudad de los Fyros",
+                "es": "Antigua Ciudad Fyros",
                 "ru": "Старый город Файросов"
             }
         },
@@ -208,7 +208,7 @@
                 "en": "Valley of Mists",
                 "fr": "Vallée des brumes",
                 "de": "Nebeltal",
-                "es": "Valle de Mist",
+                "es": "Valle de Niebla",
                 "ru": "Долина Туманов"
             }
         },
@@ -238,7 +238,7 @@
                 "en": "Camp of the Company of the Eternal Tree",
                 "fr": "Camp de la Compagnie de l'arbre éternel",
                 "de": "Lager der Gemeinschaft des Ewigen Baumes",
-                "es": "Campo de la Compañía del Árbol Eterno",
+                "es": "Campamento de la Compañía del Árbol Eterno",
                 "ru": "Лагерь Общества Вечного Древа"
             }
         },
@@ -277,7 +277,7 @@
         "continent_fyros": {
             "pos": [
                 18080,
-                -25441
+                -25442
             ],
             "regionforce": 0,
             "lmtype": -1,
@@ -390,7 +390,7 @@
                 "en": "Outlaw Canyon",
                 "fr": "Canyon Interdit",
                 "de": "Canyon der Gesetzlosen",
-                "es": "Canon de los Forajidos",
+                "es": "Cañón de Forajidos",
                 "ru": "Каньон Беззакония"
             }
         },
@@ -433,7 +433,7 @@
             "lmtype": 2,
             "text": {
                 "en": "Blackburn Trade Post",
-                "fr": "Poste d'Echange de la Combustion",
+                "fr": "Poste d'Échange de la Combustion",
                 "de": "Schwarzbrand-Handelsposten",
                 "es": "Puesto de Comercio Blackburn",
                 "ru": "Торговая застава Кострище"
@@ -480,7 +480,7 @@
                 "en": "Canyon Pass",
                 "fr": "Col aux Canyons",
                 "de": "Schluchtenpass",
-                "es": "Pase del Canon ",
+                "es": "Paso del Cañón",
                 "ru": "Горловина Каньона"
             }
         },
@@ -496,7 +496,7 @@
                 "fr": "Marché des Bonnes Affaires",
                 "de": "Fremdenbasar",
                 "es": "Mercado de Cheapside",
-                "ru": "Рынок Чипсайд "
+                "ru": "Рынок Чипсайд"
             }
         },
         "place_pyr_p_west_entrance": {
@@ -510,7 +510,7 @@
                 "en": "Cerakos Gate",
                 "fr": "Porte de Cerakos",
                 "de": "Cerakos-Tor",
-                "es": "Puerta de Cerakos",
+                "es": "Puerta Cerakos",
                 "ru": "Врата Церакос"
             }
         },
@@ -540,7 +540,7 @@
                 "en": "Academy Place",
                 "fr": "Place des Académies",
                 "de": "Platz der Akademie",
-                "es": "Lugar de la Academia",
+                "es": "Academias",
                 "ru": "Военная Академия"
             }
         },
@@ -555,7 +555,7 @@
                 "en": "Oasis Fountain Square",
                 "fr": "Carré à la Fontaine",
                 "de": "Brunnenplatz",
-                "es": "Plaza de la Fuente del Oasis",
+                "es": "Plaza Fuente del Oasis",
                 "ru": "Площадь Фонтана Оазиса"
             }
         },
@@ -570,7 +570,7 @@
                 "en": "Guardhouse Place",
                 "fr": "Place des Corps de Garde",
                 "de": "Turm der Schildwacht",
-                "es": "Lugar de la Cárcel Militar",
+                "es": "Cárcel Militar",
                 "ru": "Городские Казармы"
             }
         },
@@ -600,7 +600,7 @@
                 "en": "Karavia Square",
                 "fr": "Square de Karavia",
                 "de": "Karavia-Platz",
-                "es": "Plaza de Karavia",
+                "es": "Plaza Karavia",
                 "ru": "Площадь Каравии"
             }
         },
@@ -615,7 +615,7 @@
                 "en": "Agora",
                 "fr": "Agora",
                 "de": "Agora",
-                "es": "Agora",
+                "es": "Ágora",
                 "ru": "Агора"
             }
         },
@@ -630,7 +630,7 @@
                 "en": "Forge",
                 "fr": "Forge",
                 "de": "Schmiede",
-                "es": "Fundición \/ Herrería",
+                "es": "Fragua",
                 "ru": "Кузня"
             }
         },
@@ -661,7 +661,7 @@
                 "fr": "Chemin des Bonnes Affaires",
                 "de": "Basarstraße",
                 "es": "Camino de Cheapside",
-                "ru": "Улица Чипсайд "
+                "ru": "Улица Чипсайд"
             }
         },
         "place_pyr_p_street_3": {
@@ -675,7 +675,7 @@
                 "en": "Trader's Way",
                 "fr": "Chemin des Négoces",
                 "de": "Händlergasse",
-                "es": "La Manera del Comerciante",
+                "es": "Camino del Comerciante",
                 "ru": "Улица Торговцев"
             }
         },
@@ -705,7 +705,7 @@
                 "en": "Northgate Road",
                 "fr": "Route du Nord",
                 "de": "Nordtorstraße",
-                "es": "Carretera de la Puerta del Norte",
+                "es": "Carretera de Puerta Norte",
                 "ru": "Путь Северных Врат"
             }
         },
@@ -765,7 +765,7 @@
                 "en": "Rydon's Walk",
                 "fr": "Promenade de Rydon",
                 "de": "Rydon-Weg",
-                "es": "Camino de Rydon",
+                "es": "Camino Rydon",
                 "ru": "Переулок Райдона"
             }
         },
@@ -795,7 +795,7 @@
                 "en": "Leanon Street",
                 "fr": "Rue Leanon",
                 "de": "Leanon-Straße",
-                "es": "Calle Leanon ",
+                "es": "Calle Leanon",
                 "ru": "Улица Леанон"
             }
         },
@@ -810,7 +810,7 @@
                 "en": "Dexton Street",
                 "fr": "Rue Dexton",
                 "de": "Dexton-Straße",
-                "es": "Calle Dexton ",
+                "es": "Calle Dexton",
                 "ru": "Улица Декстона"
             }
         },
@@ -825,7 +825,7 @@
                 "en": "Guardhouse Way",
                 "fr": "Chemin des Corps de Garde",
                 "de": "Weg der Schildwacht",
-                "es": "Camino de la Cárcel Militar",
+                "es": "Camino de Cárcel Militar",
                 "ru": "Казарменный переулок"
             }
         },
@@ -840,7 +840,7 @@
                 "en": "Upper Piros Street",
                 "fr": "Rue du Haut-Piros",
                 "de": "Obere Piros-Straße",
-                "es": "Calle de Piros de Arriba",
+                "es": "Calle Pyr Alto",
                 "ru": "Улица Верхний Пайрос"
             }
         },
@@ -855,7 +855,7 @@
                 "en": "Karavia Road",
                 "fr": "Route de Karavia",
                 "de": "Karavia-Straße",
-                "es": "Calla Karavia",
+                "es": "Calle Karavia",
                 "ru": "Каравия авеню"
             }
         },
@@ -870,7 +870,7 @@
                 "en": "Forge and Hammer Way",
                 "fr": "Route de la Forge et du Marteau",
                 "de": "Weg von Hammer und Schmiede",
-                "es": "Forma de la Fragua y del Martillo",
+                "es": "Fragua y Martillo",
                 "ru": "Переулок Молота и Наковальни"
             }
         },
@@ -885,7 +885,7 @@
                 "en": "Lower Piros Street",
                 "fr": "Rue du Bas-Piros",
                 "de": "Untere Piros-Straße",
-                "es": "Calle de Piros de Abajo",
+                "es": "Calle Pyr Bajo",
                 "ru": "Улица Нижний Пайрос"
             }
         },
@@ -900,7 +900,7 @@
                 "en": "Southgate Road",
                 "fr": "Route du Sud",
                 "de": "Südtorstraße",
-                "es": "Carretera de la Puerta del Sur",
+                "es": "Carretera Puerta del Sur",
                 "ru": "Путь Южных врат"
             }
         },
@@ -915,7 +915,7 @@
                 "en": "Bath Lane",
                 "fr": "Chemin de la Cuvette",
                 "de": "Badegasse",
-                "es": "Carril de Baño",
+                "es": "Calle de los Baños",
                 "ru": "Улица Терм"
             }
         },
@@ -945,7 +945,7 @@
                 "en": "Fountain Road",
                 "fr": "Route à la Fontaine",
                 "de": "Quellweg",
-                "es": "Carretera de la Fuente",
+                "es": "Carretera La Fuente",
                 "ru": "Улица Фонтанов"
             }
         },
@@ -975,7 +975,7 @@
                 "en": "Merchant's Walk",
                 "fr": "Promenade des Marchands",
                 "de": "Kaufmannsgasse",
-                "es": "Caminata del Comerciante",
+                "es": "Camino del Mercader",
                 "ru": "Купеческий переулок"
             }
         },
@@ -1003,7 +1003,7 @@
             "lmtype": 2,
             "text": {
                 "en": "Northlake Trade Post",
-                "fr": "Poste d'Echange du Lac du Nord",
+                "fr": "Poste d'Échange du Lac du Nord",
                 "de": "Handelsposten am Nördlichen See",
                 "es": "Puesto de Comercio Lago del Norte",
                 "ru": "Торговая застава у Севеерного Озера"
@@ -1020,7 +1020,7 @@
                 "en": "Barkgully Workshop",
                 "fr": "Atelier du Couloir aux Ecorces",
                 "de": "Rindenspalt-Werkstatt",
-                "es": "Taller Barkgully",
+                "es": "Taller Barranco de Corteza",
                 "ru": "Мастерская Корковражье"
             }
         },
@@ -1035,7 +1035,7 @@
                 "en": "West Blackburn Border Post",
                 "fr": "Poste Frontière Ouest de la Combustion",
                 "de": "West-Schwarzbrand-Grenzposten",
-                "es": "Puesto Fronterizo Blackburn del Este",
+                "es": "Puesto Fronterizo Blackburn Este",
                 "ru": "Пограничная застава Западное Кострище"
             }
         },
@@ -1080,7 +1080,7 @@
                 "en": "Midpeaks",
                 "fr": "Pics du Milieu",
                 "de": "Mittlere Gipfel",
-                "es": "Midpeaks",
+                "es": "Picos Centrales",
                 "ru": "Средигорье"
             }
         },
@@ -1095,7 +1095,7 @@
                 "en": "Barkgully",
                 "fr": "Couloir aux Ecorces",
                 "de": "Rindenriss",
-                "es": "Barkgully",
+                "es": "Barranco de Corteza",
                 "ru": "Корковражье"
             }
         },
@@ -1125,7 +1125,7 @@
                 "en": "East Dyron Workshop",
                 "fr": "Atelier de Dyron Est",
                 "de": "Dyron-Ost-Werkstatt",
-                "es": "Taller Dyron del Este",
+                "es": "Taller Dyron Este",
                 "ru": "Мастерская Восточный Дайрон"
             }
         },
@@ -1140,7 +1140,7 @@
                 "en": "Frahar Towers Border Post",
                 "fr": "Poste Frontière des Tours de Frahar",
                 "de": "Frahar-Türme-Grenzposten",
-                "es": "Puesto Fronterizo Torres de Frahar",
+                "es": "Puesto Fronterizo Torres Frahar",
                 "ru": "Пограничная застава Башни Фрахаров"
             }
         },
@@ -1185,7 +1185,7 @@
                 "en": "Lonesome Pass",
                 "fr": "Col de la Solitude",
                 "de": "Einsamer Pass",
-                "es": "Pase Solitario",
+                "es": "Paso Solitario",
                 "ru": "Страда Одиночества"
             }
         },
@@ -1198,9 +1198,9 @@
             "lmtype": 5,
             "text": {
                 "en": "The Vast Expanse",
-                "fr": "Vaste Etendue",
+                "fr": "Vaste Étendue",
                 "de": "Die enorme Weite",
-                "es": "La Vasta Extensión ",
+                "es": "Vasta Extensión",
                 "ru": "Широкие просторы"
             }
         },
@@ -1230,8 +1230,8 @@
                 "en": "Barker Canyon Stronghold",
                 "fr": "Forteresse du Canyon de Barker",
                 "de": "Rindenschlucht-Festung",
-                "es": "Fortaleza del Canon del Descortezador",
-                "ru": "Форт Каньона Искусников "
+                "es": "Fortaleza Cañón del Descortezador",
+                "ru": "Форт Каньона Искусников"
             }
         },
         "place_outpost_fyros_18": {
@@ -1245,8 +1245,8 @@
                 "en": "Barker Canyon Farm",
                 "fr": "Ferme du Canyon de Barker",
                 "de": "Rindenschlucht-Hof",
-                "es": "Granja Canon del Descortezador",
-                "ru": "Ферма Каньона Искусников"
+                "es": "Granja Cañón del Descortezador",
+                "ru": "Ферма Каньона Короедов"
             }
         },
         "place_outpost_fyros_19": {
@@ -1260,7 +1260,7 @@
                 "en": "Highridges Diplomatic Outpost",
                 "fr": "Avant-Poste Diplomatique des Hauts Récifs",
                 "de": "Diplomatischer Außenposten am Hohen Riff",
-                "es": "Puesto Diplomático Highridges",
+                "es": "Puesto Diplomático Cimas Altas",
                 "ru": "Дипломатическая миссия Вышние Хребты"
             }
         },
@@ -1272,7 +1272,7 @@
             "regionforce": 0,
             "lmtype": 2,
             "text": {
-                "en": "Workshop of the Waste ",
+                "en": "Workshop of the Waste",
                 "fr": "Atelier des Terres Désolées",
                 "de": "Werkstatt des Untergangs",
                 "es": "Taller de los Residuos",
@@ -1305,7 +1305,7 @@
                 "en": "The Waste",
                 "fr": "Terres Désolées",
                 "de": "Der Untergang",
-                "es": "Los Residuos",
+                "es": "Residuos",
                 "ru": "Пустошь"
             }
         },
@@ -1320,7 +1320,7 @@
                 "en": "Highridges",
                 "fr": "Hauts Récifs",
                 "de": "Hohes Riff",
-                "es": "Highridges",
+                "es": "Cimas Altas",
                 "ru": "Вышние Хребты"
             }
         },
@@ -1350,7 +1350,7 @@
                 "en": "Varynx Rise",
                 "fr": "Côte des Varinx",
                 "de": "Varinx-Hänge",
-                "es": "La Cuesta del Varinx",
+                "es": "Cuesta del Varinx",
                 "ru": "Возвышение Варинксов"
             }
         },
@@ -1367,6 +1367,21 @@
                 "de": "Wildes Wasser",
                 "es": "Aguas Turbulentas",
                 "ru": "Неспокойные воды"
+            }
+        },
+        "place_marauder_camp_sawdustmines": {
+            "pos": [
+                20169,
+                -25264
+            ],
+            "regionforce": 0,
+            "lmtype": 1,
+            "text": {
+                "en": "Marauder Camp",
+                "fr": "Camp Maraudeur",
+                "de": "Lager der Marodeure",
+                "es": "Campamento Marauder",
+                "ru": "Marauder Camp"
             }
         },
         "place_dyron": {
@@ -1395,7 +1410,7 @@
                 "en": "Dyron Hill Border Post",
                 "fr": "Poste Frontière de la Colline de Dyron",
                 "de": "Grenzposten der Dyron-Anhöhe",
-                "es": "Puesto Fronterizo de la Colina de Dyron",
+                "es": "Puesto Fronterizo Colina de Dyron",
                 "ru": "Пограничная Застава Холм Дайрона"
             }
         },
@@ -1410,7 +1425,7 @@
                 "en": "North Dyron Stronghold",
                 "fr": "Forteresse de Dyron Nord",
                 "de": "Nord-Dyron-Festung",
-                "es": "Fortaleza de Dyron del Norte",
+                "es": "Fortaleza de Dyron Norte",
                 "ru": "Форт Северный Дайрон"
             }
         },
@@ -1425,7 +1440,7 @@
                 "en": "Dragon's Tail Workshop",
                 "fr": "Atelier de la Queue du Dragon",
                 "de": "Drachenschwanz-Werkstatt",
-                "es": "Taller de la Cola del Dragón ",
+                "es": "Taller de Cola del Dragón",
                 "ru": "Мастерская Хвост Дракона"
             }
         },
@@ -1440,7 +1455,7 @@
                 "en": "Malmont Farm",
                 "fr": "Ferme de Malmontagne",
                 "de": "Malmont-Hof",
-                "es": "Granja Malmont",
+                "es": "Granja Monte del Mal",
                 "ru": "Ферма Мальмонт"
             }
         },
@@ -1455,7 +1470,7 @@
                 "en": "Canyon Road Workshop",
                 "fr": "Atelier de la Route du Canyon",
                 "de": "Canyonweg-Werkstatt",
-                "es": "Taller de la Calle del Dragón ",
+                "es": "Taller de Calle del Dragón",
                 "ru": "Мастерская дороги Каньонов"
             }
         },
@@ -1485,7 +1500,7 @@
                 "en": "Dragon's Tail",
                 "fr": "Queue du Dragon",
                 "de": "Drachenschwanz",
-                "es": "Cola del Dragón ",
+                "es": "Cola del Dragón",
                 "ru": "Хвост Дракона"
             }
         },
@@ -1500,7 +1515,7 @@
                 "en": "Malmont",
                 "fr": "Malmontagne",
                 "de": "Malmont",
-                "es": "Malmont",
+                "es": "Monte del Mal",
                 "ru": "Мальмонт"
             }
         },
@@ -1515,7 +1530,7 @@
                 "en": "Ruins of Mossok",
                 "fr": "Ruines de Mossok",
                 "de": "Ruinen von Mossok",
-                "es": "Ruinas de",
+                "es": "Ruinas",
                 "ru": "Руины Моссока"
             }
         },
@@ -1545,7 +1560,7 @@
                 "en": "Thesos Springs Stronghold",
                 "fr": "Forteresse des Sources de Thesos",
                 "de": "Festung an der Thesos-Quelle",
-                "es": "Fortaleza de los Manantiales de Thesos",
+                "es": "Fortaleza Manantiales de Thesos",
                 "ru": "Форт Родники Фессоса"
             }
         },
@@ -1558,9 +1573,9 @@
             "lmtype": 2,
             "text": {
                 "en": "Running Ridge Workshop",
-                "fr": "Atelier de la Crête Eternelle",
+                "fr": "Atelier de la Crête Éternelle",
                 "de": "Werkstatt am Langen Grat",
-                "es": "Taller de la Cadena en Marcha",
+                "es": "Taller Cadena en Marcha",
                 "ru": "Мастерская Бегущей Гряды"
             }
         },
@@ -1575,7 +1590,7 @@
                 "en": "South Range Diplomatic Outpost",
                 "fr": "Avant-Poste Diplomatique de la Chaîne Sud",
                 "de": "Diplomatischer Außenposten der Südlichen Hügelkette",
-                "es": "Puesto Diplomático de la Cordillera Sur",
+                "es": "Puesto Diplomático Cordillera Sur",
                 "ru": "Дипломатическая миссия южного Предела"
             }
         },
@@ -1590,7 +1605,7 @@
                 "en": "Southend Dune Farm",
                 "fr": "Ferme des Dunes du Bas",
                 "de": "Hof der Entlegenen Dünen",
-                "es": "Granja de la Dunas Southend",
+                "es": "Granja Dunas Southend",
                 "ru": "Ферма Южные дюны"
             }
         },
@@ -1605,7 +1620,7 @@
                 "en": "Kipucka Plain Border Post",
                 "fr": "Poste Frontière de la Plaine des Kipuckas",
                 "de": "Grenzposten der Kipucka-Ebene",
-                "es": "Puesto Fronterizo de los Llanos de Kipucka",
+                "es": "Puesto Fronterizo Llanos de Kipucka",
                 "ru": "Пограничная Застава Равнин Кипакка"
             }
         },
@@ -1620,7 +1635,7 @@
                 "en": "Ash Gorge",
                 "fr": "Gorge des Cendres",
                 "de": "Schlucht der Asche",
-                "es": "El Desfiladero de las Cenizas",
+                "es": "Desfiladero de Cenizas",
                 "ru": "Пепельная Пасть"
             }
         },
@@ -1650,7 +1665,7 @@
                 "en": "Thesos Billabong",
                 "fr": "Mare de Thesos",
                 "de": "Thesos-Flussbett",
-                "es": "Billabong de Thesos",
+                "es": "Estanque de Thesos",
                 "ru": "Заводи Фессоса"
             }
         },
@@ -1680,7 +1695,7 @@
                 "en": "Thesos Falls Tor",
                 "fr": "Butte des Chutes de Thesos",
                 "de": "Thesos-Wasserfallpforte",
-                "es": "Catarata Tor de Thesos ",
+                "es": "Catarata de Thesos",
                 "ru": "Водопад Фессоса"
             }
         },
@@ -1695,7 +1710,7 @@
                 "en": "Kipucka Plain",
                 "fr": "Plaine des Kipuckas",
                 "de": "Kipucka-Ebene",
-                "es": "Llanura de la Kipucka",
+                "es": "Llanura Kipucka",
                 "ru": "Равнина Кипакки"
             }
         },
@@ -1710,7 +1725,7 @@
                 "en": "Dragon's Spine Stronghold",
                 "fr": "Forteresse de la Colonne du Dragon",
                 "de": "Stachel-des-Drachen-Festung",
-                "es": "Fortaleza del Espinazo del Dragón ",
+                "es": "Fortaleza de Columna del Dragón",
                 "ru": "Форт Драконий Хребет"
             }
         },
@@ -1725,7 +1740,7 @@
                 "en": "Dragon's Spine Workshop",
                 "fr": "Atelier de la Colonne du Dragon",
                 "de": "Stachel-des-Drachen-Werkstatt",
-                "es": "Taller del Espinazo del Dragón ",
+                "es": "Taller de Columna del Dragón",
                 "ru": "Мастерская Драконий Хребет"
             }
         },
@@ -1740,7 +1755,7 @@
                 "en": "Dragon's Spine",
                 "fr": "Colonne du Dragon",
                 "de": "Stachel des Drachen",
-                "es": "Columna de Dragón ",
+                "es": "Columna del Dragón",
                 "ru": "Драконий Хребет"
             }
         },
@@ -1755,8 +1770,8 @@
                 "en": "Lucenthead Hurst",
                 "fr": "Horst Etincelant",
                 "de": "Grat des Funkelnden Waldes",
-                "es": "Lucenthead Hurst",
-                "ru": " Сверкающая Отмель"
+                "es": "Horizonte Espumoso",
+                "ru": "Сверкающая Отмель"
             }
         },
         "place_lieudit_outlawcanyon_3": {
@@ -1770,8 +1785,8 @@
                 "en": "Dragon's Gullet Impasse",
                 "fr": "Impasse de la Gorge du Dragon",
                 "de": "Drachenschlund-Klamm",
-                "es": "Callejón de las Fauces del Dragón ",
-                "ru": "Глотка Дракона "
+                "es": "Callejón Fauces del Dragón",
+                "ru": "Глотка Дракона"
             }
         },
         "place_outpost_fyros_27": {
@@ -1830,7 +1845,7 @@
                 "en": "Varynx Haunt",
                 "fr": "Repère des Varinx",
                 "de": "Varinx-Revier",
-                "es": "Guarida del Varynxx",
+                "es": "Guarida del Varynx",
                 "ru": "Обиталище Варинксов"
             }
         },
@@ -1845,7 +1860,7 @@
                 "en": "Secret Kami Oasis",
                 "fr": "Oasis Secret des Kamis",
                 "de": "Geheime Kami-Oase",
-                "es": "Oasis Secreto Kami ",
+                "es": "Oasis Secreto Kami",
                 "ru": "Тайный Оазис Ками"
             }
         },
@@ -1858,8 +1873,8 @@
             "lmtype": 3,
             "text": {
                 "en": "North Pyr Stables",
-                "fr": "Etables Nord de Pyr",
-                "de": "Nord-Stall von Pyr ",
+                "fr": "Étables Nord de Pyr",
+                "de": "Nord-Stall von Pyr",
                 "es": "Establos al Norte de Pyr",
                 "ru": "Стойла Северного Пайра"
             }
@@ -1873,7 +1888,7 @@
             "lmtype": 3,
             "text": {
                 "en": "South Pyr Stables",
-                "fr": "Etables Sud de Pyr",
+                "fr": "Étables Sud de Pyr",
                 "de": "Süd-Stall von Pyr",
                 "es": "Establos al Sur de Pyr",
                 "ru": "Стойла Южного Пайра"
@@ -1888,10 +1903,25 @@
             "lmtype": 3,
             "text": {
                 "en": "East Pyr Stables",
-                "fr": "Etables Est de Pyr",
+                "fr": "Étables Est de Pyr",
                 "de": "Ost-Stall von Pyr",
                 "es": "Establos al Este de Pyr",
                 "ru": "Стойла Восточного Пайра"
+            }
+        },
+        "marauder_camp_stable": {
+            "pos": [
+                20125,
+                -25265
+            ],
+            "regionforce": 0,
+            "lmtype": 3,
+            "text": {
+                "en": "Marauder Stables",
+                "fr": "Étables Maraudeurs",
+                "de": "Stall der Marodeure",
+                "es": "Establos Marauders",
+                "ru": "Стойло мародеров"
             }
         },
         "dyron_stable": {
@@ -1903,7 +1933,7 @@
             "lmtype": 3,
             "text": {
                 "en": "Dyron Stables",
-                "fr": "Etables de Dyron",
+                "fr": "Étables de Dyron",
                 "de": "Stall von Dyron",
                 "es": "Establos de Dyron",
                 "ru": "Стойла Дайрона"
@@ -1918,7 +1948,7 @@
             "lmtype": 3,
             "text": {
                 "en": "Thesos Stables",
-                "fr": "Etables de Thesos",
+                "fr": "Étables de Thesos",
                 "de": "Stall von Thesos",
                 "es": "Establos de Thesos",
                 "ru": "Стойла Фессоса"
@@ -1997,7 +2027,7 @@
                 "en": "Karavan Camp of Aelius Dunes",
                 "fr": "Camp Karavan des Dunes d'Aelius",
                 "de": "Karavan-Lager der Aelius-Dünen",
-                "es": "Campamento Karavan de las Dunas Aelius",
+                "es": "Campamento Karavan de Dunas Aelius",
                 "ru": "Лагерь Каравана в дюнах Аэлиуса"
             }
         },
@@ -2012,7 +2042,7 @@
                 "en": "Kami Camp of Aelius Dunes",
                 "fr": "Camp Kami des Dunes d'Aelius",
                 "de": "Kami-Lager der Aelius-Dünen",
-                "es": "Campamento Kami de las Dunas Aelius",
+                "es": "Campamento Kami de Dunas Aelius",
                 "ru": "Лагерь Ками в дюнах Аэлиуса"
             }
         }
@@ -2044,7 +2074,7 @@
                 "en": "Fyros Island",
                 "fr": "Ile Fyros",
                 "de": "Fyros-Insel",
-                "es": "Isla de los Fyros ",
+                "es": "Isla de los Fyros",
                 "ru": "Земли файросов"
             }
         },
@@ -2136,7 +2166,7 @@
                 "en": "a building",
                 "fr": "bâtiment",
                 "de": "Gebäude",
-                "es": "un edificio ",
+                "es": "edificio",
                 "ru": "здание"
             }
         }
@@ -2153,7 +2183,7 @@
                 "en": "Kitins' Lair",
                 "fr": "continent de la Kitinière",
                 "de": "Das Kitinnest",
-                "es": "Madriguera de los Kitins",
+                "es": "Kitinero",
                 "ru": "Логово китинов"
             }
         },
@@ -2168,7 +2198,7 @@
                 "en": "Kitins' Lair",
                 "fr": "Kitinière",
                 "de": "Kitin-Nest",
-                "es": "Madriguera de los Kitins",
+                "es": "Kitinero",
                 "ru": "Логово китинов"
             }
         },
@@ -2213,7 +2243,7 @@
                 "en": "Prime Eggs Room",
                 "fr": "Chambre des oeufs primaires",
                 "de": "Haupt-Gelegeraum",
-                "es": "Sala del Huevo Principal",
+                "es": "Sala de huevos",
                 "ru": "Главный зал яиц"
             }
         },
@@ -2266,8 +2296,8 @@
     "matis": {
         "continent_matis": {
             "pos": [
-                3245,
-                -3878
+                3249,
+                -3874
             ],
             "regionforce": 0,
             "lmtype": -1,
@@ -2350,7 +2380,7 @@
                 "en": "Knoll of Dissent",
                 "fr": "Tertre de la Dissidence",
                 "de": "Hügel der Abtrünnigen",
-                "es": "Monte de la Discordancia",
+                "es": "Monte de la Discordia",
                 "ru": "Холмы раскола"
             }
         },
@@ -2395,7 +2425,7 @@
                 "en": "Westgrove Stronghold",
                 "fr": "Forteresse du Bosquet Ouest",
                 "de": "Westwald-Festung",
-                "es": "Fortaleza o Bastión de Westgrove",
+                "es": "Fortaleza de Bosque Oeste",
                 "ru": "Форт Западной Рощи"
             }
         },
@@ -2410,7 +2440,7 @@
                 "en": "Eastgrove Workshop",
                 "fr": "Atelier du Bosquet Est",
                 "de": "Ostwald-Werkstatt",
-                "es": "Taller de Eastgrove",
+                "es": "Taller de Bosque Este",
                 "ru": "Мастерская Восточной Рощи"
             }
         },
@@ -2425,7 +2455,7 @@
                 "en": "Highgrove Research Center",
                 "fr": "Centre de Recherche du Bosquet Supérieur",
                 "de": "Hochwald-Forschungszentrum",
-                "es": "Centro de Investigación High Grove",
+                "es": "Centro de Investigación Bosque Alto",
                 "ru": "Исследовательский центр Вышней Рощи"
             }
         },
@@ -2455,7 +2485,7 @@
                 "en": "Mullgrove",
                 "fr": "Bosquet Inférieur",
                 "de": "Kapwald",
-                "es": "Mullgrove",
+                "es": "Arboleda Mull",
                 "ru": "Маллгроув"
             }
         },
@@ -2470,7 +2500,7 @@
                 "en": "Eastgrove Gate",
                 "fr": "Porte du Bosquet Est",
                 "de": "Ostwaldpforte",
-                "es": "Puerta del Patio del Este",
+                "es": "Puerta del Patio Este",
                 "ru": "Врата Восточной рощи"
             }
         },
@@ -2485,7 +2515,7 @@
                 "en": "Westgrove Gate",
                 "fr": "Porte du Bosquet Ouest",
                 "de": "Westwaldpforte",
-                "es": "Puerta del Patio del Oeste",
+                "es": "Puerta del Patio Oeste",
                 "ru": "Врата Западной рощи"
             }
         },
@@ -2500,7 +2530,7 @@
                 "en": "Highgrove",
                 "fr": "Bosquet Supérieur",
                 "de": "Hochwald",
-                "es": "Highgrove",
+                "es": "Bosque Alto",
                 "ru": "Верхняя роща"
             }
         },
@@ -2515,7 +2545,7 @@
                 "en": "Little Mountain Workshop",
                 "fr": "Atelier de la Petite Montagne",
                 "de": "Werkstatt am Kleinen Berg",
-                "es": "Taller de la Montana Pequeña",
+                "es": "Taller de Montana Pequeña",
                 "ru": "Мастерская у Малой Горы"
             }
         },
@@ -2530,7 +2560,7 @@
                 "en": "Little Mountain Stronghold",
                 "fr": "Forteresse de la Petite Montagne",
                 "de": "Festung am Kleinen Berg",
-                "es": "Fortaleza de la Montana Pequeña",
+                "es": "Fortaleza de Montana Pequeña",
                 "ru": "Форт у Малой Горы"
             }
         },
@@ -2545,7 +2575,7 @@
                 "en": "Berello Gorge Border Post",
                 "fr": "Poste Frontière de la Gorge de Berello",
                 "de": "Berello-Schlucht-Grenzposten",
-                "es": "Puesto Fronterizo del Desfiladero Berello",
+                "es": "Puesto Fronterizo Desfiladero Berello",
                 "ru": "Пограничная застава Ущелье Берелло"
             }
         },
@@ -2560,7 +2590,7 @@
                 "en": "Virginia Falls Diplomatic Outpost",
                 "fr": "Avant-Poste Diplomatique des Chutes de Virginia",
                 "de": "Diplomatischer Außenposten der Virginia-Fälle",
-                "es": "Puesto Diplomático de la Cascada de Virginia",
+                "es": "Puesto Diplomático Cascada de Virginia",
                 "ru": "Дипломатическая миссия Водопад Виргиния"
             }
         },
@@ -2575,7 +2605,7 @@
                 "en": "Virginia Falls Magic Pole",
                 "fr": "Pôle Magique des Chutes de Virginia",
                 "de": "Magischer Ort der Virginia-Fälle",
-                "es": "Polo Mágico de la Cascada de Virginia",
+                "es": "Polo Mágico Cascada de Virginia",
                 "ru": "Очаг Магии Водопад Виргиния"
             }
         },
@@ -2590,7 +2620,7 @@
                 "en": "Little Mountain",
                 "fr": "Petite Montagne",
                 "de": "kleiner Berg",
-                "es": "Montana Pequeña",
+                "es": "Montaña Pequeña",
                 "ru": "Малая гора"
             }
         },
@@ -2605,7 +2635,7 @@
                 "en": "Virginia Falls",
                 "fr": "Chutes de Virginia",
                 "de": "Virginia-Wasserfall",
-                "es": "Cascadas de Virginia",
+                "es": "Cascadas Virginia",
                 "ru": "Водопад Виргиния"
             }
         },
@@ -2635,7 +2665,7 @@
                 "en": "Marauder Camp",
                 "fr": "Camp Maraudeur",
                 "de": "Lager der Marodeure",
-                "es": "Campamento Merodeador",
+                "es": "Campamento Marauder",
                 "ru": "place_marauder_camp"
             }
         },
@@ -2650,7 +2680,7 @@
                 "en": "Marauder Arena",
                 "fr": "Arène Maraudeur",
                 "de": "Arena der Marodeure",
-                "es": "Arena Merodeadora",
+                "es": "Arena Marauder",
                 "ru": "place_lieudit_marauder_arena"
             }
         },
@@ -2725,7 +2755,7 @@
                 "en": "Maze of Sprite Border Post",
                 "fr": "Poste Frontière du Labyrinthe des Lutins",
                 "de": "Geisterlabyrinth-Grenzposten",
-                "es": "Puesto Fronterizo del Laberinto del Duende",
+                "es": "Puesto Fronterizo Laberinto del Duende",
                 "ru": "Пограничная застава Лабиринта Спрайтов"
             }
         },
@@ -2770,7 +2800,7 @@
                 "en": "Falls of the Two Totems",
                 "fr": "Chutes des Deux Totems",
                 "de": "Wasserfall der zwei Totems",
-                "es": "Cascada de los Dos Tótems",
+                "es": "Cascada de Dos Tótems",
                 "ru": "Водопады двух Тотемов"
             }
         },
@@ -2800,7 +2830,7 @@
                 "en": "Panting Pass Research Center",
                 "fr": "Centre de Recherche du Col des Palpitations",
                 "de": "Forschungszentrum am Schwierigen Pfad",
-                "es": "Centro de Investigación Paseo Jadeante",
+                "es": "Centro de Investigación Paso Jadeante",
                 "ru": "Исследовательский центр Изнуряющего Перевала"
             }
         },
@@ -2845,7 +2875,7 @@
                 "en": "Fencoomb Workshop",
                 "fr": "Atelier de Fencoomb",
                 "de": "Moorteiche-Werkstatt",
-                "es": "Taller Fencoomb",
+                "es": "Taller Marismas",
                 "ru": "Мастерская у Фенкумба"
             }
         },
@@ -2857,10 +2887,10 @@
             "regionforce": 0,
             "lmtype": 5,
             "text": {
-                "en": "Fencoomb Ponds ",
-                "fr": "Etangs de Fencoomb",
+                "en": "Fencoomb Ponds",
+                "fr": "Étangs de Fencoomb",
                 "de": "Moorteiche",
-                "es": "Estanques de Fencoomb ",
+                "es": "Marismas",
                 "ru": "Пруды Фенкумба"
             }
         },
@@ -2905,7 +2935,7 @@
                 "en": "Panting Pass",
                 "fr": "Col des Palpitations",
                 "de": "schwieriger Pfad",
-                "es": "Pase Jadeante ",
+                "es": "Paso Jadeante",
                 "ru": "Изнуряющий перевал"
             }
         },
@@ -2950,7 +2980,7 @@
                 "en": "Dryland Gate Stronghold",
                 "fr": "Forteresse de la Porte des Terres Arides",
                 "de": "Festung an der Ödlandpforte",
-                "es": "Puerta de la Fortaleza de la Tierra Seca ",
+                "es": "Puerta de la Fortaleza Tierra Seca",
                 "ru": "Форт Врата Засухи"
             }
         },
@@ -2980,7 +3010,7 @@
                 "en": "Ryecliff Stronghold",
                 "fr": "Forteresse de la Falaise de Rye",
                 "de": "Festung an der Klippe von Rye",
-                "es": "Fortaleza Ryecliff",
+                "es": "Fortaleza del Acantilado",
                 "ru": "Форт Ржавого Утеса"
             }
         },
@@ -2995,7 +3025,7 @@
                 "en": "Torbak Hill Farm",
                 "fr": "Ferme de la Colline des Torbaks",
                 "de": "Hof an der Anhöhe der Torbaks",
-                "es": "Granja La Colina de Torbak",
+                "es": "Granja Colina de Torbak",
                 "ru": "Фирма Холма Торбаков"
             }
         },
@@ -3040,7 +3070,7 @@
                 "en": "Tunnel of Woe",
                 "fr": "Tunnel des Malheurs",
                 "de": "Unglückstunnel",
-                "es": "El Túnel de Woe",
+                "es": "Túnel de Woe",
                 "ru": "Тоннель страданий"
             }
         },
@@ -3055,7 +3085,7 @@
                 "en": "Runninghill Pass",
                 "fr": "Col Vallonné",
                 "de": "Gebirgspass",
-                "es": "El Desfiladero de Runninghill ",
+                "es": "Desfiladero de Runninghill",
                 "ru": "Ущелье Бегущего холма"
             }
         },
@@ -3085,7 +3115,7 @@
                 "en": "Torbak Trail Hill",
                 "fr": "Sentier des Torbaks",
                 "de": "Anhöhe der Torbaks",
-                "es": "Colina del Sendero de Torbakl",
+                "es": "Colina del Sendero Torbak",
                 "ru": "Холм Тропы Торбаков"
             }
         },
@@ -3100,7 +3130,7 @@
                 "en": "Killing Tree",
                 "fr": "Arbre au Massacre",
                 "de": "Todesbaum",
-                "es": "Árbol Mortal",
+                "es": "Árbol Muerto",
                 "ru": "Убийственное дерево"
             }
         },
@@ -3115,8 +3145,23 @@
                 "en": "Smitten Mount",
                 "fr": "Montagne du Tourment",
                 "de": "Berg der Pein",
-                "es": "Monte Smitten",
+                "es": "Monte Encantado",
                 "ru": "Разбитая гора"
+            }
+        },
+        "place_marauder_camp_knollofdissent": {
+            "pos": [
+                2773,
+                -2499
+            ],
+            "regionforce": 0,
+            "lmtype": 1,
+            "text": {
+                "en": "Marauder Camp",
+                "fr": "Camp Maraudeur",
+                "de": "Lager der Marodeure",
+                "es": "Campamento Marauder",
+                "ru": "Marauder Camp"
             }
         },
         "place_yrkanis": {
@@ -3188,10 +3233,10 @@
             "lmtype": 2,
             "text": {
                 "en": "Psykopla Knoll Trading Post",
-                "fr": "Poste d'Echange du Monticule des Psykoplas",
+                "fr": "Poste d'Échange du Monticule des Psykoplas",
                 "de": "Handelsposten am Psykopla-Hügel",
-                "es": "Puesto de Comercio del Montículo de la Psykopla",
-                "ru": "Торговая застава Холмы Псикоплы "
+                "es": "Puesto de Comercio Monte de Psykopla",
+                "ru": "Торговая застава Холмы Псикоплы"
             }
         },
         "place_lieudit_majesticgarden_1": {
@@ -3206,7 +3251,7 @@
                 "fr": "Monticule des Psykoplas",
                 "de": "Psykopla-Hügel",
                 "es": "Monte de Psykopla",
-                "ru": "Холмы Псикопл "
+                "ru": "Холмы Псикопл"
             }
         },
         "place_lieudit_majesticgarden_3": {
@@ -3220,7 +3265,7 @@
                 "en": "Charmers' Way",
                 "fr": "Route des Charmeurs",
                 "de": "Weg der Charmeure",
-                "es": "Manera de los Encantadores",
+                "es": "Camino de los Encantadores",
                 "ru": "Тропа Чародеев"
             }
         },
@@ -3310,7 +3355,7 @@
                 "en": "Libia Ward",
                 "fr": "District de Libia",
                 "de": "Libia-Bezirk",
-                "es": "Barrio ibia ",
+                "es": "Barrio Ibia",
                 "ru": "Округ Либия"
             }
         },
@@ -3325,7 +3370,7 @@
                 "en": "The Rising Border Post",
                 "fr": "Poste Frontière de la Poussée",
                 "de": "Grenzposten bei der Erhebung",
-                "es": "El Puesto Fronterizo Creciente",
+                "es": "Puesto Fronterizo Creciente",
                 "ru": "Пограничная застава На Возвышенности"
             }
         },
@@ -3338,9 +3383,9 @@
             "lmtype": 2,
             "text": {
                 "en": "Southeast Trade Post",
-                "fr": "Poste d'Echange du Sud-Est",
+                "fr": "Poste d'Échange du Sud-Est",
                 "de": "Südöstlicher Handelsposten",
-                "es": "Puesto Fronterizo del Sureste",
+                "es": "Puesto Fronterizo Sureste",
                 "ru": "Юго-Восточная торговая застава"
             }
         },
@@ -3370,7 +3415,7 @@
                 "en": "Trove Workshop",
                 "fr": "Atelier du Trésor",
                 "de": "Werkstatt am Hort",
-                "es": "Taller de Trove",
+                "es": "Taller del Tesoro",
                 "ru": "Мастерская Сокровищницы"
             }
         },
@@ -3385,7 +3430,7 @@
                 "en": "Kami Circle Magic Pole",
                 "fr": "Pôle Magique du Cercle Kamic",
                 "de": "Magischer Ort am Kami-Kreis",
-                "es": "Polo del Circulo Mágico Kami",
+                "es": "Polo del Círculo Mágico Kami",
                 "ru": "Магический Полюс Ками"
             }
         },
@@ -3400,7 +3445,7 @@
                 "en": "Kami Circle",
                 "fr": "Cercle Kamic",
                 "de": "Kami-Kreis",
-                "es": "Circulo Kami",
+                "es": "Círculo Kami",
                 "ru": "Круг Ками"
             }
         },
@@ -3445,7 +3490,7 @@
                 "en": "The Rising",
                 "fr": "Poussée",
                 "de": "Erhebung",
-                "es": "La Sublevación ",
+                "es": "La Sublevación",
                 "ru": "Возвышение"
             }
         },
@@ -3458,10 +3503,25 @@
             "lmtype": 3,
             "text": {
                 "en": "Marauder Stables",
-                "fr": "Etables Maraudeurs",
+                "fr": "Étables Maraudeurs",
                 "de": "Stall der Marodeure",
-                "es": "Establos Merodeadores",
-                "ru": "marauder_stable"
+                "es": "Establos Marauders",
+                "ru": "Стойло мародеров"
+            }
+        },
+        "marauder_camp_stable": {
+            "pos": [
+                2776,
+                -2505
+            ],
+            "regionforce": 0,
+            "lmtype": 3,
+            "text": {
+                "en": "Marauder Stables",
+                "fr": "Étables Maraudeurs",
+                "de": "Stall der Marodeure",
+                "es": "Establos Marauders",
+                "ru": "Стойло мародеров"
             }
         },
         "yrkanis_stable": {
@@ -3473,9 +3533,9 @@
             "lmtype": 3,
             "text": {
                 "en": "Yrkanis Stables",
-                "fr": "Etables d'Yrkanis",
+                "fr": "Étables d'Yrkanis",
                 "de": "Stall von Yrkanis",
-                "es": "Establos Yrkanis ",
+                "es": "Establos Yrkanis",
                 "ru": "Стойла Мектубов Ирканиса"
             }
         },
@@ -3488,7 +3548,7 @@
             "lmtype": 3,
             "text": {
                 "en": "Natae Stables",
-                "fr": "Etables de Natae",
+                "fr": "Étables de Natae",
                 "de": "Stall von Natae",
                 "es": "Establos de Natae",
                 "ru": "Стойла Нэтея"
@@ -3503,7 +3563,7 @@
             "lmtype": 3,
             "text": {
                 "en": "Davae Stables",
-                "fr": "Etables de Davae",
+                "fr": "Étables de Davae",
                 "de": "Stall von Davae",
                 "es": "Establos de Davae",
                 "ru": "Стойла Дэвея"
@@ -3518,7 +3578,7 @@
             "lmtype": 3,
             "text": {
                 "en": "Avalae Stables",
-                "fr": "Etables d'Avalae",
+                "fr": "Étables d'Avalae",
                 "de": "Stall von Avalae",
                 "es": "Establos de Avalae",
                 "ru": "Стойла Эвелея"
@@ -3534,11 +3594,11 @@
             "regionforce": 0,
             "lmtype": 4,
             "text": {
-                "en": "",
-                "fr": "",
+                "en": "Almati Woods",
+                "fr": "region_matis_island",
                 "de": "Almati-Wald",
-                "es": "",
-                "ru": ""
+                "es": "Bosque Almati",
+                "ru": "region_matis_island"
             }
         },
         "episode2_camp_kami_matis_island": {
@@ -3552,7 +3612,7 @@
                 "en": "Kami Camp of Almati Wood",
                 "fr": "Camp Kami du Bois d'Almati",
                 "de": "Kami-Lager des Almati-Waldes",
-                "es": "Campamento Kami del Bosque Almati",
+                "es": "Campamento Kami de Bosque Almati",
                 "ru": "Лагерь Ками в лесу Алмати"
             }
         },
@@ -3567,7 +3627,7 @@
                 "en": "Karavan Camp of Almati Wood",
                 "fr": "Camp Karavan du Bois d'Almati",
                 "de": "Karavan-Lager des Almati-Waldes",
-                "es": "Campamento Karavan del Bosque Almati",
+                "es": "Campamento Karavan de Bosque Almati",
                 "ru": "Лагерь Каравана в дюнах Аэлиуса"
             }
         },
@@ -3639,26 +3699,11 @@
             "regionforce": 0,
             "lmtype": 4,
             "text": {
-                "en": "",
-                "fr": "",
+                "en": "Almati Island",
+                "fr": "region_matis_island_3",
                 "de": "Almati-Insel",
-                "es": "",
-                "ru": ""
-            }
-        },
-        "place_matis_island_1": {
-            "pos": [
-                14738,
-                -969
-            ],
-            "regionforce": 0,
-            "lmtype": 1,
-            "text": {
-                "en": "Ranger Camp",
-                "fr": "Campement ranger",
-                "de": "Ranger-Lager",
-                "es": "Campamento de los guardabosques",
-                "ru": "Лагерь Рэйнджеров"
+                "es": "Isla Almati",
+                "ru": "Остров Алмати"
             }
         },
         "place_matis_island_2": {
@@ -3684,11 +3729,11 @@
             "regionforce": 0,
             "lmtype": 1,
             "text": {
-                "en": "",
-                "fr": "",
+                "en": "Rangers island",
+                "fr": "place_matis_island_3",
                 "de": "Ranger-Insel",
-                "es": "",
-                "ru": ""
+                "es": "Isla de Rangers",
+                "ru": "Остров Рейнджеров"
             }
         }
     },
@@ -3827,7 +3872,7 @@
                 "fr": "Contrées à explorer",
                 "de": "Entdeckenswerte Gefilde",
                 "es": "Tierras para Explorar",
-                "ru": "Малоизученные Земли "
+                "ru": "Малоизученные Земли"
             }
         },
         "region_newbieland_hunting_grounds": {
@@ -3899,16 +3944,16 @@
             "lmtype": 5,
             "text": {
                 "en": "Rangers' Land",
-                "fr": "contrée des Rangers",
+                "fr": "Contrée des Rangers",
                 "de": "Gebiet der Ranger",
-                "es": "Tierras de Guardabosques",
+                "es": "Tierras de Rangers",
                 "ru": "Земля Рейнджеров"
             }
         },
         "place_starting_zone_starting_city": {
             "pos": [
-                10350,
-                -11758
+                10330,
+                -11759
             ],
             "regionforce": 0,
             "lmtype": 0,
@@ -3916,8 +3961,23 @@
                 "en": "Ranger Camp",
                 "fr": "Campement ranger",
                 "de": "Ranger-Lager",
-                "es": "Campo del Guardabosques",
+                "es": "Campamento de Rangers",
                 "ru": "Лагерь Рейнджеров"
+            }
+        },
+        "newbie_start_point": {
+            "pos": [
+                10139,
+                -11813
+            ],
+            "regionforce": 0,
+            "lmtype": 0,
+            "text": {
+                "en": "Rangers' refuge",
+                "fr": "Refuge des Rangers",
+                "de": "Zuflucht der Ranger",
+                "es": "Refugio de Rangers",
+                "ru": "Убежище рейнджеров"
             }
         },
         "place_starting_zone_arena": {
@@ -3961,7 +4021,7 @@
                 "en": "Shining Lake",
                 "fr": "Lac étincelant",
                 "de": "Funkelnder See",
-                "es": "El Lago Brillante",
+                "es": "Lago Brillante",
                 "ru": "Сверкающее озеро"
             }
         },
@@ -3995,6 +4055,21 @@
                 "ru": "Посольство Каравана"
             }
         },
+        "place_marauder_camp": {
+            "pos": [
+                10443,
+                -11793
+            ],
+            "regionforce": 0,
+            "lmtype": 5,
+            "text": {
+                "en": "Marauder Camp",
+                "fr": "Camp Maraudeur",
+                "de": "Lager der Marodeure",
+                "es": "Campamento Marauder",
+                "ru": "place_marauder_camp"
+            }
+        },
         "kami_enclave": {
             "pos": [
                 10423,
@@ -4014,8 +4089,8 @@
     "nexus": {
         "continent_nexus": {
             "pos": [
-                8788,
-                -7196
+                9355,
+                -7359
             ],
             "regionforce": 0,
             "lmtype": -1,
@@ -4029,8 +4104,8 @@
         },
         "region_nexus": {
             "pos": [
-                8786,
-                -7196
+                9355,
+                -7359
             ],
             "regionforce": 200,
             "lmtype": 4,
@@ -4050,25 +4125,25 @@
             "regionforce": 0,
             "lmtype": 2,
             "text": {
-                "en": "Ichorgate Research Center",
-                "fr": "Centre de Recherche de la Porte d'Ichor",
-                "de": "Tor von Ichor - Forschungszentrum",
-                "es": "Centro de Investigación de la Puerta de Ichor",
+                "en": "Outpost of the Northern Nexus ((Experimental and Unstable))",
+                "fr": "Avant-poste Nexnor ((En test, instable))",
+                "de": "Außenposten des nördlichen Nexus (Experimentell und instabil)",
+                "es": "Puesto de Avanzada de Nexo Norte",
                 "ru": "Исследовательский центр Врата Ихора"
             }
         },
         "place_outpost_nexus_02": {
             "pos": [
                 8550,
-                -6815
+                -6809
             ],
             "regionforce": 0,
             "lmtype": 2,
             "text": {
-                "en": "Hammer Hills Trade Post",
-                "fr": "Poste d'Echange des Collines Martelées",
-                "de": "Hammerhöhen-Handelsposten",
-                "es": "Puesto de Comercio de las Colinas del Martillo",
+                "en": "Karavan Observation Camp",
+                "fr": "Centre d'observation karavanier",
+                "de": "Beobachtungslager der Karavan",
+                "es": "Campamento Karavan de Observación",
                 "ru": "Торговая застава Холмов Молота"
             }
         },
@@ -4080,10 +4155,10 @@
             "regionforce": 0,
             "lmtype": 2,
             "text": {
-                "en": "Umbragate Farm",
-                "fr": "Ferme de la Porte des Ombres",
-                "de": "Tor nach Umbra - Hof",
-                "es": "Granja de la Puerta de la Sombra",
+                "en": "Outpost of the Western Nexus ((Experimental and Unstable))",
+                "fr": "Avant-poste Nexocc ((En test, instable))",
+                "de": "Außenposten des westlichen Nexus (Experimentell und instabil)",
+                "es": "Puesto de Avanzada de Nexo Occidental",
                 "ru": "Ферма Врата Тени"
             }
         },
@@ -4095,10 +4170,10 @@
             "regionforce": 0,
             "lmtype": 2,
             "text": {
-                "en": "Destiny's End Diplomatic Outpost",
-                "fr": "Avant-Poste Diplomatique de la Fin de la Destinée",
-                "de": "Diplomatischer Außenposten am Schicksalsende",
-                "es": "Puesto Diplomático Final del Destino",
+                "en": "Outpost of the Eastern Nexus ((Experimental and Unstable))",
+                "fr": "Avant-poste Nexori ((En test, instable))",
+                "de": "Außenposten des östlichen Nexus (Experimentell und instabil)",
+                "es": "Puesto de Avanzada de Nexo Oriental",
                 "ru": "Дипломатическая миссия Роковой Предел"
             }
         },
@@ -4110,25 +4185,25 @@
             "regionforce": 0,
             "lmtype": 2,
             "text": {
-                "en": "Watchcomb Workshop",
-                "fr": "Atelier de Gardecombe",
-                "de": "Talwacht-Werkstatt",
-                "es": "Taller Watchcomb",
+                "en": "Kamist Observation Camp",
+                "fr": "Centre d'observation kamiste",
+                "de": "Beobachtungslager der Kami",
+                "es": "Campamento Kami de Observación",
                 "ru": "Мастерская Гребень Наблюдателей"
             }
         },
         "place_outpost_nexus_06": {
             "pos": [
-                8541,
-                -7426
+                8458,
+                -7578
             ],
             "regionforce": 0,
             "lmtype": 2,
             "text": {
-                "en": "Highwatch Farm",
-                "fr": "Ferme de la Crête Surveillée",
-                "de": "Hohe Wacht - Hof",
-                "es": "Granja de la Alta Vigilancia",
+                "en": "Marauder Observation Camp",
+                "fr": "Centre d'observation maraudeur",
+                "de": "Beobachtungslager der Marodeure",
+                "es": "Campamento Marauder de Observación",
                 "ru": "Ферма Верхогляд"
             }
         },
@@ -4140,10 +4215,10 @@
             "regionforce": 0,
             "lmtype": 2,
             "text": {
-                "en": "Wastegate Border Post",
-                "fr": "Poste Frontière de la Porte des Terres Désolées",
-                "de": "Tor ins Niemandsland – Grenzposten",
-                "es": "Puesto Fronterizo de la Puerta de los Residuos",
+                "en": "Outpost of the Southern Nexus ((Experimental and unstable))",
+                "fr": "Avant-poste Nexud ((En test, instable))",
+                "de": "Außenposten des südlichen Nexus (Experimentell und instabil)",
+                "es": "Puesto de Avanzada de Nexo Sur",
                 "ru": "Пограничная застава Врата Пустоши"
             }
         },
@@ -4173,14 +4248,14 @@
                 "en": "Destiny's End",
                 "fr": "Fin de la Destinée",
                 "de": "Schicksalsende",
-                "es": "El Desino Final",
+                "es": "Destino Final",
                 "ru": "Роковой Предел"
             }
         },
         "place_lieudit_nexus_3": {
             "pos": [
-                8567,
-                -7286
+                8637,
+                -7337
             ],
             "regionforce": 0,
             "lmtype": 5,
@@ -4188,14 +4263,14 @@
                 "en": "Hammer Hills",
                 "fr": "Colline Martelée",
                 "de": "Hammerhöhen",
-                "es": "Colinas Hammer",
+                "es": "Colinas Mazos",
                 "ru": "Холмы Молота"
             }
         },
         "place_lieudit_nexus_4": {
             "pos": [
-                9054,
-                -7667
+                9088,
+                -7622
             ],
             "regionforce": 0,
             "lmtype": 5,
@@ -4219,9 +4294,9 @@
             "text": {
                 "en": "Unexplored Desert",
                 "fr": "Inexploré Desert",
-                "de": "Unerforschte Desert",
-                "es": "continent_r2_desert",
-                "ru": "continent_r2_desert"
+                "de": "Unerforschte Wüste",
+                "es": "Desierto Inexplorado",
+                "ru": "Неисследованная Пустыня"
             }
         },
         "uir2_deserts35": {
@@ -4265,7 +4340,7 @@
                 "en": "Meditations of the Mace Master",
                 "fr": "Réflexions sur le maître des massues",
                 "de": "Meditationen des Streitkolbenmeisters",
-                "es": "uir2_deserts33",
+                "es": "Meditaciones del Maestro del Laberinto",
                 "ru": "uir2_deserts33"
             }
         },
@@ -4280,7 +4355,7 @@
                 "en": "Shalah Footprints",
                 "fr": "Empreintes de Shalah",
                 "de": "Shalah Fußabdrücke",
-                "es": "uir2_deserts32",
+                "es": "Huellas de Shalah",
                 "ru": "uir2_deserts32"
             }
         },
@@ -4295,7 +4370,7 @@
                 "en": "The Furrow",
                 "fr": "Le sillon",
                 "de": "Die Furche",
-                "es": "uir2_deserts31",
+                "es": "El Surco",
                 "ru": "uir2_deserts31"
             }
         },
@@ -4310,7 +4385,7 @@
                 "en": "The Two Halls",
                 "fr": "Les deux chambres",
                 "de": "Die zwei Hallen",
-                "es": "uir2_deserts30",
+                "es": "Los Dos Salones",
                 "ru": "uir2_deserts30"
             }
         },
@@ -4325,7 +4400,7 @@
                 "en": "The Dark Pathway",
                 "fr": "Le sentier obscur",
                 "de": "Der dunkle Durchgang",
-                "es": "uir2_deserts29",
+                "es": "Camino Oscuro",
                 "ru": "uir2_deserts29"
             }
         },
@@ -4340,7 +4415,7 @@
                 "en": "Treacherous Passage",
                 "fr": "Passage perfide",
                 "de": "Verräterischer Durchgang",
-                "es": "uir2_deserts28",
+                "es": "Paso Traicionero",
                 "ru": "uir2_deserts28"
             }
         },
@@ -4355,7 +4430,7 @@
                 "en": "Hidden Reserves",
                 "fr": "Réserves secrètes",
                 "de": "Versteckte Reserven",
-                "es": "uir2_deserts27",
+                "es": "Reservas Ocultas",
                 "ru": "uir2_deserts27"
             }
         },
@@ -4370,7 +4445,7 @@
                 "en": "The Hive",
                 "fr": "La ruche",
                 "de": "Der Bienenstock",
-                "es": "uir2_deserts26",
+                "es": "La Colmena",
                 "ru": "uir2_deserts26"
             }
         },
@@ -4385,7 +4460,7 @@
                 "en": "The Great Circuit",
                 "fr": "Le grand circuit",
                 "de": "Das große Circuit",
-                "es": "uir2_deserts25",
+                "es": "Gran Circuito",
                 "ru": "uir2_deserts25"
             }
         },
@@ -4400,7 +4475,7 @@
                 "en": "Height of Serenity",
                 "fr": "Sommet de la sérénité",
                 "de": "Anhöhe der Lässigkeit",
-                "es": "uir2_deserts24",
+                "es": "Altura de Serenidad",
                 "ru": "uir2_deserts24"
             }
         },
@@ -4415,7 +4490,7 @@
                 "en": "Connected Paths",
                 "fr": "Chemins reliés",
                 "de": "Verbundene Pfade",
-                "es": "uir2_deserts23",
+                "es": "Vías Conectadas",
                 "ru": "uir2_deserts23"
             }
         },
@@ -4430,7 +4505,7 @@
                 "en": "Sands of Solitude",
                 "fr": "Sables de la solitude",
                 "de": "Sande der Einsamkeit",
-                "es": "uir2_deserts22",
+                "es": "Arenas de Soledad",
                 "ru": "uir2_deserts22"
             }
         },
@@ -4445,7 +4520,7 @@
                 "en": "The Ambush",
                 "fr": "L`embuscade",
                 "de": "Der Hinterhalt",
-                "es": "uir2_deserts21",
+                "es": "La Emboscada",
                 "ru": "uir2_deserts21"
             }
         },
@@ -4460,7 +4535,7 @@
                 "en": "The Labyrinth",
                 "fr": "Le labyrinthe",
                 "de": "Das Labyrinth",
-                "es": "uir2_deserts20",
+                "es": "Laberinto",
                 "ru": "uir2_deserts20"
             }
         },
@@ -4475,7 +4550,7 @@
                 "en": "Struggle for Power",
                 "fr": "Lutte de pouvoirs",
                 "de": "Kampf um die Macht",
-                "es": "uir2_deserts19",
+                "es": "Lucha por el Poder",
                 "ru": "uir2_deserts19"
             }
         },
@@ -4490,7 +4565,7 @@
                 "en": "The Crown",
                 "fr": "La couronne",
                 "de": "Die Krone",
-                "es": "uir2_deserts18",
+                "es": "Corona",
                 "ru": "uir2_deserts18"
             }
         },
@@ -4505,7 +4580,7 @@
                 "en": "Three Branches",
                 "fr": "Trois branches",
                 "de": "Drei äste",
-                "es": "uir2_deserts17",
+                "es": "Tres Ramas",
                 "ru": "uir2_deserts17"
             }
         },
@@ -4520,7 +4595,7 @@
                 "en": "Lair in the Heights",
                 "fr": "Repaire aux sommets",
                 "de": "Unterschlupf in den Höhen",
-                "es": "uir2_deserts16",
+                "es": "Guarida en las Alturas",
                 "ru": "uir2_deserts16"
             }
         },
@@ -4535,7 +4610,7 @@
                 "en": "The Trail of Initiation",
                 "fr": "La piste initiatique",
                 "de": "Der Schweif der Einweihung",
-                "es": "uir2_deserts15",
+                "es": "Camino de la Iniciación",
                 "ru": "uir2_deserts15"
             }
         },
@@ -4550,7 +4625,7 @@
                 "en": "Wooded Canyon",
                 "fr": "Canyon boisé",
                 "de": "Bewaldeter Canyon",
-                "es": "uir2_deserts14",
+                "es": "Cañón Boscoso",
                 "ru": "uir2_deserts14"
             }
         },
@@ -4565,7 +4640,7 @@
                 "en": "Dunes of Temperance",
                 "fr": "Dunes de la sagesse",
                 "de": "Dünen der Mässigung",
-                "es": "uir2_deserts13",
+                "es": "Dunas de la Templanza",
                 "ru": "uir2_deserts13"
             }
         },
@@ -4580,7 +4655,7 @@
                 "en": "Dragon Valley",
                 "fr": "Vallée du dragon",
                 "de": "Drachental",
-                "es": "uir2_deserts12",
+                "es": "Valle de Dragón",
                 "ru": "uir2_deserts12"
             }
         },
@@ -4595,7 +4670,7 @@
                 "en": "Blue Oasis",
                 "fr": "Oasis bleue",
                 "de": "Blaue Oase",
-                "es": "uir2_deserts11",
+                "es": "Oasis Azul",
                 "ru": "uir2_deserts11"
             }
         },
@@ -4610,7 +4685,7 @@
                 "en": "Ancient Hollow",
                 "fr": "Caverne antique",
                 "de": "Alte Höhle",
-                "es": "uir2_deserts10",
+                "es": "Hoyo Antiguo",
                 "ru": "uir2_deserts10"
             }
         },
@@ -4733,7 +4808,82 @@
                 "fr": "Terres Sous le Vent",
                 "de": "Leewindsteg",
                 "es": "Cumbres Borrascosas",
-                "ru": "continent_r2_forest"
+                "ru": "Земли Ливинд"
+            }
+        },
+        "uir2_forest53": {
+            "pos": [
+                21198,
+                -14725
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Land of the Lost",
+                "fr": "Patrie des Perdus",
+                "de": "Land der Verlorenen",
+                "es": "Tierra de los Perdidos",
+                "ru": "Земля Потерянных"
+            }
+        },
+        "uir2_forest52": {
+            "pos": [
+                21998,
+                -14244
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Creeping Caverns",
+                "fr": "Cavernes Rampantes",
+                "de": "Kriechenden Höhlen",
+                "es": "Caverna Reptante",
+                "ru": "Ползучие Пещеры"
+            }
+        },
+        "uir2_forest51": {
+            "pos": [
+                23598,
+                -14242
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Frantic Fringe",
+                "fr": "Lisière Frénétique",
+                "de": "Wilden Randgebiete",
+                "es": "Franja Frenética",
+                "ru": "Безумный Фриндж"
+            }
+        },
+        "uir2_forest50": {
+            "pos": [
+                21198,
+                -14244
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Howling Heights",
+                "fr": "Hauteurs Hurlantes",
+                "de": "Heulende Höhen",
+                "es": "Altura de los Aullidos",
+                "ru": "Воющие Высоты"
+            }
+        },
+        "uir2_forest49": {
+            "pos": [
+                22797,
+                -14242
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Depths of Despair",
+                "fr": "Profondeurs du Désespoir",
+                "de": "Tiefen der Verzweiflung",
+                "es": "Profundidad del Desespero",
+                "ru": "Глубины Отчаяния"
             }
         },
         "uir2_forest48": {
@@ -4777,7 +4927,7 @@
                 "en": "The Wild Ravine",
                 "fr": "Le ravin sauvage",
                 "de": "Die wilde Klamm",
-                "es": "uir2_forest46",
+                "es": "Cañada Salvaje",
                 "ru": "uir2_forest46"
             }
         },
@@ -4792,7 +4942,7 @@
                 "en": "Barkcleft",
                 "fr": "Fendécorce",
                 "de": "Rindenspalte",
-                "es": "uir2_forest45",
+                "es": "Corteza Rota",
                 "ru": "uir2_forest45"
             }
         },
@@ -4807,7 +4957,7 @@
                 "en": "Grove of Jen-Mawk",
                 "fr": "Bosquet de Jen-Mawk",
                 "de": "Hain des Jen-Mawk",
-                "es": "uir2_forest44",
+                "es": "Arboleda de Jen-Mawk",
                 "ru": "uir2_forest44"
             }
         },
@@ -4822,7 +4972,7 @@
                 "en": "Serene Forest",
                 "fr": "Forêt de la sérénité",
                 "de": "Lässiger Wald",
-                "es": "uir2_forest43",
+                "es": "Bosque Sereno",
                 "ru": "uir2_forest43"
             }
         },
@@ -4837,7 +4987,7 @@
                 "en": "Lush Forest",
                 "fr": "Forêt luxuriante",
                 "de": "üppiger Wakd",
-                "es": "uir2_forest42",
+                "es": "Bosque Frondoso",
                 "ru": "uir2_forest42"
             }
         },
@@ -4852,7 +5002,7 @@
                 "en": "Mage Tower",
                 "fr": "Tour du Mage",
                 "de": "Magierturm",
-                "es": "uir2_forest41",
+                "es": "Torre del Mago",
                 "ru": "uir2_forest41"
             }
         },
@@ -4867,7 +5017,7 @@
                 "en": "Madakam Track",
                 "fr": "Piste des Madakams",
                 "de": "Madakam Spur",
-                "es": "uir2_forest40",
+                "es": "Rastro del Madakam",
                 "ru": "uir2_forest40"
             }
         },
@@ -4882,7 +5032,7 @@
                 "en": "Three Clearings",
                 "fr": "Trois clairières",
                 "de": "Drei Lichtungen",
-                "es": "uir2_forest39",
+                "es": "Los Tres Claros",
                 "ru": "uir2_forest39"
             }
         },
@@ -4897,7 +5047,7 @@
                 "en": "Garden of Reward",
                 "fr": "Jardin des récompenses",
                 "de": "Garten der Belohnung",
-                "es": "uir2_forest38",
+                "es": "Jardín de Recompensas",
                 "ru": "uir2_forest38"
             }
         },
@@ -4912,7 +5062,7 @@
                 "en": "Beyond the Jungle",
                 "fr": "Au-delà de la Jungle",
                 "de": "Hinter dem Dschungel",
-                "es": "uir2_forest37",
+                "es": "Más Allá de la Selva",
                 "ru": "uir2_forest37"
             }
         },
@@ -4927,7 +5077,7 @@
                 "en": "The Last Well",
                 "fr": "Le dernier puits",
                 "de": "Der letzte Brunnen",
-                "es": "uir2_forest36",
+                "es": "Última Fuente",
                 "ru": "uir2_forest36"
             }
         },
@@ -4942,7 +5092,7 @@
                 "en": "Wall of Bark",
                 "fr": "Mur d`écorce",
                 "de": "Mauer aus Rinde",
-                "es": "uir2_forest35",
+                "es": "Pared de Corteza",
                 "ru": "uir2_forest35"
             }
         },
@@ -4957,7 +5107,7 @@
                 "en": "Jaws of the Tobak",
                 "fr": "Lacération des Tobaks",
                 "de": "Kiefer des Tobaks",
-                "es": "uir2_forest34",
+                "es": "Fauces de Torbak",
                 "ru": "uir2_forest34"
             }
         },
@@ -4972,7 +5122,7 @@
                 "en": "Chasm of the Kincher",
                 "fr": "Gouffre des Kinchers",
                 "de": "Kluft des Kinchers",
-                "es": "uir2_forest33",
+                "es": "Abismo del Kincher",
                 "ru": "uir2_forest33"
             }
         },
@@ -4987,7 +5137,7 @@
                 "en": "Dried-up Springs",
                 "fr": "Souches asséchées",
                 "de": "Ausgetrocknete Quellen",
-                "es": "uir2_forest32",
+                "es": "Fuentes Secas",
                 "ru": "uir2_forest32"
             }
         },
@@ -5000,9 +5150,9 @@
             "lmtype": 4,
             "text": {
                 "en": "Mere of dreams",
-                "fr": "Etang des rêves",
+                "fr": "Étang des rêves",
                 "de": "Teich der Träume",
-                "es": "uir2_forest31",
+                "es": "Solo de Sueños",
                 "ru": "uir2_forest31"
             }
         },
@@ -5017,7 +5167,7 @@
                 "en": "Crag of chaos",
                 "fr": "Rocher du chaos",
                 "de": "Fels des Chaos",
-                "es": "uir2_forest30",
+                "es": "Risco del Caos",
                 "ru": "uir2_forest30"
             }
         },
@@ -5032,7 +5182,7 @@
                 "en": "Woods of wonder",
                 "fr": "Bois des merveilles",
                 "de": "Wälder der Verwunderung",
-                "es": "uir2_forest29",
+                "es": "Bosque de Maravillas",
                 "ru": "uir2_forest29"
             }
         },
@@ -5047,7 +5197,7 @@
                 "en": "Cliff of Clouds",
                 "fr": "Falaise des nuages",
                 "de": "Klippe der Wolken",
-                "es": "uir2_forest28",
+                "es": "Acantilado de las Nubes",
                 "ru": "uir2_forest28"
             }
         },
@@ -5062,7 +5212,7 @@
                 "en": "Forgotten Plateau",
                 "fr": "Plateau oublié",
                 "de": "Vergessene Ebene",
-                "es": "uir2_forest27",
+                "es": "Planicie Olvidada",
                 "ru": "uir2_forest27"
             }
         },
@@ -5077,7 +5227,7 @@
                 "en": "Long-Island",
                 "fr": "Ile infinie",
                 "de": "Lange-Insel",
-                "es": "uir2_forest26",
+                "es": "Gran Isla",
                 "ru": "uir2_forest26"
             }
         },
@@ -5092,7 +5242,7 @@
                 "en": "Gorge of the Dance",
                 "fr": "Gorge de la danse",
                 "de": "Schlucht des Tanzes",
-                "es": "uir2_forest25",
+                "es": "Desfiladero de la Danza",
                 "ru": "uir2_forest25"
             }
         },
@@ -5107,7 +5257,7 @@
                 "en": "Northern Island",
                 "fr": "Ile du nord",
                 "de": "Nördliche Insel",
-                "es": "uir2_forest24",
+                "es": "Isla Norte",
                 "ru": "uir2_forest24"
             }
         },
@@ -5122,7 +5272,7 @@
                 "en": "Empty Passage",
                 "fr": "Passage vide",
                 "de": "Leerer Durchgang",
-                "es": "uir2_forest23",
+                "es": "Paso Vacío",
                 "ru": "uir2_forest23"
             }
         },
@@ -5137,7 +5287,7 @@
                 "en": "Fang-Island",
                 "fr": "Ile aux crocs",
                 "de": "Fang-Insel",
-                "es": "uir2_forest22",
+                "es": "Isla Colmillos",
                 "ru": "uir2_forest22"
             }
         },
@@ -5152,7 +5302,7 @@
                 "en": "Passage of the Pit",
                 "fr": "Passage de la mine",
                 "de": "Durchgang des Schachts",
-                "es": "uir2_forest21",
+                "es": "Pasadizo del Pozo",
                 "ru": "uir2_forest21"
             }
         },
@@ -5167,7 +5317,7 @@
                 "en": "Darkpass",
                 "fr": "Passage sinistre",
                 "de": "Dunkelpass",
-                "es": "uir2_forest20",
+                "es": "Paso Oscuro",
                 "ru": "uir2_forest20"
             }
         },
@@ -5182,7 +5332,7 @@
                 "en": "Haunted Corridor",
                 "fr": "Couloir hanté",
                 "de": "Verfluchter Korridor",
-                "es": "uir2_forest19",
+                "es": "Corredor Encantado",
                 "ru": "uir2_forest19"
             }
         },
@@ -5197,7 +5347,7 @@
                 "en": "Plain of Spines",
                 "fr": "Prairie des épines",
                 "de": "Ebene der Stacheln",
-                "es": "uir2_forest18",
+                "es": "Espinal",
                 "ru": "uir2_forest18"
             }
         },
@@ -5212,7 +5362,7 @@
                 "en": "Bawaab Ridge",
                 "fr": "Crête des Bawaabs",
                 "de": "Bawaab First",
-                "es": "uir2_forest17",
+                "es": "Cima Bawaab",
                 "ru": "uir2_forest17"
             }
         },
@@ -5227,7 +5377,7 @@
                 "en": "Whirlmount",
                 "fr": "Mont du tourbillon",
                 "de": "Wirbelberg",
-                "es": "uir2_forest16",
+                "es": "Monte Torbellino",
                 "ru": "uir2_forest16"
             }
         },
@@ -5242,7 +5392,7 @@
                 "en": "Kitins Ridge",
                 "fr": "Crête des Kitins",
                 "de": "Kitin First",
-                "es": "uir2_forest15",
+                "es": "Cima Kitin",
                 "ru": "uir2_forest15"
             }
         },
@@ -5257,7 +5407,7 @@
                 "en": "Great Arena",
                 "fr": "Grande arène",
                 "de": "Große Arena",
-                "es": "uir2_forest14",
+                "es": "Gran Arena",
                 "ru": "uir2_forest14"
             }
         },
@@ -5272,7 +5422,7 @@
                 "en": "The Winter Pier",
                 "fr": "La jetée de l`hiver",
                 "de": "Der Winter Steg",
-                "es": "uir2_forest13",
+                "es": "Muelle de Invierno",
                 "ru": "uir2_forest13"
             }
         },
@@ -5287,7 +5437,7 @@
                 "en": "Confined Clearing",
                 "fr": "Clairière perdue",
                 "de": "Begrenzte Lichtung",
-                "es": "uir2_forest12",
+                "es": "Claro Confinado",
                 "ru": "uir2_forest12"
             }
         },
@@ -5302,7 +5452,7 @@
                 "en": "Madakam Ridge",
                 "fr": "Crête des Madakams",
                 "de": "Madakam First",
-                "es": "uir2_forest11",
+                "es": "Cima Madakam",
                 "ru": "uir2_forest11"
             }
         },
@@ -5317,7 +5467,7 @@
                 "en": "Roots of Memory",
                 "fr": "Racines de la mémoire",
                 "de": "Wurweln der Erinnerung",
-                "es": "uir2_forest10",
+                "es": "Raíces de Memoria",
                 "ru": "uir2_forest10"
             }
         },
@@ -5439,8 +5589,8 @@
                 "en": "Unexplored Jungle",
                 "fr": "Inexploré Jungle",
                 "de": "Unerforscht Jungle",
-                "es": "continent_r2_jungle",
-                "ru": "continent_r2_jungle"
+                "es": "Selva Inexplorada",
+                "ru": "Неисследованные Джунгли"
             }
         },
         "uir2_jungle51": {
@@ -5454,7 +5604,7 @@
                 "en": "Green Spirit",
                 "fr": "Esprit verdoyant",
                 "de": "Grüner Geist",
-                "es": "uir2_jungle51",
+                "es": "Espíritu Verde",
                 "ru": "uir2_jungle51"
             }
         },
@@ -5469,7 +5619,7 @@
                 "en": "Spoiled Spring",
                 "fr": "Source souillée",
                 "de": "Verdorbene Quelle",
-                "es": "uir2_jungle50",
+                "es": "Manantial Roto",
                 "ru": "uir2_jungle50"
             }
         },
@@ -5484,7 +5634,7 @@
                 "en": "The Chain",
                 "fr": "La chaîne",
                 "de": "Die Kette",
-                "es": "uir2_jungle49",
+                "es": "La Cadena",
                 "ru": "uir2_jungle49"
             }
         },
@@ -5499,7 +5649,7 @@
                 "en": "Rock of Flowers",
                 "fr": "Pierre de fleurs",
                 "de": "Fels der Blumen",
-                "es": "uir2_jungle48",
+                "es": "Peñón de Flores",
                 "ru": "uir2_jungle48"
             }
         },
@@ -5514,7 +5664,7 @@
                 "en": "Range of the Brave",
                 "fr": "Région des braves",
                 "de": "Gebirgskette der Mutigen",
-                "es": "uir2_jungle47",
+                "es": "Rango Bravío",
                 "ru": "uir2_jungle47"
             }
         },
@@ -5529,7 +5679,7 @@
                 "en": "The Fall",
                 "fr": "La chute",
                 "de": "Der Herbst",
-                "es": "uir2_jungle46",
+                "es": "La Cascada",
                 "ru": "uir2_jungle46"
             }
         },
@@ -5544,7 +5694,7 @@
                 "en": "Homin`s Plain",
                 "fr": "Prairie des homins",
                 "de": "Homins Ebene",
-                "es": "uir2_jungle45",
+                "es": "Planicie del Homin",
                 "ru": "uir2_jungle45"
             }
         },
@@ -5559,7 +5709,7 @@
                 "en": "Rock of Tears",
                 "fr": "Rocher des lamentations",
                 "de": "Fels der Tränen",
-                "es": "uir2_jungle44",
+                "es": "Peñón de Lágrimas",
                 "ru": "uir2_jungle44"
             }
         },
@@ -5574,7 +5724,7 @@
                 "en": "The Mysterious Forest",
                 "fr": "La forêt mystérieuse",
                 "de": "Der geheimnisvolle Wald",
-                "es": "uir2_jungle43",
+                "es": "Bosque Misterioso",
                 "ru": "uir2_jungle43"
             }
         },
@@ -5589,7 +5739,7 @@
                 "en": "The Enclave",
                 "fr": "L`enclave",
                 "de": "Die Enklave",
-                "es": "uir2_jungle42",
+                "es": "El Enclave",
                 "ru": "uir2_jungle42"
             }
         },
@@ -5604,7 +5754,7 @@
                 "en": "Great Kami Plain",
                 "fr": "Grande prairie des Kamis",
                 "de": "Große Kami-Ebene",
-                "es": "uir2_jungle41",
+                "es": "Planicie Gran Kami",
                 "ru": "uir2_jungle41"
             }
         },
@@ -5634,7 +5784,7 @@
                 "en": "Wombaï`s passage",
                 "fr": "Passage de Wombaï",
                 "de": "Wombaïs Durchgang",
-                "es": "uir2_jungle39",
+                "es": "Paso de Wombaï",
                 "ru": "uir2_jungle39"
             }
         },
@@ -5649,7 +5799,7 @@
                 "en": "Twin Ponds",
                 "fr": "Mares jumelles",
                 "de": "Zwillingsteiche",
-                "es": "uir2_jungle38",
+                "es": "Pozos Gemelos",
                 "ru": "uir2_jungle38"
             }
         },
@@ -5679,7 +5829,7 @@
                 "en": "The Forgotten Lagoon",
                 "fr": "Le lagon oublié",
                 "de": "Die vergessene Lagune",
-                "es": "uir2_jungle36",
+                "es": "Lago Olvidado",
                 "ru": "uir2_jungle36"
             }
         },
@@ -5694,7 +5844,7 @@
                 "en": "Plain of Desolation",
                 "fr": "Prairie de la désolation",
                 "de": "Ebene der Verwüstung",
-                "es": "uir2_jungle35",
+                "es": "Planicie de Desolación",
                 "ru": "uir2_jungle35"
             }
         },
@@ -5709,7 +5859,7 @@
                 "en": "Plateau of Goo",
                 "fr": "Plateau de Goo",
                 "de": "Plateau des Goo",
-                "es": "uir2_jungle34",
+                "es": "Meseta de Goo",
                 "ru": "uir2_jungle34"
             }
         },
@@ -5724,7 +5874,7 @@
                 "en": "The Cave",
                 "fr": "La grotte",
                 "de": "Der Keller",
-                "es": "uir2_jungle33",
+                "es": "La Cueva",
                 "ru": "uir2_jungle33"
             }
         },
@@ -5739,7 +5889,7 @@
                 "en": "Goo Patches",
                 "fr": "Taches de Goo",
                 "de": "Goo Stellen",
-                "es": "uir2_jungle32",
+                "es": "Parches de Goo",
                 "ru": "uir2_jungle32"
             }
         },
@@ -5754,7 +5904,7 @@
                 "en": "Small Circle",
                 "fr": "Petit cercle",
                 "de": "Kleiner Kreis",
-                "es": "uir2_jungle31",
+                "es": "Pequeño Círculo",
                 "ru": "uir2_jungle31"
             }
         },
@@ -5769,7 +5919,7 @@
                 "en": "Great Dale",
                 "fr": "Grand vallon",
                 "de": "Großes Tal",
-                "es": "uir2_jungle30",
+                "es": "Gran Valle",
                 "ru": "uir2_jungle30"
             }
         },
@@ -5784,7 +5934,7 @@
                 "en": "Waterside",
                 "fr": "Berge",
                 "de": "Wasserseite",
-                "es": "uir2_jungle29",
+                "es": "Playa del Agua",
                 "ru": "uir2_jungle29"
             }
         },
@@ -5799,7 +5949,7 @@
                 "en": "Small Spring",
                 "fr": "Petite source",
                 "de": "Kleiner Brunnen",
-                "es": "uir2_jungle28",
+                "es": "Pequeño Manantial",
                 "ru": "uir2_jungle28"
             }
         },
@@ -5814,7 +5964,7 @@
                 "en": "Empty Valley",
                 "fr": "Vallée vierge",
                 "de": "Leeres Tal",
-                "es": "uir2_jungle27",
+                "es": "Valle Vacío",
                 "ru": "uir2_jungle27"
             }
         },
@@ -5829,7 +5979,7 @@
                 "en": "Further Goes the Goo",
                 "fr": "Avancée de la Goo",
                 "de": "Weiter geht das Goo",
-                "es": "uir2_jungle26",
+                "es": "Más lejos va al Goo",
                 "ru": "uir2_jungle26"
             }
         },
@@ -5844,7 +5994,7 @@
                 "en": "The Circle",
                 "fr": "Le cercle",
                 "de": "Der Kreis",
-                "es": "uir2_jungle25",
+                "es": "El Círculo",
                 "ru": "uir2_jungle25"
             }
         },
@@ -5859,7 +6009,7 @@
                 "en": "Mountainside",
                 "fr": "Versant de la montagne",
                 "de": "Bergseite",
-                "es": "uir2_jungle24",
+                "es": "Ladera de Montaña",
                 "ru": "uir2_jungle24"
             }
         },
@@ -5874,7 +6024,7 @@
                 "en": "Mountain Bamboos",
                 "fr": "Bambous des montages",
                 "de": "Berg Bambus",
-                "es": "uir2_jungle23",
+                "es": "Montaña de Bambú",
                 "ru": "uir2_jungle23"
             }
         },
@@ -5889,7 +6039,7 @@
                 "en": "Tropical Corridor",
                 "fr": "Couloir des tropiques",
                 "de": "Tropischer Korridor",
-                "es": "uir2_jungle22",
+                "es": "Corredor Tropical",
                 "ru": "uir2_jungle22"
             }
         },
@@ -5904,7 +6054,7 @@
                 "en": "Uneven and Variety",
                 "fr": "Irrégularité et diversité",
                 "de": "Uneben und Vielfalt",
-                "es": "uir2_jungle21",
+                "es": "Desigual y Diverso",
                 "ru": "uir2_jungle21"
             }
         },
@@ -5934,7 +6084,7 @@
                 "en": "Aquatic Jungle",
                 "fr": "Jungle aquatique",
                 "de": "Wasserdschungel",
-                "es": "uir2_jungle19",
+                "es": "Selva Acuática",
                 "ru": "uir2_jungle19"
             }
         },
@@ -5949,7 +6099,7 @@
                 "en": "Heart of the Jungle",
                 "fr": "Coeur de la jungle",
                 "de": "Herz des Dschungels",
-                "es": "uir2_jungle18",
+                "es": "Corazón de la Selva",
                 "ru": "uir2_jungle18"
             }
         },
@@ -5964,7 +6114,7 @@
                 "en": "Promontories and Ridges",
                 "fr": "Promontoires et crêtes",
                 "de": "Promontories und Firsten",
-                "es": "uir2_jungle17",
+                "es": "Promontorios y Despeñaderos",
                 "ru": "uir2_jungle17"
             }
         },
@@ -5979,7 +6129,7 @@
                 "en": "High-Plateau",
                 "fr": "Haut Plateau",
                 "de": "Hoch-Plateau",
-                "es": "uir2_jungle16",
+                "es": "Meseta Alta",
                 "ru": "uir2_jungle16"
             }
         },
@@ -5994,7 +6144,7 @@
                 "en": "Soiled Plain",
                 "fr": "Prairie boueuse",
                 "de": "Beschmutzte Ebene",
-                "es": "uir2_jungle15",
+                "es": "Planicie Sucia",
                 "ru": "uir2_jungle15"
             }
         },
@@ -6009,7 +6159,7 @@
                 "en": "Vegetable Diversity",
                 "fr": "Diversité végétale",
                 "de": "Pflanzliche Vielfalt",
-                "es": "uir2_jungle14",
+                "es": "Diversidad Vegetal",
                 "ru": "uir2_jungle14"
             }
         },
@@ -6024,7 +6174,7 @@
                 "en": "Mirror of Goo",
                 "fr": "Miroir de la Goo",
                 "de": "Spiegel des Goo",
-                "es": "uir2_jungle13",
+                "es": "Espejo de Goo",
                 "ru": "uir2_jungle13"
             }
         },
@@ -6039,7 +6189,7 @@
                 "en": "Ways of the Maze",
                 "fr": "Couloirs du labyrinthe",
                 "de": "Wege des Irrgartens",
-                "es": "uir2_jungle12",
+                "es": "Caminos del Laberinto",
                 "ru": "uir2_jungle12"
             }
         },
@@ -6054,7 +6204,7 @@
                 "en": "Bald Plateau",
                 "fr": "Plateau vierge",
                 "de": "Kahle Ebene",
-                "es": "uir2_jungle11",
+                "es": "Meseta Calva",
                 "ru": "uir2_jungle11"
             }
         },
@@ -6191,8 +6341,8 @@
                 "en": "Unexplored Lakes",
                 "fr": "Inexploré Lakes",
                 "de": "Unerforscht Lakes",
-                "es": "continent_r2_lakes",
-                "ru": "continent_r2_lakes"
+                "es": "Lago Inexplorado",
+                "ru": "Неисследованные Озера"
             }
         },
         "uir2_lakes41": {
@@ -6221,7 +6371,7 @@
                 "en": "The High Plains",
                 "fr": "Les hautes plaines",
                 "de": "The High Plains",
-                "es": "uir2_lakes40",
+                "es": "Planicies Altas",
                 "ru": "uir2_lakes40"
             }
         },
@@ -6236,7 +6386,7 @@
                 "en": "The Bolas",
                 "fr": "Les Bolas",
                 "de": "Die Bolas",
-                "es": "uir2_lakes39",
+                "es": "Las Bolas",
                 "ru": "uir2_lakes39"
             }
         },
@@ -6251,7 +6401,7 @@
                 "en": "The Niches",
                 "fr": "Les niches",
                 "de": "Die Nischen",
-                "es": "uir2_lakes38",
+                "es": "Los Nichos",
                 "ru": "uir2_lakes38"
             }
         },
@@ -6266,7 +6416,7 @@
                 "en": "The Excavations",
                 "fr": "Les excavations",
                 "de": "Die Ausgrabungen",
-                "es": "uir2_lakes37",
+                "es": "Excavaciones",
                 "ru": "uir2_lakes37"
             }
         },
@@ -6281,7 +6431,7 @@
                 "en": "Raskous Corner",
                 "fr": "Coin de Raskous",
                 "de": "Raskous Ecke",
-                "es": "uir2_lakes36",
+                "es": "Esquina Raskous",
                 "ru": "uir2_lakes36"
             }
         },
@@ -6296,7 +6446,7 @@
                 "en": "The Two Caches",
                 "fr": "Les deux cachettes",
                 "de": "Die zwei Lager",
-                "es": "uir2_lakes35",
+                "es": "Los Dos Escondrijos",
                 "ru": "uir2_lakes35"
             }
         },
@@ -6311,7 +6461,7 @@
                 "en": "The winding maze",
                 "fr": "Le labyrinthe sinueux",
                 "de": "Der gewundene Irrgarten",
-                "es": "uir2_lakes34",
+                "es": "Laberinto Serpenteante",
                 "ru": "uir2_lakes34"
             }
         },
@@ -6326,7 +6476,7 @@
                 "en": "The Narrow staircase",
                 "fr": "L`escalier étroit",
                 "de": "Das schmale Treppenhaus",
-                "es": "uir2_lakes33",
+                "es": "Escalera Estrecha",
                 "ru": "uir2_lakes33"
             }
         },
@@ -6341,7 +6491,7 @@
                 "en": "Sunny Path",
                 "fr": "Chemin ensoleillé",
                 "de": "Sonniger Pfad",
-                "es": "uir2_lakes32",
+                "es": "Camino Soleado",
                 "ru": "uir2_lakes32"
             }
         },
@@ -6356,7 +6506,7 @@
                 "en": "The Clash",
                 "fr": "Le conflit",
                 "de": "Der Zusammenprall",
-                "es": "uir2_lakes31",
+                "es": "El Conflicto",
                 "ru": "uir2_lakes31"
             }
         },
@@ -6371,7 +6521,7 @@
                 "en": "The K",
                 "fr": "Le K",
                 "de": "Das K",
-                "es": "uir2_lakes30",
+                "es": "La K",
                 "ru": "uir2_lakes30"
             }
         },
@@ -6386,7 +6536,7 @@
                 "en": "Clopper`s claw",
                 "fr": "Griffe du Clopper",
                 "de": "Clopper Klaue",
-                "es": "uir2_lakes29",
+                "es": "Pinza de Clopper",
                 "ru": "uir2_lakes29"
             }
         },
@@ -6401,7 +6551,7 @@
                 "en": "Tears of Sky",
                 "fr": "Larmes des cieux",
                 "de": "Tränen des Himmels",
-                "es": "uir2_lakes28",
+                "es": "Lágrimas del Cielo",
                 "ru": "uir2_lakes28"
             }
         },
@@ -6416,7 +6566,7 @@
                 "en": "Dacoco Beach",
                 "fr": "Plage Dacoco",
                 "de": "Dacoco Strand",
-                "es": "uir2_lakes27",
+                "es": "Playa Dacoco",
                 "ru": "uir2_lakes27"
             }
         },
@@ -6431,7 +6581,7 @@
                 "en": "The Hike",
                 "fr": "La randonnée",
                 "de": "Die Wanderung",
-                "es": "uir2_lakes26",
+                "es": "El Sendero",
                 "ru": "uir2_lakes26"
             }
         },
@@ -6446,7 +6596,7 @@
                 "en": "Gorges of Sitra",
                 "fr": "Gorges de Sitra",
                 "de": "Schluchten von Sitra",
-                "es": "uir2_lakes25",
+                "es": "Gargantas de Sitra",
                 "ru": "uir2_lakes25"
             }
         },
@@ -6461,7 +6611,7 @@
                 "en": "The Neck",
                 "fr": "Le collet",
                 "de": "Der Nacken",
-                "es": "uir2_lakes24",
+                "es": "El Cuello",
                 "ru": "uir2_lakes24"
             }
         },
@@ -6476,7 +6626,7 @@
                 "en": "The Yubo Cave",
                 "fr": "La grotte des Yubos",
                 "de": "Der Yubo Keller",
-                "es": "uir2_lakes23",
+                "es": "Cueva Yubo",
                 "ru": "uir2_lakes23"
             }
         },
@@ -6491,7 +6641,7 @@
                 "en": "Hidden crannies",
                 "fr": "Failles cachées",
                 "de": "Versteckte Verstecke",
-                "es": "uir2_lakes22",
+                "es": "Grietas Ocultas",
                 "ru": "uir2_lakes22"
             }
         },
@@ -6506,7 +6656,7 @@
                 "en": "Voyage of Dreams",
                 "fr": "Voyage féerique",
                 "de": "Reise der Träume",
-                "es": "uir2_lakes21",
+                "es": "Viaje de Sueños",
                 "ru": "uir2_lakes21"
             }
         },
@@ -6521,7 +6671,7 @@
                 "en": "Hundred Ways",
                 "fr": "Les cent chemins",
                 "de": "Hundert Wege",
-                "es": "uir2_lakes20",
+                "es": "Mil Caminos",
                 "ru": "uir2_lakes20"
             }
         },
@@ -6536,7 +6686,7 @@
                 "en": "Hidden Valley",
                 "fr": "Vallée cachée",
                 "de": "Verstecktes Tal",
-                "es": "uir2_lakes19",
+                "es": "Valle Oculto",
                 "ru": "uir2_lakes19"
             }
         },
@@ -6551,7 +6701,7 @@
                 "en": "Liberty Land",
                 "fr": "Terre de la liberté",
                 "de": "Freiheitsland",
-                "es": "uir2_lakes18",
+                "es": "Tierra de Libertad",
                 "ru": "uir2_lakes18"
             }
         },
@@ -6566,7 +6716,7 @@
                 "en": "Through the Cliff",
                 "fr": "A travers la falaise",
                 "de": "Durch die Felswand",
-                "es": "uir2_lakes17",
+                "es": "Paso del Precipicio",
                 "ru": "uir2_lakes17"
             }
         },
@@ -6581,7 +6731,7 @@
                 "en": "Reclaimed Dunes",
                 "fr": "Dunes reconquises",
                 "de": "Verlangte Dünen",
-                "es": "uir2_lakes16",
+                "es": "Dunas Conquistadas",
                 "ru": "uir2_lakes16"
             }
         },
@@ -6596,7 +6746,7 @@
                 "en": "The Inland Sea",
                 "fr": "La mer intérieure",
                 "de": "Der Inlandssee",
-                "es": "uir2_lakes15",
+                "es": "Mar Interior",
                 "ru": "uir2_lakes15"
             }
         },
@@ -6611,7 +6761,7 @@
                 "en": "The Archway",
                 "fr": "La voûte",
                 "de": "Der Torbogen",
-                "es": "uir2_lakes14",
+                "es": "Camino del Arco",
                 "ru": "uir2_lakes14"
             }
         },
@@ -6641,7 +6791,7 @@
                 "en": "Vale of Ponds",
                 "fr": "Vallée des mares",
                 "de": "Tal der Teiche",
-                "es": "uir2_lakes12",
+                "es": "Estanques del Valle",
                 "ru": "uir2_lakes12"
             }
         },
@@ -6656,7 +6806,7 @@
                 "en": "The Trident",
                 "fr": "Le trident",
                 "de": "Der Dreizack",
-                "es": "uir2_lakes11",
+                "es": "El Tridente",
                 "ru": "uir2_lakes11"
             }
         },
@@ -6669,9 +6819,9 @@
             "lmtype": 4,
             "text": {
                 "en": "Mystic Mere",
-                "fr": "Etang mystique",
+                "fr": "Étang mystique",
                 "de": "Mystischer Weiher",
-                "es": "uir2_lakes10",
+                "es": "Sólo Místico",
                 "ru": "uir2_lakes10"
             }
         },
@@ -6793,8 +6943,8 @@
                 "en": "Unexplored Prims",
                 "fr": "Inexploré Prims",
                 "de": "Unerforschte Prims",
-                "es": "continent_r2_roots",
-                "ru": "continent_r2_roots"
+                "es": "Raíces Primarias Inexploradas",
+                "ru": "Неисследованные Примусы"
             }
         },
         "uir2_primes30": {
@@ -6808,7 +6958,7 @@
                 "en": "An Ancient Hide",
                 "fr": "Une ancienne cachette",
                 "de": "Ein altes Versteck",
-                "es": "uir2_primes30",
+                "es": "Escondite Antiguo",
                 "ru": "uir2_primes30"
             }
         },
@@ -6823,7 +6973,7 @@
                 "en": "Mount of Curses",
                 "fr": "Mont des malédictions",
                 "de": "Hügel der Verfluchungen",
-                "es": "uir2_primes22",
+                "es": "Montaña Maldita",
                 "ru": "uir2_primes22"
             }
         },
@@ -6838,7 +6988,7 @@
                 "en": "Springs of Life",
                 "fr": "Sources de vie",
                 "de": "Quellen des Lebens",
-                "es": "uir2_primes21",
+                "es": "Fuentes de Vida",
                 "ru": "uir2_primes21"
             }
         },
@@ -6853,7 +7003,7 @@
                 "en": "Unknown Mound",
                 "fr": "Monticule mystérieux",
                 "de": "Unbekannter Hügel",
-                "es": "uir2_primes23",
+                "es": "Monte Desconocido",
                 "ru": "uir2_primes23"
             }
         },
@@ -6868,7 +7018,7 @@
                 "en": "Stalagmites of Quietude",
                 "fr": "Stalagmites de la tranquillité",
                 "de": "Stalagmiten der Ruhe",
-                "es": "uir2_primes15",
+                "es": "Estalagmitas de Quietud",
                 "ru": "uir2_primes15"
             }
         },
@@ -6883,7 +7033,7 @@
                 "en": "The Bath of Sap",
                 "fr": "Le bain de sève",
                 "de": "Bad aus Sap",
-                "es": "uir2_primes05",
+                "es": "Baño de Savia",
                 "ru": "uir2_primes05"
             }
         },
@@ -6898,7 +7048,7 @@
                 "en": "The Shining Cave",
                 "fr": "La grotte scintillante",
                 "de": "Der scheinende Keller",
-                "es": "uir2_primes29",
+                "es": "Cueva Brillante",
                 "ru": "uir2_primes29"
             }
         },
@@ -6913,7 +7063,7 @@
                 "en": "Valley of Death",
                 "fr": "Vallée de la mort",
                 "de": "Tal des Todes",
-                "es": "uir2_primes20",
+                "es": "Valle de Muerte",
                 "ru": "uir2_primes20"
             }
         },
@@ -6928,7 +7078,7 @@
                 "en": "Hall of Destiny",
                 "fr": "Salle du destin",
                 "de": "Halle des Schicksals",
-                "es": "uir2_primes01",
+                "es": "Sala del Destino",
                 "ru": "uir2_primes01"
             }
         },
@@ -6943,7 +7093,7 @@
                 "en": "Tunnels of Oblvion",
                 "fr": "Galeries de l`oubli",
                 "de": "Tunnel von Oblvion",
-                "es": "uir2_primes19",
+                "es": "Túneles del Olvido",
                 "ru": "uir2_primes19"
             }
         },
@@ -6958,7 +7108,7 @@
                 "en": "River of Doubts",
                 "fr": "Fleuve des doutes",
                 "de": "Fluss der Zweifel",
-                "es": "uir2_primes09",
+                "es": "Río de Dudas",
                 "ru": "uir2_primes09"
             }
         },
@@ -6973,7 +7123,7 @@
                 "en": "Sanctuary",
                 "fr": "Sanctuaire",
                 "de": "Heiligenstätte",
-                "es": "uir2_primes14",
+                "es": "Santuario",
                 "ru": "uir2_primes14"
             }
         },
@@ -6988,7 +7138,7 @@
                 "en": "Eye of Ma-Duk",
                 "fr": "Oeil de Ma-Duk",
                 "de": "Auge des Ma-Duk",
-                "es": "uir2_primes16",
+                "es": "Ojo de Ma-Duk",
                 "ru": "uir2_primes16"
             }
         },
@@ -7003,7 +7153,7 @@
                 "en": "Maro`s Steps",
                 "fr": "Marches de Maro",
                 "de": "Maros Schritte",
-                "es": "uir2_primes25",
+                "es": "Paso de Maro",
                 "ru": "uir2_primes25"
             }
         },
@@ -7018,7 +7168,7 @@
                 "en": "Forest of Light",
                 "fr": "Forêt de la lumière",
                 "de": "Wald des Lichts",
-                "es": "uir2_primes28",
+                "es": "Bosque de Luz",
                 "ru": "uir2_primes28"
             }
         },
@@ -7033,7 +7183,7 @@
                 "en": "Fallen Stump",
                 "fr": "Souche brisée",
                 "de": "Gefallener Stumpf",
-                "es": "uir2_primes27",
+                "es": "Tocón Caído",
                 "ru": "uir2_primes27"
             }
         },
@@ -7048,7 +7198,7 @@
                 "en": "To the End of the Nightmare",
                 "fr": "A la fin du cauchemar",
                 "de": "zumEnde des Albtraums",
-                "es": "uir2_primes18",
+                "es": "Final de la Pesadilla",
                 "ru": "uir2_primes18"
             }
         },
@@ -7063,7 +7213,7 @@
                 "en": "Kitins Lair",
                 "fr": "Repaire des Kitins",
                 "de": "Kitin-Unterschlupf",
-                "es": "uir2_primes10",
+                "es": "Kitinero",
                 "ru": "uir2_primes10"
             }
         },
@@ -7078,7 +7228,7 @@
                 "en": "The Nest",
                 "fr": "Le nid",
                 "de": "Das Nest",
-                "es": "uir2_primes08",
+                "es": "El Nido",
                 "ru": "uir2_primes08"
             }
         },
@@ -7093,7 +7243,7 @@
                 "en": "Neverending Walk",
                 "fr": "Marche éternelle",
                 "de": "Unendlicher Spaziergang",
-                "es": "uir2_primes26",
+                "es": "Camino sin Fin",
                 "ru": "uir2_primes26"
             }
         },
@@ -7108,7 +7258,7 @@
                 "en": "Green-cave",
                 "fr": "Grotte-verte",
                 "de": "Grüner-Keller",
-                "es": "uir2_primes03",
+                "es": "Cueva Verde",
                 "ru": "uir2_primes03"
             }
         },
@@ -7123,7 +7273,7 @@
                 "en": "The Arena",
                 "fr": "L`arène",
                 "de": "Die Arena",
-                "es": "uir2_primes13",
+                "es": "La Arena",
                 "ru": "uir2_primes13"
             }
         },
@@ -7138,7 +7288,7 @@
                 "en": "Abandoned Cave",
                 "fr": "Grotte abandonnée",
                 "de": "Verlassener Keller",
-                "es": "uir2_primes17",
+                "es": "Cueva Abandonada",
                 "ru": "uir2_primes17"
             }
         },
@@ -7153,7 +7303,7 @@
                 "en": "The Pillars",
                 "fr": "Les statues",
                 "de": "Die Pfeiler",
-                "es": "uir2_primes06",
+                "es": "Los Pilares",
                 "ru": "uir2_primes06"
             }
         },
@@ -7168,7 +7318,7 @@
                 "en": "Plain of Torments",
                 "fr": "Prairie des tourments",
                 "de": "Ebene der Qualen",
-                "es": "uir2_primes04",
+                "es": "Planicie de Tormentos",
                 "ru": "uir2_primes04"
             }
         },
@@ -7183,7 +7333,7 @@
                 "en": "Kitin Desolation",
                 "fr": "Désolation des Kitins",
                 "de": "Kitin Verwüstung",
-                "es": "uir2_primes24",
+                "es": "Desolación Kitin",
                 "ru": "uir2_primes24"
             }
         },
@@ -7198,7 +7348,7 @@
                 "en": "Ruins of the Past",
                 "fr": "Ruines du passé",
                 "de": "Ruinen der Vergangenheit",
-                "es": "uir2_primes07",
+                "es": "Ruinas del Pasado",
                 "ru": "uir2_primes07"
             }
         },
@@ -7213,7 +7363,7 @@
                 "en": "Valley of Spores",
                 "fr": "Vallée des spores",
                 "de": "Tal der Sporen",
-                "es": "uir2_primes11",
+                "es": "Valle de Esporas",
                 "ru": "uir2_primes11"
             }
         },
@@ -7228,7 +7378,7 @@
                 "en": "The Hive",
                 "fr": "La ruche",
                 "de": "Der Bienenstock",
-                "es": "uir2_primes12",
+                "es": "La Colmena",
                 "ru": "uir2_primes12"
             }
         }
@@ -7245,7 +7395,7 @@
                 "en": "Lands of Umbra",
                 "fr": "Route des Ombres",
                 "de": "Länder von Umbra",
-                "es": "Tierras de las Sombras",
+                "es": "Tierras de Sombras",
                 "ru": "Земля Теней"
             }
         },
@@ -7290,7 +7440,7 @@
                 "en": "Gate of Obscurity",
                 "fr": "Porte de l'Obscurité",
                 "de": "Tor der Dunkelheit",
-                "es": "Puerta de la Oscuridad ",
+                "es": "Puerta de la Oscuridad",
                 "ru": "Врата Туманности"
             }
         },
@@ -7320,7 +7470,7 @@
                 "en": "Ruins of Leron Workshop",
                 "fr": "Atelier des Ruines de Léron",
                 "de": "Werkstatt in den Ruinen von Leron",
-                "es": "Taller de las Ruinas de Lerong",
+                "es": "Taller de Ruinas de Lerong",
                 "ru": "Мастерская Руин Лернона"
             }
         },
@@ -7335,8 +7485,8 @@
                 "en": "Halls of Darkring Research Center",
                 "fr": "Centre de Recherche des Salles de la Bague Noire",
                 "de": "Forschungszentrum in den Hallen des Schwarzen Rings",
-                "es": "Centro de Investigación del Pasillo del Anillo Oscuro",
-                "ru": "Исследовательский центр Залы темного кольца "
+                "es": "Centro de Investigación Pasillo del Anillo Oscuro",
+                "ru": "Исследовательский центр Залы темного кольца"
             }
         },
         "place_outpost_pr_06": {
@@ -7350,7 +7500,7 @@
                 "en": "The Fallen Tree Workshop",
                 "fr": "Atelier de l'Arbre Abattu",
                 "de": "Gefallener-Baum-Werkstatt",
-                "es": "Taller del Árbol Caído",
+                "es": "Taller de Árbol Caído",
                 "ru": "Мастерская Падшего Древа"
             }
         },
@@ -7365,7 +7515,7 @@
                 "en": "Ruins of Leron",
                 "fr": "Ruines de Léron",
                 "de": "Ruinen von Leron",
-                "es": "Ruinas de Leron ",
+                "es": "Ruinas de Leron",
                 "ru": "Руины Лероны"
             }
         },
@@ -7395,7 +7545,7 @@
                 "en": "The Fallen Tree",
                 "fr": "Arbre Abattu",
                 "de": "Der gefallene Baum",
-                "es": "El Árbol Caído",
+                "es": "Árbol Caído",
                 "ru": "Падшее Дерево"
             }
         },
@@ -7410,7 +7560,7 @@
                 "en": "Windygate Column",
                 "fr": "Colonne de la Porte des Vents",
                 "de": "Säule der Sturmpforte",
-                "es": "Columna de la Puerta del Viento",
+                "es": "Columna de Puerta del Viento",
                 "ru": "Колонна Ветряных Врат"
             }
         },
@@ -7425,7 +7575,7 @@
                 "en": "Land of Plenty Research Center",
                 "fr": "Centre de Recherche de la Terre d'Abondance",
                 "de": "Land des Überflusses - Forschungszentrum",
-                "es": "Centro de Investigación de la Tierra de la Abundancia",
+                "es": "Centro de Investigación de Tierra de Abundancia",
                 "ru": "Исследовательский центр Земли изобилия"
             }
         },
@@ -7440,7 +7590,7 @@
                 "en": "Underwood Woe Stronghold",
                 "fr": "Forteresse des Sous-Bois du Malheur",
                 "de": "Festung am Unterholz des Unglücks",
-                "es": "Fortaleza de Underwood",
+                "es": "Fortaleza de Sotobosque",
                 "ru": "Форт Горе Подлесное"
             }
         },
@@ -7455,7 +7605,7 @@
                 "en": "Three Totems Pass Workshop",
                 "fr": "Atelier du Col des Trois Totems",
                 "de": "Dreitotempass-Werkstatt",
-                "es": "Taller del Pase de los Tres Tótems",
+                "es": "Taller Paso de Tres Tótems",
                 "ru": "Мастерская Проход трех Тотемов"
             }
         },
@@ -7470,7 +7620,7 @@
                 "en": "Land of Plenty",
                 "fr": "Terre d'Abondance",
                 "de": "Land des Überflusses",
-                "es": "Tierra de la Abundancia",
+                "es": "Tierra de Abundancia",
                 "ru": "Земли Изобилия"
             }
         },
@@ -7485,7 +7635,7 @@
                 "en": "Highwell",
                 "fr": "Flaque Supérieur",
                 "de": "Oberer Schacht",
-                "es": "Highwell",
+                "es": "Pozo",
                 "ru": "Хайвелл"
             }
         },
@@ -7515,7 +7665,7 @@
                 "en": "Grotto Pass",
                 "fr": "Col des Grottes",
                 "de": "Höhlenpass",
-                "es": "Pase de la Gruta",
+                "es": "Paso de la Gruta",
                 "ru": "Сквозной Грот"
             }
         },
@@ -7530,7 +7680,7 @@
                 "en": "Three Totems Pass",
                 "fr": "Col des Trois Totems",
                 "de": "Dreitotempass",
-                "es": "Pase de los Tres Tótems",
+                "es": "Paso de Tres Tótems",
                 "ru": "Проход Трех Тотемов"
             }
         },
@@ -7545,7 +7695,7 @@
                 "en": "Giant Mushroom Pass",
                 "fr": "Col du Champignon Géant",
                 "de": "Riesenpilzpass",
-                "es": "Pase del Hongo Gigante",
+                "es": "Paso del Hongo Gigante",
                 "ru": "Проход Гигантских Грибов"
             }
         },
@@ -7560,7 +7710,7 @@
                 "en": "Alleyways Bluff Stronghold",
                 "fr": "Forteresse de la Ruelle",
                 "de": "Festung am Klippendurchgang",
-                "es": "Fortaleza de los Callejones del Acantilado",
+                "es": "Fortaleza de Callejones del Acantilado",
                 "ru": "Форт Утеса Проулков"
             }
         },
@@ -7576,7 +7726,7 @@
                 "fr": "Centre de Recherche du Cromlech Supérieur",
                 "de": "Forschungszentrum am Oberen Steinkreis",
                 "es": "Centro de Investigación de Henge Alto",
-                "ru": "Исследовательский центр Высокие Мезолиты "
+                "ru": "Исследовательский центр Высокие Мезолиты"
             }
         },
         "place_outpost_pr_12": {
@@ -7590,7 +7740,7 @@
                 "en": "Lowhills Stronghold",
                 "fr": "Forteresse des Basses Collines",
                 "de": "Festung in den Kleinen Hügeln",
-                "es": "Fortaleza de las Colinas Bajas",
+                "es": "Fortaleza de Colinas Bajas",
                 "ru": "Форт Малохолмья"
             }
         },
@@ -7605,7 +7755,7 @@
                 "en": "Lowhills Research Center",
                 "fr": "Centre de Recherche des Basses Collines",
                 "de": "Forschungszentrum in den Kleinen Hügeln",
-                "es": "Centro de Investigación de las Colinas Altas",
+                "es": "Centro de Investigación de Colinas Altas",
                 "ru": "Исследовательский центр Малохолмья"
             }
         },
@@ -7680,7 +7830,7 @@
                 "en": "Eerie Valley Magic Pole",
                 "fr": "Pôle Magique de la Vallée Sinistre",
                 "de": "Magischer Ort im Schaurigen Tal",
-                "es": "Polo Mágico del Valle de Eerie",
+                "es": "Polo Mágico Valle de Eerie",
                 "ru": "Очаг Магии Долина Ужаса"
             }
         },
@@ -7695,7 +7845,7 @@
                 "en": "Aedengate Workshop",
                 "fr": "Atelier de la Porte d'Aeden",
                 "de": "Aedenpforte-Werkstatt",
-                "es": "Taller de la Puerta de Aeden",
+                "es": "Taller Puerta de Aeden",
                 "ru": "Мастерская Врата Аэдан"
             }
         },
@@ -7710,7 +7860,7 @@
                 "en": "Yelkgrove Border Post",
                 "fr": "Poste Frontière du Bosquet des Yelks",
                 "de": "Yelkwäldchen-Grenzposten",
-                "es": "Puesto Fronterizo de Yelkgrove",
+                "es": "Puesto Fronterizo Arboleda Yelk",
                 "ru": "Пограничная застава Роща Йелков"
             }
         },
@@ -7740,7 +7890,7 @@
                 "en": "Yelkgrove",
                 "fr": "Bosquet des Yelks",
                 "de": "Yelkwäldchen",
-                "es": "Yelkgrove",
+                "es": "Arboleda Yelk",
                 "ru": "Роща Йелков"
             }
         },
@@ -7772,7 +7922,7 @@
                 "en": "Under Spring",
                 "fr": "Sources Interdites",
                 "de": "Verbotene Quellen",
-                "es": "Bajo la Primavera",
+                "es": "Fuente Subterránea",
                 "ru": "Подземный источник"
             }
         },
@@ -7787,7 +7937,7 @@
                 "en": "Under Spring",
                 "fr": "Sources Interdites",
                 "de": "Verbotene Quellen",
-                "es": "Bajo la Primavera",
+                "es": "Fuente subterránea",
                 "ru": "Подземный источник"
             }
         },
@@ -7802,7 +7952,7 @@
                 "en": "Deadtree Stronghold",
                 "fr": "Forteresse de l'Arbre Mort",
                 "de": "Festung am Toten Baum",
-                "es": "Fortaleza del Árbol Muerto",
+                "es": "Fortaleza de Árbol Muerto",
                 "ru": "Форт Мертводрева"
             }
         },
@@ -7815,9 +7965,9 @@
             "lmtype": 2,
             "text": {
                 "en": "Sap Marsh Trade Post",
-                "fr": "Poste d'Echange du Marécage de la Sève",
+                "fr": "Poste d'Échange du Marécage de la Sève",
                 "de": "Sapsumpf-Handelsposten",
-                "es": "Puesto de Comercio de la Savia de los Pantanos",
+                "es": "Puesto de Comercio Pantano de Savia",
                 "ru": "Торговая застава Болота Сэпа"
             }
         },
@@ -7832,7 +7982,7 @@
                 "en": "Shooting Meadow Border Post",
                 "fr": "Poste Frontière du Pré Lancinant",
                 "de": "Grenzposten in der Stechenden Wiese",
-                "es": "Puesto Fronterizo de la Pradera de Tiro",
+                "es": "Puesto Fronterizo Pradera de Tiro",
                 "ru": "Пограничная застава Луг Стрелков"
             }
         },
@@ -7862,7 +8012,7 @@
                 "en": "Sap Marsh",
                 "fr": "Marécage de la Sève",
                 "de": "Sapsumpf",
-                "es": "Savia del Pantano",
+                "es": "Pantano de Savia",
                 "ru": "Болото сэпа"
             }
         },
@@ -7924,7 +8074,7 @@
                 "en": "Wastelands",
                 "fr": "Terres Abandonnées",
                 "de": "Niemandsland",
-                "es": "Paramos",
+                "es": "Páramos",
                 "ru": "Пустоземье"
             }
         },
@@ -7984,7 +8134,7 @@
                 "en": "Grotto Walk Research Center",
                 "fr": "Centre de Recherche de la Promenade des Grottes",
                 "de": "Grottenweg-Forschungszentrum",
-                "es": "Centro de Investigación Caminata de la Gruta",
+                "es": "Centro de Investigación Camino de la Gruta",
                 "ru": "Исследовательский центр Тропа Грота"
             }
         },
@@ -7999,7 +8149,7 @@
                 "en": "Cursed Cavern Stronghold",
                 "fr": "Forteresse de la Caverne Maudite",
                 "de": "Festung in der Verfluchten Höhle",
-                "es": "Fortaleza de la Caverna Maldita",
+                "es": "Fortaleza Caverna Maldita",
                 "ru": "Форт Проклятой Пещеры"
             }
         },
@@ -8029,7 +8179,7 @@
                 "en": "Wings of Spite Farm",
                 "fr": "Ferme des Ailes du Dépit",
                 "de": "Hof im Flügel der Feindschaft",
-                "es": "Granja de las Alas de la Malevolencia",
+                "es": "Granja Alas de la Maldad",
                 "ru": "Ферма Крылья Досады"
             }
         },
@@ -8044,7 +8194,7 @@
                 "en": "Continuity Corner Diplomatic Outpost",
                 "fr": "Avant-Poste Diplomatique du Tournant de la Continuité",
                 "de": "Diplomatischer Außenposten in der Wegkehre der Kontinuität",
-                "es": "Puesto Diplomático de la Esquina de la Continuidad",
+                "es": "Puesto Diplomático Esquina de la Continuidad",
                 "ru": "Дипломатическая миссия Точка Непрерывности"
             }
         },
@@ -8059,7 +8209,7 @@
                 "en": "Wings of Spite",
                 "fr": "Ailes du Dépit",
                 "de": "Flügel der Feindschaft",
-                "es": "Alas de Malevolencia",
+                "es": "Alas de Maldad",
                 "ru": "Крылья Досады"
             }
         },
@@ -8075,7 +8225,7 @@
                 "fr": "Bois du Champignon Géant",
                 "de": "Großer Pilzwald",
                 "es": "Bosque del Gran Hongo",
-                "ru": "Великие Грибные Леса "
+                "ru": "Великие Грибные Леса"
             }
         },
         "place_lieudit_the_land_of_continuity_3": {
@@ -8089,7 +8239,7 @@
                 "en": "The Cursed Cavern",
                 "fr": "Caverne Maudite",
                 "de": "Die verfluchte Höhle",
-                "es": "La Caverna Maldita",
+                "es": "Caverna Maldita",
                 "ru": "Проклятая Пещера"
             }
         },
@@ -8119,7 +8269,7 @@
                 "en": "Midway Point",
                 "fr": "Point du Milieu",
                 "de": "Mittelpunkt",
-                "es": "Punto Medio ",
+                "es": "Punto Medio",
                 "ru": "Срединное Место"
             }
         },
@@ -8134,7 +8284,7 @@
                 "en": "Saplake Major Stronghold",
                 "fr": "Forteresse du Lac Majeure de Sève",
                 "de": "Festung am Großen Sapsee",
-                "es": "Fortaleza del Lago de la Savia Mayor",
+                "es": "Fortaleza Lago Mayor de  Savia",
                 "ru": "Форт Большое Сэпозеро"
             }
         },
@@ -8164,7 +8314,7 @@
                 "en": "Haunted Gorge Farm",
                 "fr": "Ferme de la Gorge Hantée",
                 "de": "Hof an der Schlucht des Spuks",
-                "es": "Granja de la Quebrada Encantada",
+                "es": "Granja Quebrada Encantada",
                 "ru": "Мастерская ущелья Призраков"
             }
         },
@@ -8179,7 +8329,7 @@
                 "en": "Saplake Major",
                 "fr": "Lac Majeur de Sève",
                 "de": "Großer Sapsee",
-                "es": "Principal Lago de Savia",
+                "es": "Lago Mayor de Savia",
                 "ru": "Большое озеро сэп"
             }
         },
@@ -8209,7 +8359,7 @@
                 "en": "Dragon Horns Valley",
                 "fr": "Vallée des Cornes du Dragon",
                 "de": "Drachenhorntal",
-                "es": "Valle de los Cuernos de Dragón ",
+                "es": "Valle Cuernos de Dragón",
                 "ru": "Долина Драконова Рога"
             }
         },
@@ -8239,7 +8389,7 @@
                 "en": "Ruins of Cryton Farm",
                 "fr": "Ferme des Ruines de Cryton",
                 "de": "Hof an den Ruinen von Cryton",
-                "es": "Granja de las Ruinas de Cryton",
+                "es": "Granja Ruinas de Cryton",
                 "ru": "Ферма Руины Крайтона"
             }
         },
@@ -8284,7 +8434,7 @@
                 "en": "Hall of the Mountain Bane",
                 "fr": "Caverne de la Montagne Empoisonnée",
                 "de": "Halle des vergifteten Berges",
-                "es": "Salón de la Montana de la Perdición",
+                "es": "Salón de la Montaña de Perdición",
                 "ru": "Зал Горной Погибели"
             }
         },
@@ -8362,7 +8512,7 @@
             "text": {
                 "en": "Winds of Muse",
                 "fr": "Vents du Songe",
-                "de": "Winde der Musen (WoM)",
+                "de": "Winde der Musen",
                 "es": "Vientos de la Musa",
                 "ru": "Ветра Муз"
             }
@@ -8468,7 +8618,7 @@
                 "en": "Watergate Border Post",
                 "fr": "Poste Frontière de la Porte des Eaux",
                 "de": "Wasserpforte-Grenzposten",
-                "es": "Puerto Fronterizo de la Puerta del Agua",
+                "es": "Puerto Fronterizo de Puerta del Agua",
                 "ru": "Пограничная застава Врата Вод"
             }
         },
@@ -8496,10 +8646,10 @@
             "lmtype": 2,
             "text": {
                 "en": "Loria Ponds Research Center",
-                "fr": "Centre de Recherche des Etangs de Loria",
+                "fr": "Centre de Recherche des Étangs de Loria",
                 "de": "Lorias Teiche - Forschungszentrum",
                 "es": "Centro de Investigación Estanques de Loria",
-                "ru": "Исследовательский центр Пруды Лории "
+                "ru": "Исследовательский центр Пруды Лории"
             }
         },
         "place_outpost_tryker_31": {
@@ -8513,7 +8663,7 @@
                 "en": "Whirling Stronghold",
                 "fr": "Forteresse du Tourbillon",
                 "de": "Wirbelwind-Festung",
-                "es": "Fortaleza de Whirling",
+                "es": "Fortaleza Remolinos",
                 "ru": "Форт Ветряки"
             }
         },
@@ -8528,7 +8678,7 @@
                 "en": "Gusty Gorge Workshop",
                 "fr": "Atelier de la Gorge des Vents",
                 "de": "Werkstatt in der Stürmischen Schlucht",
-                "es": "Taller del Barranco Borrascoso",
+                "es": "Taller de Barranco Borrascoso",
                 "ru": "Мастерская Теснины Ветров"
             }
         },
@@ -8573,7 +8723,7 @@
                 "en": "Hush Hole",
                 "fr": "Trou du Silence",
                 "de": "Grube der Stille",
-                "es": "Hoyo del Silencio ",
+                "es": "Hoyo del Silencio",
                 "ru": "Нора Тссс!"
             }
         },
@@ -8586,9 +8736,9 @@
             "lmtype": 2,
             "text": {
                 "en": "Loriagate Border Post",
-                "fr": "Poste d'Echange de Port-Loria",
+                "fr": "Poste d'Échange de Port-Loria",
                 "de": "Grenzposten am Tor von Loria",
-                "es": "Puesto Fronterizo Loriagate",
+                "es": "Puesto Fronterizo Puerta de Loria",
                 "ru": "Пограничная застава Врата Лории"
             }
         },
@@ -8618,7 +8768,7 @@
                 "en": "Muse Watch Lake Farm",
                 "fr": "Ferme du Lac des Veilleurs de Songe",
                 "de": "Hof am See der Traumwächter",
-                "es": "Granja del Lago para Observar a la Musa",
+                "es": "Granja del Observatorio de la Musa",
                 "ru": "Ферма Стражи Озера Муз"
             }
         },
@@ -8646,9 +8796,9 @@
             "lmtype": 2,
             "text": {
                 "en": "Musemere Workshop",
-                "fr": "Atelier de l'Etang de la Contemplation",
+                "fr": "Atelier de l'Étang de la Contemplation",
                 "de": "Werkstatt an den Verträumten Seen",
-                "es": "Taller Musemere",
+                "es": "Taller de la Contemplación",
                 "ru": "Мастерская Озера Муз"
             }
         },
@@ -8663,7 +8813,7 @@
                 "en": "Witchy Coves",
                 "fr": "Criques Ensorcelées",
                 "de": "Verzauberte Bucht",
-                "es": "Calas de las Brujas",
+                "es": "Ensenada de Brujas",
                 "ru": "Пещеры Ведьм"
             }
         },
@@ -8678,7 +8828,7 @@
                 "en": "Muse Watch Lake",
                 "fr": "Lac des Veilleurs de Songe",
                 "de": "See der Traumwächter",
-                "es": "Lago para Observar a la Musa",
+                "es": "Observatorio de la Musa",
                 "ru": "Озеро Муз"
             }
         },
@@ -8693,7 +8843,7 @@
                 "en": "Big Sleep Mountain",
                 "fr": "Montagne du Profond Sommeil",
                 "de": "Schlafender Berg",
-                "es": "Gran Montana Durmiente",
+                "es": "Gran Montaña Durmiente",
                 "ru": "Гора Долгого Сна"
             }
         },
@@ -8723,7 +8873,7 @@
                 "en": "Cute Springs Research Center",
                 "fr": "Centre de Recherche des Sources des Cutes",
                 "de": "Cute-Quellsee-Forschungszentrum",
-                "es": "Centro de Investigación de los Manantiales Bonitos",
+                "es": "Centro de Investigación de Manantial de Cutes",
                 "ru": "Исследовательский центр Ключи Кьют"
             }
         },
@@ -8753,7 +8903,7 @@
                 "en": "Cute Springs Twining Stronghold",
                 "fr": "Forteresse des Sources Agitées des Cutes",
                 "de": "Festung an den Sprudelnden Cute-Quellen",
-                "es": "Fortaleza del Hermanamiento de los Manantiales Bonitos",
+                "es": "Fortaleza Hermanamiento de Manantial de Cutes",
                 "ru": "Форт Плетения Кьют"
             }
         },
@@ -8766,7 +8916,7 @@
             "lmtype": 2,
             "text": {
                 "en": "Tupile Trade Post",
-                "fr": "Poste d'Echange de Tupile",
+                "fr": "Poste d'Échange de Tupile",
                 "de": "Tupile-Handelsposten",
                 "es": "Puesto de Comercio Tupile",
                 "ru": "Торговая застава Тьюпайл"
@@ -8783,7 +8933,7 @@
                 "en": "Twintops Workshop",
                 "fr": "Atelier des Cimes Jumelles",
                 "de": "Zwillingsgipfel-Werkstatt",
-                "es": "Taller de las Cimas Gemelas",
+                "es": "Taller de Cimas Gemelas",
                 "ru": "Мастерская Пики Близнецы"
             }
         },
@@ -8813,7 +8963,7 @@
                 "en": "Cute Springs",
                 "fr": "Sources des Cutes",
                 "de": "Cute-Quellsee",
-                "es": "Lindos Manantiales",
+                "es": "Manantial de Cutes",
                 "ru": "Ключи Кьют"
             }
         },
@@ -8828,7 +8978,7 @@
                 "en": "Cute Springs Twining",
                 "fr": "Sources Agitées des Cutes",
                 "de": "Sprudelnde Cute-Quellen",
-                "es": "Hermanamiento de Lindos Manantiales",
+                "es": "Hermanamiento de Manantial de Cutes",
                 "ru": "Плетение Кьют"
             }
         },
@@ -8903,7 +9053,7 @@
                 "en": "Bountygate Border Post",
                 "fr": "Poste Frontière de la Porte de la Générosité",
                 "de": "Grenzposten am Tor des Überflusses",
-                "es": "Puesto Fronterizo de la Puerta de la Recompensa",
+                "es": "Puesto Fronterizo Puerta de la Recompensa",
                 "ru": "Пограничная застава Врата Изобилия"
             }
         },
@@ -8916,7 +9066,7 @@
             "lmtype": 2,
             "text": {
                 "en": "Fount Porch Trade Post",
-                "fr": "Poste d'Echange du Porche des Sources",
+                "fr": "Poste d'Échange du Porche des Sources",
                 "de": "Quellhalle-Handelsposten",
                 "es": "Puesto de Comercio Porche de la Fuente",
                 "ru": "Торговая застава Террасы Родника"
@@ -8948,7 +9098,7 @@
                 "en": "Ponders End Workshop",
                 "fr": "Atelier des Colonnes de la Méditation",
                 "de": "Werkstatt an den Säulen der Besinnung",
-                "es": "Taller Final de la Reflexión ",
+                "es": "Taller Final del Reflejo",
                 "ru": "Мастерская Предел Раздумий"
             }
         },
@@ -8963,7 +9113,7 @@
                 "en": "Deathfly Plain",
                 "fr": "Plaine Perdue",
                 "de": "Verlassene Ebene",
-                "es": "Llanura Deathfly",
+                "es": "Llanura Mosca muerta",
                 "ru": "Роковая Равнина"
             }
         },
@@ -9023,7 +9173,7 @@
                 "en": "Ponders End Pillars",
                 "fr": "Colonnes de la Méditation",
                 "de": "Säulen der Besinnung",
-                "es": "Reflexiones sobre los Pilares Finales",
+                "es": "Reflejos de los Pilares Finales",
                 "ru": "Колонны Предела Раздумий"
             }
         },
@@ -9038,7 +9188,7 @@
                 "en": "Tippy Peaks Diplomatic Outpost",
                 "fr": "Avant-Poste Diplomatique des Pics Instables",
                 "de": "Diplomatischer Außenposten auf den Brüchigen Gipfeln",
-                "es": "Puesto Diplomático de los Picos Tippy",
+                "es": "Puesto Diplomático de Picos Tippy",
                 "ru": "Дипломатическая миссия Острые Пики"
             }
         },
@@ -9053,7 +9203,7 @@
                 "en": "Sinking Sands Workshop",
                 "fr": "Atelier des Sables de la Perdition",
                 "de": "Werkstatt im Sinkenden Sand",
-                "es": "Taller de las Arenas Movedizas",
+                "es": "Taller Arenas Movedizas",
                 "ru": "Мастерская Зыбучие пески"
             }
         },
@@ -9068,7 +9218,7 @@
                 "en": "Eastshore Magic Pole",
                 "fr": "Pôle Magique de la Rivest",
                 "de": "Magischer Ort an der Ostküste",
-                "es": "Polo Mágico de la Costa del Este",
+                "es": "Polo Mágico Costa del Este",
                 "ru": "Очаг Магии Истхорн"
             }
         },
@@ -9083,7 +9233,7 @@
                 "en": "Graveyard Gate Research Center",
                 "fr": "Centre de Recherche de la Promenade Caverneuse",
                 "de": "Friedhofspforte-Forschungszentrum",
-                "es": "Centro de Investigación de la Puerta del Cementerio",
+                "es": "Centro de Investigación Puerta del Cementerio",
                 "ru": "Исследовательский центр Кладбищенские Врата"
             }
         },
@@ -9098,7 +9248,7 @@
                 "en": "Mire of the Dire Stronghold",
                 "fr": "Forteresse du Bourbier de la Misère",
                 "de": "Festung im Grässlichen Morast",
-                "es": "Fortaleza del Fango de lo Fatal",
+                "es": "Fortaleza de Fango Fatal",
                 "ru": "Форт Зловещей Трясины"
             }
         },
@@ -9143,7 +9293,7 @@
                 "en": "Mire of the Dire",
                 "fr": "Bourbier de la Misère",
                 "de": "Grässlicher Morast",
-                "es": "Fango de lo Fatal",
+                "es": "Fango Fatal",
                 "ru": "Зловещая Трясина"
             }
         },
@@ -9158,7 +9308,7 @@
                 "en": "Graveyard Walk",
                 "fr": "Promenade Caverneuse",
                 "de": "Friedhofsweg",
-                "es": "Caminata al Cementerio",
+                "es": "Camino al Cementerio",
                 "ru": "Кладбищенская тропа"
             }
         },
@@ -9188,7 +9338,7 @@
                 "en": "Darkmoor Border Post",
                 "fr": "Poste Frontière des Landes Obscures",
                 "de": "Schwarzmoor-Grenzposten",
-                "es": "Puesto Fronterizo de Darkmoor",
+                "es": "Puesto Fronterizo de Pantano Oscuro",
                 "ru": "Пограничная застава Даркмур"
             }
         },
@@ -9246,7 +9396,7 @@
             "lmtype": 2,
             "text": {
                 "en": "Greenvale Trade Post",
-                "fr": "Poste d'Echange de Vertval",
+                "fr": "Poste d'Échange de Vertval",
                 "de": "Grünes Tal - Handelsposten",
                 "es": "Puesto de Comercio Greenvale",
                 "ru": "Торговая застава Зеленая Долина"
@@ -9338,7 +9488,7 @@
                 "en": "Darkmoor",
                 "fr": "Landes Obscures",
                 "de": "Schwarzmoor",
-                "es": "Darkmoor",
+                "es": "Pantano Oscuro",
                 "ru": "Даркмур"
             }
         },
@@ -9353,7 +9503,7 @@
                 "en": "Lakenisle",
                 "fr": "Lac de l'Ile",
                 "de": "Seeninsel",
-                "es": "Lakenisle",
+                "es": "Lago de la Isla",
                 "ru": "Озерная отмель"
             }
         },
@@ -9443,7 +9593,7 @@
                 "en": "Council Chamber Square",
                 "fr": "Square de la Chambre du Conseil",
                 "de": "Ratskammerplatz",
-                "es": "Plaza de la Cámara del Consejo",
+                "es": "Plaza Cámara del Consejo",
                 "ru": "Площадь Палат Совета"
             }
         },
@@ -9473,7 +9623,7 @@
                 "en": "Frogmore Place",
                 "fr": "Place Frogmore",
                 "de": "Frogmore-Platz",
-                "es": "Lugar de Frogrmore",
+                "es": "Lugar de Frogmore",
                 "ru": "Площадь Лягушек"
             }
         },
@@ -9533,7 +9683,7 @@
                 "en": "Upper Chamber Avenue",
                 "fr": "Avenue de la Chambre Haute",
                 "de": "Obere Ratsstraße",
-                "es": "Avenida de la Cámara Superior",
+                "es": "Avenida de Cámara Alta",
                 "ru": "Авеню Верхних палат"
             }
         },
@@ -9548,7 +9698,7 @@
                 "en": "Lower Chamber Avenue",
                 "fr": "Avenue de la Chambre Basse",
                 "de": "Untere Ratsstraße",
-                "es": "Avenida de la Cámara Inferior",
+                "es": "Avenida de Cámara Baja",
                 "ru": "Авеню Нижних палат"
             }
         },
@@ -9563,8 +9713,8 @@
                 "en": "Hartley's Way",
                 "fr": "Chemin de Hartley",
                 "de": "Hartley-Weg",
-                "es": "En Camino de Hartley",
-                "ru": "Проулок Хартли "
+                "es": "Camino de Hartley",
+                "ru": "Проулок Хартли"
             }
         },
         "place_fairhaven_s_6": {
@@ -9578,7 +9728,7 @@
                 "en": "Eastmarket Walk",
                 "fr": "Promenade du Marché Est",
                 "de": "Ostmarkt-Gang",
-                "es": "El Camino del Mercado del Este",
+                "es": "Camino Mercado del Este",
                 "ru": "Переулок Восточного Рынка"
             }
         },
@@ -9612,6 +9762,21 @@
                 "ru": "Лягушачья улица"
             }
         },
+        "place_marauder_camp_restingwater": {
+            "pos": [
+                15998,
+                -33712
+            ],
+            "regionforce": 0,
+            "lmtype": 1,
+            "text": {
+                "en": "Marauder Camp",
+                "fr": "Camp Maraudeur",
+                "de": "Lager der Marodeure",
+                "es": "Campamento Marauder",
+                "ru": "Marauder Camp"
+            }
+        },
         "avendale_stable": {
             "pos": [
                 18186,
@@ -9621,8 +9786,8 @@
             "lmtype": 3,
             "text": {
                 "en": "Avendale Stables",
-                "fr": "Etables d'Avendale",
-                "de": "Stall von Avendale ",
+                "fr": "Étables d'Avendale",
+                "de": "Stall von Avendale",
                 "es": "Establos de Avendale",
                 "ru": "Стойла Эвендейла"
             }
@@ -9636,8 +9801,8 @@
             "lmtype": 3,
             "text": {
                 "en": "Crystabell Stables",
-                "fr": "Etables de Crystabell",
-                "de": "Stall von Crystabell ",
+                "fr": "Étables de Crystabell",
+                "de": "Stall von Crystabell",
                 "es": "Establos de Crystabell",
                 "ru": "Стойла Кристабелла"
             }
@@ -9651,8 +9816,8 @@
             "lmtype": 3,
             "text": {
                 "en": "Fairhaven Stables",
-                "fr": "Etables de Fairhaven",
-                "de": "Stall von Fairhaven ",
+                "fr": "Étables de Fairhaven",
+                "de": "Stall von Fairhaven",
                 "es": "Establos de Fairhaven",
                 "ru": "Стойла Фэрхевена"
             }
@@ -9666,10 +9831,25 @@
             "lmtype": 3,
             "text": {
                 "en": "Windermeer Stables",
-                "fr": "Etables de Windermeer",
-                "de": "Stall von Windermeer ",
+                "fr": "Étables de Windermeer",
+                "de": "Stall von Windermeer",
                 "es": "Establos de Windermeer",
                 "ru": "Стойла Виндермеера"
+            }
+        },
+        "marauder_camp_stable": {
+            "pos": [
+                15980,
+                -33700
+            ],
+            "regionforce": 0,
+            "lmtype": 3,
+            "text": {
+                "en": "Marauder Stables",
+                "fr": "Étables Maraudeurs",
+                "de": "Stall der Marodeure",
+                "es": "Establos Marauders",
+                "ru": "Стойло мародеров"
             }
         }
     },
@@ -9700,7 +9880,7 @@
                 "en": "Karavan Camp of Olkern Lake",
                 "fr": "Camp Karavan du Lac d'Olkern",
                 "de": "Karavan-Lager des Olkern-Sees",
-                "es": "Campamento Karavan del Lago Olken",
+                "es": "Campamento Karavan de Lago Olken",
                 "ru": "Лагерь Каравана у озера Олкерн"
             }
         },
@@ -9715,7 +9895,7 @@
                 "en": "Kami Camp of Olkern Lake",
                 "fr": "Camp Kami du Lac d'Olkern",
                 "de": "Kami-Lager des Olkern-Sees",
-                "es": "Campamento Kami del Lago Olken",
+                "es": "Campamento Kami de Lago Olken",
                 "ru": "Лагерь Ками у озера Олкерн"
             }
         },
@@ -9822,7 +10002,7 @@
                 "en": "Tryker Island",
                 "fr": "Ile Tryker",
                 "de": "Tryker-Insel",
-                "es": "Isla de los Tryker",
+                "es": "Isla de Tryker",
                 "ru": "Земли трайкеров"
             }
         },
@@ -9902,6 +10082,38 @@
             }
         }
     },
+    "undernexus": {
+        "continent_undernexus": {
+            "pos": [
+                9358,
+                -9039
+            ],
+            "regionforce": 0,
+            "lmtype": -1,
+            "text": {
+                "en": "continent_undernexus",
+                "fr": "continent_undernexus",
+                "de": "continent_undernexus",
+                "es": "continent_undernexus",
+                "ru": "continent_undernexus"
+            }
+        },
+        "region_undernexus": {
+            "pos": [
+                9361,
+                -9038
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "region_undernexus",
+                "fr": "region_undernexus",
+                "de": "region_undernexus",
+                "es": "region_undernexus",
+                "ru": "region_undernexus"
+            }
+        }
+    },
     "zorai": {
         "continent_zorai": {
             "pos": [
@@ -9914,7 +10126,7 @@
                 "en": "Witherings",
                 "fr": "Pays Malade",
                 "de": "Verdorrende Lande",
-                "es": "Witherings",
+                "es": "País Marchitándose",
                 "ru": "Земли Увядания"
             }
         },
@@ -9929,7 +10141,7 @@
                 "en": "Grove of Umbra",
                 "fr": "Bosquet de l'Ombre",
                 "de": "Hain von Umbra",
-                "es": "Bosque de las Sombras",
+                "es": "Bosque de Sombras",
                 "ru": "Роща Мрака"
             }
         },
@@ -9944,7 +10156,7 @@
                 "en": "Cities of Intuition",
                 "fr": "Cités de l'Intuition",
                 "de": "Städte der Einsicht",
-                "es": "Ciudades de la Intuicion",
+                "es": "Ciudades de la Intuición",
                 "ru": "Города Провидцев"
             }
         },
@@ -9959,7 +10171,7 @@
                 "en": "Maiden Grove",
                 "fr": "Bosquet Vierge",
                 "de": "Jungfräuliches Wäldchen",
-                "es": "Bosque de las Doncellas",
+                "es": "Selva Virgen",
                 "ru": "Роща Дев"
             }
         },
@@ -9974,7 +10186,7 @@
                 "en": "Void",
                 "fr": "Vide",
                 "de": "Das Nichts",
-                "es": "Vacio",
+                "es": "Vacío",
                 "ru": "Великая Пустота"
             }
         },
@@ -9989,7 +10201,7 @@
                 "en": "Haven of Purity",
                 "fr": "Havre de Pureté",
                 "de": "Hafen der Reinheit",
-                "es": "Refugio de la Pureza",
+                "es": "Refugio de Pureza",
                 "ru": "Прибежище Благочестия"
             }
         },
@@ -10019,7 +10231,7 @@
                 "en": "Withered Stock Magic Pole",
                 "fr": "Pôle Magique de la Souche Flétrie",
                 "de": "Magischer Ort des Verdorrten Stammes",
-                "es": "Polo Mágico de Existencias Marchitas",
+                "es": "Polo Mágico del Tocón Marchito",
                 "ru": "Очаг Магии Заброшенный Кладезь"
             }
         },
@@ -10049,7 +10261,7 @@
                 "en": "Doomed Maze Farm",
                 "fr": "Ferme du Labyrinthe Condamné",
                 "de": "Hof am Verdammten Labyrinth",
-                "es": "Granja del Laberinto de los Condenados",
+                "es": "Granja Laberinto Condenado",
                 "ru": "Ферма Лабиринт Обреченных"
             }
         },
@@ -10064,7 +10276,7 @@
                 "en": "Underway Arch Stronghold",
                 "fr": "Forteresse de l'Arc Caché",
                 "de": "Wölbung-Festung",
-                "es": "Fortaleza del Arco en Marcha",
+                "es": "Lago Escondido",
                 "ru": "Форт Подземного Свода"
             }
         },
@@ -10079,7 +10291,7 @@
                 "en": "Gu-Qin Research Center",
                 "fr": "Centre de Recherche de Gu-Qin",
                 "de": "Gu-Qin-Forschungszentrum",
-                "es": "Centro de Investigación Gu-Qin ",
+                "es": "Centro de Investigación Gu-Qin",
                 "ru": "Исследовательский центр Гу-Кина"
             }
         },
@@ -10094,7 +10306,7 @@
                 "en": "Umbra Highback Workshop",
                 "fr": "Atelier du Dôme des Ombres",
                 "de": "Schattenkuppel-Werkstatt",
-                "es": "Taller de Highback de Umbra",
+                "es": "Taller Cúpula de Sombras",
                 "ru": "Мастерская Теневой гряды"
             }
         },
@@ -10109,7 +10321,7 @@
                 "en": "Sly Lake Crossroads Border Post",
                 "fr": "Poste Frontière du Lac Dissimulé",
                 "de": "Grenzposten am Verborgenen See",
-                "es": "Puesto Fronterizo Encrucijada del Lago Sly ",
+                "es": "Puesto fronterizo del Lago Escondido",
                 "ru": "Пограничная застава перекрестка у Озера Коварства"
             }
         },
@@ -10124,7 +10336,7 @@
                 "en": "Kipee Mull",
                 "fr": "Promontoire des Kipees",
                 "de": "Kap der Kipees",
-                "es": "Reflexión de Kipee",
+                "es": "Reflejo del Kipee",
                 "ru": "Мыс Киппи"
             }
         },
@@ -10139,7 +10351,7 @@
                 "en": "Sly Lake",
                 "fr": "Lac Dissimulé",
                 "de": "Verborgener See",
-                "es": "Lago Sly",
+                "es": "Lago Escondido",
                 "ru": "Озеро Коварства"
             }
         },
@@ -10154,7 +10366,7 @@
                 "en": "Underway Arch",
                 "fr": "Arc Caché",
                 "de": "Wölbung",
-                "es": "Archo en Marcha",
+                "es": "Arco en Marcha",
                 "ru": "Подземный свод"
             }
         },
@@ -10170,7 +10382,7 @@
                 "fr": "Souche Flétrie",
                 "de": "Verdorrter Stamm",
                 "es": "Acción Marchita",
-                "ru": "Заброшенный Кладезь "
+                "ru": "Заброшенный Кладезь"
             }
         },
         "place_zora": {
@@ -10244,7 +10456,7 @@
                 "en": "Qai-Du Workshop",
                 "fr": "Atelier de Qai-Du",
                 "de": "Qai-Du-Werkstatt",
-                "es": "Taller Qai-Du ",
+                "es": "Taller Qai-Du",
                 "ru": "Мастерская Кай-Ду"
             }
         },
@@ -10258,7 +10470,7 @@
             "text": {
                 "en": "Still Waters",
                 "fr": "Eaux Paisibles",
-                "de": "Stille Wasser",
+                "de": "Ruhigen Wasser",
                 "es": "Aguas Tranquilas",
                 "ru": "Недвижные воды"
             }
@@ -10289,7 +10501,7 @@
                 "en": "Mektoub Waterhole",
                 "fr": "Mare des Mektoubs",
                 "de": "Mektoub-Wasserloch",
-                "es": "Pozo de Auga de Mektoub",
+                "es": "Abrevadero de Mektoub",
                 "ru": "Водопой Мектубов"
             }
         },
@@ -10364,7 +10576,7 @@
                 "en": "Temple Hall District",
                 "fr": "District de Temple Hall",
                 "de": "Tempelhallen-Distrikt",
-                "es": "Distrito del Salón del Templo",
+                "es": "Distrito Salón del Templo",
                 "ru": "Квартал Храмовых залов"
             }
         },
@@ -10379,7 +10591,7 @@
                 "en": "West Hollow District",
                 "fr": "District de West Hollow",
                 "de": "West-Hollow-Distrikt",
-                "es": "Distrito de la Hondonada del Oeste",
+                "es": "Distrito Hondonada del Oeste",
                 "ru": "Квартал Чистого колодца"
             }
         },
@@ -10394,7 +10606,7 @@
                 "en": "Daïsha Estate",
                 "fr": "Domaine de Daïsha",
                 "de": "Daïsha-Distrikt",
-                "es": "Hacienda de Daïsha ",
+                "es": "Hacienda de Daïsha",
                 "ru": "Имение Даиши"
             }
         },
@@ -10409,7 +10621,7 @@
                 "en": "Win-Cho Estate",
                 "fr": "Domaine de Win-Cho",
                 "de": "Win-Cho-Distrikt",
-                "es": "Hacienda de Win-Cho ",
+                "es": "Hacienda de Win-Cho",
                 "ru": "Имение Вин-Чо"
             }
         },
@@ -10424,7 +10636,7 @@
                 "en": "Land's End Farm",
                 "fr": "Ferme du Bout des Terres",
                 "de": "Land-Enden-Hof",
-                "es": "Granja Final de la Tierra",
+                "es": "Granja Fin de la Tierra",
                 "ru": "Ферма на краю Света"
             }
         },
@@ -10439,7 +10651,7 @@
                 "en": "Sai-Shun Stronghold",
                 "fr": "Forteresse de Sai-Shun",
                 "de": "Sai-Shun-Festung",
-                "es": "Fortaleza Sai-Shun ",
+                "es": "Fortaleza Sai-Shun",
                 "ru": "Форт Саи-Шуна"
             }
         },
@@ -10452,9 +10664,9 @@
             "lmtype": 2,
             "text": {
                 "en": "Maiden Pond Workshop",
-                "fr": "Atelier de l'Etang Vierge",
+                "fr": "Atelier de l'Étang Vierge",
                 "de": "Jungfernteich-Werkstatt",
-                "es": "Taller del Estanque de las Doncellas",
+                "es": "Taller del Estanque de Selva Virgen",
                 "ru": "Мастерская у Девственного Пруда"
             }
         },
@@ -10484,7 +10696,7 @@
                 "en": "Great Boulder Workshop",
                 "fr": "Atelier du Grand Tunnel Rocailleux",
                 "de": "Werkstatt am Großen Brocken",
-                "es": "Taller del Gran Boulder",
+                "es": "Taller de la Gran Roca",
                 "ru": "Мастерская Великой Глыбы"
             }
         },
@@ -10497,9 +10709,9 @@
             "lmtype": 2,
             "text": {
                 "en": "Great Boulder Trade Post",
-                "fr": "Poste d'Echange du Grand Tunnel Rocailleux",
+                "fr": "Poste d'Échange du Grand Tunnel Rocailleux",
                 "de": "Handelsposten am Großen Brocken",
-                "es": "Puesto de Comercio Gran Boulder",
+                "es": "Puesto de Comercio Gran Roca",
                 "ru": "Торговая застава Великой Глыбы"
             }
         },
@@ -10527,9 +10739,9 @@
             "lmtype": 5,
             "text": {
                 "en": "Maiden Pond",
-                "fr": "Etang Vierge",
+                "fr": "Étang Vierge",
                 "de": "Jungfernteich",
-                "es": "Estanque de la Doncella",
+                "es": "Estanque de Selva Virgen",
                 "ru": "Девственный Пруд"
             }
         },
@@ -10559,7 +10771,7 @@
                 "en": "Fowling Lake",
                 "fr": "Lac aux Oiseaux",
                 "de": "Vogelsee",
-                "es": "Lago para Cazar Aves",
+                "es": "Lago de Caza",
                 "ru": "Озеро Птицеловов"
             }
         },
@@ -10578,6 +10790,21 @@
                 "ru": "Тоннель Великой глыбы"
             }
         },
+        "place_marauder_camp_maidengrove": {
+            "pos": [
+                10836,
+                -3059
+            ],
+            "regionforce": 0,
+            "lmtype": 1,
+            "text": {
+                "en": "Marauder Camp",
+                "fr": "Camp Maraudeur",
+                "de": "Lager der Marodeure",
+                "es": "Campamento Marauder",
+                "ru": "Marauder Camp"
+            }
+        },
         "place_outpost_zorai_15": {
             "pos": [
                 11261,
@@ -10589,7 +10816,7 @@
                 "en": "Zo-Kian Ruins Workshop",
                 "fr": "Atelier des Ruines de Zo-Kian",
                 "de": "Zo-Kian Ruinen - Werkstatt",
-                "es": "Taller de las Ruinas de Zo-Kian",
+                "es": "Taller Ruinas de Zo-Kian",
                 "ru": "Мастерская Руины Зо-Киан"
             }
         },
@@ -10619,7 +10846,7 @@
                 "en": "Paramount Stock Workshop",
                 "fr": "Atelier de la Souche Capitale",
                 "de": "Aussicht-Werkstatt",
-                "es": "Taller de las Acciones Primordiales",
+                "es": "Taller Acciones Primordiales",
                 "ru": "Мастерская Верховный Кладезь"
             }
         },
@@ -10679,7 +10906,7 @@
                 "en": "The Lost Valley",
                 "fr": "Vallée Perdue",
                 "de": "Das verlorene Tal",
-                "es": "El Valle Perdido",
+                "es": "Valle Perdido",
                 "ru": "Затерянная долина"
             }
         },
@@ -10694,7 +10921,7 @@
                 "en": "Mull of Despond",
                 "fr": "Promontoire du Désespoir",
                 "de": "Kap der Verzweiflung",
-                "es": "Reflexión del Desaliento",
+                "es": "Reflejo del Desaliento",
                 "ru": "Мыс Отчаяния"
             }
         },
@@ -10707,7 +10934,7 @@
             "lmtype": 5,
             "text": {
                 "en": "Pei-Ruz's Secret Camp",
-                "fr": "camp secret de Pei-Ruz",
+                "fr": "Camp secret de Pei-Ruz",
                 "de": "Pei-Ruz' geheimes Lager",
                 "es": "Campamento secreto de Pei-Ruz",
                 "ru": "Тайный лагерь Пэй-Руза"
@@ -10739,7 +10966,7 @@
                 "en": "Fustylake Workshop",
                 "fr": "Atelier du Lac Poussiéreux",
                 "de": "Werkstatt am Stinkenden See",
-                "es": "Taller Fustylake",
+                "es": "Taller Lago Rancio",
                 "ru": "Мастерская Затхлого Озера"
             }
         },
@@ -10754,8 +10981,8 @@
                 "en": "Demon's Crossroads Diplomatic Outpost",
                 "fr": "Avant-Poste Diplomatique du Croisement du Démon",
                 "de": "Diplomatischer Außenposten der Dämonenkreuzung",
-                "es": "Puesto Diplomático de La Encrucijada del Demonio",
-                "ru": "Дипломатическая миссия Перекресток Демона "
+                "es": "Puesto Diplomático Encrucijada del Demonio",
+                "ru": "Дипломатическая миссия Перекресток Демона"
             }
         },
         "place_outpost_zorai_23": {
@@ -10769,7 +10996,7 @@
                 "en": "Bighorn Mountain Farm",
                 "fr": "Ferme de la Montagne aux Cornes",
                 "de": "Hornberg-Hof",
-                "es": "Granja de la Montana del Carnero",
+                "es": "Granja Montaña del Carnero",
                 "ru": "Ферма у горы Бигхорн"
             }
         },
@@ -10784,7 +11011,7 @@
                 "en": "Bighorn Mountain",
                 "fr": "Montagne aux Cornes",
                 "de": "Hornberg",
-                "es": "Montana del Carnero",
+                "es": "Montaña del Carnero",
                 "ru": "Гора Бигхорн"
             }
         },
@@ -10799,7 +11026,7 @@
                 "en": "Fustylake",
                 "fr": "Lac Poussiéreux",
                 "de": "Stinkender See",
-                "es": "Fustylake",
+                "es": "Lago Rancio",
                 "ru": "Затхлое озеро"
             }
         },
@@ -10827,7 +11054,7 @@
             "lmtype": 5,
             "text": {
                 "en": "Pei-Ruz's Camp",
-                "fr": "camp de Pei-Ruz",
+                "fr": "Camp de Pei-Ruz",
                 "de": "Pei-Ruz' Lager",
                 "es": "Campamento de Pei-Ruz",
                 "ru": "Лагерь Пэй-Руза"
@@ -10844,7 +11071,7 @@
                 "en": "Jen-Laï Research Center",
                 "fr": "Centre de Recherche de Jen-Laï",
                 "de": "Jen-Laï-Forschungszentrum",
-                "es": "Centro de Investigación Jen-Laï ",
+                "es": "Centro de Investigación Jen-Laï",
                 "ru": "Исследовательский центр Джен-Лаи"
             }
         },
@@ -10859,7 +11086,7 @@
                 "en": "Lonview Stronghold",
                 "fr": "Forteresse de l'Horizon",
                 "de": "Horizont-Festung",
-                "es": "Fortaleza Lonview",
+                "es": "Fortaleza El Horizonte",
                 "ru": "Форт Одинокого Наблюдателя"
             }
         },
@@ -10874,7 +11101,7 @@
                 "en": "Stainmoor Stronghold",
                 "fr": "Forteresse de la Lande Tachetée",
                 "de": "Fleckenmoor-Festung",
-                "es": "Fortaleza Stainmoor",
+                "es": "Fortaleza Tierra Manchada",
                 "ru": "Форт Стэйнмура"
             }
         },
@@ -10889,7 +11116,7 @@
                 "en": "Stainmoor Border Post",
                 "fr": "Poste Frontière de la Lande Tachetée",
                 "de": "Fleckenmoor-Grenzposten",
-                "es": "Puesto Fronterizo Stainmoor",
+                "es": "Puesto Fronterizo Tierra Manchada",
                 "ru": "Пограничная застава Стэйнмура"
             }
         },
@@ -10904,7 +11131,7 @@
                 "en": "Desertstock Farm",
                 "fr": "Ferme de Désertstock",
                 "de": "Hof am Trockenen Stamm",
-                "es": "Granja Desertstock",
+                "es": "Granja Acción Desierta",
                 "ru": "Ферма Пустынный Кладезь"
             }
         },
@@ -10920,7 +11147,7 @@
                 "fr": "Atelier de l'Arrière-Pays",
                 "de": "Werkstatt des Großen Buschlandes",
                 "es": "Taller Gran Despoblado",
-                "ru": "Мастерская Великая Целина "
+                "ru": "Мастерская Великая Целина"
             }
         },
         "place_outpost_zorai_30": {
@@ -10934,7 +11161,7 @@
                 "en": "Ni-Jing Farm",
                 "fr": "Ferme de Ni-Jing",
                 "de": "Ni-Jing-Hof",
-                "es": "Franja Ni-Jing ",
+                "es": "Granja Ni-Jing",
                 "ru": "Ферма Ни-Джинг"
             }
         },
@@ -10949,7 +11176,7 @@
                 "en": "The Great Outback",
                 "fr": "Arrière Pays",
                 "de": "Großes Buschland",
-                "es": "El Gran Despoblado",
+                "es": "Gran Despoblado",
                 "ru": "Великая Целина"
             }
         },
@@ -10964,7 +11191,7 @@
                 "en": "Desertstock",
                 "fr": "Désertstock",
                 "de": "Trockener Stamm",
-                "es": "Desertstock",
+                "es": "Acción Desierta",
                 "ru": "Пустынный кладезь"
             }
         },
@@ -10979,7 +11206,7 @@
                 "en": "Stainmoor",
                 "fr": "Lande Tachetée",
                 "de": "Fleckenmoor",
-                "es": "Stainmoor",
+                "es": "Tierra Manchada",
                 "ru": "Стэйнмур"
             }
         },
@@ -10994,7 +11221,7 @@
                 "en": "Stainmoor Gate",
                 "fr": "Porte de la Lande Tachetée",
                 "de": "Fleckenmoorpforte",
-                "es": "Puerta de Stainmoor",
+                "es": "Puerta de Tierra Manchada",
                 "ru": "Врата Стэйнмура"
             }
         },
@@ -11009,7 +11236,7 @@
                 "en": "Highland Impasse",
                 "fr": "Impasse des Hautes Terres",
                 "de": "Hochland-Pass",
-                "es": "Callejón de las Tierras Altas",
+                "es": "Callejón de Tierras Altas",
                 "ru": "Непроходимое Нагорье"
             }
         },
@@ -11024,7 +11251,7 @@
                 "en": "Hopedell",
                 "fr": "Vallon des Espérances",
                 "de": "Tal der Hoffnung",
-                "es": "Hopedell",
+                "es": "Cañada de Esperanza",
                 "ru": "Хоупделл"
             }
         },
@@ -11037,7 +11264,7 @@
             "lmtype": 3,
             "text": {
                 "en": "Zora Stables",
-                "fr": "Etables de Zora",
+                "fr": "Étables de Zora",
                 "de": "Stall von Zora",
                 "es": "Establos Zora",
                 "ru": "Стойла Мектубов Зоры"
@@ -11052,9 +11279,9 @@
             "lmtype": 3,
             "text": {
                 "en": "Hoï-Cho Stables",
-                "fr": "Etables d'Hoi Cho",
-                "de": "Stall von Hoï-Cho ",
-                "es": "Establo de Hoi Cho ",
+                "fr": "Étables d'Hoi Cho",
+                "de": "Stall von Hoï-Cho",
+                "es": "Establo de Hoi Cho",
                 "ru": "Стойла Хоа Шо"
             }
         },
@@ -11067,9 +11294,9 @@
             "lmtype": 3,
             "text": {
                 "en": "Jen-Laï Stables",
-                "fr": "Etables de Jen Lai",
+                "fr": "Étables de Jen Lai",
                 "de": "Stall von Jen-Laï",
-                "es": "Establos de Jen Lai ",
+                "es": "Establos de Jen Lai",
                 "ru": "Стойла Джен Лай"
             }
         },
@@ -11082,10 +11309,25 @@
             "lmtype": 3,
             "text": {
                 "en": "Min-Cho Stables",
-                "fr": "Etables de Min Cho",
+                "fr": "Étables de Min Cho",
                 "de": "Stall von Min-Cho",
-                "es": "Establos de Min Cho ",
+                "es": "Establos de Min Cho",
                 "ru": "Стойла Мин Хо"
+            }
+        },
+        "marauder_camp_stable": {
+            "pos": [
+                10855,
+                -3041
+            ],
+            "regionforce": 0,
+            "lmtype": 3,
+            "text": {
+                "en": "Marauder Stables",
+                "fr": "Étables Maraudeurs",
+                "de": "Stall der Marodeure",
+                "es": "Establos Marauders",
+                "ru": "Стойло мародеров"
             }
         }
     },
@@ -11116,7 +11358,7 @@
                 "en": "Oflovak Road -- Jungle",
                 "fr": "Route d’Oflovak – Jungle",
                 "de": "Oflovak's Straße - Dschungel",
-                "es": "Camino de Oflovak -- Jungla",
+                "es": "Camino de Oflovak, Selva",
                 "ru": "region_zorai_islands"
             }
         }
@@ -11133,7 +11375,7 @@
                 "en": "Zoraï Island",
                 "fr": "Ile Zoraï",
                 "de": "Zoraï-Startinsel",
-                "es": "fIsla Zoraï",
+                "es": "Isla Zoraï",
                 "ru": "Земли Зораи"
             }
         },

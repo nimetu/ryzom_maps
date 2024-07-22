@@ -13,15 +13,17 @@ class JsMinifier implements \Bmsite\Maps\JavascriptApi\MinifyInterface
     }
 }
 
+$path = dirname(__DIR__);
+
 // javascript
 $ver = 'leaflet';
 $mapjs = get_mapjs($ver);
-save_js($mapjs['js'],    $mapjs['hash'],    "map-{$ver}.js");
-save_js($mapjs['jsmin'], $mapjs['hashmin'], "map-{$ver}.min.js");
+save_js($mapjs['js'],    $mapjs['hash'],    "${path}/map-{$ver}.js");
+save_js($mapjs['jsmin'], $mapjs['hashmin'], "${path}/map-{$ver}.min.js");
 
 $mapjs_areas = get_mapjs_areas();
-save_js($mapjs_areas['js'],    $mapjs_areas['hash'],     "map-areas-{$ver}.js");
-save_js($mapjs_areas['jsmin'], $mapjs_areas['hashmin'], "map-areas-{$ver}.min.js");
+save_js($mapjs_areas['js'],    $mapjs_areas['hash'],    "${path}/map-areas-{$ver}.js");
+save_js($mapjs_areas['jsmin'], $mapjs_areas['hashmin'], "${path}/map-areas-{$ver}.min.js");
 
 exit;
 
