@@ -17,5 +17,9 @@ L.CRS.RyzomServer = L.extend({}, L.CRS, {
     scale: function (zoom) {
         // pow(2, 10) == 1024
         return Math.pow(2, zoom) / 1024;
+    },
+
+    zoom: function (scale) {
+        return Math.log2(scale * 1024);
     }
 });

@@ -1,1 +1,1 @@
-<script src="/home/max/gitolite/ryzom_maps.git/map-leaflet.js" integrity="sha384-a3nNU6hYDkXXfuntmrDFGPbxh952MNvWM1ZCQUeHwH6cqzF6ictFq9CvUhnx2sKo" crossorigin="anonymous"></script>
+<script src="/home/max/gitolite/ryzom_maps.git/map-leaflet.js" integrity="sha384-4n3CEf3yWHn9K8+8bmNM+RynLkrY3ekIZmKd4ADVVY7AemAlfURbs+I0gehtmFPD" crossorigin="anonymous"></script>
