@@ -137,10 +137,40 @@
                 "ru": "Трясины Тления"
             }
         },
-        "region_karavanexclusionzone": {
+        "region_event_island": {
             "pos": [
-                13355,
-                -11603
+                13200,
+                -9838
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Anlor Winn Resting Place",
+                "fr": "Lieu de repos dAnlor Winn",
+                "de": "Anlor Winn Ruheplatz",
+                "es": "Lugar de Descanso de Anlor Winn",
+                "ru": "Место упокоения Анлора Винна"
+            }
+        },
+        "region_start_of_the_collapse": {
+            "pos": [
+                13710,
+                -10463
+            ],
+            "regionforce": 0,
+            "lmtype": 4,
+            "text": {
+                "en": "Start of the Collapse",
+                "fr": "Début de l'effondrement",
+                "de": "Beginn des Zusammenbruchs",
+                "es": "Inicio del Colapso",
+                "ru": "Начало коллапса"
+            }
+        },
+        "region_lacerated_plains": {
+            "pos": [
+                13622,
+                -11366
             ],
             "regionforce": 0,
             "lmtype": 4,
@@ -152,124 +182,64 @@
                 "ru": "Изрезанные Равнины"
             }
         },
-        "region_hopeforest": {
+        "region_fields_of_decay": {
             "pos": [
-                15177,
-                -11712
+                14977,
+                -11541
             ],
             "regionforce": 0,
             "lmtype": 4,
             "text": {
-                "en": "Forest of Dreams",
-                "fr": "Forêt des songes",
-                "de": "Wald der Träume",
-                "es": "Bosque de Sueños",
-                "ru": "Лес Сновидений"
+                "en": "Fields of Decay",
+                "fr": "Champs de décomposition",
+                "de": "Felder des Verfalls",
+                "es": "Campos de Decadencia",
+                "ru": "Поля распада"
             }
         },
-        "region_northspire": {
+        "region_dark_breeding_ground": {
             "pos": [
-                13069,
-                -10200
+                15089,
+                -10422
             ],
             "regionforce": 0,
             "lmtype": 4,
             "text": {
-                "en": "Northern Peaks",
-                "fr": "Cimes du nord",
-                "de": "Gipfel des Nordens",
-                "es": "Picos del Norte",
-                "ru": "Северные Пики"
+                "en": "Dark Breeding Ground",
+                "fr": "Pépinière du mal",
+                "de": "Dunkle Nährboden",
+                "es": "Criadero de Oscuridad",
+                "ru": "Темная питательная среда"
             }
         },
-        "region_fyreruins": {
+        "region_the_forbidden_secret": {
             "pos": [
-                14939,
-                -10444
+                15520,
+                -11200
             ],
             "regionforce": 0,
             "lmtype": 4,
             "text": {
-                "en": "Fyros Old City",
-                "fr": "Ancienne cité Fyros",
-                "de": "Alte Fyros-Stadt",
-                "es": "Antigua Ciudad Fyros",
-                "ru": "Старый город Файросов"
+                "en": "The Forbidden Secret",
+                "fr": "Secret interdit",
+                "de": "Verbotene Geheimnis",
+                "es": "El Secreto Prohibido",
+                "ru": "Запретный секрет"
             }
         },
-        "region_mistvalley": {
+        "place_tcm_bloody_arena": {
             "pos": [
-                14276,
-                -10928
-            ],
-            "regionforce": 0,
-            "lmtype": 4,
-            "text": {
-                "en": "Valley of Mists",
-                "fr": "Vallée des brumes",
-                "de": "Nebeltal",
-                "es": "Valle de Niebla",
-                "ru": "Долина Туманов"
-            }
-        },
-        "place_tcm_company_camp": {
-            "pos": [
-                15306,
-                -11819
+                14400,
+                -10403
             ],
             "regionforce": 0,
             "lmtype": 5,
             "text": {
-                "en": "Kami Mission",
-                "fr": "Mission Kami",
-                "de": "Kami-Mission",
-                "es": "Misión Kami",
-                "ru": "Миссия Ками"
-            }
-        },
-        "place_tcm_company_eternal_tree": {
-            "pos": [
-                15373,
-                -11789
-            ],
-            "regionforce": 0,
-            "lmtype": 6,
-            "text": {
-                "en": "Camp of the Company of the Eternal Tree",
-                "fr": "Camp de la Compagnie de l'arbre éternel",
-                "de": "Lager der Gemeinschaft des Ewigen Baumes",
-                "es": "Campamento de la Compañía del Árbol Eterno",
-                "ru": "Лагерь Общества Вечного Древа"
-            }
-        },
-        "place_tcm_keepers": {
-            "pos": [
-                15216,
-                -11835
-            ],
-            "regionforce": 0,
-            "lmtype": 6,
-            "text": {
-                "en": "Keepers Archeological Base",
-                "fr": "Base archéologique des Keepers",
-                "de": "Archäologische Basis der Keeper",
-                "es": "Base Arqueológica de los Guardianes",
-                "ru": "Археологическая база Хранителей"
-            }
-        },
-        "place_tcm_tutors": {
-            "pos": [
-                15428,
-                -11845
-            ],
-            "regionforce": 0,
-            "lmtype": 6,
-            "text": {
-                "en": "Tutors' Sanctuary",
-                "fr": "Sanctuaire Tutors",
-                "de": "Tutoren-Altar",
-                "es": "Santuario del Tutor",
-                "ru": "Святилище Наставников"
+                "en": "Bloody Arena",
+                "fr": "Arène sanglante",
+                "de": "Blutige Arena",
+                "es": "Arena Sangrienta",
+                "ru": "Кровавая арена"
             }
         }
     },
@@ -3167,7 +3137,7 @@
         "place_yrkanis": {
             "pos": [
                 4712,
-                -3443
+                -3444
             ],
             "regionforce": 0,
             "lmtype": 0,
@@ -3586,51 +3556,6 @@
         }
     },
     "matis_island": {
-        "region_matis_island": {
-            "pos": [
-                14744,
-                -949
-            ],
-            "regionforce": 0,
-            "lmtype": 4,
-            "text": {
-                "en": "Almati Woods",
-                "fr": "region_matis_island",
-                "de": "Almati-Wald",
-                "es": "Bosque Almati",
-                "ru": "region_matis_island"
-            }
-        },
-        "episode2_camp_kami_matis_island": {
-            "pos": [
-                15109,
-                -1274
-            ],
-            "regionforce": 0,
-            "lmtype": 5,
-            "text": {
-                "en": "Kami Camp of Almati Wood",
-                "fr": "Camp Kami du Bois d'Almati",
-                "de": "Kami-Lager des Almati-Waldes",
-                "es": "Campamento Kami de Bosque Almati",
-                "ru": "Лагерь Ками в лесу Алмати"
-            }
-        },
-        "episode2_camp_karavan_matis_island": {
-            "pos": [
-                14347,
-                -641
-            ],
-            "regionforce": 0,
-            "lmtype": 5,
-            "text": {
-                "en": "Karavan Camp of Almati Wood",
-                "fr": "Camp Karavan du Bois d'Almati",
-                "de": "Karavan-Lager des Almati-Waldes",
-                "es": "Campamento Karavan de Bosque Almati",
-                "ru": "Лагерь Каравана в дюнах Аэлиуса"
-            }
-        },
         "region_matis_island_1_cont": {
             "pos": [
                 14730,
@@ -3699,11 +3624,26 @@
             "regionforce": 0,
             "lmtype": 4,
             "text": {
-                "en": "Almati Island",
-                "fr": "region_matis_island_3",
-                "de": "Almati-Insel",
-                "es": "Isla Almati",
-                "ru": "Остров Алмати"
+                "en": "Anniversary Island",
+                "fr": "Île de l'Anniversaire",
+                "de": "Jubiläumsinsel",
+                "es": "Isla del Aniversario",
+                "ru": "Юбилейный Остров"
+            }
+        },
+        "place_matis_island_1": {
+            "pos": [
+                14738,
+                -969
+            ],
+            "regionforce": 0,
+            "lmtype": 1,
+            "text": {
+                "en": "Almati Wood",
+                "fr": "Bois d'Almati",
+                "de": "Almati-Wald",
+                "es": "Bosque Almati",
+                "ru": "Леса Алмати"
             }
         },
         "place_matis_island_2": {
@@ -3721,19 +3661,64 @@
                 "ru": "Пик Данте"
             }
         },
-        "place_matis_island_3": {
+        "place_welcomer_anniversary_island": {
             "pos": [
-                17686,
-                -864
+                17359,
+                -880
             ],
             "regionforce": 0,
-            "lmtype": 1,
+            "lmtype": 5,
             "text": {
-                "en": "Rangers island",
-                "fr": "place_matis_island_3",
-                "de": "Ranger-Insel",
-                "es": "Isla de Rangers",
-                "ru": "Остров Рейнджеров"
+                "en": "Welcome Square",
+                "fr": "Square de la Bienvenue",
+                "de": "Begrüßungsplatz",
+                "es": "Plaza de la Bienvenida",
+                "ru": "Площадь Приветствия"
+            }
+        },
+        "main_stage_anniversary_island": {
+            "pos": [
+                17680,
+                -885
+            ],
+            "regionforce": 0,
+            "lmtype": 6,
+            "text": {
+                "en": "Festival Square",
+                "fr": "Place de la Fête",
+                "de": "Festplatz",
+                "es": "Plaza de la Fiesta",
+                "ru": "Фестивальная Площадь"
+            }
+        },
+        "memorial_anniversary_island": {
+            "pos": [
+                17567,
+                -1169
+            ],
+            "regionforce": 0,
+            "lmtype": 6,
+            "text": {
+                "en": "Memorial Grove",
+                "fr": "Bosquet du Souvenir",
+                "de": "Gedenkhain",
+                "es": "Bosque Memorial",
+                "ru": "Мемориальная Роща"
+            }
+        },
+        "cake_anniversary_island": {
+            "pos": [
+                17585,
+                -795
+            ],
+            "regionforce": 0,
+            "lmtype": 6,
+            "text": {
+                "en": "Sweet Smells of Cake",
+                "fr": "Délicieuse senteur du Gâteau",
+                "de": "Süßer Duft von Kuchen",
+                "es": "Dulce Aroma de Pastel",
+                "ru": "Сладкие Запахи Торта"
             }
         }
     },
@@ -7633,7 +7618,7 @@
             "lmtype": 5,
             "text": {
                 "en": "Highwell",
-                "fr": "Flaque Supérieur",
+                "fr": "Flaque Supérieure",
                 "de": "Oberer Schacht",
                 "es": "Pozo",
                 "ru": "Хайвелл"
@@ -10875,7 +10860,7 @@
             "text": {
                 "en": "Witherstock Farm",
                 "fr": "Ferme de la Souche Flétrie",
-                "de": "Hof am Verdorrten Stamm",
+                "de": "Hof am Stamm der Aussicht",
                 "es": "Granja Whiterstock",
                 "ru": "Ферма у Заброшенного Кладезя"
             }

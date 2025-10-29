@@ -132,7 +132,8 @@ class BuildJsonFiles extends Command
             'place_zora',
             'place_hoi_cho',
             'place_jen_lai',
-            'place_min_cho',
+			'place_min_cho',
+			'place_starting_zone_starting_city',
         );
 
         $json = array(
