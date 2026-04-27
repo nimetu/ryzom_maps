@@ -169,7 +169,7 @@ class StaticMapGenerator
     public function setFormat($format)
     {
         $format = strtolower(trim($format));
-        if (in_array($format, array('png', 'jpg'))) {
+        if (in_array($format, array('png', 'jpg'), true)) {
             $this->format = $format;
         }
     }
@@ -225,15 +225,13 @@ class StaticMapGenerator
     public function setLanguage($val)
     {
         $val = strtolower($val);
-        if (in_array($val, $this->languages)) {
+        if (in_array($val, $this->languages, true)) {
             $this->lang = $val;
         } else {
-            if ($val == 'auto') {
+            if ($val === 'auto') {
                 $this->lang = $this->getBrowserlanguage();
-            } else {
-                if ($val == '') {
-                    $this->lang = false;
-                }
+            } elseif ($val === '') {
+                $this->lang = false;
             }
         }
     }
@@ -380,9 +378,7 @@ class StaticMapGenerator
                 break;
         }
         imagedestroy($img);
-        $img = ob_get_clean();
-
-        return $img;
+        return ob_get_clean();
     }
 
     /**
@@ -410,7 +406,7 @@ class StaticMapGenerator
     }
 
     /**
-     * @return resource
+	 * @return \GdImage
      * @throws \RuntimeException
      */
     protected function _background()
@@ -423,7 +419,7 @@ class StaticMapGenerator
         if ($this->center === null) {
             if ($this->bounds === null) {
                 // no features on map, so take center point in world zone
-                $world = $this->proj->getZoneBounds($this->mapmode == 'world' ? 'world' : 'grid');
+                $world = $this->proj->getZoneBounds($this->mapmode === 'world' ? 'world' : 'grid');
                 $this->bounds = clone $world;
             }
 

@@ -172,7 +172,7 @@ class Icon implements FeatureInterface
         $x = $p->x - $w / 2 + $xOffset;
         $y = $p->y - $h / 2 + $yOffset;
 
-        if ($w != $width || $h != $height) {
+        if ($w !== $width || $h !== $height) {
             imagecopyresampled($canvas, $icon, $x, $y, 0, 0, $w, $h, $width, $height);
         } else {
             imagecopy($canvas, $icon, $x, $y, 0, 0, $width, $height);

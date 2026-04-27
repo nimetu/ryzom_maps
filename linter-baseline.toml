@@ -1,0 +1,97 @@
+variant = "loose"
+
+[[issues]]
+file = "src/Bmsite/Maps/BaseTypes/Polygon.php"
+code = "no-alias-function"
+message = "Function alias `join` should not be used."
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/JavascriptApi/JavascriptFactory.php"
+code = "explicit-nullable-param"
+message = "Parameter `$minify` is implicitly nullable and relies on a deprecated feature."
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/MapProjection.php"
+code = "prefer-early-continue"
+message = "Consider using early continue pattern to reduce nesting."
+count = 5
+
+[[issues]]
+file = "src/Bmsite/Maps/MapProjection.php"
+code = "use-compound-assignment"
+message = "Use a compound assignment for clarity and performance."
+count = 4
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap.php"
+code = "no-empty-catch-clause"
+message = "Do not use empty `catch` blocks."
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap.php"
+code = "str-contains"
+message = "Consider replacing `strpos` with `str_contains` for improved readability and intent clarity."
+count = 2
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
+code = "explicit-nullable-param"
+message = "Parameter `$color` is implicitly nullable and relies on a deprecated feature."
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
+code = "explicit-nullable-param"
+message = "Parameter `$pos` is implicitly nullable and relies on a deprecated feature."
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
+code = "explicit-nullable-param"
+message = "Parameter `$c` is implicitly nullable and relies on a deprecated feature."
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
+code = "explicit-nullable-param"
+message = "Parameter `$color` is implicitly nullable and relies on a deprecated feature."
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
+code = "explicit-nullable-param"
+message = "Parameter `$pos` is implicitly nullable and relies on a deprecated feature."
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
+code = "no-shorthand-ternary"
+message = "Use of the shorthand ternary operator."
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap/Feature/Polygon.php"
+code = "no-shorthand-ternary"
+message = "Use of the shorthand ternary operator."
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap/Feature/Polygon.php"
+code = "use-compound-assignment"
+message = "Use a compound assignment for clarity and performance."
+count = 2
+
+[[issues]]
+file = "src/Bmsite/Maps/Tiles/FileTileStorage.php"
+code = "explicit-octal"
+message = "Use explicit octal numeral notation."
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/Tiles/SqlTileStorage.php"
+code = "file-name"
+message = "Class `TileStorage` should be in a file named `TileStorage.php`, found `SqlTileStorage.php`."
+count = 1

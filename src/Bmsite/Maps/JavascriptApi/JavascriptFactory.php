@@ -105,7 +105,7 @@ class JavascriptFactory
 
         $js = $minified ? $this->mincache : $this->jscache;
         $hash = base64_encode(hash($type, $js, true));
-        return "$type-$hash";
+        return "{$type}-{$hash}";
     }
 
     /**

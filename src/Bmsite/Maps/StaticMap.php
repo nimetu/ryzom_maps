@@ -62,7 +62,7 @@ class StaticMap
         if (isset($params['mapmode'])) {
             $mapmode = $params['mapmode'];
             // set coordinate mode early as points are converted to image coords
-            if ($mapmode == 'server') {
+            if ($mapmode === 'server') {
                 // 1:1 projection
                 $this->map->getProjection()->setWorldZones(array('grid' => array(array(0, 47520), array(108000, 0))));
             }
@@ -174,9 +174,7 @@ class StaticMap
      */
     public function render()
     {
-        $image = $this->map->render();
-
-        return $image;
+        return $this->map->render();
     }
 
     /**
@@ -361,7 +359,7 @@ class StaticMap
         $ret = false;
 
         $pairs = explode(',', $val);
-        if (count($pairs) == 2 && is_numeric($pairs[0]) && is_numeric($pairs[1])) {
+        if (count($pairs) === 2 && is_numeric($pairs[0]) && is_numeric($pairs[1])) {
             $x = (float)$pairs[0];
             $y = (float)$pairs[1];
             $proj = $this->map->getProjection();
@@ -412,6 +410,7 @@ class StaticMap
         if (preg_match('/^(?:#|0x)?([a-z0-9]{2})([a-z0-9]{2})([a-z0-9]{2})([a-z0-9]{2})?$/', $color, $matches)) {
             $result = new Color(hexdec($matches[1]), hexdec($matches[2]), hexdec($matches[3]));
             if (!empty($matches[4])) {
+                // @mago-ignore analysis:invalid-property-assignment-value
                 $result->a = hexdec($matches[4]);
             }
             return $result;
@@ -437,7 +436,7 @@ function parse_parameters($url)
         $k = urldecode($tmp[0]);
         $v = isset($tmp[1]) ? urldecode($tmp[1]) : '';
         // remove [] at the end of key and create empty ret[k] if it does not already exist
-        if (substr($k, -2) == '[]') {
+        if (substr($k, -2) === '[]') {
             $k = substr($k, 0, -2);
             // this must be array type, so lets make sure it's gonna be
             if (!isset($ret[$k])) {

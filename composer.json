@@ -24,5 +24,10 @@
         "psr-0": {
             "Bmsite": ["src"]
         }
+    },
+    "scripts": {
+        "test": [
+            "XDEBUG_MODE=coverage phpunit --coverage-html coverage --display-all"
+        ]
     }
 }

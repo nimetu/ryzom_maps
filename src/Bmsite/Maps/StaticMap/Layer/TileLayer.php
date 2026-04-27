@@ -19,7 +19,10 @@ use Bmsite\Maps\Tiles\TileStorageInterface;
  */
 class TileLayer
 {
-    protected $debug = true;
+	protected $debug = true;
+
+	/** @var StaticMapGenerator */
+	protected $map;
 
     /** @var MapProjection */
     protected $proj;

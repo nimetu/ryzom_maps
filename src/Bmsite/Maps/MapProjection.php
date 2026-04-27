@@ -182,11 +182,9 @@ class MapProjection
     public function unproject(Point $p, $zoom = null)
     {
         if ($zoom !== null) {
-            var_dump('convet to base zoom', $p, $zoom);
             $scale = $this->scale($zoom);
             $p->x = $p->x / $scale;
             $p->y = $p->y / $scale;
-            var_dump('->', $p, $scale);
         }
 
         $zone = false;

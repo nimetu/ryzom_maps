@@ -15,7 +15,7 @@ interface MinifyInterface
     /**
      * Minify input string and return it
      *
-     * @param string
+     * @param string $str
      *
      * @return string
      */

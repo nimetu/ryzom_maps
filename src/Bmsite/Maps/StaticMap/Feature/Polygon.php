@@ -43,7 +43,10 @@ class Polygon extends PointsCollection implements FeatureInterface
     public $label_outline;
 
     /** @var StaticMapGenerator */
-    private $map;
+	private $map;
+
+	/** @var array|false */
+	private $bbox;
 
     /**
      * @param int $weight
@@ -106,7 +109,7 @@ class Polygon extends PointsCollection implements FeatureInterface
         $color = $this->color->allocate($canvas);
 
         if ($this->fillcolor) {
-            if ($nbPoints == 2) {
+            if ($nbPoints === 2) {
                 // filled polygon needs at least 3 points
                 $poly[] = $poly[0];
                 $poly[] = $poly[1];

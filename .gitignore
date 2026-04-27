@@ -1,5 +1,6 @@
 /.idea
 /.vscode
+/coverage
 /vendor
 /composer.lock
 /static-map-result.png

@@ -19,13 +19,11 @@ interface FeatureInterface
 
     /**
      * @param StaticMapGenerator $map
-     *
-     * @return
      */
     public function setMap(StaticMapGenerator $map);
 
     /**
-     * @param resource $canvas
+     * @param \GdImage $canvas
      *
      * @return bool
      */

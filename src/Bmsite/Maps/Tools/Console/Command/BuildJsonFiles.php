@@ -51,12 +51,12 @@ class BuildJsonFiles extends Command
      * @return int|null|void
      */
     protected function execute(InputInterface $input, OutputInterface $output)
-    {
+	{
         /** @var ResourceHelper $helper */
         $helper = $this->getHelper('resource');
 
         $ryzomDataPath = $input->getOption('ryzom');
-        if (empty($ryzomDataPath) ||
+        if ($ryzomDataPath === '' ||
             !file_exists($ryzomDataPath.'/gamedev.bnp') ||
             !file_exists($ryzomDataPath.'/lmconts.packed') ||
             !file_exists($ryzomDataPath.'/world.packed_sheets')
@@ -89,13 +89,14 @@ class BuildJsonFiles extends Command
         $output->write('<info>building server.json</info>...');
 
         $ps = $psLoader->load('world');
-        // 6 == sheetid for 'ryzom.world'
+		// 6 == sheetid for 'ryzom.world'
+		/** @var WorldSheet|false $world */
         $world = $ps->get(6);
         if (!$world) {
             throw new \RuntimeException("Failed to load world.packed_sheets");
         }
         $this->buildServerZones($world, $helper->get('server.json.file'));
-        $output->writeln('');
+		$output->writeln('');
     }
 
     /**
@@ -142,7 +143,7 @@ class BuildJsonFiles extends Command
         foreach ($world->Maps as $map) {
             $key = strtolower($map->Name);
 
-            if (in_array($key, $include)) {
+            if (in_array($key, $include, true)) {
                 //echo " + ({$key}, {$map->ContinentName})\n";
                 $json[$key] = array(
                     array((int)$map->MinX, (int)$map->MinY),
@@ -176,10 +177,12 @@ class BuildJsonFiles extends Command
 
             foreach ($cont->ContLandMarks as $lm) {
                 $result = $this->filterLabel($lm, $strings);
-                if ($result) {
+				if ($result) {
+					/** @var string $key */
+					/** @var array $label */
                     list($key, $label) = $result;
 
-                    if (in_array($key, array('region_matis_island_1', 'region_matis_island_2'))) {
+                    if (in_array($key, array('region_matis_island_1', 'region_matis_island_2'), true)) {
                         // there is no 'continent' text for Almati and Dantes, so make one up
                         // also move region text up a bit or it conflicts other text
                         $label['pos'][1] += 100;
@@ -244,14 +247,12 @@ class BuildJsonFiles extends Command
     /**
      * Return flat array from CPrimVector objects
      *
-     * @param CPrimVector[] $points
+     * @param \Ryzom\Sheets\Client\CPrimVector[] $points
      *
      * @return array [X, Y, ... Xn, Yn]
      */
     private function exportVPoints(array $points)
     {
-        $x = false;
-        $y = false;
         $ret = array();
         foreach($points as $point) {
             // ingame X is always positive -> next highest
@@ -264,22 +265,26 @@ class BuildJsonFiles extends Command
 
     /**
      * @param CContinent $cont
-     * @param array $strings
+     * @param array<string,array<string,array{name:string}>> $strings
      *
-     * @return array
+	 * @return array{
+	 * 	string,
+	 * 	array
+	 * }|false
      */
     private function filterContLabel($cont, array $strings)
     {
         $langs = array_keys($strings);
 
         // Ryzom only shows continent names in world map, but those are no use here
-        // Modify continent info to be used as label
+		// Modify continent info to be used as label
+		/** @var string $key */
         $key = strtolower($cont->Name);
 
         // matis_island == 'Old Lands' - do not show
-        if ($key == 'matis_island') {
+        if ($key === 'matis_island') {
             return false;
-        } elseif ($key != 'newbieland') {
+        } elseif ($key !== 'newbieland') {
             $key = 'continent_'.$key;
         }
 

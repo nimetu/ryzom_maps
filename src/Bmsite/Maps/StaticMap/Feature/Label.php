@@ -44,7 +44,11 @@ class Label implements FeatureInterface
     private $outlineWidth;
 
     /** @var StaticMapGenerator */
-    private $map;
+	private $map;
+
+	private $fontPath;
+	private $relOffsetX;
+	private $relOffsetY;
 
     /**
      * @param string $text

@@ -14,9 +14,13 @@ namespace Bmsite\Maps\BaseTypes;
  */
 class Color
 {
+    /** @var int */
     public $r;
+    /** @var int */
     public $g;
+    /** @var int */
     public $b;
+    /** @var int */
     public $a;
 
     /**

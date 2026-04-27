@@ -21,22 +21,16 @@ interface TileStorageInterface
 
     /**
      * @param string $mode world|server
-     *
-     * @return
      */
     public function setMapMode($mode);
 
     /**
      * @param string $name atys|atys_sp|lang_en
-     *
-     * @return
      */
     public function setMapName($name);
 
     /**
      * @param string $ext png|jpg
-     *
-     * @return
      */
     public function setImageExt($ext);
 
@@ -45,8 +39,6 @@ interface TileStorageInterface
      * @param int $x
      * @param int $y
      * @param resource $img
-     *
-     * @return
      */
     public function set($z, $x, $y, $img);
 
@@ -54,8 +46,6 @@ interface TileStorageInterface
      * @param int $z
      * @param int $x
      * @param int $y
-     *
-     * @return
      */
     public function get($z, $x, $y);
 
@@ -63,8 +53,6 @@ interface TileStorageInterface
      * @param int $z
      * @param int $x
      * @param int $y
-     *
-     * @return
      */
     public function delete($z, $x, $y);
 }

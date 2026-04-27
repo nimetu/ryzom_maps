@@ -32,7 +32,7 @@ class Bounds
      * @param float $right
      * @param float $top
      */
-    public function __construct($left = null, $bottom = null, $right = null, $top = null)
+    public function __construct($left = 0, $bottom = 0, $right = 0, $top = 0)
     {
         $this->left = min($left, $right);
         $this->right = max($left, $right);
@@ -82,19 +82,19 @@ class Bounds
      */
     public function extend($x, $y)
     {
-        if ($this->left === null || $x < $this->left) {
+        if ($x < $this->left) {
             $this->left = $x;
         }
 
-        if ($this->right === null || $x > $this->right) {
+        if ($x > $this->right) {
             $this->right = $x;
         }
 
-        if ($this->top === null || $y > $this->top) {
+        if ($y > $this->top) {
             $this->top = $y;
         }
 
-        if ($this->bottom === null || $y < $this->bottom) {
+        if ($y < $this->bottom) {
             $this->bottom = $y;
         }
     }
@@ -102,8 +102,8 @@ class Bounds
     /**
      * @param float $left
      * @param float $bottom
-     * @param float $right
-     * @param float $top
+     * @param float|null $right
+     * @param float|null $top
      *
      * @return bool
      */

@@ -15,7 +15,7 @@ class Polygon
     public $points;
 
     /**
-     * @param float[]
+     * @param float[] $points
      */
     public function __construct(array $points)
     {
@@ -62,7 +62,7 @@ class Polygon
         for($i = 0, $j = $nbPoints - 2; $i < $nbPoints; $j = $i, $i += 2) {
             $iX = $this->points[$i]; $iY = $this->points[$i+1];
             $jX = $this->points[$j]; $jY = $this->points[$j+1];
-            if ( ( ($iY > $y) != ($jY > $y) ) && ( $x < ($jX - $iX) * ($y - $iY) / ($jY - $iY) + $iX ) ) {
+            if ( ( ($iY > $y) !== ($jY > $y) ) && ( $x < ($jX - $iX) * ($y - $iY) / ($jY - $iY) + $iX ) ) {
                 $success = !$success;
             }
         }
