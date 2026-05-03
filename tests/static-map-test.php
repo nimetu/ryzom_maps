@@ -6,7 +6,7 @@ use Bmsite\Maps\StaticMap;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-$tiledir = __DIR__.'/../../ryzom_map_tiles.git/tiles';
+$tiledir = __DIR__.'/../tiles/v2';
 
 $params = array(
     'maptype' => 'atys',
@@ -26,7 +26,7 @@ $params = array(
     ),
 );
 
-$loader = new ResourceLoader();
+$loader = new ResourceLoader($tiledir);
 
 $proj = new MapProjection();
 $proj->setServerZones($loader->loadJson('server.json'));
@@ -42,7 +42,6 @@ $proj->setWorldZones($loader->loadJson('world.json'));
 
 $params = [
     'markers' => '17201,-32970|17300,-32870|17300,-32970',
-    'zoom' => 10,
 ];
 $map = new StaticMap($tiledir, $proj);
 $map->configure($params);

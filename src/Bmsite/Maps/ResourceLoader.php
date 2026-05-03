@@ -14,50 +14,33 @@ namespace Bmsite\Maps;
  */
 class ResourceLoader
 {
+    private string $path;
 
-    /**
-     * Return resources directory path
-     *
-     * @return string
-     */
-    public function getPath()
+    public function __construct(string $path = __DIR__ . '/Resources')
     {
-        return __DIR__.'/Resources';
+        $this->path = $path;
     }
 
     /**
      * Return full path + filename for requested file
-     *
-     * @param string $filename
-     *
-     * @return string
      */
-    public function getFilePath($filename)
+    public function getFilePath(string $filename): string
     {
-        return $this->getPath().'/'.$filename;
+        return $this->path . '/' . $filename;
     }
 
     /**
      * Check if file exists
-     *
-     * @param string $file
-     *
-     * @return bool
      */
-    public function fileExists($file)
+    public function fileExists(string $file): bool
     {
-        $path = $this->getFilePath($file);
-        return file_exists($path);
+        return file_exists($this->getFilePath($file));
     }
 
     /**
      * Return file content or boolean false if file does not exist
-     *
-     * @param string $name
-     *
-     * @return string|bool
      */
-    public function getContents($name)
+    public function getContents(string $name): string|bool
     {
         if ($this->fileExists($name)) {
             $path = $this->getFilePath($name);
@@ -68,15 +51,12 @@ class ResourceLoader
 
     /**
      * Load file content and decode it as json string
-     *
-     * @param string $filename
-     * @param bool $assoc
-     *
-     * @return mixed
      */
-    public function loadJson($filename, $assoc = true)
+    public function loadJson(string $filename, bool $assoc = true): ?array
     {
-        return json_decode($this->getContents($filename), $assoc);
+        /** @var ?array $json */
+        $json = json_decode($this->getContents($filename), $assoc);
+        return $json;
     }
 }
 

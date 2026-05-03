@@ -3,6 +3,7 @@
 /coverage
 /vendor
 /composer.lock
+/tiles
 /static-map-result.png
 bin/update.sh
 
