@@ -34,33 +34,38 @@ class Label implements FeatureInterface
     /** @var Color */
     private $color;
 
-    /** @var Color */
+    /** @var ?Color */
     private $background;
 
-    /** @var Color */
+    /** @var ?Color */
     private $outlineColor;
 
     /** @var int */
     private $outlineWidth;
 
-    /** @var StaticMapGenerator */
+    /** @var ?StaticMapGenerator */
 	private $map;
 
+	/** @var string */
 	private $fontPath;
+
+	/** @var int */
 	private $relOffsetX;
+
+	/** @var int */
 	private $relOffsetY;
 
     /**
      * @param string $text
-     * @param Point $pos
-     * @param Color $color
+     * @param ?Point $pos
+     * @param ?Color $color
      */
-    public function __construct($text, Point $pos = null, Color $color = null)
+    public function __construct($text, ?Point $pos = null, ?Color $color = null)
     {
         $this->pos = $pos;
         $this->text = $text;
 
-        $this->setColor($color ? : new Color(255, 255, 255));
+        $this->setColor($color ?? new Color(255, 255, 255));
         $this->setOutline(new Color(0, 0, 0), 1);
 
         $this->fontSize = 7;
@@ -72,8 +77,8 @@ class Label implements FeatureInterface
     }
 
     /**
-     * @param float $x
-     * @param float $y
+     * @param int $x
+     * @param int $y
      */
     public function setOffset($x, $y)
     {
@@ -175,17 +180,17 @@ class Label implements FeatureInterface
         $bbox = $this->getTextBbox();
 
         // bottom-left corner
-        $x = $p->x - ($bbox->getWidth() / 2) - $bbox->left + $xOffset + $this->relOffsetX;
-        $y = $p->y + ($bbox->getHeight() / 2) - $bbox->bottom + $yOffset + $this->relOffsetY;
+        $x = intval($p->x - ($bbox->getWidth() / 2) - $bbox->left + $xOffset + $this->relOffsetX);
+        $y = intval($p->y + ($bbox->getHeight() / 2) - $bbox->bottom + $yOffset + $this->relOffsetY);
 
         if ($this->background) {
             $s = $this->background->allocate($canvas);
             imagefilledrectangle(
                 $canvas,
-                $x + $bbox->left,
-                $y + $bbox->bottom + 1,
-                $x + $bbox->right - 1,
-                $y + $bbox->top,
+                intval($x + $bbox->left),
+                intval($y + $bbox->bottom + 1),
+                intval($x + $bbox->right - 1),
+                intval($y + $bbox->top),
                 $s
             );
         }
@@ -213,6 +218,7 @@ class Label implements FeatureInterface
     {
         $font = $this->getFont();
 
+		/** @var int[] */
         $bbox = imagettfbbox($this->fontSize, 0, $font, $this->text);
 
         return new Bounds($bbox[0], $bbox[1], $bbox[4], $bbox[5]);

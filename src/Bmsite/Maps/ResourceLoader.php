@@ -54,9 +54,7 @@ class ResourceLoader
      */
     public function loadJson(string $filename, bool $assoc = true): ?array
     {
-        /** @var ?array $json */
-        $json = json_decode($this->getContents($filename), $assoc);
-        return $json;
+        return json_decode($this->getContents($filename), $assoc);
     }
 }
 

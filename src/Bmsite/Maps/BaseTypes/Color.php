@@ -38,12 +38,12 @@ class Color
     }
 
     /**
-     * @param resource $canvas
+     * @param \GdImage $canvas
      *
      * @return int
      */
     public function allocate($canvas)
-    {
-        return imagecolorallocatealpha($canvas, $this->r, $this->g, $this->b, 127 - ($this->a >> 1));
+	{
+		return imagecolorallocatealpha($canvas, $this->r, $this->g, $this->b, 127 - ($this->a >> 1));
     }
 }

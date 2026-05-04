@@ -50,7 +50,7 @@ class MapProjection
     protected $baseScale = 1024;
 
     /**
-     * @param array $zones
+	 * @param array $zones
      * @param int $baseZoom
      */
     public function setWorldZones(array $zones, $baseZoom = 10)
@@ -59,7 +59,7 @@ class MapProjection
         $this->baseScale = pow(2, $this->baseZoom);
 
         $this->zones = array();
-        foreach ($zones as $key => $pos) {
+		foreach ($zones as $key => $pos) {
             $this->zones[$key] = new Bounds($pos[0][0], $pos[0][1], $pos[1][0], $pos[1][1]);
         }
     }
@@ -81,7 +81,7 @@ class MapProjection
     public function setServerAreas(array $areas)
     {
         $this->serverAreas = array();
-        foreach($areas as $key => $area) {
+		foreach($areas as $key => $area) {
             $this->serverAreas[$key] = array('name' => $key, 'order' => $area['order'], 'polygon' => new Polygon($area['points']));
             if (!empty($area['areas'])) {
                 foreach($area['areas'] as $subkey => $subarea) {
@@ -174,7 +174,7 @@ class MapProjection
      * (ie nexus/matis) is returned.
      *
      * @param Point $p
-     * @param int $zoom zoom level to use
+     * @param ?int $zoom zoom level to use
      *
      * @throws \InvalidArgumentException
      * @return Point|bool
@@ -271,6 +271,7 @@ class MapProjection
         array_multisort($sk, SORT_NUMERIC, SORT_DESC, $match);
         // TODO: should return match = [ 0 => [zones...], 1 => [areas....] ] ? 'kitiniere' is in duplicate
 
+		/** @var array[] $match */
         return $match;
     }
 
@@ -279,21 +280,19 @@ class MapProjection
      *
      * @param Point $point
      *
-     * @return bool|int|string
+     * @return null|string
      */
     protected function findParentZone(Point $point)
-    {
-        $parent = null;
-
+	{
+		/** @var string[] $regions */
         $regions = $this->getTargetRegions($point);
         foreach ($regions as $id) {
             if (isset($this->zones[$id])) {
-                $parent = $id;
-                break;
+                return $id;
             }
         }
 
-        return $parent;
+        return null;
     }
 
     /**

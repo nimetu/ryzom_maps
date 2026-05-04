@@ -176,7 +176,7 @@ class Marker extends PointsCollection implements FeatureInterface
                 // offset is in pixel scale
                 if ($icon) {
                     $iconSize = $icon->getSize();
-                    $label->setOffset(0, $iconSize[1] / 2);
+                    $label->setOffset(0, intdiv($iconSize[1], 2));
                 }
 
                 $label->draw($canvas);

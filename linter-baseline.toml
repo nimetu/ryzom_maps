@@ -25,6 +25,12 @@ message = "Use a compound assignment for clarity and performance."
 count = 4
 
 [[issues]]
+file = "src/Bmsite/Maps/ResourceLoader.php"
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 1
+
+[[issues]]
 file = "src/Bmsite/Maps/StaticMap.php"
 code = "no-empty-catch-clause"
 message = "Do not use empty `catch` blocks."

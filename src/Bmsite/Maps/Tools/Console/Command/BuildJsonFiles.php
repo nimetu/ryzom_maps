@@ -28,6 +28,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class BuildJsonFiles extends Command
 {
     // exclude continents from server.json
+    /** @var string[] */
     protected $exclude = array(
         'testroom',
     );
@@ -115,7 +116,7 @@ class BuildJsonFiles extends Command
         $continents = array();
         foreach ($world->Maps as $map) {
             $key = strtolower($map->Name);
-            if (in_array($key, $this->exclude)) {
+            if (in_array($key, $this->exclude, true)) {
                 continue;
             }
 
@@ -129,10 +130,10 @@ class BuildJsonFiles extends Command
         // also include continents that does not have map texture (ie r2 maps)
         foreach ($world->ContLocs as $map) {
             $key = strtolower($map->SelectionName);
-            if (isset($continents[$key]) || in_array($key, $this->exclude)) {
+            if (isset($continents[$key]) || in_array($key, $this->exclude, true)) {
                 continue;
             }
-            $area = ($map->MaxX - $map->MinX) * ($map->MaxY - $map->MinY);
+            $area = intval(($map->MaxX - $map->MinX) * ($map->MaxY - $map->MinY));
             if ($area === 0) {
                 continue;
             }

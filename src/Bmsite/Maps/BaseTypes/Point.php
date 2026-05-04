@@ -38,8 +38,10 @@ class Point
      * @return float
      */
     public function getDistance($x, $y)
-    {
+	{
+		/** @var float $dx */
         $dx = pow(abs($this->x - $x), 2);
+		/** @var float $dy */
         $dy = pow(abs($this->y - $y), 2);
 
         return sqrt($dx + $dy);

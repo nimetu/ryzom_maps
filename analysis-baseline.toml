@@ -3,31 +3,13 @@ variant = "loose"
 [[issues]]
 file = "src/Bmsite/Maps/BaseTypes/Color.php"
 code = "falsable-return-statement"
-message = '''Function `bmsite\maps\basetypes\color::allocate` is declared to return `int` but possibly returns 'false' (inferred as `false|int`).'''
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/BaseTypes/Color.php"
-code = "invalid-argument"
-message = "Invalid argument type for argument #1 of `imagecolorallocatealpha`: expected `GdImage`, but found `resource`."
+message = '''Function `Bmsite\Maps\BaseTypes\Color::allocate` is declared to return `int` but possibly returns 'false' (inferred as `false|int`).'''
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/BaseTypes/Color.php"
 code = "invalid-return-statement"
-message = 'Invalid return type for function `bmsite\maps\basetypes\color::allocate`: expected `int`, but found `false|int`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/BaseTypes/Point.php"
-code = "possibly-invalid-operand"
-message = "Possibly invalid type for left operand."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/BaseTypes/Point.php"
-code = "possibly-invalid-operand"
-message = "Possibly invalid type for right operand."
+message = 'Invalid return type for function `Bmsite\Maps\BaseTypes\Color::allocate`: expected `int`, but found `false|int`.'
 count = 1
 
 [[issues]]
@@ -111,8 +93,14 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/MapProjection.php"
 code = "invalid-iterator"
+message = "The expression provided to `foreach` is not iterable. It resolved to type `mixed`, which is not iterable."
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/MapProjection.php"
+code = "invalid-iterator"
 message = "The expression provided to `foreach` is not iterable. It resolved to type `truthy-mixed`, which is not iterable."
-count = 2
+count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/MapProjection.php"
@@ -122,38 +110,32 @@ count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/MapProjection.php"
-code = "mismatched-array-index"
-message = "Invalid array key type: `int|true|truthy-string` is not a valid key for this array."
-count = 4
-
-[[issues]]
-file = "src/Bmsite/Maps/MapProjection.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `bmsite\maps\basetypes\bounds::__construct`: expected `float`, but found `mixed`.'
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\BaseTypes\Bounds::__construct`: expected `float`, but found `mixed`.'
 count = 2
 
 [[issues]]
 file = "src/Bmsite/Maps/MapProjection.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `bmsite\maps\basetypes\polygon::__construct`: expected `array<array-key, float>`, but found `mixed`.'
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\BaseTypes\Polygon::__construct`: expected `array<array-key, float>`, but found `mixed`.'
 count = 2
 
 [[issues]]
 file = "src/Bmsite/Maps/MapProjection.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #2 of `bmsite\maps\basetypes\bounds::__construct`: expected `float`, but found `mixed`.'
+message = 'Invalid argument type for argument #2 of `Bmsite\Maps\BaseTypes\Bounds::__construct`: expected `float`, but found `mixed`.'
 count = 2
 
 [[issues]]
 file = "src/Bmsite/Maps/MapProjection.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #3 of `bmsite\maps\basetypes\bounds::__construct`: expected `float`, but found `mixed`.'
+message = 'Invalid argument type for argument #3 of `Bmsite\Maps\BaseTypes\Bounds::__construct`: expected `float`, but found `mixed`.'
 count = 2
 
 [[issues]]
 file = "src/Bmsite/Maps/MapProjection.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #4 of `bmsite\maps\basetypes\bounds::__construct`: expected `float`, but found `mixed`.'
+message = 'Invalid argument type for argument #4 of `Bmsite\Maps\BaseTypes\Bounds::__construct`: expected `float`, but found `mixed`.'
 count = 2
 
 [[issues]]
@@ -164,21 +146,9 @@ count = 24
 
 [[issues]]
 file = "src/Bmsite/Maps/MapProjection.php"
-code = "mixed-array-index"
-message = 'Invalid index type `mixed` used for array access on `array<array-key, Bmsite\Maps\BaseTypes\Bounds>`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/MapProjection.php"
-code = "mixed-array-index"
-message = '''Invalid index type `mixed` used for array access on `non-empty-list<array{'name': mixed, 'order': mixed, 'polygon': Bmsite\Maps\BaseTypes\Polygon}>`.'''
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/MapProjection.php"
 code = "mixed-assignment"
 message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
-count = 10
+count = 8
 
 [[issues]]
 file = "src/Bmsite/Maps/MapProjection.php"
@@ -200,18 +170,6 @@ count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/MapProjection.php"
-code = "mixed-return-statement"
-message = 'Could not infer a precise return type for function `bmsite\maps\mapprojection::findparentzone`. Saw type `mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/MapProjection.php"
-code = "mixed-return-statement"
-message = 'Could not infer a precise return type for function `bmsite\maps\mapprojection::gettargetareas`. Saw type `mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/MapProjection.php"
 code = "possibly-invalid-operand"
 message = "Possibly invalid type for left operand."
 count = 1
@@ -220,13 +178,19 @@ count = 1
 file = "src/Bmsite/Maps/MapProjection.php"
 code = "redundant-comparison"
 message = "Redundant `!==` comparison: left-hand side is always not identical to right-hand side."
-count = 2
+count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/MapProjection.php"
 code = "redundant-condition"
 message = "This condition (type `true`) will always evaluate to true."
-count = 2
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/ResourceLoader.php"
+code = "mixed-return-statement"
+message = 'Could not infer a precise return type for function `Bmsite\Maps\ResourceLoader::loadJson`. Saw type `mixed`.'
+count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/ResourceLoader.php"
@@ -237,80 +201,80 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap.php"
 code = "invalid-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\Feature\Marker::circleradius`: expected `float`, but found `string`.'
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\Feature\Marker::circleRadius`: expected `float`, but found `string`.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap.php"
 code = "invalid-argument"
-message = 'Invalid argument type for argument #2 of `Bmsite\Maps\StaticMap\Feature\Marker::circleradius`: expected `float`, but found `string`.'
+message = 'Invalid argument type for argument #2 of `Bmsite\Maps\StaticMap\Feature\Marker::circleRadius`: expected `float`, but found `string`.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap.php"
 code = "invalid-return-statement"
-message = 'Invalid return type for function `bmsite\maps\staticmap::parsecolor`: expected `Bmsite\Maps\BaseTypes\Color`, but found `false`.'
+message = 'Invalid return type for function `Bmsite\Maps\StaticMap::parseColor`: expected `Bmsite\Maps\BaseTypes\Color`, but found `false`.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap::parselocation`: expected `string`, but found `mixed`.'
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap::parseLocation`: expected `string`, but found `mixed`.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::setcenter`: expected `Bmsite\Maps\BaseTypes\Point`, but found `truthy-mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::setformat`: expected `string`, but found `mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::setlanguage`: expected `string`, but found `mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::setmapmode`: expected `string`, but found `nonnull`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::setmapname`: expected `string`, but found `nonnull`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::setmaxzoom`: expected `int`, but found `mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::setzoom`: expected `int`, but found `mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\Tiles\TileStorageInterface::setmapmode`: expected `string`, but found `nonnull`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `bmsite\maps\staticmap\feature\pointscollection::addpoint`: expected `Bmsite\Maps\BaseTypes\Point`, but found `mixed`.'
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\Feature\PointsCollection::addPoint`: expected `Bmsite\Maps\BaseTypes\Point`, but found `mixed`.'
 count = 2
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::setCenter`: expected `Bmsite\Maps\BaseTypes\Point`, but found `truthy-mixed`.'
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::setFormat`: expected `string`, but found `mixed`.'
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::setLanguage`: expected `string`, but found `mixed`.'
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::setMapMode`: expected `string`, but found `nonnull`.'
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::setMapName`: expected `string`, but found `nonnull`.'
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::setMaxZoom`: expected `int`, but found `mixed`.'
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::setZoom`: expected `int`, but found `mixed`.'
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap.php"
+code = "mixed-argument"
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\Tiles\TileStorageInterface::setMapMode`: expected `string`, but found `nonnull`.'
+count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap.php"
@@ -351,19 +315,19 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap.php"
 code = "possibly-invalid-argument"
-message = 'Possible argument type mismatch for argument #1 of `bmsite\maps\basetypes\color::__construct`: expected `int`, but possibly received `float|int`.'
+message = 'Possible argument type mismatch for argument #1 of `Bmsite\Maps\BaseTypes\Color::__construct`: expected `int`, but possibly received `float|int`.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap.php"
 code = "possibly-invalid-argument"
-message = 'Possible argument type mismatch for argument #2 of `bmsite\maps\basetypes\color::__construct`: expected `int`, but possibly received `float|int`.'
+message = 'Possible argument type mismatch for argument #2 of `Bmsite\Maps\BaseTypes\Color::__construct`: expected `int`, but possibly received `float|int`.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap.php"
 code = "possibly-invalid-argument"
-message = 'Possible argument type mismatch for argument #3 of `bmsite\maps\basetypes\color::__construct`: expected `int`, but possibly received `float|int`.'
+message = 'Possible argument type mismatch for argument #3 of `Bmsite\Maps\BaseTypes\Color::__construct`: expected `int`, but possibly received `float|int`.'
 count = 1
 
 [[issues]]
@@ -387,7 +351,7 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap.php"
 code = "too-many-arguments"
-message = 'Too many arguments provided for method `Bmsite\Maps\Tiles\TileStorageInterface::setmapmode`.'
+message = 'Too many arguments provided for method `Bmsite\Maps\Tiles\TileStorageInterface::setMapMode`.'
 count = 1
 
 [[issues]]
@@ -398,117 +362,9 @@ count = 2
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "invalid-argument"
-message = "Invalid argument type for argument #1 of `imagedestroy`: expected `GdImage`, but found `resource|true`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "invalid-argument"
-message = "Invalid argument type for argument #1 of `imagesx`: expected `GdImage`, but found `resource|true`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "invalid-argument"
-message = "Invalid argument type for argument #1 of `imagesy`: expected `GdImage`, but found `resource|true`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "invalid-argument"
-message = "Invalid argument type for argument #2 of `imagecopy`: expected `GdImage`, but found `resource|true`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "invalid-argument"
-message = "Invalid argument type for argument #2 of `imagecopyresampled`: expected `GdImage`, but found `resource|true`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "invalid-return-statement"
-message = 'Invalid return type for function `bmsite\maps\staticmap\feature\icon::loadicon`: expected `bool|resource`, but found `GdImage|false`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #1 of `imagecolorallocatealpha`: expected `GdImage`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #1 of `imagesetpixel`: expected `GdImage`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #2 of `imagecolorallocatealpha`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #3 of `imagecolorallocatealpha`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #3 of `imagecopy`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #3 of `imagecopyresampled`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #4 of `imagecolorallocatealpha`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #4 of `imagecopy`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #4 of `imagecopyresampled`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #5 of `imagecolorallocatealpha`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #7 of `imagecopyresampled`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #8 of `imagecopyresampled`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
 code = "mixed-assignment"
 message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
-count = 11
+count = 7
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
@@ -520,13 +376,13 @@ count = 1
 file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
 code = "mixed-operand"
 message = "Left operand in binary operation has type `mixed`."
-count = 16
+count = 12
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
 code = "mixed-operand"
 message = "Right operand in binary operation has type `mixed`."
-count = 5
+count = 3
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
@@ -560,122 +416,8 @@ count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "invalid-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\BaseTypes\Color::allocate`: expected `resource`, but found `GdImage`.'
-count = 3
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `bmsite\maps\basetypes\bounds::__construct`: expected `float`, but found `mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #2 of `bmsite\maps\basetypes\bounds::__construct`: expected `float`, but found `mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #2 of `imagefilledrectangle`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #3 of `bmsite\maps\basetypes\bounds::__construct`: expected `float`, but found `mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #3 of `imagefilledrectangle`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #4 of `bmsite\maps\basetypes\bounds::__construct`: expected `float`, but found `mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #4 of `imagefilledrectangle`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #4 of `imagettftext`: expected `int`, but found `mixed`."
-count = 2
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #5 of `imagefilledrectangle`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #5 of `imagettftext`: expected `int`, but found `mixed`."
-count = 2
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "mixed-assignment"
-message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
-count = 2
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "mixed-operand"
-message = "Invalid left operand: type `mixed` cannot be reliably used in string concatenation."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "mixed-operand"
-message = "Left operand in binary operation has type `mixed`."
-count = 8
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "mixed-operand"
-message = "Right operand in binary operation has type `mixed`."
-count = 2
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "possibly-false-array-access"
-message = "Cannot perform array access on possibly `false` value."
-count = 4
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "redundant-condition"
-message = "Redundant Elvis operator: left-hand side is always truthy."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "redundant-condition"
-message = 'This condition (type `Bmsite\Maps\BaseTypes\Color`) will always evaluate to true.'
-count = 2
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "redundant-condition"
-message = 'This condition (type `Bmsite\Maps\StaticMap\StaticMapGenerator`) will always evaluate to true.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "unreachable-else-clause"
-message = "Unreachable else clause"
+code = "invalid-property-assignment-value"
+message = 'Invalid type for property `$pos`: expected `Bmsite\Maps\BaseTypes\Point`, but got `Bmsite\Maps\BaseTypes\Point|null`.'
 count = 1
 
 [[issues]]
@@ -683,12 +425,6 @@ file = "src/Bmsite/Maps/StaticMap/Feature/Marker.php"
 code = "impossible-condition"
 message = "This condition (type `false`) will always evaluate to false."
 count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Marker.php"
-code = "invalid-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\BaseTypes\Color::allocate`: expected `resource`, but found `GdImage`.'
-count = 2
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Feature/Marker.php"
@@ -705,19 +441,13 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Feature/Marker.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `bmsite\maps\basetypes\point::__construct`: expected `float`, but found `mixed`.'
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\BaseTypes\Point::__construct`: expected `float`, but found `mixed`.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Feature/Marker.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #2 of `Bmsite\Maps\StaticMap\Feature\Label::setoffset`: expected `float`, but found `mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Marker.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #2 of `bmsite\maps\basetypes\point::__construct`: expected `float`, but found `mixed`.'
+message = 'Invalid argument type for argument #2 of `Bmsite\Maps\BaseTypes\Point::__construct`: expected `float`, but found `mixed`.'
 count = 1
 
 [[issues]]
@@ -730,7 +460,7 @@ count = 1
 file = "src/Bmsite/Maps/StaticMap/Feature/Marker.php"
 code = "mixed-operand"
 message = "Left operand in binary operation has type `mixed`."
-count = 5
+count = 4
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Feature/Marker.php"
@@ -848,12 +578,6 @@ count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Feature/Polygon.php"
-code = "invalid-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\BaseTypes\Color::allocate`: expected `resource`, but found `GdImage`.'
-count = 2
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Polygon.php"
 code = "invalid-iterator"
 message = "The expression provided to `foreach` is not iterable. It resolved to type `mixed`, which is not iterable."
 count = 1
@@ -885,13 +609,13 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Feature/Polygon.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `bmsite\maps\basetypes\point::__construct`: expected `float`, but found `mixed`.'
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\BaseTypes\Point::__construct`: expected `float`, but found `mixed`.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Feature/Polygon.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #2 of `bmsite\maps\basetypes\point::__construct`: expected `float`, but found `mixed`.'
+message = 'Invalid argument type for argument #2 of `Bmsite\Maps\BaseTypes\Point::__construct`: expected `float`, but found `mixed`.'
 count = 1
 
 [[issues]]
@@ -981,7 +705,7 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Layer/TileLayer.php"
 code = "invalid-return-statement"
-message = 'Invalid return type for function `bmsite\maps\staticmap\layer\tilelayer::debugtile`: expected `bool|resource`, but found `GdImage|false`.'
+message = 'Invalid return type for function `Bmsite\Maps\StaticMap\Layer\TileLayer::debugTile`: expected `bool|resource`, but found `GdImage|false`.'
 count = 1
 
 [[issues]]
@@ -993,13 +717,13 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Layer/TileLayer.php"
 code = "mixed-argument"
-message = "Invalid argument type for argument #1 of `imagedestroy`: expected `GdImage`, but found `truthy-mixed`."
+message = "Invalid argument type for argument #1 of `imagedestroy`: expected `GdImage`, but found `nonnull`."
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Layer/TileLayer.php"
 code = "mixed-argument"
-message = "Invalid argument type for argument #2 of `imagecopyresampled`: expected `GdImage`, but found `truthy-mixed`."
+message = "Invalid argument type for argument #2 of `imagecopyresampled`: expected `GdImage`, but found `nonnull`."
 count = 1
 
 [[issues]]
@@ -1010,8 +734,8 @@ count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Layer/TileLayer.php"
-code = "mixed-operand"
-message = "Right operand in `&&` operation has `mixed` type."
+code = "mixed-property-type-coercion"
+message = "A value with a less specific type `mixed` is being assigned to property `$$minZoom` (int)."
 count = 1
 
 [[issues]]
@@ -1029,31 +753,7 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Layer/TileLayer.php"
 code = "possibly-invalid-argument"
-message = 'Possible argument type mismatch for argument #2 of `Bmsite\Maps\StaticMap\Layer\TileLayer::debugtile`: expected `int`, but possibly received `float`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Layer/TileLayer.php"
-code = "possibly-invalid-argument"
-message = 'Possible argument type mismatch for argument #2 of `Bmsite\Maps\Tiles\TileStorageInterface::get`: expected `int`, but possibly received `float`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Layer/TileLayer.php"
-code = "possibly-invalid-argument"
 message = "Possible argument type mismatch for argument #2 of `imagecolorallocatealpha`: expected `int`, but possibly received `float|int`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Layer/TileLayer.php"
-code = "possibly-invalid-argument"
-message = 'Possible argument type mismatch for argument #3 of `Bmsite\Maps\StaticMap\Layer\TileLayer::debugtile`: expected `int`, but possibly received `float`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Layer/TileLayer.php"
-code = "possibly-invalid-argument"
-message = 'Possible argument type mismatch for argument #3 of `Bmsite\Maps\Tiles\TileStorageInterface::get`: expected `int`, but possibly received `float`.'
 count = 1
 
 [[issues]]
@@ -1065,19 +765,7 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Layer/TileLayer.php"
 code = "possibly-invalid-argument"
-message = "Possible argument type mismatch for argument #3 of `imagecopyresampled`: expected `int`, but possibly received `float`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Layer/TileLayer.php"
-code = "possibly-invalid-argument"
 message = "Possible argument type mismatch for argument #4 of `imagecolorallocatealpha`: expected `int`, but possibly received `float|int`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Layer/TileLayer.php"
-code = "possibly-invalid-argument"
-message = "Possible argument type mismatch for argument #4 of `imagecopyresampled`: expected `int`, but possibly received `float`."
 count = 1
 
 [[issues]]
@@ -1093,12 +781,6 @@ message = "Possible argument type mismatch for argument #8 of `imagecopyresample
 count = 1
 
 [[issues]]
-file = "src/Bmsite/Maps/StaticMap/Layer/TileLayer.php"
-code = "too-many-arguments"
-message = 'Too many arguments provided for method `Bmsite\Maps\StaticMap\Layer\TileLayer::gettilesize`.'
-count = 1
-
-[[issues]]
 file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
 code = "deprecated-function"
 message = "Call to deprecated function: `imagedestroy`."
@@ -1107,14 +789,14 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
 code = "falsable-return-statement"
-message = '''Function `bmsite\maps\staticmap\staticmapgenerator::render` is declared to return `string` but possibly returns 'false' (inferred as `false|string`).'''
+message = '''Function `Bmsite\Maps\StaticMap\StaticMapGenerator::render` is declared to return `string` but possibly returns 'false' (inferred as `false|string`).'''
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
 code = "impossible-condition"
 message = "This condition (type `false`) will always evaluate to false."
-count = 4
+count = 2
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
@@ -1166,26 +848,26 @@ count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "invalid-property-assignment-value"
-message = "Invalid type for property `$lang`: expected `string`, but got `false`."
+code = "invalid-return-statement"
+message = 'Invalid return type for function `Bmsite\Maps\StaticMap\StaticMapGenerator::getZoom`: expected `int`, but found `int|null`.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
 code = "invalid-return-statement"
-message = 'Invalid return type for function `bmsite\maps\staticmap\staticmapgenerator::render`: expected `string`, but found `false|string`.'
+message = 'Invalid return type for function `Bmsite\Maps\StaticMap\StaticMapGenerator::render`: expected `string`, but found `false|string`.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::addmarker`: expected `Bmsite\Maps\StaticMap\Feature\Marker`, but found `mixed`.'
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::addMarker`: expected `Bmsite\Maps\StaticMap\Feature\Marker`, but found `mixed`.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::addpolygon`: expected `Bmsite\Maps\StaticMap\Feature\Polygon`, but found `mixed`.'
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\StaticMap\StaticMapGenerator::addPolygon`: expected `Bmsite\Maps\StaticMap\Feature\Polygon`, but found `mixed`.'
 count = 1
 
 [[issues]]
@@ -1196,93 +878,15 @@ count = 2
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `bmsite\maps\basetypes\bounds::__construct`: expected `float`, but found `mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #1 of `imagecreatetruecolor`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #2 of `bmsite\maps\basetypes\bounds::__construct`: expected `float`, but found `mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #2 of `imagecreatetruecolor`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #2 of `imageline`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #2 of `in_array`: expected `array<array-key, lowercase-string>`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #3 of `bmsite\maps\basetypes\bounds::__construct`: expected `float`, but found `mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #3 of `imageline`: expected `int`, but found `mixed`."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "mixed-argument"
-message = 'Invalid argument type for argument #4 of `bmsite\maps\basetypes\bounds::__construct`: expected `float`, but found `mixed`.'
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #4 of `imageline`: expected `int`, but found `mixed`."
-count = 2
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "mixed-argument"
-message = "Invalid argument type for argument #5 of `imageline`: expected `int`, but found `mixed`."
-count = 2
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
 code = "mixed-assignment"
 message = "Assigning `mixed` type to a variable may lead to unexpected behavior."
-count = 12
+count = 4
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "mixed-operand"
-message = "Left operand in binary operation has type `mixed`."
-count = 6
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "mixed-operand"
-message = "Right operand in `<` comparison has `mixed` type."
-count = 3
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "mixed-operand"
-message = "Right operand in binary operation has type `mixed`."
-count = 6
+code = "nullable-return-statement"
+message = 'Function `Bmsite\Maps\StaticMap\StaticMapGenerator::getZoom` is declared to return `int` but possibly returns a nullable value (inferred as `int|null`).'
+count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
@@ -1299,20 +903,32 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
 code = "possibly-null-argument"
-message = "Argument #1 of function `substr` is possibly `null`, but parameter type `string` does not accept it."
+message = 'Argument #1 of method `Bmsite\Maps\StaticMap\Layer\LangTileLayer::setLanguage` is possibly `null`, but parameter type `string` does not accept it.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
-code = "possibly-undefined-string-array-index"
-message = "Possibly undefined array key 'HTTP_ACCEPT_LANGUAGE' accessed on `array{'APP_DEBUG'?: bool, 'APP_ENV'?: string, 'APP_FALLBACK_LOCALE'?: non-empty-string, 'APP_KEY'?: non-empty-string, 'APP_LOCALE'?: non-empty-string, 'APP_NAME'?: non-empty-string, 'APP_SECRET'?: non-empty-string, 'APP_URL'?: non-empty-string, 'AUTH_TYPE'?: non-empty-string, 'CACHE_DRIVER'?: non-empty-string, 'CONTENT_LENGTH'?: string, 'CONTENT_TYPE'?: string, 'DATABASE_URL'?: non-empty-string, 'DB_CONNECTION'?: non-empty-string, 'DB_DATABASE'?: non-empty-string, 'DB_HOST'?: non-empty-string, 'DB_PASSWORD'?: string, 'DB_PORT'?: non-empty-string, 'DB_USERNAME'?: non-empty-string, 'DOCUMENT_ROOT'?: non-empty-string, 'FCGI_ROLE'?: non-empty-string, 'GATEWAY_INTERFACE'?: non-empty-string, 'HOME'?: non-empty-string, 'HTTPS'?: string, 'HTTP_ACCEPT'?: non-empty-string, 'HTTP_ACCEPT_CHARSET'?: non-empty-string, 'HTTP_ACCEPT_ENCODING'?: non-empty-string, 'HTTP_ACCEPT_LANGUAGE'?: non-empty-string, 'HTTP_CACHE_CONTROL'?: non-empty-string, 'HTTP_CDN_LOOP'?: non-empty-string, 'HTTP_CF_CONNECTING_IP'?: non-empty-string, 'HTTP_CF_IPCOUNTRY'?: non-empty-string, 'HTTP_CF_VISITOR'?: non-empty-string, 'HTTP_CLIENT_IP'?: non-empty-string, 'HTTP_CONNECTION'?: non-empty-string, 'HTTP_COOKIE'?: non-empty-string, 'HTTP_DNT'?: non-empty-string, 'HTTP_HOST'?: non-empty-string, 'HTTP_PRIORITY'?: non-empty-string, 'HTTP_REFERER'?: non-empty-string, 'HTTP_SEC_CH_UA'?: non-empty-string, 'HTTP_SEC_CH_UA_MOBILE'?: non-empty-string, 'HTTP_SEC_CH_UA_PLATFORM'?: non-empty-string, 'HTTP_SEC_FETCH_DEST'?: non-empty-string, 'HTTP_SEC_FETCH_MODE'?: non-empty-string, 'HTTP_SEC_FETCH_SITE'?: non-empty-string, 'HTTP_SEC_FETCH_USER'?: non-empty-string, 'HTTP_UPGRADE_INSECURE_REQUESTS'?: non-empty-string, 'HTTP_USER_AGENT'?: non-empty-string, 'HTTP_X_FORWARDED_FOR'?: non-empty-string, 'HTTP_X_FORWARDED_PROTO'?: non-empty-string, 'HTTP_X_REAL_IP'?: non-empty-string, 'ORIG_PATH_INFO'?: non-empty-string, 'PATH'?: non-empty-string, 'PATH_INFO'?: non-empty-string, 'PATH_TRANSLATED'?: non-empty-string, 'PHP_AUTH_DIGEST'?: non-empty-string, 'PHP_AUTH_PW'?: non-empty-string, 'PHP_AUTH_USER'?: non-empty-string, 'PHP_SELF'?: non-empty-string, 'QUERY_STRING'?: string, 'REDIRECT_REMOTE_USER'?: non-empty-string, 'REDIRECT_STATUS'?: non-empty-string, 'REMOTE_ADDR'?: non-empty-string, 'REMOTE_HOST'?: non-empty-string, 'REMOTE_PORT'?: string, 'REMOTE_USER'?: non-empty-string, 'REQUEST_METHOD'?: non-empty-string, 'REQUEST_SCHEME'?: non-empty-string, 'REQUEST_TIME'?: int<1764191486, max>, 'REQUEST_TIME_FLOAT'?: float, 'REQUEST_URI'?: non-empty-string, 'SCRIPT_FILENAME': non-empty-string, 'SCRIPT_NAME': non-empty-string, 'SECRET'?: non-empty-string, 'SERVER_ADDR'?: non-empty-string, 'SERVER_ADMIN'?: non-empty-string, 'SERVER_NAME'?: non-empty-string, 'SERVER_PORT'?: non-empty-string, 'SERVER_PROTOCOL'?: non-empty-string, 'SERVER_SIGNATURE'?: non-empty-string, 'SERVER_SOFTWARE'?: non-empty-string, 'USER'?: non-empty-string, 'argc'?: positive-int, 'argv'?: non-empty-list<string>, ...<non-empty-string, string>}`."
-count = 1
+code = "possibly-null-argument"
+message = 'Argument #3 of method `Bmsite\Maps\StaticMap\Layer\TileLayer::draw` is possibly `null`, but parameter type `int` does not accept it.'
+count = 2
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
+code = "possibly-null-operand"
+message = "Left operand in arithmetic operation might be `null` (type `float|null`)."
+count = 2
+
+[[issues]]
+file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
+code = "possibly-null-property-access"
+message = "Attempting to access a property on a possibly `null` value."
+count = 2
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/StaticMapGenerator.php"
 code = "redundant-comparison"
 message = "Redundant `===` comparison: left-hand side is never identical to right-hand side."
-count = 4
+count = 2
 
 [[issues]]
 file = "src/Bmsite/Maps/Tiles/FileTileStorage.php"
@@ -1383,7 +999,7 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/Tools/Console/Command/BuildJsonFiles.php"
 code = "less-specific-argument"
-message = '''Argument type mismatch for argument #2 of `Bmsite\Maps\Tools\Console\Command\BuildJsonFiles::filtercontlabel`: expected `array<string, array<string, array{'name': string}>>`, but provided type `array<array-key, mixed>` is less specific.'''
+message = '''Argument type mismatch for argument #2 of `Bmsite\Maps\Tools\Console\Command\BuildJsonFiles::filterContLabel`: expected `array<string, array<string, array{'name': string}>>`, but provided type `array<array-key, mixed>` is less specific.'''
 count = 1
 
 [[issues]]
@@ -1395,13 +1011,13 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/Tools/Console/Command/BuildJsonFiles.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\Tools\Console\Command\BuildJsonFiles::buildlabels`: expected `array<array-key, Ryzom\Sheets\Client\CContinent>`, but found `mixed`.'
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\Tools\Console\Command\BuildJsonFiles::buildLabels`: expected `array<array-key, Ryzom\Sheets\Client\CContinent>`, but found `mixed`.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/Tools/Console/Command/BuildJsonFiles.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `Bmsite\Maps\Tools\Console\Command\BuildJsonFiles::buildregionpolys`: expected `array<array-key, Ryzom\Sheets\Client\CContinent>`, but found `mixed`.'
+message = 'Invalid argument type for argument #1 of `Bmsite\Maps\Tools\Console\Command\BuildJsonFiles::buildRegionPolys`: expected `array<array-key, Ryzom\Sheets\Client\CContinent>`, but found `mixed`.'
 count = 1
 
 [[issues]]
@@ -1413,25 +1029,25 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/Tools/Console/Command/BuildJsonFiles.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #1 of `ryzom\sheets\packedsheetsloader::__construct`: expected `string`, but found `mixed`.'
+message = 'Invalid argument type for argument #1 of `Ryzom\Sheets\PackedSheetsLoader::__construct`: expected `string`, but found `mixed`.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/Tools/Console/Command/BuildJsonFiles.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #2 of `Bmsite\Maps\Tools\Console\Command\BuildJsonFiles::buildserverzones`: expected `string`, but found `mixed`.'
+message = 'Invalid argument type for argument #2 of `Bmsite\Maps\Tools\Console\Command\BuildJsonFiles::buildServerZones`: expected `string`, but found `mixed`.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/Tools/Console/Command/BuildJsonFiles.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #3 of `Bmsite\Maps\Tools\Console\Command\BuildJsonFiles::buildlabels`: expected `string`, but found `mixed`.'
+message = 'Invalid argument type for argument #3 of `Bmsite\Maps\Tools\Console\Command\BuildJsonFiles::buildLabels`: expected `string`, but found `mixed`.'
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/Tools/Console/Command/BuildJsonFiles.php"
 code = "mixed-argument"
-message = 'Invalid argument type for argument #3 of `Bmsite\Maps\Tools\Console\Command\BuildJsonFiles::buildregionpolys`: expected `string`, but found `mixed`.'
+message = 'Invalid argument type for argument #3 of `Bmsite\Maps\Tools\Console\Command\BuildJsonFiles::buildRegionPolys`: expected `string`, but found `mixed`.'
 count = 1
 
 [[issues]]
@@ -1467,7 +1083,7 @@ count = 1
 [[issues]]
 file = "src/Bmsite/Maps/Tools/Console/Command/BuildJsonFiles.php"
 code = "null-argument"
-message = 'Argument #2 of method `Symfony\Component\Console\Command\Command::addoption` is `null`, but parameter type `string` does not accept it.'
+message = 'Argument #2 of method `Symfony\Component\Console\Command\Command::addOption` is `null`, but parameter type `string` does not accept it.'
 count = 1
 
 [[issues]]

@@ -113,13 +113,12 @@ class Polygon extends PointsCollection implements FeatureInterface
                 // filled polygon needs at least 3 points
                 $poly[] = $poly[0];
                 $poly[] = $poly[1];
-                ++$nbPoints;
             }
             imagesetthickness($canvas, 1);
             imagefilledpolygon($canvas, $poly, $nbPoints, $this->fillcolor->allocate($canvas));
 
             imagesetthickness($canvas, $this->weight);
-            imagepolygon($canvas, $poly, $nbPoints, $color);
+            imagepolygon($canvas, $poly, $color);
         } else {
             imagesetthickness($canvas, $this->weight);
 

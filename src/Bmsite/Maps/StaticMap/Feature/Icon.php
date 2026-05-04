@@ -34,7 +34,7 @@ class Icon implements FeatureInterface
     /** @var StaticMapGenerator */
     private $map;
 
-    /** @var array */
+    /** @var array{int,int} */
     private $size;
 
     /** @var bool */
@@ -137,7 +137,7 @@ class Icon implements FeatureInterface
     }
 
     /**
-     * @return array
+     * @return array{int,int}
      */
     public function getSize()
     {
@@ -169,8 +169,8 @@ class Icon implements FeatureInterface
         $w = $this->size[0];
         $h = $this->size[1];
 
-        $x = $p->x - $w / 2 + $xOffset;
-        $y = $p->y - $h / 2 + $yOffset;
+        $x = intval($p->x - $w / 2 + $xOffset);
+        $y = intval($p->y - $h / 2 + $yOffset);
 
         if ($w !== $width || $h !== $height) {
             imagecopyresampled($canvas, $icon, $x, $y, 0, 0, $w, $h, $width, $height);
@@ -185,7 +185,7 @@ class Icon implements FeatureInterface
     /**
      * Load icon from file, apply colorize if needed
      *
-     * @return resource|bool
+     * @return \GdImage|false
      */
     private function loadIcon()
     {
@@ -203,7 +203,9 @@ class Icon implements FeatureInterface
     }
 
     /**
-     * Tint input image $im with required color
+	 * Tint input image $im with required color
+	 *
+	 * @param \GdImage $icon
      */
     private function colorize($icon)
     {
@@ -231,7 +233,7 @@ class Icon implements FeatureInterface
                     $g = $g / $max * 255;
                     $b = $b / $max * 255;
                 }
-                $c = imagecolorallocatealpha($icon, $r, $g, $b, $rgba['alpha']);
+                $c = imagecolorallocatealpha($icon, (int)$r, (int)$g, (int)$b, (int)$rgba['alpha']);
                 imagesetpixel($icon, $x, $y, $c);
             }
         }

@@ -49,8 +49,8 @@ class StaticMapGenerator
     /** @var string */
     private $format = 'jpg';
 
-    /** @var string|bool */
-    private $lang = false;
+    /** @var ?string */
+    private $lang;
 
     /** @var string[] */
     private $languages = array('en', 'fr', 'de', 'es', 'ru');
@@ -234,19 +234,19 @@ class StaticMapGenerator
     }
 
     /**
-     * @param string $val
+     * @param string $val 'auto' try to use browser language
+     *                    empty string disable text layer
+     *                    otherwise 2-char supported language code
      */
     public function setLanguage($val)
     {
         $val = strtolower($val);
-        if (in_array($val, $this->languages, true)) {
+        if ($val === 'auto') {
+            $this->lang = $this->getBrowserlanguage();
+        } elseif (in_array($val, $this->languages, true)) {
             $this->lang = $val;
         } else {
-            if ($val === 'auto') {
-                $this->lang = $this->getBrowserlanguage();
-            } elseif ($val === '') {
-                $this->lang = false;
-            }
+            $this->lang = null;
         }
     }
 
@@ -457,8 +457,8 @@ class StaticMapGenerator
         $halfHeight = $this->height / 2;
 
         // absolute coords for viewport
-        $vpLeft = $this->center->x * $scale - $halfWidth;
-        $vpTop = $this->center->y * $scale - $halfHeight;
+        $vpLeft = intval($this->center->x * $scale - $halfWidth);
+        $vpTop = intval($this->center->y * $scale - $halfHeight);
         $vpRight = $vpLeft + $this->width;
         $vpBottom = $vpTop + $this->height;
 
@@ -474,12 +474,14 @@ class StaticMapGenerator
      */
     protected function draw($canvas)
     {
-        // background map layer with maxZoom = 9
+        if ($this->zoom === null) {
+            $this->zoom = $this->getBoundsZoom();
+        }
+
         $layer = new TileLayer($this, $this->tileLayerMinZoom, $this->tileLayerMaxZoom);
         $layer->draw($canvas, $this->viewport, $this->zoom);
 
-        if ($this->lang !== false) {
-            // background text layer with maxZoom = 10
+        if ($this->lang) {
             $textLayer = new LangTileLayer($this, $this->textLayerMinZoom, $this->textLayerMaxZoom);
             $textLayer->setLanguage($this->lang);
             $textLayer->draw($canvas, $this->viewport, $this->zoom);
@@ -494,8 +496,8 @@ class StaticMapGenerator
         }
 
         if ($this->drawCenterLines) {
-            $halfWidth = $this->width / 2;
-            $halfHeight = $this->height / 2;
+            $halfWidth = intval($this->width / 2);
+            $halfHeight = intval($this->height / 2);
             $y = imagecolorallocatealpha($canvas, 255, 255, 50, 100);
             imagesetthickness($canvas, 1);
             imageline($canvas, 0, $halfHeight, $this->width, $halfHeight, $y);
