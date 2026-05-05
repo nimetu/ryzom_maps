@@ -23,7 +23,7 @@ update_ryzomxy(
 
 // javascript
 $ver = 'leaflet';
-$mapjs = get_mapjs($ver);
+$mapjs = get_mapjs();
 save_js($mapjs['js'],    $mapjs['hash'],    "${path}/map-{$ver}.js");
 save_js($mapjs['jsmin'], $mapjs['hashmin'], "${path}/map-{$ver}.min.js");
 
@@ -69,8 +69,8 @@ function save_js($js, $hash, $file) {
  *
  * @return string[] [js, min]
  */
-function get_mapjs($ver = 'leaflet') {
-    $factory = new \Bmsite\Maps\JavascriptApi\JavascriptFactory($ver, new JsMinifier);
+function get_mapjs() {
+    $factory = new \Bmsite\Maps\JavascriptApi\JavascriptFactory(new JsMinifier());
 
     $ret = [];
     $ret['js'] = $factory->dump();
