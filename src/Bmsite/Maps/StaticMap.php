@@ -38,6 +38,9 @@ class StaticMap
     protected $map;
 
     /** @var string */
+    protected $tiledir;
+
+    /** @var string */
     protected $etag;
 
     /**
@@ -46,7 +49,8 @@ class StaticMap
      */
     public function __construct($tiledir, MapProjection $proj)
     {
-        $ts = new FileTileStorage($tiledir);
+        $this->tiledir = $tiledir;
+        $ts = new FileTileStorage($this->tiledir);
 
         $this->map = new StaticMapGenerator($ts);
         $this->map->setProjection($proj);
@@ -58,6 +62,7 @@ class StaticMap
     public function configure(array $params = array())
     {
         $etag = array();
+        $etag[] = $this->tiledir;
 
         $mapmode = 'world';
         if (isset($params['mapmode'])) {
