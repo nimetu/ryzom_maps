@@ -115,7 +115,7 @@ class Polygon extends PointsCollection implements FeatureInterface
                 $poly[] = $poly[1];
             }
             imagesetthickness($canvas, 1);
-            imagefilledpolygon($canvas, $poly, $nbPoints, $this->fillcolor->allocate($canvas));
+            imagefilledpolygon($canvas, $poly, $this->fillcolor->allocate($canvas));
 
             imagesetthickness($canvas, $this->weight);
             imagepolygon($canvas, $poly, $color);

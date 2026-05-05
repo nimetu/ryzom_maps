@@ -60,6 +60,6 @@ class Point
      */
     public function __toString()
     {
-        return sprintf('Point{%d,%d}', $this->x, $this->y);
+        return sprintf('Point{%.2f,%.2f}', $this->x, $this->y);
     }
 }

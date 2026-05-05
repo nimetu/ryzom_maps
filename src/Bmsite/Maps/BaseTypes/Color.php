@@ -45,5 +45,10 @@ class Color
     public function allocate($canvas)
 	{
 		return imagecolorallocatealpha($canvas, $this->r, $this->g, $this->b, 127 - ($this->a >> 1));
-    }
+	}
+
+	public function __toString()
+	{
+		return sprintf('Color{%d,%d,%d,%d}', $this->r, $this->g, $this->b, $this->a);
+	}
 }

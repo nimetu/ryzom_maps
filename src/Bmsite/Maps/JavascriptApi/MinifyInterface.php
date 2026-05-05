@@ -14,11 +14,7 @@ interface MinifyInterface
 
     /**
      * Minify input string and return it
-     *
-     * @param string $str
-     *
-     * @return string
      */
-    public function minify($str);
+    public function minify(string $str): string;
 }
 

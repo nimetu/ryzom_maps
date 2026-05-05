@@ -14,16 +14,10 @@ namespace Bmsite\Maps\JavascriptApi;
  */
 class JavascriptFactory
 {
-    /** @var string */
-    protected $path;
-
-    /** @var array */
-    protected $js;
-
     /** @var int */
     protected $lastModified;
 
-    /** @var \Bmsite\Maps\MinifyInterface */
+    /** @var ?MinifyInterface */
     protected $minifier;
 
     /** @var string */
@@ -35,107 +29,70 @@ class JavascriptFactory
     /** @var string */
     protected $mincache;
 
-    public function __construct(?MinifyInterface $minify)
+    public function __construct(?MinifyInterface $minify = null)
     {
         $this->minifier = $minify;
         $this->buildAssets();
     }
 
-    /**
-     * @return string
-     */
-    public function etag()
+    public function etag(): string
     {
         return "map.{$this->lastModified}.js";
     }
 
-    /**
-     * @return string
-     */
-    public function dump()
+    public function lastModified(): int
     {
-        if (empty($this->jscache)) {
-            $this->cachejs();
-        }
+        return $this->lastModified;
+    }
 
+    public function dump(): string
+    {
         return $this->jscache;
     }
 
     /**
      * Return minified version from js
      *
-     * @return string
-     *
      * @throws \RuntimeException if minifier not set
      */
-    public function minify()
+    public function minify(): string
     {
         if ($this->minifier === null) {
             throw new \RuntimeException("Minifier not set");
         }
 
-        if (empty($this->jscache) || empty($this->mincache)) {
-            $this->cachejs();
-            $this->cachemin();
-        }
-
         return $this->mincache;
-
     }
 
     /**
      * Return html script tag integrity hash
      *
-     * @param bool $minified
-     * @param string $type
-     *
-     * @return string
+     * @throws \RuntimeException if minifier not set
      */
-    public function integrity($minified = false, $type = 'sha384')
+    public function integrity(bool $minified = false, string $type = 'sha384'): string
     {
-        if (empty($this->jscache)) {
-            $this->cachejs();
-        }
-        if ($minified && empty($this->mincache)) {
-            $this->cachemin();
+        if ($minified && !$this->minifier) {
+            throw new \RuntimeException("Minifier not set");
         }
 
-        $js = $minified ? $this->mincache : $this->jscache;
+        $js = $minified
+            ? $this->mincache
+            : $this->jscache;
+
         $hash = base64_encode(hash($type, $js, true));
         return "{$type}-{$hash}";
     }
 
     /**
-     * Rebuild js cache from $js files array
-     */
-    protected function cachejs()
-    {
-        $result = '';
-        foreach ($this->js as $file) {
-            $result .= file_get_contents($file);
-        }
-
-        $this->jscache = $result;
-    }
-
-    /**
-     * Rebuild minified js cache with header
-     */
-    protected function cachemin()
-    {
-        if (!empty($this->jscache)) {
-            $this->cachejs();
-        }
-
-        $this->mincache = $this->header;
-        $this->mincache .= $this->minifier->minify($this->jscache);
-    }
-
-    /**
-     * @return array
+     * Concatenate all javascript files into single string
      */
     protected function buildAssets()
     {
+        $this->lastModified = 0;
+        $this->jscache = '';
+        $this->mincache = '';
+        $this->header = '';
+
         $jsFiles = array(
             '__header' => 'Leaflet/header.txt',
             'Leaflet/OpenLayers.Geometry.js',
@@ -150,12 +107,6 @@ class JavascriptFactory
             'Leaflet/geo/crs/RyzomWorld.js',
         );
 
-        $this->js = array();
-        $this->lastModified = 0;
-        $this->jscache = '';
-        $this->mincache = '';
-        $this->header = '';
-
         foreach ($jsFiles as $k => $file) {
             $filename = __DIR__.'/'.$file;
             if ($k === '__header') {
@@ -168,8 +119,12 @@ class JavascriptFactory
                 $this->lastModified = $mtime;
             }
 
-            $this->js[] = $filename;
+            $this->jscache .= file_get_contents($filename);
+        }
+
+        if ($this->minifier) {
+            $this->mincache = $this->header;
+            $this->mincache .= $this->minifier->minify($this->jscache);
         }
     }
 }
-

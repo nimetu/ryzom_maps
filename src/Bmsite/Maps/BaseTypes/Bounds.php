@@ -123,6 +123,6 @@ class Bounds
      */
     public function __toString()
     {
-        return sprintf('Bounds{[%d,%d], [%d,%d]}', $this->left, $this->bottom, $this->right, $this->top);
+        return sprintf('Bounds{%.2f,%.2f,%.2f,%.2f}', $this->left, $this->bottom, $this->right, $this->top);
     }
 }

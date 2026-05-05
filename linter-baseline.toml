@@ -8,15 +8,21 @@ count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/JavascriptApi/JavascriptFactory.php"
-code = "explicit-nullable-param"
-message = "Parameter `$minify` is implicitly nullable and relies on a deprecated feature."
+code = "no-boolean-flag-parameter"
+message = "Avoid boolean flag parameters."
+count = 1
+
+[[issues]]
+file = "src/Bmsite/Maps/JavascriptApi/JsMinifier.php"
+code = "inline-variable-return"
+message = "Variable assignment can be inlined into the return statement."
 count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/MapProjection.php"
 code = "prefer-early-continue"
 message = "Consider using early continue pattern to reduce nesting."
-count = 5
+count = 4
 
 [[issues]]
 file = "src/Bmsite/Maps/MapProjection.php"
@@ -41,42 +47,6 @@ file = "src/Bmsite/Maps/StaticMap.php"
 code = "str-contains"
 message = "Consider replacing `strpos` with `str_contains` for improved readability and intent clarity."
 count = 2
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "explicit-nullable-param"
-message = "Parameter `$color` is implicitly nullable and relies on a deprecated feature."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Icon.php"
-code = "explicit-nullable-param"
-message = "Parameter `$pos` is implicitly nullable and relies on a deprecated feature."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "explicit-nullable-param"
-message = "Parameter `$c` is implicitly nullable and relies on a deprecated feature."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "explicit-nullable-param"
-message = "Parameter `$color` is implicitly nullable and relies on a deprecated feature."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "explicit-nullable-param"
-message = "Parameter `$pos` is implicitly nullable and relies on a deprecated feature."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Label.php"
-code = "no-shorthand-ternary"
-message = "Use of the shorthand ternary operator."
-count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/StaticMap/Feature/Polygon.php"

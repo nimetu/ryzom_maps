@@ -39,7 +39,7 @@ class Polygon
         foreach($this->points as $p) {
             $ret[] = sprintf('%.2f', $p);
         }
-        return 'Point{'.join(',', $ret).'}';
+        return 'Polygon{'.join(',', $ret).'}';
     }
 
     /**

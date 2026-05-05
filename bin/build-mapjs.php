@@ -1,17 +1,9 @@
 <?php
 
-require_once dirname(__DIR__).'/vendor/autoload.php';
+use Bmsite\Maps\JavascriptApi\JavascriptFactory;
+use Bmsite\Maps\JavascriptApi\JsMinifier;
 
-/**
- * Simple wrapper around JavascriptPacker
- */
-class JsMinifier implements \Bmsite\Maps\JavascriptApi\MinifyInterface
-{
-    public function minify($str) {
-        $packer = new JavascriptPacker($str);
-        return $packer->pack();
-    }
-}
+require_once dirname(__DIR__).'/vendor/autoload.php';
 
 $path = dirname(__DIR__);
 
@@ -70,7 +62,7 @@ function save_js($js, $hash, $file) {
  * @return string[] [js, min]
  */
 function get_mapjs() {
-    $factory = new \Bmsite\Maps\JavascriptApi\JavascriptFactory(new JsMinifier());
+    $factory = new JavascriptFactory(new JsMinifier());
 
     $ret = [];
     $ret['js'] = $factory->dump();
