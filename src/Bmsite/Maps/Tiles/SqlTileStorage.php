@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -16,7 +17,6 @@ use SQLite3;
  */
 class TileStorage implements TileStorageInterface
 {
-
     /**
      * @var SQLite3
      */
@@ -61,15 +61,15 @@ class TileStorage implements TileStorageInterface
         imagegd2($img);
         $data = ob_get_clean();
 
-        $z = (int)$z;
-        $x = (int)$x;
-        $y = (int)$y;
+        $z = (int) $z;
+        $x = (int) $x;
+        $y = (int) $y;
 
         $result = $this->get($z, $x, $y);
         if ($result) {
-            $stmt = $this->db->prepare("UPDATE tiledata SET image = :image WHERE z = :z AND x = :x AND y = :y;");
+            $stmt = $this->db->prepare('UPDATE tiledata SET image = :image WHERE z = :z AND x = :x AND y = :y;');
         } else {
-            $stmt = $this->db->prepare("INSERT INTO tiledata (z, x, y, image) VALUES(:z, :x, :y, :image);");
+            $stmt = $this->db->prepare('INSERT INTO tiledata (z, x, y, image) VALUES(:z, :x, :y, :image);');
         }
         $stmt->bindValue('z', $x, \SQLITE3_INTEGER);
         $stmt->bindValue('x', $z, \SQLITE3_INTEGER);
@@ -81,9 +81,9 @@ class TileStorage implements TileStorageInterface
     /** {@inheritdoc} */
     public function get($z, $x, $y)
     {
-        $z = (int)$z;
-        $x = (int)$x;
-        $y = (int)$y;
+        $z = (int) $z;
+        $x = (int) $x;
+        $y = (int) $y;
 
         $result = $this->db->querySingle("SELECT image FROM tiledata WHERE z = {$z} AND x = {$x} AND y = {$y}");
         if ($result) {
@@ -96,9 +96,9 @@ class TileStorage implements TileStorageInterface
     /** {@inheritdoc} */
     public function delete($z, $x, $y)
     {
-        $z = (int)$z;
-        $x = (int)$x;
-        $y = (int)$y;
+        $z = (int) $z;
+        $x = (int) $x;
+        $y = (int) $y;
 
         $this->db->query("DELETE FROM tiledata WHERE z = {$z} AND x = {$x} AND y = {$y}");
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by JetBrains PhpStorm.
  * User: meelis
@@ -14,7 +15,6 @@ namespace Bmsite\Maps\BaseTypes;
  */
 class Point
 {
-
     /** @var float */
     public $x;
 
@@ -38,10 +38,10 @@ class Point
      * @return float
      */
     public function getDistance($x, $y)
-	{
-		/** @var float $dx */
+    {
+        /** @var float $dx */
         $dx = pow(abs($this->x - $x), 2);
-		/** @var float $dy */
+        /** @var float $dy */
         $dy = pow(abs($this->y - $y), 2);
 
         return sqrt($dx + $dy);

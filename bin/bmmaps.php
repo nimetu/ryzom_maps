@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by JetBrains PhpStorm.
  * User: meelis
@@ -10,7 +11,7 @@
 use Bmsite\Maps\ResourceLoader;
 use Bmsite\Maps\Tools\Console\Helper\ResourceHelper;
 
-require_once dirname(__DIR__).'/vendor/autoload.php';
+require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 $appRoot = dirname(__DIR__);
 
@@ -36,10 +37,7 @@ $helperSet->set(new \Bmsite\Maps\Tools\Console\Helper\RegionsHelper());
 $cli = new \Symfony\Component\Console\Application('Bmsite Ryzom Maps', '0.1');
 $cli->setCatchExceptions(true);
 $cli->setHelperSet($helperSet);
-$cli->addCommands(
-    array(
-        new \Bmsite\Maps\Tools\Console\Command\BuildJsonFiles(),
-    )
-);
+$cli->addCommands(array(
+    new \Bmsite\Maps\Tools\Console\Command\BuildJsonFiles(),
+));
 $cli->run();
-

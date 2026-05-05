@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -145,7 +146,7 @@ class Marker extends PointsCollection implements FeatureInterface
         $xOffset = -$vp->left;
         $yOffset = -$vp->top;
         foreach ($this->xy as $point) {
-            $p = new Point($point->x * $scale + $xOffset, $point->y * $scale + $yOffset);
+            $p = new Point(($point->x * $scale) + $xOffset, ($point->y * $scale) + $yOffset);
 
             if ($this->circleRadiusHoriz) {
                 // TODO: stroke width, circle color, fill color

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -9,12 +10,10 @@
 
 namespace Bmsite\Maps\Tools\Console\Helper;
 
-
 use Symfony\Component\Console\Helper\Helper;
 
 class RegionsHelper extends Helper
 {
-
     /**
      * Returns the canonical name of this helper.
      *
@@ -35,20 +34,20 @@ class RegionsHelper extends Helper
     public function getRegionForce($sheetid)
     {
         /*
-          region_fyreruins
-          region_hopeforest
-          region_northspire
-
-          region_mistvalley
-          region_karavanexclusionzone
-
-          region_newbieland
-          region_newbieland_blight_zone
-          region_newbieland_hunting_grounds
-          region_newbieland_kitins_jungle
-          region_newbieland_shining_lake
-          region_newbieland_starting_zone
-          region_newbieland_the_shattered_ruins
+         * region_fyreruins
+         * region_hopeforest
+         * region_northspire
+         *
+         * region_mistvalley
+         * region_karavanexclusionzone
+         *
+         * region_newbieland
+         * region_newbieland_blight_zone
+         * region_newbieland_hunting_grounds
+         * region_newbieland_kitins_jungle
+         * region_newbieland_shining_lake
+         * region_newbieland_starting_zone
+         * region_newbieland_the_shattered_ruins
          */
 
         switch ($sheetid) {
@@ -103,6 +102,7 @@ class RegionsHelper extends Helper
             default:
                 return 0; //'FFFFFF';
         }
+
         //switch
     }
 }

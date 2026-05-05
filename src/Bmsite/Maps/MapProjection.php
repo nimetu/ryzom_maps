@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -50,7 +51,7 @@ class MapProjection
     protected $baseScale = 1024;
 
     /**
-	 * @param array $zones
+     * @param array $zones
      * @param int $baseZoom
      */
     public function setWorldZones(array $zones, $baseZoom = 10)
@@ -59,7 +60,7 @@ class MapProjection
         $this->baseScale = pow(2, $this->baseZoom);
 
         $this->zones = array();
-		foreach ($zones as $key => $pos) {
+        foreach ($zones as $key => $pos) {
             $this->zones[$key] = new Bounds($pos[0][0], $pos[0][1], $pos[1][0], $pos[1][1]);
         }
     }
@@ -81,11 +82,19 @@ class MapProjection
     public function setServerAreas(array $areas)
     {
         $this->serverAreas = array();
-		foreach($areas as $key => $area) {
-            $this->serverAreas[$key] = array('name' => $key, 'order' => $area['order'], 'polygon' => new Polygon($area['points']));
+        foreach ($areas as $key => $area) {
+            $this->serverAreas[$key] = array(
+                'name' => $key,
+                'order' => $area['order'],
+                'polygon' => new Polygon($area['points']),
+            );
             if (!empty($area['areas'])) {
-                foreach($area['areas'] as $subkey => $subarea) {
-                    $this->serverAreas[$key]['areas'][$subkey] = array('name' => $subkey, 'order' => $subarea['order'], 'polygon' => new Polygon($subarea['points']));
+                foreach ($area['areas'] as $subkey => $subarea) {
+                    $this->serverAreas[$key]['areas'][$subkey] = array(
+                        'name' => $subkey,
+                        'order' => $subarea['order'],
+                        'polygon' => new Polygon($subarea['points']),
+                    );
                 }
             }
         }
@@ -189,7 +198,7 @@ class MapProjection
 
         $zone = false;
         $minsize = false;
-        foreach($this->zones as $k => $v) {
+        foreach ($this->zones as $k => $v) {
             if ($v->contains($p->x, $p->y)) {
                 $size = $v->getWidth() * $v->getHeight();
                 if ($minsize === false || $size < $minsize) {
@@ -253,12 +262,12 @@ class MapProjection
     {
         $match = array();
         $sk = array();
-        foreach($this->serverAreas as $area) {
+        foreach ($this->serverAreas as $area) {
             if ($area['polygon']->contains($point->x, $point->y)) {
                 $match[] = array('key' => $area['name'], 'order' => $area['order']);
                 $sk[] = $area['order'];
                 if (!empty($area['areas'])) {
-                    foreach($area['areas'] as $subarea) {
+                    foreach ($area['areas'] as $subarea) {
                         if ($subarea['polygon']->contains($point->x, $point->y)) {
                             $match[] = array('key' => $subarea['name'], 'order' => $subarea['order']);
                             $sk[] = $subarea['order'];
@@ -271,7 +280,7 @@ class MapProjection
         array_multisort($sk, SORT_NUMERIC, SORT_DESC, $match);
         // TODO: should return match = [ 0 => [zones...], 1 => [areas....] ] ? 'kitiniere' is in duplicate
 
-		/** @var array[] $match */
+        /** @var array[] $match */
         return $match;
     }
 
@@ -283,8 +292,8 @@ class MapProjection
      * @return null|string
      */
     protected function findParentZone(Point $point)
-	{
-		/** @var string[] $regions */
+    {
+        /** @var string[] $regions */
         $regions = $this->getTargetRegions($point);
         foreach ($regions as $id) {
             if (isset($this->zones[$id])) {
@@ -312,8 +321,8 @@ class MapProjection
         $px = ($point->x - $src->left) / $src->getWidth();
         $py = ($point->y - $src->top) / $src->getHeight();
 
-        $left = $dst->left + $px * $dst->getWidth();
-        $top = $dst->bottom - $py * $dst->getHeight();
+        $left = $dst->left + ($px * $dst->getWidth());
+        $top = $dst->bottom - ($py * $dst->getHeight());
 
         return new Point($left, $top);
     }

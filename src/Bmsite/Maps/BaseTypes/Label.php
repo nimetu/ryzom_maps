@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by JetBrains PhpStorm.
  * User: meelis
@@ -8,7 +9,6 @@
  */
 
 namespace Bmsite\Maps\BaseTypes;
-
 
 /**
  * Class Label
@@ -26,5 +26,4 @@ class Label
 
     /** @var int */
     public $type;
-
 }

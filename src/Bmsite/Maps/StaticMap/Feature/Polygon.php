@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -43,10 +44,10 @@ class Polygon extends PointsCollection implements FeatureInterface
     public $label_outline;
 
     /** @var StaticMapGenerator */
-	private $map;
+    private $map;
 
-	/** @var array|false */
-	private $bbox;
+    /** @var array|false */
+    private $bbox;
 
     /**
      * @param int $weight
@@ -56,7 +57,7 @@ class Polygon extends PointsCollection implements FeatureInterface
     function __construct($weight = 1, $color = null, $fillcolor = null)
     {
         $this->weight = $weight;
-        $this->color = $color ? : new Color(255, 255, 255);
+        $this->color = $color ?: new Color(255, 255, 255);
         $this->fillcolor = $fillcolor;
         $this->xy = array();
         $this->label = false;
@@ -87,8 +88,8 @@ class Polygon extends PointsCollection implements FeatureInterface
         $xCenter = 0;
         $yCenter = 0;
         foreach ($this->xy as $pos) {
-            $x = $xOffset + $pos->x * $scale;
-            $y = $yOffset + $pos->y * $scale;
+            $x = $xOffset + ($pos->x * $scale);
+            $y = $yOffset + ($pos->y * $scale);
 
             $poly[] = $x;
             $poly[] = $y;
@@ -123,7 +124,7 @@ class Polygon extends PointsCollection implements FeatureInterface
             imagesetthickness($canvas, $this->weight);
 
             imagesetthickness($canvas, $this->weight);
-            for ($i = 0; $i < count($poly) - 2; $i++) {
+            for ($i = 0; $i < (count($poly) - 2); $i++) {
                 imageline($canvas, $poly[$i], $poly[$i + 1], $poly[$i + 2], $poly[$i + 3], $color);
                 $i++;
             }
@@ -149,7 +150,7 @@ class Polygon extends PointsCollection implements FeatureInterface
             } elseif ($this->label_color) {
                 $label->setOutline(new Color(0, 0, 0, $this->label_color->a), 1);
             } else {
-                $label->setOutline(new Color(0,0,0), 1);
+                $label->setOutline(new Color(0, 0, 0), 1);
             }
 
             $label->draw($canvas);
@@ -157,5 +158,4 @@ class Polygon extends PointsCollection implements FeatureInterface
 
         return true;
     }
-
 }

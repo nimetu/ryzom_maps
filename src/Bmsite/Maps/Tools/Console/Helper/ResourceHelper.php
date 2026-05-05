@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -9,7 +10,6 @@
 
 namespace Bmsite\Maps\Tools\Console\Helper;
 
-
 use Symfony\Component\Console\Helper\Helper;
 
 /**
@@ -18,7 +18,6 @@ use Symfony\Component\Console\Helper\Helper;
  */
 class ResourceHelper extends Helper
 {
-
     private $values = array();
 
     /**

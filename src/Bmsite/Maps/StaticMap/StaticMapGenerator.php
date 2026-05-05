@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -150,7 +151,7 @@ class StaticMapGenerator
      */
     public function setZoom($zoom)
     {
-        $this->zoom = max(self::MIN_ZOOM, min((int)$zoom, self::MAX_ZOOM));
+        $this->zoom = max(self::MIN_ZOOM, min((int) $zoom, self::MAX_ZOOM));
     }
 
     /**
@@ -367,7 +368,7 @@ class StaticMapGenerator
                 $type = 'image/png';
                 break;
             case 'jpg': // fall thru
-            default   :
+            default:
                 $type = 'image/jpeg';
                 break;
         }
@@ -387,7 +388,7 @@ class StaticMapGenerator
                 imagepng($img, null, 9);
                 break;
             case 'jpg': // fall thru
-            default   :
+            default:
                 imagejpeg($img, null, 85);
                 break;
         }
@@ -409,8 +410,8 @@ class StaticMapGenerator
         // map image size in pixels
         while ($zoom > 1) {
             $scale = $this->proj->scale($zoom);
-            $newW = (int)($w * $scale + $this->hMargin);
-            $newH = (int)($h * $scale + $this->vMargin);
+            $newW = (int) (($w * $scale) + $this->hMargin);
+            $newH = (int) (($h * $scale) + $this->vMargin);
             if ($newW < $this->width && $newH < $this->height) {
                 break;
             }
@@ -420,7 +421,7 @@ class StaticMapGenerator
     }
 
     /**
-	 * @return \GdImage
+     * @return \GdImage
      * @throws \RuntimeException
      */
     protected function _background()
@@ -457,8 +458,8 @@ class StaticMapGenerator
         $halfHeight = $this->height / 2;
 
         // absolute coords for viewport
-        $vpLeft = intval($this->center->x * $scale - $halfWidth);
-        $vpTop = intval($this->center->y * $scale - $halfHeight);
+        $vpLeft = intval(($this->center->x * $scale) - $halfWidth);
+        $vpTop = intval(($this->center->y * $scale) - $halfHeight);
         $vpRight = $vpLeft + $this->width;
         $vpBottom = $vpTop + $this->height;
 
@@ -504,5 +505,4 @@ class StaticMapGenerator
             imageline($canvas, $halfWidth, 0, $halfWidth, $this->height, $y);
         }
     }
-
 }

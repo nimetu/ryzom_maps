@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -14,7 +15,6 @@ namespace Bmsite\Maps\StaticMap\Layer;
  */
 class LangTileLayer extends TileLayer
 {
-
     /** @var string */
     protected $lang = '';
 
@@ -30,7 +30,6 @@ class LangTileLayer extends TileLayer
     public function setLanguage($lang)
     {
         $this->lang = $lang;
-        $this->mapname = 'lang_'.$lang;
+        $this->mapname = 'lang_' . $lang;
     }
-
 }

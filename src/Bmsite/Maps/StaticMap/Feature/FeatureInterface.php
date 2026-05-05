@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -16,7 +17,6 @@ use Bmsite\Maps\StaticMap\StaticMapGenerator;
  */
 interface FeatureInterface
 {
-
     /**
      * @param StaticMapGenerator $map
      */
@@ -28,5 +28,4 @@ interface FeatureInterface
      * @return bool
      */
     public function draw($canvas);
-
 }

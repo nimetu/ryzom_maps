@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Date: 1/1/20
  * Time: 2:54 PM
@@ -36,10 +37,10 @@ class Polygon
     public function __toString()
     {
         $ret = array();
-        foreach($this->points as $p) {
+        foreach ($this->points as $p) {
             $ret[] = sprintf('%.2f', $p);
         }
-        return 'Polygon{'.join(',', $ret).'}';
+        return 'Polygon{' . join(',', $ret) . '}';
     }
 
     /**
@@ -59,14 +60,15 @@ class Polygon
             return false;
         }
         $success = false;
-        for($i = 0, $j = $nbPoints - 2; $i < $nbPoints; $j = $i, $i += 2) {
-            $iX = $this->points[$i]; $iY = $this->points[$i+1];
-            $jX = $this->points[$j]; $jY = $this->points[$j+1];
-            if ( ( ($iY > $y) !== ($jY > $y) ) && ( $x < ($jX - $iX) * ($y - $iY) / ($jY - $iY) + $iX ) ) {
+        for ($i = 0, $j = $nbPoints - 2; $i < $nbPoints; $j = $i, $i += 2) {
+            $iX = $this->points[$i];
+            $iY = $this->points[$i + 1];
+            $jX = $this->points[$j];
+            $jY = $this->points[$j + 1];
+            if ($iY > $y !== $jY > $y && $x < (((($jX - $iX) * ($y - $iY)) / ($jY - $iY)) + $iX)) {
                 $success = !$success;
             }
         }
         return $success;
     }
 }
-

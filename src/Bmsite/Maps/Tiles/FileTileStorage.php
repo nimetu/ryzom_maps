@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -14,7 +15,6 @@ namespace Bmsite\Maps\Tiles;
  */
 class FileTileStorage implements TileStorageInterface
 {
-
     /** @var string */
     protected $tiledir;
 
@@ -113,12 +113,12 @@ class FileTileStorage implements TileStorageInterface
      */
     protected function getFilename($z, $x, $y, $mkdir = false)
     {
-        $file = $this->tiledir."/{$this->mapmode}/{$this->mapname}/{$z}/{$x}";
+        $file = $this->tiledir . "/{$this->mapmode}/{$this->mapname}/{$z}/{$x}";
         if (!file_exists($file)) {
             if ($mkdir && !mkdir($file, 0775, true)) {
                 throw new \RuntimeException("Unable to create output directory {$file}");
             }
         }
-        return $file."/{$y}.{$this->ext}";
+        return $file . "/{$y}.{$this->ext}";
     }
 }

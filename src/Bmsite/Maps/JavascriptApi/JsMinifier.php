@@ -9,7 +9,8 @@ use JavaScriptPacker;
  */
 class JsMinifier implements MinifyInterface
 {
-    public function minify(string $str): string {
+    public function minify(string $str): string
+    {
         /** @var string $min */
         $min = (new JavaScriptPacker($str))->pack();
         return $min;

@@ -4,14 +4,23 @@ namespace Bmsite\Maps;
 
 use Bmsite\Maps\Tiles\TileStorageInterface;
 
-class MockTileStorage implements  TileStorageInterface
+class MockTileStorage implements TileStorageInterface
 {
     private $ext;
-    public function setMapMode($mode){}
-    public function setMapName($name){}
-    public function setImageExt($ext){ $this->ext = $ext; }
-    public function set($z, $x, $y, $img){}
-    public function get($z, $x, $y){
+
+    public function setMapMode($mode) {}
+
+    public function setMapName($name) {}
+
+    public function setImageExt($ext)
+    {
+        $this->ext = $ext;
+    }
+
+    public function set($z, $x, $y, $img) {}
+
+    public function get($z, $x, $y)
+    {
         $im = imagecreatetruecolor(self::TILE_SIZE, self::TILE_SIZE);
         $bg = imagecolorallocatealpha($im, 0, 0, 0, 127);
         imagefill($im, 0, 0, $bg);
@@ -21,7 +30,7 @@ class MockTileStorage implements  TileStorageInterface
 
         $cx = $hw;
         $cy = $hh;
-        $text = sprintf("z=%d y=%d, x=%d", $z, $y, $x);
+        $text = sprintf('z=%d y=%d, x=%d', $z, $y, $x);
         $red = imagecolorallocate($im, 255, 0, 0);
         imagestring($im, 5, 2, 2, $text, $red);
 
@@ -33,6 +42,6 @@ class MockTileStorage implements  TileStorageInterface
 
         return $im;
     }
-    public function delete($z, $x, $y){}
-}
 
+    public function delete($z, $x, $y) {}
+}

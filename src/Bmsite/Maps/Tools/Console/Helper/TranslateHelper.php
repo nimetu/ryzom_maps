@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -19,7 +20,6 @@ use Symfony\Component\Console\Helper\Helper;
  */
 class TranslateHelper extends Helper
 {
-
     /**
      * Returns the canonical name of this helper.
      *
@@ -39,7 +39,7 @@ class TranslateHelper extends Helper
      */
     public function load($ryzomDataPath)
     {
-        $bnp = new BnpFile($ryzomDataPath.'/gamedev.bnp');
+        $bnp = new BnpFile($ryzomDataPath . '/gamedev.bnp');
 
         $sm = new StringsManager();
         $sm->register(new WordsLoader());
@@ -52,5 +52,4 @@ class TranslateHelper extends Helper
 
         return $sm;
     }
-
 }

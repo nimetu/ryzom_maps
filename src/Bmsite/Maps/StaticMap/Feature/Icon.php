@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -18,7 +19,6 @@ use Bmsite\Maps\StaticMap\StaticMapGenerator;
  */
 class Icon implements FeatureInterface
 {
-
     /** @var string */
     private $icon;
 
@@ -54,7 +54,7 @@ class Icon implements FeatureInterface
         $this->size = array(24, 24);
         $this->over = $over;
 
-        $this->iconPath = __DIR__.'/../../Resources/icons';
+        $this->iconPath = __DIR__ . '/../../Resources/icons';
     }
 
     /**
@@ -64,9 +64,7 @@ class Icon implements FeatureInterface
      */
     public function isSupported()
     {
-        return $this->over
-            ? file_exists($this->getIconFullPath('_over.png'))
-            : file_exists($this->getIconFullPath());
+        return $this->over ? file_exists($this->getIconFullPath('_over.png')) : file_exists($this->getIconFullPath());
     }
 
     /**
@@ -108,7 +106,7 @@ class Icon implements FeatureInterface
      */
     public function getIconFullPath($ext = '.png')
     {
-        return $this->iconPath.'/'.$this->icon.'/image'.$ext;
+        return $this->iconPath . '/' . $this->icon . '/image' . $ext;
     }
 
     /**
@@ -169,8 +167,8 @@ class Icon implements FeatureInterface
         $w = $this->size[0];
         $h = $this->size[1];
 
-        $x = intval($p->x - $w / 2 + $xOffset);
-        $y = intval($p->y - $h / 2 + $yOffset);
+        $x = intval($p->x - ($w / 2) + $xOffset);
+        $y = intval($p->y - ($h / 2) + $yOffset);
 
         if ($w !== $width || $h !== $height) {
             imagecopyresampled($canvas, $icon, $x, $y, 0, 0, $w, $h, $width, $height);
@@ -189,7 +187,7 @@ class Icon implements FeatureInterface
      */
     private function loadIcon()
     {
-        $imgFile = $this->getIconFullPath($this->over ? '_over.png'  : '.png');
+        $imgFile = $this->getIconFullPath($this->over ? '_over.png' : '.png');
         if (!file_exists($imgFile)) {
             return false;
         }
@@ -203,9 +201,9 @@ class Icon implements FeatureInterface
     }
 
     /**
-	 * Tint input image $im with required color
-	 *
-	 * @param \GdImage $icon
+     * Tint input image $im with required color
+     *
+     * @param \GdImage $icon
      */
     private function colorize($icon)
     {
@@ -223,17 +221,17 @@ class Icon implements FeatureInterface
         for ($x = 0; $x < $w; $x++) {
             for ($y = 0; $y < $h; $y++) {
                 $rgba = imagecolorsforindex($mask, imagecolorat($mask, $x, $y));
-                $r = $rgba['red'] * $cr / 255;
-                $g = $rgba['green'] * $cg / 255;
-                $b = $rgba['blue'] * $cb / 255;
+                $r = ($rgba['red'] * $cr) / 255;
+                $g = ($rgba['green'] * $cg) / 255;
+                $b = ($rgba['blue'] * $cb) / 255;
 
                 $max = max($r, $g, $b);
                 if ($max > 255) {
-                    $r = $r / $max * 255;
-                    $g = $g / $max * 255;
-                    $b = $b / $max * 255;
+                    $r = ($r / $max) * 255;
+                    $g = ($g / $max) * 255;
+                    $b = ($b / $max) * 255;
                 }
-                $c = imagecolorallocatealpha($icon, (int)$r, (int)$g, (int)$b, (int)$rgba['alpha']);
+                $c = imagecolorallocatealpha($icon, (int) $r, (int) $g, (int) $b, (int) $rgba['alpha']);
                 imagesetpixel($icon, $x, $y, $c);
             }
         }

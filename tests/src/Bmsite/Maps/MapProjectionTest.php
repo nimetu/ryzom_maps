@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -8,9 +9,9 @@
  */
 namespace Bmsite\Maps;
 
-use PHPUnit\Framework\Attributes\DataProvider;
 use Bmsite\Maps\BaseTypes\Bounds;
 use Bmsite\Maps\BaseTypes\Point;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * Class MapProjectionTest
@@ -22,6 +23,7 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
      */
     private $proj;
 
+    /** @mago-format-ignore-start */
     private $worldZones = array(
         'world' => array(array(0, 14160), array(14160, 0)),
         'fyros' => array(array(2920, 3836), array(7400, 636)),
@@ -59,7 +61,7 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
             ],
         ],
     );
-
+    /** @mago-format-ignore-end */
 
     public function setUp(): void
     {
@@ -109,16 +111,17 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(
             $expectedRegions,
             $regions,
-            "Target regions for point {$latlng} are not whats expected [".join(',', $expectedRegions)."], got [".join(
-                ', ',
-                $regions
-            )."]"
+            "Target regions for point {$latlng} are not whats expected ["
+            . join(',', $expectedRegions)
+            . '], got ['
+            . join(', ', $regions)
+            . ']',
         );
 
         $this->assertEquals(
             $expectedPoint->asArray(),
-            [(int)$point->x, (int)$point->y],
-            "Failed to translate server coordinates {$latlng} to world coordinates {$expectedPoint}, got {$point}"
+            [(int) $point->x, (int) $point->y],
+            "Failed to translate server coordinates {$latlng} to world coordinates {$expectedPoint}, got {$point}",
         );
     }
 
@@ -127,15 +130,15 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
      */
     public function testZoneNotOneToOneScale()
     {
-        $ig = new Point(2540,-17400);
+        $ig = new Point(2540, -17400);
         $point = $this->proj->project($ig);
         $regions = $this->proj->gettargetRegions($ig);
 
         $expected = new Point(17492, 7098);
         $this->assertEquals(
             $expected->asArray(),
-            [(int)$point->x, (int)$point->y],
-            "Failed to translate server coordinates {$ig} to world coordinates {$expected}, got {$point}"
+            [(int) $point->x, (int) $point->y],
+            "Failed to translate server coordinates {$ig} to world coordinates {$expected}, got {$point}",
         );
     }
 
@@ -146,12 +149,16 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
     #[DataProvider('areasProvider')]
     public function testTargetAreas(Point $latlng, $expectedAreas = null)
     {
-            $areas = $this->proj->getTargetAreas($latlng);
-            $this->assertEquals(
-                    $expectedAreas,
-                    $areas,
-                    "Target areas for point {$latlng} are not whats expected (".var_export($expectedAreas, true)."), got [".var_export($areas, true)."]"
-            );
+        $areas = $this->proj->getTargetAreas($latlng);
+        $this->assertEquals(
+            $expectedAreas,
+            $areas,
+            "Target areas for point {$latlng} are not whats expected ("
+            . var_export($expectedAreas, true)
+            . '), got ['
+            . var_export($areas, true)
+            . ']',
+        );
     }
 
     public function testUnknownZone()
@@ -171,7 +178,7 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(
             '\InvalidArgumentException',
-            'Missing server to world zone projection (unknown-world-zone)'
+            'Missing server to world zone projection (unknown-world-zone)',
         );
 
         $sz = array('unknown-world-zone' => array(array(0, -10), array(10, 0)));
@@ -213,6 +220,7 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
      */
     public static function projectProvider()
     {
+        /** @mago-format-ignore-next */
         return array(
             // matis - yrk (sw)
             array(new Point(4640, -3680), new Point(12080, 3712), array('place_yrkanis', 'matis', 'grid')),
@@ -234,6 +242,7 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
      */
     public static function areasProvider()
     {
+        /** @mago-format-ignore-next */
         return array(
             array(new Point(3110, -10190), array(
                 array('key' => 'place_outpost_pr_17', 'order' => 7),
@@ -252,4 +261,3 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
         );
     }
 }
-

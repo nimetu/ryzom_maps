@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by JetBrains PhpStorm.
  * User: meelis
@@ -43,12 +44,12 @@ class Color
      * @return int
      */
     public function allocate($canvas)
-	{
-		return imagecolorallocatealpha($canvas, $this->r, $this->g, $this->b, 127 - ($this->a >> 1));
-	}
+    {
+        return imagecolorallocatealpha($canvas, $this->r, $this->g, $this->b, 127 - ($this->a >> 1));
+    }
 
-	public function __toString()
-	{
-		return sprintf('Color{%d,%d,%d,%d}', $this->r, $this->g, $this->b, $this->a);
-	}
+    public function __toString()
+    {
+        return sprintf('Color{%d,%d,%d,%d}', $this->r, $this->g, $this->b, $this->a);
+    }
 }

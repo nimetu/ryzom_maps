@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -44,16 +45,16 @@ class Label implements FeatureInterface
     private $outlineWidth;
 
     /** @var ?StaticMapGenerator */
-	private $map;
+    private $map;
 
-	/** @var string */
-	private $fontPath;
+    /** @var string */
+    private $fontPath;
 
-	/** @var int */
-	private $relOffsetX;
+    /** @var int */
+    private $relOffsetX;
 
-	/** @var int */
-	private $relOffsetY;
+    /** @var int */
+    private $relOffsetY;
 
     /**
      * @param string $text
@@ -70,7 +71,7 @@ class Label implements FeatureInterface
 
         $this->fontSize = 7;
         $this->fontFamily = 'ryzom';
-        $this->fontPath = __DIR__.'/../../Resources/fonts';
+        $this->fontPath = __DIR__ . '/../../Resources/fonts';
 
         $this->relOffsetX = 0;
         $this->relOffsetY = 0;
@@ -157,7 +158,7 @@ class Label implements FeatureInterface
      */
     public function getFont()
     {
-        return $this->fontPath.'/'.$this->fontFamily.'.ttf';
+        return $this->fontPath . '/' . $this->fontFamily . '.ttf';
     }
 
     /** {@inheritdoc} */
@@ -191,7 +192,7 @@ class Label implements FeatureInterface
                 intval($y + $bbox->bottom + 1),
                 intval($x + $bbox->right - 1),
                 intval($y + $bbox->top),
-                $s
+                $s,
             );
         }
 
@@ -218,7 +219,7 @@ class Label implements FeatureInterface
     {
         $font = $this->getFont();
 
-		/** @var int[] */
+        /** @var int[] */
         $bbox = imagettfbbox($this->fontSize, 0, $font, $this->text);
 
         return new Bounds($bbox[0], $bbox[1], $bbox[4], $bbox[5]);

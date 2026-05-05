@@ -4,9 +4,9 @@ use Bmsite\Maps\MapProjection;
 use Bmsite\Maps\ResourceLoader;
 use Bmsite\Maps\StaticMap;
 
-require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
-$tiledir = __DIR__.'/../tiles/v2';
+$tiledir = __DIR__ . '/../tiles/v2';
 
 $params = array(
     'maptype' => 'atys',
@@ -49,7 +49,6 @@ $etag = $map->etag();
 echo "etag:[{$etag}]\n";
 
 $img = $map->render();
-file_put_contents(__DIR__.'/../static-map-result.png', $img);
+file_put_contents(__DIR__ . '/../static-map-result.png', $img);
 $size = strlen($img);
 echo "size:[$size]\n";
-

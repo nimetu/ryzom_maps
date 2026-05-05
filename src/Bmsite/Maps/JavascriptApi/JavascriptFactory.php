@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -58,7 +59,7 @@ class JavascriptFactory
     public function minify(): string
     {
         if ($this->minifier === null) {
-            throw new \RuntimeException("Minifier not set");
+            throw new \RuntimeException('Minifier not set');
         }
 
         return $this->mincache;
@@ -72,12 +73,10 @@ class JavascriptFactory
     public function integrity(bool $minified = false, string $type = 'sha384'): string
     {
         if ($minified && !$this->minifier) {
-            throw new \RuntimeException("Minifier not set");
+            throw new \RuntimeException('Minifier not set');
         }
 
-        $js = $minified
-            ? $this->mincache
-            : $this->jscache;
+        $js = $minified ? $this->mincache : $this->jscache;
 
         $hash = base64_encode(hash($type, $js, true));
         return "{$type}-{$hash}";
@@ -108,7 +107,7 @@ class JavascriptFactory
         );
 
         foreach ($jsFiles as $k => $file) {
-            $filename = __DIR__.'/'.$file;
+            $filename = __DIR__ . '/' . $file;
             if ($k === '__header') {
                 $this->header = file_get_contents($filename);
                 continue;

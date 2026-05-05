@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -63,6 +64,6 @@ class JavascriptFactoryTest extends \PHPUnit\Framework\TestCase
     private function getBase64EncodedHashLength(): int
     {
         $b64 = base64_encode(hash('sha384', '*', true));
-        return strlen('sha364-'.$b64);
+        return strlen('sha364-' . $b64);
     }
 }

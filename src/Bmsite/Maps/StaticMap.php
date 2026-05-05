@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -76,15 +77,16 @@ class StaticMap
                     $mapname = $val;
                     break;
                 case 'satellite':
-                    // @deprecated
+                // @deprecated
                 case 'atys_sp':
                     $mapname = 'atys_sp';
                     break;
                 default:
-                    // invalid, ignore
+
+                // invalid, ignore
             }
         }
-        $etag[] = $mapmode.$mapname;
+        $etag[] = $mapmode . $mapname;
 
         $this->map->getTileStorage()->setMapMode($mapmode, $mapname);
 
@@ -116,14 +118,14 @@ class StaticMap
                 case 'size':
                     $tmp = explode('x', $val);
                     if (!isset($tmp[1])) {
-                        $tmp[1] = (int)$tmp[0];
+                        $tmp[1] = (int) $tmp[0];
                     }
-                    $width = min((int)$tmp[0], self::MAX_WIDTH);
-                    $height = min((int)$tmp[1], self::MAX_HEIGHT);
+                    $width = min((int) $tmp[0], self::MAX_WIDTH);
+                    $height = min((int) $tmp[1], self::MAX_HEIGHT);
                     $this->map->setSize($width, $height);
 
                     // modify value for etag
-                    $val = $width.'x'.$height;
+                    $val = $width . 'x' . $height;
                     break;
                 case 'markers':
                     $markers = $this->parseMarker($val);
@@ -209,7 +211,7 @@ class StaticMap
                             $marker->setLabel(trim($pairs[1]));
                             break;
                         case 'label_size':
-                            $marker->setFontSize(max(3, min((int)$pairs[1], 20)));
+                            $marker->setFontSize(max(3, min((int) $pairs[1], 20)));
                             break;
                         case 'label_color':
                             $fc = $this->parseColor(trim($pairs[1]));
@@ -296,7 +298,7 @@ class StaticMap
                             $poly->label = trim($pairs[1]);
                             break;
                         case 'label_size':
-                            $poly->label_size = max(3, min((int)$pairs[1], 20));
+                            $poly->label_size = max(3, min((int) $pairs[1], 20));
                             break;
                         case 'label_color':
                             $fc = $this->parseColor($pairs[1]);
@@ -323,7 +325,7 @@ class StaticMap
                             }
                             break;
                         case 'weight': // limit weight to 1 to 20
-                            $poly->weight = max(1, min((int)$pairs[1], 20));
+                            $poly->weight = max(1, min((int) $pairs[1], 20));
                             break;
                     }
                 } else {
@@ -360,8 +362,8 @@ class StaticMap
 
         $pairs = explode(',', $val);
         if (count($pairs) === 2 && is_numeric($pairs[0]) && is_numeric($pairs[1])) {
-            $x = (float)$pairs[0];
-            $y = (float)$pairs[1];
+            $x = (float) $pairs[0];
+            $y = (float) $pairs[1];
             $proj = $this->map->getProjection();
             try {
                 $ret = $proj->project(new Point($x, $y));

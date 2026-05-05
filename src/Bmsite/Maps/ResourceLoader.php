@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -57,4 +58,3 @@ class ResourceLoader
         return json_decode($this->getContents($filename), $assoc);
     }
 }
-

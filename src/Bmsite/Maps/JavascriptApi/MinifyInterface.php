@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -11,10 +12,8 @@ namespace Bmsite\Maps\JavascriptApi;
 
 interface MinifyInterface
 {
-
     /**
      * Minify input string and return it
      */
     public function minify(string $str): string;
 }
-

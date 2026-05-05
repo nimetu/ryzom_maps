@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -16,7 +17,6 @@ use Bmsite\Maps\StaticMap\StaticMapGenerator;
  */
 interface LayerInterface
 {
-
     /**
      * @param StaticMapGenerator $map
      *

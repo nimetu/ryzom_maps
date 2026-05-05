@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -38,13 +39,7 @@ class BuildJsonFiles extends Command
         $this
             ->setName('bmmaps:json')
             ->setDescription('Build json files')
-            ->addOption(
-                'ryzom',
-                null,
-                InputOption::VALUE_REQUIRED,
-                'Ryzom data path',
-                ''
-            );
+            ->addOption('ryzom', null, InputOption::VALUE_REQUIRED, 'Ryzom data path', '');
     }
 
     /**
@@ -56,17 +51,20 @@ class BuildJsonFiles extends Command
      * @return int|null|void
      */
     protected function execute(InputInterface $input, OutputInterface $output)
-	{
+    {
         /** @var ResourceHelper $helper */
         $helper = $this->getHelper('resource');
 
         $ryzomDataPath = $input->getOption('ryzom');
-        if ($ryzomDataPath === '' ||
-            !file_exists($ryzomDataPath.'/gamedev.bnp') ||
-            !file_exists($ryzomDataPath.'/lmconts.packed') ||
-            !file_exists($ryzomDataPath.'/world.packed_sheets')
+        if (
+            $ryzomDataPath === ''
+            || !file_exists($ryzomDataPath . '/gamedev.bnp')
+            || !file_exists($ryzomDataPath . '/lmconts.packed')
+            || !file_exists($ryzomDataPath . '/world.packed_sheets')
         ) {
-            throw new \InvalidArgumentException("Invalid Ryzom data path. gamedev.bnp, lmconts.packed or world.packed_sheets not found");
+            throw new \InvalidArgumentException(
+                'Invalid Ryzom data path. gamedev.bnp, lmconts.packed or world.packed_sheets not found',
+            );
         }
 
         $psLoader = new PackedSheetsLoader($ryzomDataPath);
@@ -94,14 +92,14 @@ class BuildJsonFiles extends Command
         $output->write('<info>building server.json</info>...');
 
         $ps = $psLoader->load('world');
-		// 6 == sheetid for 'ryzom.world'
-		/** @var WorldSheet|false $world */
+        // 6 == sheetid for 'ryzom.world'
+        /** @var WorldSheet|false $world */
         $world = $ps->get(6);
         if (!$world) {
-            throw new \RuntimeException("Failed to load world.packed_sheets");
+            throw new \RuntimeException('Failed to load world.packed_sheets');
         }
         $this->buildServerZones($world, $helper->get('server.json.file'));
-		$output->writeln('');
+        $output->writeln('');
     }
 
     /**
@@ -111,7 +109,7 @@ class BuildJsonFiles extends Command
     protected function buildServerZones(WorldSheet $world, $outFile)
     {
         $json = array(
-            'grid' => array(array(0, -47520), array(108000, 0))
+            'grid' => array(array(0, -47520), array(108000, 0)),
         );
         $continents = array();
         foreach ($world->Maps as $map) {
@@ -123,8 +121,8 @@ class BuildJsonFiles extends Command
             $continents[$map->ContinentName] = true;
 
             $json[$key] = array(
-                array((int)$map->MinX, (int)$map->MinY),
-                array((int)$map->MaxX, (int)$map->MaxY),
+                array((int) $map->MinX, (int) $map->MinY),
+                array((int) $map->MaxX, (int) $map->MaxY),
             );
         }
         // also include continents that does not have map texture (ie r2 maps)
@@ -138,8 +136,8 @@ class BuildJsonFiles extends Command
                 continue;
             }
             $json[$key] = array(
-                array((int)$map->MinX, (int)$map->MinY),
-                array((int)$map->MaxX, (int)$map->MaxY),
+                array((int) $map->MinX, (int) $map->MinY),
+                array((int) $map->MaxX, (int) $map->MaxY),
             );
         }
         file_put_contents($outFile, json_encode($json, JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT));
@@ -166,9 +164,9 @@ class BuildJsonFiles extends Command
 
             foreach ($cont->ContLandMarks as $lm) {
                 $result = $this->filterLabel($lm, $strings);
-				if ($result) {
-					/** @var string $key */
-					/** @var array $label */
+                if ($result) {
+                    /** @var string $key */
+                    /** @var array $label */
                     list($key, $label) = $result;
 
                     if (in_array($key, array('region_matis_island_1', 'region_matis_island_2'), true)) {
@@ -178,7 +176,7 @@ class BuildJsonFiles extends Command
                         $contlabel = $label;
                         $contlabel['lmtype'] = -1;
                         $contlabel['regionforce'] = 0;
-                        $labels[$key.'_cont'] = $contlabel;
+                        $labels[$key . '_cont'] = $contlabel;
                     }
 
                     $labels[$key] = $label;
@@ -225,7 +223,7 @@ class BuildJsonFiles extends Command
             foreach ($cont->ContLandMarks as $lm) {
                 $json[$cont->Name]['areas'][$lm->TitleText] = array(
                     'order' => isset($order[$lm->Type]) ? $order[$lm->Type] : $order['unknown'],
-                    'points' => $this->exportVPoints($lm->Zone->VPoints)
+                    'points' => $this->exportVPoints($lm->Zone->VPoints),
                 );
             }
         }
@@ -243,11 +241,11 @@ class BuildJsonFiles extends Command
     private function exportVPoints(array $points)
     {
         $ret = array();
-        foreach($points as $point) {
+        foreach ($points as $point) {
             // ingame X is always positive -> next highest
             // ingame Y is always negative -> next lowest
-            $ret[] = ceil($point->X*100) / 100;
-            $ret[] = floor($point->Y*100) / 100;
+            $ret[] = ceil($point->X * 100) / 100;
+            $ret[] = floor($point->Y * 100) / 100;
         }
         return $ret;
     }
@@ -256,25 +254,25 @@ class BuildJsonFiles extends Command
      * @param CContinent $cont
      * @param array<string,array<string,array{name:string}>> $strings
      *
-	 * @return array{
-	 * 	string,
-	 * 	array
-	 * }|false
+     * @return array{
+     * 	string,
+     * 	array
+     * }|false
      */
     private function filterContLabel($cont, array $strings)
     {
         $langs = array_keys($strings);
 
         // Ryzom only shows continent names in world map, but those are no use here
-		// Modify continent info to be used as label
-		/** @var string $key */
+        // Modify continent info to be used as label
+        /** @var string $key */
         $key = strtolower($cont->Name);
 
         // matis_island == 'Old Lands' - do not show
         if ($key === 'matis_island') {
             return false;
         } elseif ($key !== 'newbieland') {
-            $key = 'continent_'.$key;
+            $key = 'continent_' . $key;
         }
 
         $textArray = array();
@@ -286,7 +284,7 @@ class BuildJsonFiles extends Command
             }
         }
         $label = array(
-            'pos' => array((int)$cont->ZoneCenter->X, (int)$cont->ZoneCenter->Y),
+            'pos' => array((int) $cont->ZoneCenter->X, (int) $cont->ZoneCenter->Y),
             'regionforce' => 0,
             'lmtype' => -1,
             'text' => $textArray,
@@ -321,7 +319,7 @@ class BuildJsonFiles extends Command
         $force = $regions->getRegionForce($lm->TitleText);
 
         $label = array(
-            'pos' => array((int)$lm->Pos->X, (int)$lm->Pos->Y),
+            'pos' => array((int) $lm->Pos->X, (int) $lm->Pos->Y),
             'regionforce' => $force,
             'lmtype' => $lm->Type,
             'text' => $textArray,

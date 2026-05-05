@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Ryzom Maps
  *
@@ -73,9 +74,9 @@ class TileLayer
     {
         $size = TileStorageInterface::TILE_SIZE;
         if ($this->zoom < $this->minZoom) {
-            $size = $this->proj->scale($this->zoom) / $this->proj->scale($this->minZoom) * $size;
+            $size = ($this->proj->scale($this->zoom) / $this->proj->scale($this->minZoom)) * $size;
         } elseif ($this->zoom > $this->maxZoom) {
-            $size = $this->proj->scale($this->zoom) / $this->proj->scale($this->maxZoom) * $size;
+            $size = ($this->proj->scale($this->zoom) / $this->proj->scale($this->maxZoom)) * $size;
         }
         return $size;
     }
@@ -97,14 +98,14 @@ class TileLayer
         $tileZoom = max($this->minZoom, min($this->zoom, $this->maxZoom));
 
         // tile offset (px)
-        $vpOffsetX = floor($vp->left / $tileSize) * $tileSize - $vp->left;
-        $vpOffsetY = floor($vp->top / $tileSize) * $tileSize - $vp->top;
+        $vpOffsetX = (floor($vp->left / $tileSize) * $tileSize) - $vp->left;
+        $vpOffsetY = (floor($vp->top / $tileSize) * $tileSize) - $vp->top;
 
         // tiles affected
-        $tx1 = (int)floor($vp->left / $tileSize);
-        $ty1 = (int)floor($vp->top / $tileSize);
-        $tx2 = (int)ceil($vp->right / $tileSize);
-        $ty2 = (int)ceil($vp->bottom / $tileSize);
+        $tx1 = (int) floor($vp->left / $tileSize);
+        $ty1 = (int) floor($vp->top / $tileSize);
+        $tx2 = (int) ceil($vp->right / $tileSize);
+        $ty2 = (int) ceil($vp->bottom / $tileSize);
 
         for ($i = $tx1; $i < $tx2; $i++) {
             for ($j = $ty1; $j < $ty2; $j++) {
@@ -114,8 +115,8 @@ class TileLayer
                 }
 
                 if ($img !== null) {
-                    $x1 = (int)($vpOffsetX + ($i - $tx1) * $tileSize);
-                    $y1 = (int)($vpOffsetY + ($j - $ty1) * $tileSize);
+                    $x1 = (int) ($vpOffsetX + (($i - $tx1) * $tileSize));
+                    $y1 = (int) ($vpOffsetY + (($j - $ty1) * $tileSize));
                     imagecopyresampled(
                         $canvas,
                         $img,
@@ -126,7 +127,7 @@ class TileLayer
                         $tileSize,
                         $tileSize,
                         TileStorageInterface::TILE_SIZE,
-                        TileStorageInterface::TILE_SIZE
+                        TileStorageInterface::TILE_SIZE,
                     );
                     imagedestroy($img);
                 }
@@ -147,9 +148,9 @@ class TileLayer
         $g = $y * 255;
         $b = $z * 255;
         $mod = max($r, max($g, $b));
-        $r = $r * 255 / $mod;
-        $g = $g * 255 / $mod;
-        $b = $b * 255 / $mod;
+        $r = ($r * 255) / $mod;
+        $g = ($g * 255) / $mod;
+        $b = ($b * 255) / $mod;
 
         $result = imagecreatetruecolor(TileStorageInterface::TILE_SIZE, TileStorageInterface::TILE_SIZE);
         $c = imagecolorallocatealpha($result, $r, $g, $b, 80);
