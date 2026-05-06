@@ -60,19 +60,11 @@ class FileTileStorage implements TileStorageInterface
     /** {@inheritdoc} */
     public function set($z, $x, $y, $img)
     {
-        $file = $this->getFilename($z, $x, $y, true);
+        $file = $this->getFilename($z, $x, $y);
 
-        if (!$file) {
-            throw new \RuntimeException("Unable to save image file ({$z}/{$x}/{$y})");
-        }
-        switch ($this->ext) {
-            case 'png':
-                imagepng($img, $file, 9);
-                break;
-            case 'jpg':
-            default:
-                imagejpeg($img, $file, 90);
-                break;
+        $dir = dirname($file);
+        if (!file_exists($dir) && !mkdir($dir, 0775, true)) {
+            throw new \RuntimeException("Unable to create output directory {$file}");
         }
     }
 
@@ -102,23 +94,9 @@ class FileTileStorage implements TileStorageInterface
         unlink($file);
     }
 
-    /**
-     * @param int $z
-     * @param int $x
-     * @param int $y
-     * @param bool $mkdir
-     *
-     * @return null|string
-     * @throws \RuntimeException
-     */
-    protected function getFilename($z, $x, $y, $mkdir = false)
+    protected function getFilename(int $z, int $x, int $y, bool $mkdir = false): ?string
     {
         $file = $this->tiledir . "/{$this->mapmode}/{$this->mapname}/{$z}/{$x}";
-        if (!file_exists($file)) {
-            if ($mkdir && !mkdir($file, 0775, true)) {
-                throw new \RuntimeException("Unable to create output directory {$file}");
-            }
-        }
         return $file . "/{$y}.{$this->ext}";
     }
 }
