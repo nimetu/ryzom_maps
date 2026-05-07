@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -17,37 +19,27 @@ use Bmsite\Maps\StaticMap\Feature\Polygon;
 use Bmsite\Maps\StaticMap\StaticMapGenerator;
 use Bmsite\Maps\Tiles\FileTileStorage;
 
-/**
- * Class StaticMap
- */
 class StaticMap
 {
     /**
      * Output image size limit
      */
-    const MAX_WIDTH = 512;
-    const MAX_HEIGHT = 512;
+    const int MAX_WIDTH = 512;
+    const int MAX_HEIGHT = 512;
 
     /**
      * Feature limit
      */
-    const MARKER_LIMIT = 1000;
-    const PATH_LIMIT = 1000;
+    const int MARKER_LIMIT = 1000;
+    const int PATH_LIMIT = 1000;
 
-    /** @var StaticMapGenerator */
-    protected $map;
+    protected StaticMapGenerator $map;
 
-    /** @var string */
-    protected $tiledir;
+    protected string $tiledir;
 
-    /** @var string */
-    protected $etag;
+    protected string $etag;
 
-    /**
-     * @param string $tiledir
-     * @param MapProjection $proj
-     */
-    public function __construct($tiledir, MapProjection $proj)
+    public function __construct(string $tiledir, MapProjection $proj)
     {
         $this->tiledir = $tiledir;
         $ts = new FileTileStorage($this->tiledir);
@@ -57,43 +49,25 @@ class StaticMap
     }
 
     /**
-     * @param array $params
+     * @param array<string,string> $params
      */
-    public function configure(array $params = array())
+    public function configure(array $params = [])
     {
-        $etag = array();
-        $etag[] = $this->tiledir;
-
-        $mapmode = 'world';
-        if (isset($params['mapmode'])) {
-            $mapmode = $params['mapmode'];
-            // set coordinate mode early as points are converted to image coords
-            if ($mapmode === 'server') {
-                // 1:1 projection
-                $this->map->getProjection()->setWorldZones(array('grid' => array(array(0, 47520), array(108000, 0))));
-            }
+        $mapname = $this->parseMaptype($params);
+        $mapmode = $this->parseMapmode($params);
+        if ($mapmode === 'server') {
+            // 1:1 projection
+            $this->map->getProjection()->setWorldZones(['grid' => [[0, 47520], [108000, 0]]]);
         }
 
-        $mapname = 'atys';
-        if (isset($params['maptype'])) {
-            $val = $params['maptype'];
-            switch ($val) {
-                case 'atys':
-                    $mapname = $val;
-                    break;
-                case 'satellite':
-                // @deprecated
-                case 'atys_sp':
-                    $mapname = 'atys_sp';
-                    break;
-                default:
+        $etag = [
+            $this->tiledir,
+            $mapmode,
+            $mapname,
+        ];
 
-                // invalid, ignore
-            }
-        }
-        $etag[] = $mapmode . $mapname;
-
-        $this->map->getTileStorage()->setMapMode($mapmode, $mapname);
+        $this->map->getTileStorage()->setMapMode($mapmode);
+        $this->map->getTileStorage()->setMapName($mapname);
 
         $this->map->setSize(256, 256);
         $this->map->setMapMode($mapmode);
@@ -109,10 +83,10 @@ class StaticMap
             $found = true;
             switch ($var) {
                 case 'zoom':
-                    $this->map->setZoom($val);
+                    $this->map->setZoom((int) $val);
                     break;
                 case 'maxzoom':
-                    $this->map->setMaxZoom($val);
+                    $this->map->setMaxZoom((int) $val);
                     break;
                 case 'center':
                     $center = $this->parseLocation($val);
@@ -160,41 +134,71 @@ class StaticMap
         $this->etag = sha1(serialize($etag));
     }
 
-    /**
-     * @return string
-     */
-    public function etag()
+    public function etag(): string
     {
         return $this->etag;
     }
 
-    /**
-     * @return string
-     */
-    public function getContentType()
+    public function getContentType(): string
     {
         return $this->map->getContentType();
     }
 
-    /**
-     * @return string
-     */
-    public function render()
+    public function render(): string
     {
         return $this->map->render();
     }
 
     /**
-     * @param mixed $markers
+     * @param array<string,string> $params
+     *
+     * @return 'server'|'world'
+     */
+    protected function parseMapmode(array $params): string
+    {
+        $default = 'world';
+
+        $mode = $params['mapmode'] ?? $default;
+        if ($mode === 'world' || $mode === 'server') {
+            return $mode;
+        }
+
+        return $default;
+    }
+
+    /**
+     * @param array<string,string> $params
+     *
+     * @return 'atys'|'atys_sp'
+     */
+    protected function parseMaptype(array $params): string
+    {
+        $default = 'atys';
+
+        $type = $params['maptype'] ?? $default;
+        if ($type === 'atys' || $type === 'atys_sp') {
+            return $type;
+        }
+
+        // @deprecated 'satellite'
+        if ($type === 'satellite') {
+            return 'atys_sp';
+        }
+
+        return $default;
+    }
+
+    /**
+     * @param string|string[] $markers
      *
      * @return Marker[]
      */
-    protected function parseMarker($markers)
+    protected function parseMarker(mixed $markers): array
     {
         if (!is_array($markers)) {
-            $markers = array($markers);
+            $markers = [$markers];
         }
-        $result = array();
+        $result = [];
 
         $limit = self::MARKER_LIMIT;
         foreach ($markers as $line) {
@@ -210,7 +214,10 @@ class StaticMap
 
                     switch (strtolower($pairs[0])) {
                         case 'color':
-                            $marker->setColor($this->parseColor($pairs[1]));
+                            $c = $this->parseColor($pairs[1]);
+                            if ($c !== null) {
+                                $marker->setColor($c);
+                            }
                             break;
                         case 'label':
                             $marker->setLabel(trim($pairs[1]));
@@ -220,13 +227,13 @@ class StaticMap
                             break;
                         case 'label_color':
                             $fc = $this->parseColor(trim($pairs[1]));
-                            if ($fc !== false) {
+                            if ($fc) {
                                 $marker->setFontColor($fc);
                             }
                             break;
                         case 'label_outline':
                             $fc = $this->parseColor(trim($pairs[1]));
-                            if ($fc !== false) {
+                            if ($fc) {
                                 $marker->setFontOutline($fc);
                             }
                             break;
@@ -237,25 +244,26 @@ class StaticMap
                             }
                             break;
                         case 'circle':
+                            /** @var numeric-string[] $ellipse */
                             $ellipse = explode(',', $pairs[1]);
                             if (!isset($ellipse[1])) {
                                 $ellipse[1] = $ellipse[0];
                             }
-                            $marker->circleRadius($ellipse[0], $ellipse[1]);
+                            $marker->circleRadius((float) $ellipse[0], (float) $ellipse[1]);
                             break;
                         case 'fillcolor':
                             $fc = $this->parseColor($pairs[1]);
-                            if ($fc !== false) {
+                            if ($fc) {
                                 $marker->setCircleFillColor($fc);
                             }
                             break;
                         case 'weight':
-                            $marker->setCircleStrokeWeight($pairs[1]);
+                            $marker->setCircleStrokeWeight((int) $pairs[1]);
                             break;
                     }
                 } else {
                     $xy = $this->parseLocation($val);
-                    if ($xy !== false) {
+                    if ($xy) {
                         $marker->addPoint($xy);
                     }
                 }
@@ -276,17 +284,17 @@ class StaticMap
     }
 
     /**
-     * @param mixed $uri
+     * @param string|string[] $uri
      *
-     * @return array
+     * @return Polygon[]
      */
-    protected function parsePolygon($uri)
+    protected function parsePolygon(mixed $uri): array
     {
         if (!is_array($uri)) {
-            $uri = array($uri);
+            $uri = [$uri];
         }
 
-        $result = array();
+        $result = [];
 
         $limit = self::PATH_LIMIT;
         foreach ($uri as $path) {
@@ -307,25 +315,25 @@ class StaticMap
                             break;
                         case 'label_color':
                             $fc = $this->parseColor($pairs[1]);
-                            if ($fc !== false) {
+                            if ($fc) {
                                 $poly->label_color = $fc;
                             }
                             break;
                         case 'label_outline':
                             $fc = $this->parseColor(trim($pairs[1]));
-                            if ($fc !== false) {
+                            if ($fc) {
                                 $poly->label_outline = $fc;
                             }
                             break;
                         case 'color':
                             $fc = $this->parseColor($pairs[1]);
-                            if ($fc !== false) {
+                            if ($fc) {
                                 $poly->color = $fc;
                             }
                             break;
                         case 'fillcolor':
                             $fc = $this->parseColor($pairs[1]);
-                            if ($fc !== false) {
+                            if ($fc) {
                                 $poly->fillcolor = $fc;
                             }
                             break;
@@ -335,7 +343,7 @@ class StaticMap
                     }
                 } else {
                     $xy = $this->parseLocation($val);
-                    if ($xy !== false) {
+                    if ($xy) {
                         $poly->addPoint($xy);
                     }
                 }
@@ -355,41 +363,32 @@ class StaticMap
     }
 
     /**
-     * Parse location x/y
-     *
-     * @param string $val
-     *
-     * @return mixed
+     * Parse location x/y '17200,-33000' and return matched zones
      */
-    protected function parseLocation($val)
+    protected function parseLocation(string $val): ?Point
     {
-        $ret = false;
-
         $pairs = explode(',', $val);
         if (count($pairs) === 2 && is_numeric($pairs[0]) && is_numeric($pairs[1])) {
             $x = (float) $pairs[0];
             $y = (float) $pairs[1];
             $proj = $this->map->getProjection();
             try {
-                $ret = $proj->project(new Point($x, $y));
+                return $proj->project(new Point($x, $y));
             } catch (\InvalidArgumentException $e) {
                 // ignore point
             }
         }
-        return $ret;
+
+        return null;
     }
 
     /**
      * Parse color code #RRGGBB[AA] (AA is optional) or color name
-     *
-     * @param $color
-     *
-     * @return Color
      */
-    protected function parseColor($color)
+    protected function parseColor(string $color): ?Color
     {
         $color = strtolower($color);
-        $colorNames = array(
+        $colorNames = [
             'black' => '#000000',
             'white' => '#FFFFFF',
             'red' => '#FF0000',
@@ -409,34 +408,34 @@ class StaticMap
             'teal' => '#008080',
             'navy' => '#000080',
             'purple' => '#800080',
-        );
+        ];
         if (isset($colorNames[$color])) {
             $color = strtolower($colorNames[$color]);
         }
 
+        $matches = null;
         if (preg_match('/^(?:#|0x)?([a-z0-9]{2})([a-z0-9]{2})([a-z0-9]{2})([a-z0-9]{2})?$/', $color, $matches)) {
-            $result = new Color(hexdec($matches[1]), hexdec($matches[2]), hexdec($matches[3]));
+            $result = new Color((int) hexdec($matches[1]), (int) hexdec($matches[2]), (int) hexdec($matches[3]));
             if (!empty($matches[4])) {
-                // @mago-ignore analysis:invalid-property-assignment-value
-                $result->a = hexdec($matches[4]);
+                $result->a = (int) hexdec($matches[4]);
             }
             return $result;
-        } else {
-            return false;
         }
+
+        return null;
     }
 }
 
 /**
  * Parses QUERY_STRING and handles duplicate param names correctly
  *
- * @param string $url usually $_SERVER['QUERY_STRING']
+ * @param string $url usually from $_SERVER['QUERY_STRING']
  *
  * @return array parsed parameters
  */
-function parse_parameters($url)
+function parse_parameters(string $url): array
 {
-    $ret = array();
+    $ret = [];
     $pairs = explode('&', str_replace('&amp;', '&', $url));
     foreach ($pairs as $pair) {
         $tmp = explode('=', $pair, 2);
@@ -447,14 +446,14 @@ function parse_parameters($url)
             $k = substr($k, 0, -2);
             // this must be array type, so lets make sure it's gonna be
             if (!isset($ret[$k])) {
-                $ret[$k] = array();
+                $ret[$k] = [];
             }
         }
         // handle duplicate name parameters / arrays
         if (isset($ret[$k])) {
             // convert ret[k] to array if not already
             if (is_scalar($ret[$k])) {
-                $ret[$k] = array($ret[$k]);
+                $ret[$k] = [$ret[$k]];
             }
             $ret[$k][] = $v;
         } else {

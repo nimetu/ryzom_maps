@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -11,11 +13,10 @@ namespace Bmsite\Maps;
 
 use Bmsite\Maps\BaseTypes\Bounds;
 use Bmsite\Maps\BaseTypes\Point;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 
-/**
- * Class MapProjectionTest
- */
+#[CoversClass(MapProjection::class)]
 class MapProjectionTest extends \PHPUnit\Framework\TestCase
 {
     /**
@@ -27,8 +28,8 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
     private $worldZones = array(
         'world' => array(array(0, 14160), array(14160, 0)),
         'fyros' => array(array(2920, 3836), array(7400, 636)),
-		'matis' => array(array(7760, 7872), array(13680, 352)),
-		'kitiniere' => array(array(15272, 7212), array(18916, 3568)),
+        'matis' => array(array(7760, 7872), array(13680, 352)),
+        'kitiniere' => array(array(15272, 7212), array(18916, 3568)),
         'grid' => array(array(-108000, 47520), array(0, 0))
     );
     private $worldProj = array(
@@ -40,8 +41,8 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
         'fyros' => array(array(15840, -27040), array(20320, -23840)),
         'matis' => array(array(320, -7840), array(6240, -320)),
         'place_pyr' => array(array(18400, -24720), array(19040, -24240)),
-		'place_yrkanis' => array(array(4640, -3680), array(4800, -3200)),
-		'kitiniere' => array(array(1760, -17440), array(3040, -16160)),
+        'place_yrkanis' => array(array(4640, -3680), array(4800, -3200)),
+        'kitiniere' => array(array(1760, -17440), array(3040, -16160)),
         'grid' => array(array(0, -47520), array(108000, 0))
     );
 
@@ -97,21 +98,16 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $result);
     }
 
-    /**
-     * @param Point $latlng
-     * @param Point $expectedPoint
-     * @param array $expectedRegions
-     */
     #[DataProvider('projectProvider')]
-    public function testProject(Point $latlng, Point $expectedPoint = null, $expectedRegions = null)
+    public function testProject(Point $server, Point $world, array $expectedRegions)
     {
-        $point = $this->proj->project($latlng);
-        $regions = $this->proj->getTargetRegions($latlng);
+        $point = $this->proj->project($server);
+        $regions = $this->proj->getTargetRegions($server);
 
         $this->assertEquals(
             $expectedRegions,
             $regions,
-            "Target regions for point {$latlng} are not whats expected ["
+            "Target regions for point {$server} are not whats expected ["
             . join(',', $expectedRegions)
             . '], got ['
             . join(', ', $regions)
@@ -119,10 +115,69 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
         );
 
         $this->assertEquals(
-            $expectedPoint->asArray(),
+            $world->asArray(),
             [(int) $point->x, (int) $point->y],
-            "Failed to translate server coordinates {$latlng} to world coordinates {$expectedPoint}, got {$point}",
+            "Failed to translate server coordinates {$server} to world coordinates {$world}, got {$point}",
         );
+    }
+
+    #[DataProvider('projectProvider')]
+    public function testUnProject(Point $server, Point $world, array $expectedRegions)
+    {
+        $point = $this->proj->unproject($world);
+        $regions = $this->proj->getTargetRegions($point);
+
+        $this->assertEquals(
+            $expectedRegions,
+            $regions,
+            "Target regions for point {$world} are not whats expected ["
+            . join(',', $expectedRegions)
+            . '], got ['
+            . join(', ', $regions)
+            . ']',
+        );
+
+        $this->assertEquals(
+            $server->asArray(),
+            [(int) $point->x, (int) $point->y],
+            "Failed to translate world coordinates {$world} to server coordinates {$server}, got {$point}",
+        );
+    }
+
+    public function testProjectWithScale()
+    {
+        // from server to world coords
+        $point = $this->proj->project(new Point(4640, -3680));
+        $this->assertSame([12080, 3712], [(int) $point->x, (int) $point->y], 'Default zoom level projection failed');
+
+        // same, but at zoom level 5
+        $point = $this->proj->project(new Point(4640, -3680), 5);
+        $scale = $this->proj->scale(5);
+        $this->assertSame(
+            [intval(12080 * $scale), intval(3712 * $scale)],
+            [(int) $point->x, (int) $point->y],
+            'Custom zoom level failed',
+        );
+    }
+
+    public function testUnProjectWithScale()
+    {
+        // from world to server coords
+        $point = $this->proj->unproject(new Point(12080, 3712));
+        $this->assertSame([4640, -3680], [(int) $point->x, (int) $point->y], 'Default zoom level projection failed');
+
+        // same, but at zoom level 5
+        $scale = $this->proj->scale(5);
+        $point = $this->proj->unproject(new Point(12080 * $scale, 3712 * $scale), 5);
+        $this->assertSame(
+            [intval(4640), intval(-3680)],
+            [(int) $point->x, (int) $point->y],
+            'Custom zoom level failed',
+        );
+
+        // world coords near matis, but outside any known zones
+        $point = $this->proj->unproject(new Point(7740, 2032));
+        $this->assertFalse($point, 'Unknown world coords should return false');
     }
 
     /**
@@ -132,7 +187,6 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
     {
         $ig = new Point(2540, -17400);
         $point = $this->proj->project($ig);
-        $regions = $this->proj->gettargetRegions($ig);
 
         $expected = new Point(17492, 7098);
         $this->assertEquals(
@@ -142,12 +196,8 @@ class MapProjectionTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    /**
-     * @param Point $latlng
-     * @param array $expectedRegions
-     */
     #[DataProvider('areasProvider')]
-    public function testTargetAreas(Point $latlng, $expectedAreas = null)
+    public function testTargetAreas(Point $latlng, array $expectedAreas)
     {
         $areas = $this->proj->getTargetAreas($latlng);
         $this->assertEquals(

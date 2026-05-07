@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -10,24 +12,26 @@
 
 namespace Bmsite\Maps\StaticMap\Layer;
 
-/**
- * Class TextLayer
- */
+use Bmsite\Maps\StaticMap\StaticMapGenerator;
+
 class LangTileLayer extends TileLayer
 {
-    /** @var string */
-    protected $lang = '';
+    protected string $lang;
 
-    /** @var string */
-    protected $mapname = 'lang_en';
+    protected string $mapname;
 
-    /** @var string */
-    protected $tileExtension = 'png';
+    protected string $tileExtension;
 
-    /**
-     * @param string $lang
-     */
-    public function setLanguage($lang)
+    public function __construct(StaticMapGenerator $map, int $minZoom, int $maxZoom)
+    {
+        parent::__construct($map, $minZoom, $maxZoom);
+
+        $this->lang = 'en';
+        $this->mapname = 'lang_en';
+        $this->tileExtension = 'png';
+    }
+
+    public function setLanguage(string $lang)
     {
         $this->lang = $lang;
         $this->mapname = 'lang_' . $lang;

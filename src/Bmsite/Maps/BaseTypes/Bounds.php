@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Created by JetBrains PhpStorm.
  * User: meelis
@@ -10,30 +12,17 @@
 
 namespace Bmsite\Maps\BaseTypes;
 
-/**
- * Class Bounds
- */
 class Bounds
 {
-    /** @var float */
-    public $top;
+    public float $top;
 
-    /** @var float */
-    public $left;
+    public float $left;
 
-    /** @var float */
-    public $bottom;
+    public float $bottom;
 
-    /** @var float */
-    public $right;
+    public float $right;
 
-    /**
-     * @param float $left
-     * @param float $bottom
-     * @param float $right
-     * @param float $top
-     */
-    public function __construct($left = 0, $bottom = 0, $right = 0, $top = 0)
+    public function __construct(float $left = 0, float $bottom = 0, float $right = 0, float $top = 0)
     {
         $this->left = min($left, $right);
         $this->right = max($left, $right);
@@ -42,46 +31,41 @@ class Bounds
         $this->bottom = max($top, $bottom);
     }
 
-    /**
-     * @return float
-     */
-    public function getWidth()
+    public function getWidth(): float
     {
         return abs($this->right - $this->left);
     }
 
-    /**
-     * @return float
-     */
-    public function getHeight()
+    public function getHeight(): float
     {
         return abs($this->bottom - $this->top);
     }
 
-    /**
-     * @return array [width, height]
-     */
-    public function getSize()
+    public function getArea(): float
     {
-        return array($this->getWidth(), $this->getHeight());
+        return $this->getWidth() * $this->getHeight();
     }
 
     /**
-     * @return array [x, y]
+     * @return array{float,float} [width, height]
      */
-    public function getCenter()
+    public function getSize(): array
+    {
+        return [$this->getWidth(), $this->getHeight()];
+    }
+
+    /**
+     * @return array{float,float} [x, y]
+     */
+    public function getCenter(): array
     {
         $cx = ($this->left + $this->right) / 2;
         $cy = ($this->bottom + $this->top) / 2;
 
-        return array($cx, $cy);
+        return [$cx, $cy];
     }
 
-    /**
-     * @param float $x
-     * @param float $y
-     */
-    public function extend($x, $y)
+    public function extend(float $x, float $y)
     {
         if ($x < $this->left) {
             $this->left = $x;
@@ -100,15 +84,7 @@ class Bounds
         }
     }
 
-    /**
-     * @param float $left
-     * @param float $bottom
-     * @param float|null $right
-     * @param float|null $top
-     *
-     * @return bool
-     */
-    public function contains($left, $bottom, $right = null, $top = null)
+    public function contains(float $left, float $bottom, ?float $right = null, ?float $top = null): bool
     {
         $right = $right === null ? $left : $right;
         $top = $top === null ? $bottom : $top;
@@ -119,10 +95,7 @@ class Bounds
         return $inHorizontal && $inVertical;
     }
 
-    /**
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
         return sprintf('Bounds{%.2f,%.2f,%.2f,%.2f}', $this->left, $this->bottom, $this->right, $this->top);
     }

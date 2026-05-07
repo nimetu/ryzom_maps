@@ -28,7 +28,7 @@ count = 4
 file = "src/Bmsite/Maps/MapProjection.php"
 code = "use-compound-assignment"
 message = "Use a compound assignment for clarity and performance."
-count = 4
+count = 2
 
 [[issues]]
 file = "src/Bmsite/Maps/ResourceLoader.php"
@@ -48,23 +48,6 @@ code = "str-contains"
 message = "Consider replacing `strpos` with `str_contains` for improved readability and intent clarity."
 count = 2
 
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Polygon.php"
-code = "no-shorthand-ternary"
-message = "Use of the shorthand ternary operator."
-count = 1
-
-[[issues]]
-file = "src/Bmsite/Maps/StaticMap/Feature/Polygon.php"
-code = "use-compound-assignment"
-message = "Use a compound assignment for clarity and performance."
-count = 2
-
-[[issues]]
-file = "src/Bmsite/Maps/Tiles/FileTileStorage.php"
-code = "explicit-octal"
-message = "Use explicit octal numeral notation."
-count = 1
 
 [[issues]]
 file = "src/Bmsite/Maps/Tiles/SqlTileStorage.php"

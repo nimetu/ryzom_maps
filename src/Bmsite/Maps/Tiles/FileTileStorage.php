@@ -12,41 +12,26 @@ declare(strict_types=1);
 
 namespace Bmsite\Maps\Tiles;
 
+use GdImage;
+
 /**
  * Class FileTileStorage
  */
 class FileTileStorage implements TileStorageInterface
 {
-    /** @var string */
-    protected $tiledir;
+    public function __construct(
+        protected string $tiledir,
+        protected string $mapmode = 'world',
+        protected string $mapname = 'atys',
+        protected string $ext = 'jpg',
+    ) {}
 
-    /** @var string */
-    protected $ext = 'jpg';
-
-    /** @var string */
-    protected $mapmode;
-
-    /** @var string */
-    protected $mapname;
-
-    /**
-     * @param string $tiledir
-     */
-    public function __construct($tiledir)
-    {
-        $this->tiledir = $tiledir;
-        $this->mapmode = 'world';
-        $this->mapname = 'atys';
-    }
-
-    /** {@inheritdoc} */
-    public function setMapMode($mode)
+    public function setMapMode(string $mode)
     {
         $this->mapmode = $mode;
     }
 
-    /** {@inheritdoc} */
-    public function setMapName($name)
+    public function setMapName(string $name)
     {
         $this->mapname = $name;
     }
@@ -54,19 +39,19 @@ class FileTileStorage implements TileStorageInterface
     /**
      * @param string $ext png|jpg
      */
-    public function setImageExt($ext)
+    public function setImageExt(string $ext)
     {
         $this->ext = $ext;
     }
 
     /** {@inheritdoc} */
-    public function set(int $z, int $x, int $y, \GdImage $img)
+    public function set(int $z, int $x, int $y, GdImage $img)
     {
         $file = $this->getFilename($z, $x, $y);
 
         $dir = dirname($file);
         /** @mago-expect lint:no-error-control-operator */
-        if (!file_exists($dir) && !@mkdir($dir, 0775, true)) {
+        if (!file_exists($dir) && !@mkdir($dir, 0o0775, true)) {
             throw new \RuntimeException("Unable to create output directory '{$file}'");
         }
 
@@ -78,7 +63,7 @@ class FileTileStorage implements TileStorageInterface
     }
 
     /** {@inheritdoc} */
-    public function get(int $z, int $x, int $y): ?\GdImage
+    public function get(int $z, int $x, int $y): ?GdImage
     {
         $file = $this->getFilename($z, $x, $y);
         if (!file_exists($file)) {
@@ -101,7 +86,6 @@ class FileTileStorage implements TileStorageInterface
 
     protected function getFilename(int $z, int $x, int $y): string
     {
-        $file = $this->tiledir . "/{$this->mapmode}/{$this->mapname}/{$z}/{$x}";
-        return $file . "/{$y}.{$this->ext}";
+        return "{$this->tiledir}/{$this->mapmode}/{$this->mapname}/{$z}/{$x}/{$y}.{$this->ext}";
     }
 }

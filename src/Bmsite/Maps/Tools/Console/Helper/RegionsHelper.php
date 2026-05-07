@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -21,17 +23,12 @@ class RegionsHelper extends Helper
      *
      * @api
      */
-    public function getName()
+    public function getName(): string
     {
         return 'regions';
     }
 
-    /**
-     * @param string $sheetid
-     *
-     * @return int
-     */
-    public function getRegionForce($sheetid)
+    public function getRegionForce(string $sheetid): int
     {
         /*
          * region_fyreruins

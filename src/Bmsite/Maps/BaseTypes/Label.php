@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Created by JetBrains PhpStorm.
  * User: meelis
@@ -10,20 +12,14 @@
 
 namespace Bmsite\Maps\BaseTypes;
 
-/**
- * Class Label
- */
 class Label
 {
-    /** @var Point */
-    public $point;
+    public Point $point;
 
-    /** @var array */
-    public $text;
+    public string $text;
 
-    /** @var Color */
-    public $color;
+    public Color $color;
 
-    /** @var int */
-    public $type;
+    // TODO: use enum
+    public int $type;
 }

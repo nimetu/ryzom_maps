@@ -35,13 +35,18 @@ $proj->setWorldZones($loader->loadJson('world.json'));
 // $params = [
 //     //'center' => '17235,-32991', // Fairhaven, city map
 //     'center' => '18383,-32882', // Blackwater, east of Fairhaven
-//     'zoom' => 12,
+//     'zoom' => 6,
 //     'language' => 'en',
-//     'size' => '1024x1024',
+//     'size' => '2048x1024',
 // ];
 
 $params = [
-    'markers' => '17201,-32970|17300,-32870|17300,-32970',
+	'markers' => '17201,-32970|17300,-32870|17300,-32970|label:marker',
+	'path' => 'color:#ff0000|fillcolor:#00ff00|17201,-32970|17300,-32870|17300,-32970|label:poly',
+	'markers' => '17211,-32970|circle:10|color:#0000ff|icon:none|weight:3',
+	'mapmode' => 'server',
+	'zoom' => 10,
+	'size' => '2048x1024',
 ];
 $map = new StaticMap($tiledir, $proj);
 $map->configure($params);

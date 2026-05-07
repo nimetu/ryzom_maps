@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -10,6 +12,7 @@
 
 namespace Bmsite\Maps\Tiles;
 
+use GdImage;
 use SQLite3;
 
 /**
@@ -37,25 +40,25 @@ class TileStorage implements TileStorageInterface
     }
 
     /** {$inheritdoc} */
-    public function setMapMode($mode)
+    public function setMapMode(string $mode)
     {
         $this->mapmode = $mode;
     }
 
     /** {@inheritdoc} */
-    public function setMapName($name)
+    public function setMapName(string $name)
     {
         $this->mapname = $name;
     }
 
     /** {@inheritdoc} */
-    public function setImageExt($ext)
+    public function setImageExt(string $ext)
     {
         // TODO: Implement setImageExt() method.
     }
 
     /** {@inheritdoc} */
-    public function set($z, $x, $y, $img)
+    public function set(int $z, int $x, int $y, GdImage $img)
     {
         ob_start();
         imagegd2($img);
@@ -79,7 +82,7 @@ class TileStorage implements TileStorageInterface
     }
 
     /** {@inheritdoc} */
-    public function get($z, $x, $y)
+    public function get(int $z, int $x, int $y): ?GdImage
     {
         $z = (int) $z;
         $x = (int) $x;
@@ -94,7 +97,7 @@ class TileStorage implements TileStorageInterface
     }
 
     /** {@inheritdoc} */
-    public function delete($z, $x, $y)
+    public function delete(int $z, int $x, int $y)
     {
         $z = (int) $z;
         $x = (int) $x;

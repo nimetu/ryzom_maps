@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -9,6 +11,8 @@
  */
 
 namespace Bmsite\Maps\Tiles;
+
+use GdImage;
 
 /**
  * Class TileStorageInterface
@@ -39,9 +43,9 @@ interface TileStorageInterface
      * @throws \RuntimeException if output directory does not exist and cannot be created
      * @throws \InvalidArgumentException if image type is unknown
      */
-    public function set(int $z, int $x, int $y, \GdImage $img);
+    public function set(int $z, int $x, int $y, GdImage $img);
 
-    public function get(int $z, int $x, int $y): ?\GdImage;
+    public function get(int $z, int $x, int $y): ?GdImage;
 
     public function delete(int $z, int $x, int $y);
 }

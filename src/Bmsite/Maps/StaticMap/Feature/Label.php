@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -14,54 +16,39 @@ use Bmsite\Maps\BaseTypes\Bounds;
 use Bmsite\Maps\BaseTypes\Color;
 use Bmsite\Maps\BaseTypes\Point;
 use Bmsite\Maps\StaticMap\StaticMapGenerator;
+use GdImage;
 
 /**
  * Class Label
  */
 class Label implements FeatureInterface
 {
-    /** @var Point */
-    private $pos;
+    private ?Point $pos;
+
+    private int $fontSize;
+
+    private string $fontFamily;
+
+    private string $text;
+
+    private Color $color;
+
+    private ?Color $background = null;
+
+    private ?Color $outlineColor = null;
 
     /** @var int */
-    private $fontSize;
+    private int $outlineWidth;
 
-    /** @var string */
-    private $fontFamily;
+    private ?StaticMapGenerator $map = null;
 
-    /** @var string */
-    private $text;
+    private string $fontPath;
 
-    /** @var Color */
-    private $color;
+    private int $relOffsetX;
 
-    /** @var ?Color */
-    private $background;
+    private int $relOffsetY;
 
-    /** @var ?Color */
-    private $outlineColor;
-
-    /** @var int */
-    private $outlineWidth;
-
-    /** @var ?StaticMapGenerator */
-    private $map;
-
-    /** @var string */
-    private $fontPath;
-
-    /** @var int */
-    private $relOffsetX;
-
-    /** @var int */
-    private $relOffsetY;
-
-    /**
-     * @param string $text
-     * @param ?Point $pos
-     * @param ?Color $color
-     */
-    public function __construct($text, ?Point $pos = null, ?Color $color = null)
+    public function __construct(string $text, ?Point $pos = null, ?Color $color = null)
     {
         $this->pos = $pos;
         $this->text = $text;
@@ -77,93 +64,65 @@ class Label implements FeatureInterface
         $this->relOffsetY = 0;
     }
 
-    /**
-     * @param int $x
-     * @param int $y
-     */
-    public function setOffset($x, $y)
+    public function setOffset(int $x, int $y)
     {
         $this->relOffsetX = $x;
         $this->relOffsetY = $y;
     }
 
-    /**
-     * @param StaticMapGenerator $map
-     */
     public function setMap(StaticMapGenerator $map)
     {
         $this->map = $map;
     }
 
-    /**
-     * @param Point $p
-     */
     public function setPos(Point $p)
     {
         $this->pos = $p;
     }
 
-    /**
-     * @param Color $c
-     */
     public function setColor(Color $c)
     {
         $this->color = $c;
     }
 
-    /**
-     * @param Color $c
-     */
     public function setBackground(Color $c)
     {
         $this->background = $c;
     }
 
-    /**
-     * @param Color $c
-     * @param int $w
-     */
-    public function setOutline(Color $c = null, $w = 1)
+    public function setOutline(Color $c = null, int $w = 1)
     {
         $this->outlineColor = $c;
         $this->outlineWidth = $w;
     }
 
-    /**
-     * @param int $s
-     */
-    public function setFontSize($s)
+    public function setFontSize(int $s)
     {
         $this->fontSize = $s;
     }
 
-    /**
-     * @param string $f
-     */
-    public function setFontFamily($f)
+    public function setFontFamily(string $f)
     {
         $this->fontFamily = $f;
     }
 
-    /**
-     * @param string $p
-     */
-    public function setFontPath($p)
+    public function setFontPath(string $p)
     {
         $this->fontPath = $p;
     }
 
-    /**
-     * @return string
-     */
-    public function getFont()
+    public function getFont(): string
     {
         return $this->fontPath . '/' . $this->fontFamily . '.ttf';
     }
 
     /** {@inheritdoc} */
-    public function draw($canvas)
+    public function draw(GdImage $canvas)
     {
+        if ($this->pos === null) {
+            return;
+        }
+
         if ($this->map) {
             $scale = $this->map->getZoomScale();
             $vp = $this->map->getViewport();
@@ -208,14 +167,9 @@ class Label implements FeatureInterface
 
         $c = $this->color->allocate($canvas);
         imagettftext($canvas, $this->fontSize, 0, $x, $y, $c, $font, $this->text);
-
-        return true;
     }
 
-    /**
-     * @return Bounds
-     */
-    protected function getTextBbox()
+    protected function getTextBbox(): Bounds
     {
         $font = $this->getFont();
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -14,63 +16,41 @@ use Bmsite\Maps\BaseTypes\Bounds;
 use Bmsite\Maps\MapProjection;
 use Bmsite\Maps\StaticMap\StaticMapGenerator;
 use Bmsite\Maps\Tiles\TileStorageInterface;
+use GdImage;
 
 /**
  * Class TileLayer
  */
 class TileLayer
 {
-    /** @var bool */
-    protected $debug = true;
+    protected bool $debug = true;
 
-    /** @var StaticMapGenerator */
-    protected $map;
+    protected MapProjection $proj;
 
-    /** @var MapProjection */
-    protected $proj;
+    protected string $mapname;
 
-    /** @var string */
-    protected $mapname = 'atys';
+    protected string $tileExtension;
 
-    /** @var string */
-    protected $tileExtension = 'jpg';
+    protected int $zoom = 5;
 
-    /** @var int */
-    protected $zoom = 5;
-
-    /** @var int */
-    protected $minZoom;
-
-    /** @var int */
-    protected $maxZoom;
-
-    /**
-     * @param \Bmsite\Maps\StaticMap\StaticMapGenerator $map
-     * @param int $maxZoom
-     */
-    public function __construct(StaticMapGenerator $map, $minZoom, $maxZoom)
-    {
-        $this->map = $map;
+    public function __construct(
+        protected StaticMapGenerator $map,
+        protected int $minZoom,
+        protected int $maxZoom,
+    ) {
         $this->proj = $map->getProjection();
-        $this->debug = $map->getDebug();
         $this->mapname = $map->getMapName();
-
-        $this->minZoom = $minZoom;
-        $this->maxZoom = $maxZoom;
+        $this->tileExtension = $map->getFormat();
+        $this->debug = $map->getDebug();
     }
 
-    /**
-     * @param bool $debug
-     */
-    public function setDebug($debug)
+    /** @mago-expect lint:no-boolean-flag-parameter */
+    public function setDebug(bool $debug)
     {
         $this->debug = $debug;
     }
 
-    /**
-     * @return float
-     */
-    public function getTileSize()
+    public function getTileSize(): int
     {
         $size = TileStorageInterface::TILE_SIZE;
         if ($this->zoom < $this->minZoom) {
@@ -78,15 +58,10 @@ class TileLayer
         } elseif ($this->zoom > $this->maxZoom) {
             $size = ($this->proj->scale($this->zoom) / $this->proj->scale($this->maxZoom)) * $size;
         }
-        return $size;
+        return intval($size);
     }
 
-    /**
-     * @param $canvas
-     * @param Bounds $vp
-     * @param int $zoom
-     */
-    public function draw($canvas, Bounds $vp, $zoom)
+    public function draw(GdImage $canvas, Bounds $vp, int $zoom)
     {
         $tileStorage = $this->map->getTileStorage();
         $tileStorage->setImageExt($this->tileExtension);
@@ -110,47 +85,40 @@ class TileLayer
         for ($i = $tx1; $i < $tx2; $i++) {
             for ($j = $ty1; $j < $ty2; $j++) {
                 $img = $tileStorage->get($tileZoom, $i, $j);
-                if (!$img && $this->debug) {
+                if ($img === null) {
+                    if (!$this->debug) {
+                        continue;
+                    }
                     $img = $this->debugTile($tileZoom, $i, $j);
                 }
 
-                if ($img !== null) {
-                    $x1 = (int) ($vpOffsetX + (($i - $tx1) * $tileSize));
-                    $y1 = (int) ($vpOffsetY + (($j - $ty1) * $tileSize));
-                    imagecopyresampled(
-                        $canvas,
-                        $img,
-                        $x1,
-                        $y1,
-                        0,
-                        0,
-                        $tileSize,
-                        $tileSize,
-                        TileStorageInterface::TILE_SIZE,
-                        TileStorageInterface::TILE_SIZE,
-                    );
-                    imagedestroy($img);
-                }
+                $x1 = (int) ($vpOffsetX + (($i - $tx1) * $tileSize));
+                $y1 = (int) ($vpOffsetY + (($j - $ty1) * $tileSize));
+                imagecopyresampled(
+                    $canvas,
+                    $img,
+                    $x1,
+                    $y1,
+                    0,
+                    0,
+                    $tileSize,
+                    $tileSize,
+                    TileStorageInterface::TILE_SIZE,
+                    TileStorageInterface::TILE_SIZE,
+                );
             }
         }
     }
 
-    /**
-     * @param int $z
-     * @param int $x
-     * @param int $y
-     *
-     * @return bool|resource
-     */
-    protected function debugTile($z, $x, $y)
+    protected function debugTile(int $z, int $x, int $y): \GdImage
     {
         $r = $x * 255;
         $g = $y * 255;
         $b = $z * 255;
         $mod = max($r, max($g, $b));
-        $r = ($r * 255) / $mod;
-        $g = ($g * 255) / $mod;
-        $b = ($b * 255) / $mod;
+        $r = intdiv($r * 255, $mod);
+        $g = intdiv($g * 255, $mod);
+        $b = intdiv($b * 255, $mod);
 
         $result = imagecreatetruecolor(TileStorageInterface::TILE_SIZE, TileStorageInterface::TILE_SIZE);
         $c = imagecolorallocatealpha($result, $r, $g, $b, 80);

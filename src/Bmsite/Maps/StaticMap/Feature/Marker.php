@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -13,103 +15,45 @@ namespace Bmsite\Maps\StaticMap\Feature;
 use Bmsite\Maps\BaseTypes\Color;
 use Bmsite\Maps\BaseTypes\Point;
 use Bmsite\Maps\StaticMap\StaticMapGenerator;
+use GdImage;
 
-/**
- * Class Marker
- */
 class Marker extends PointsCollection implements FeatureInterface
 {
-    /**
-     * @var string
-     */
-    protected $label;
+    protected float $circleRadiusHoriz = 0;
 
-    /**
-     * @var string
-     */
-    protected $icon;
+    protected float $circleRadiusVert = 0;
 
-    /**
-     * @var float
-     */
-    protected $circleRadiusHoriz;
-    /**
-     * @var float
-     */
-    protected $circleRadiusVert;
+    protected ?Color $circleFillColor = null;
 
-    /**
-     * @var Color
-     */
-    protected $circleFillColor;
-    /**
-     * @var int
-     */
-    protected $circleStrokeWeight = 1;
+    protected int $circleStrokeWeight = 1;
 
-    /**
-     * @var int
-     */
-    protected $fontSize;
+    protected int $fontSize;
 
-    /**
-     * @var Color
-     */
-    protected $fontColor;
+    protected Color $fontColor;
 
-    /**
-     * outline color
-     *
-     * @var Color
-     */
-    protected $fontOutline;
+    protected Color $fontOutline;
 
-    /**
-     * @var Color
-     */
-    protected $color;
+    private StaticMapGenerator $map;
 
-    /**
-     * @var array
-     */
-    public $xy;
-
-    /** @var StaticMapGenerator */
-    private $map;
-
-    /**
-     * @param bool $label
-     * @param bool $color
-     * @param string $icon
-     */
-    function __construct($label = false, $color = null, $icon = null)
-    {
-        if ($icon === null) {
-            $icon = 'lm_marker';
-        }
-        $this->label = $label;
-        $this->color = $color;
-        $this->icon = $icon;
-        $this->xy = array();
-
+    function __construct(
+        private ?string $label = null,
+        private ?Color $color = null,
+        private string $icon = 'lm_marker',
+    ) {
         $this->fontSize = 7;
         $this->fontColor = new Color(255, 255, 255);
         $this->fontOutline = new Color(20, 20, 20);
     }
 
-    /**
-     * @param StaticMapGenerator $map
-     */
     public function setMap(StaticMapGenerator $map)
     {
         $this->map = $map;
     }
 
-    /** {@inheritdoc} */
-    public function draw($canvas)
+    public function draw(GdImage $canvas)
     {
-        $icon = false;
-        if ($this->icon && $this->icon !== 'none') {
+        $icon = null;
+        if ($this->icon !== 'none') {
             $over = substr($this->icon, -5) === '_over';
             if ($over) {
                 $icon = new Icon(substr($this->icon, 0, -5));
@@ -121,12 +65,12 @@ class Marker extends PointsCollection implements FeatureInterface
             }
             $icon->setOver($over);
 
-            if ($this->color) {
+            if ($this->color !== null) {
                 $icon->setColor($this->color);
             }
         }
 
-        $label = false;
+        $label = null;
         if ($this->label) {
             $label = new Label($this->label);
             $label->setColor($this->fontColor);
@@ -141,6 +85,14 @@ class Marker extends PointsCollection implements FeatureInterface
             $label->setBackground($bg);
         }
 
+        $circle = null;
+        if ($this->circleRadiusHoriz > 0 && $this->circleRadiusVert > 0) {
+            $circle = new Circle();
+            $circle->setRadius($this->circleRadiusHoriz, $this->circleRadiusVert);
+            $circle->setColor($this->color);
+            $circle->setFillColor($this->circleFillColor);
+        }
+
         $scale = $this->map->getZoomScale();
         $vp = $this->map->getViewport();
         $xOffset = -$vp->left;
@@ -148,29 +100,16 @@ class Marker extends PointsCollection implements FeatureInterface
         foreach ($this->xy as $point) {
             $p = new Point(($point->x * $scale) + $xOffset, ($point->y * $scale) + $yOffset);
 
-            if ($this->circleRadiusHoriz) {
-                // TODO: stroke width, circle color, fill color
-                if ($this->color) {
-                    $c = $this->color->allocate($canvas);
-                } else {
-                    $c = imagecolorallocate($canvas, 255, 0, 0);
-                }
-                // at least 1px circle is drawed
-                $h = max(1, $this->circleRadiusHoriz * 2 * $this->map->getZoomScale());
-                $v = max(1, $this->circleRadiusVert * 2 * $this->map->getZoomScale());
-
-                if ($this->circleFillColor) {
-                    $fc = $this->circleFillColor->allocate($canvas);
-                    imagefilledellipse($canvas, $p->x, $p->y, $h, $v, $fc);
-                }
-                imagesetthickness($canvas, $this->circleStrokeWeight);
-                imageellipse($canvas, $p->x, $p->y, $h, $v, $c);
+            if ($circle) {
+                $circle->setPos($p);
+                $circle->draw($canvas);
             }
 
             if ($icon) {
                 $icon->setPos($p);
                 $icon->draw($canvas);
             }
+
             if ($label) {
                 $label->setPos($p);
 
@@ -183,62 +122,50 @@ class Marker extends PointsCollection implements FeatureInterface
                 $label->draw($canvas);
             }
         }
-
-        return true;
     }
 
-    /**
-     * @param string $text
-     */
-    public function setLabel($text)
+    public function setLabel(string $text)
     {
         $this->label = $text;
     }
 
-    /**
-     * @param string $icon
-     */
-    public function setIcon($icon)
+    public function setIcon(string $icon)
     {
         $this->icon = $icon;
     }
 
-    /**
-     * @param float $h
-     * @param float $v
-     */
-    public function circleRadius($h, $v)
+    public function circleRadius(float $h, float $v)
     {
         $this->circleRadiusHoriz = $h;
         $this->circleRadiusVert = $v;
     }
 
-    public function setCircleFillColor($fc)
+    public function setCircleFillColor(Color $fc)
     {
         $this->circleFillColor = $fc;
     }
 
-    public function setCircleStrokeWeight($w)
+    public function setCircleStrokeWeight(int $w)
     {
         $this->circleStrokeWeight = $w;
     }
 
-    public function setColor($c)
+    public function setColor(Color $c)
     {
         $this->color = $c;
     }
 
-    public function setFontSize($s)
+    public function setFontSize(int $s)
     {
         $this->fontSize = $s;
     }
 
-    public function setFontColor($fc)
+    public function setFontColor(Color $fc)
     {
         $this->fontColor = $fc;
     }
 
-    public function setFontOutline($fc)
+    public function setFontOutline(Color $fc)
     {
         $this->fontOutline = $fc;
     }

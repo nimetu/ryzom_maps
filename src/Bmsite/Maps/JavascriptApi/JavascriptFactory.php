@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -15,20 +17,15 @@ namespace Bmsite\Maps\JavascriptApi;
  */
 class JavascriptFactory
 {
-    /** @var int */
-    protected $lastModified;
+    protected int $lastModified;
 
-    /** @var ?MinifyInterface */
-    protected $minifier;
+    protected ?MinifyInterface $minifier;
 
-    /** @var string */
-    protected $header;
+    protected string $header;
 
-    /** @var string */
-    private $jscache;
+    private string $jscache;
 
-    /** @var string */
-    protected $mincache;
+    protected string $mincache;
 
     public function __construct(?MinifyInterface $minify = null)
     {
@@ -92,7 +89,7 @@ class JavascriptFactory
         $this->mincache = '';
         $this->header = '';
 
-        $jsFiles = array(
+        $jsFiles = [
             '__header' => 'Leaflet/header.txt',
             'Leaflet/OpenLayers.Geometry.js',
             'Leaflet/Ryzom.js',
@@ -104,7 +101,7 @@ class JavascriptFactory
             'Leaflet/geo/projection/RyzomWorld.js',
             'Leaflet/geo/crs/RyzomServer.js',
             'Leaflet/geo/crs/RyzomWorld.js',
-        );
+        ];
 
         foreach ($jsFiles as $k => $file) {
             $filename = __DIR__ . '/' . $file;

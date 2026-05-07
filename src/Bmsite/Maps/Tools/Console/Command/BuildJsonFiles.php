@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -30,9 +32,9 @@ class BuildJsonFiles extends Command
 {
     // exclude continents from server.json
     /** @var string[] */
-    protected $exclude = array(
+    protected $exclude = [
         'testroom',
-    );
+    ];
 
     protected function configure()
     {
@@ -108,10 +110,10 @@ class BuildJsonFiles extends Command
      */
     protected function buildServerZones(WorldSheet $world, $outFile)
     {
-        $json = array(
-            'grid' => array(array(0, -47520), array(108000, 0)),
-        );
-        $continents = array();
+        $json = [
+            'grid' => [[0, -47520], [108000, 0]],
+        ];
+        $continents = [];
         foreach ($world->Maps as $map) {
             $key = strtolower($map->Name);
             if (in_array($key, $this->exclude, true)) {
@@ -120,10 +122,10 @@ class BuildJsonFiles extends Command
 
             $continents[$map->ContinentName] = true;
 
-            $json[$key] = array(
-                array((int) $map->MinX, (int) $map->MinY),
-                array((int) $map->MaxX, (int) $map->MaxY),
-            );
+            $json[$key] = [
+                [(int) $map->MinX, (int) $map->MinY],
+                [(int) $map->MaxX, (int) $map->MaxY],
+            ];
         }
         // also include continents that does not have map texture (ie r2 maps)
         foreach ($world->ContLocs as $map) {
@@ -135,10 +137,10 @@ class BuildJsonFiles extends Command
             if ($area === 0) {
                 continue;
             }
-            $json[$key] = array(
-                array((int) $map->MinX, (int) $map->MinY),
-                array((int) $map->MaxX, (int) $map->MaxY),
-            );
+            $json[$key] = [
+                [(int) $map->MinX, (int) $map->MinY],
+                [(int) $map->MaxX, (int) $map->MaxY],
+            ];
         }
         file_put_contents($outFile, json_encode($json, JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT));
     }
@@ -152,9 +154,9 @@ class BuildJsonFiles extends Command
     {
         $strings = $sm->getStrings('place');
 
-        $json = array();
+        $json = [];
         foreach ($continents as $cont) {
-            $labels = array();
+            $labels = [];
 
             $result = $this->filterContLabel($cont, $strings);
             if ($result) {
@@ -169,7 +171,7 @@ class BuildJsonFiles extends Command
                     /** @var array $label */
                     list($key, $label) = $result;
 
-                    if (in_array($key, array('region_matis_island_1', 'region_matis_island_2'), true)) {
+                    if (in_array($key, ['region_matis_island_1', 'region_matis_island_2'], true)) {
                         // there is no 'continent' text for Almati and Dantes, so make one up
                         // also move region text up a bit or it conflicts other text
                         $label['pos'][1] += 100;
@@ -198,7 +200,7 @@ class BuildJsonFiles extends Command
     protected function buildRegionPolys(array $continents, StringsManager $sm, $outFile)
     {
         // index = TContLMType enum
-        static $order = array(
+        static $order = [
             'continent' => 0,
             4 => 1, // region
             0 => 2, // capital
@@ -208,23 +210,23 @@ class BuildJsonFiles extends Command
             6 => 6, // street
             2 => 7, // outpost
             'unknown' => 8,
-        );
+        ];
 
-        $json = array();
+        $json = [];
         foreach ($continents as $cont) {
             // continent
-            $json[$cont->Name] = array(
+            $json[$cont->Name] = [
                 'order' => $order['continent'],
                 'points' => $this->exportVPoints($cont->Zone->VPoints),
-                'areas' => array(),
-            );
+                'areas' => [],
+            ];
 
             // sub regions and areas
             foreach ($cont->ContLandMarks as $lm) {
-                $json[$cont->Name]['areas'][$lm->TitleText] = array(
+                $json[$cont->Name]['areas'][$lm->TitleText] = [
                     'order' => isset($order[$lm->Type]) ? $order[$lm->Type] : $order['unknown'],
                     'points' => $this->exportVPoints($lm->Zone->VPoints),
-                );
+                ];
             }
         }
 
@@ -238,9 +240,9 @@ class BuildJsonFiles extends Command
      *
      * @return array [X, Y, ... Xn, Yn]
      */
-    private function exportVPoints(array $points)
+    private function exportVPoints(array $points): array
     {
-        $ret = array();
+        $ret = [];
         foreach ($points as $point) {
             // ingame X is always positive -> next highest
             // ingame Y is always negative -> next lowest
@@ -259,7 +261,7 @@ class BuildJsonFiles extends Command
      * 	array
      * }|false
      */
-    private function filterContLabel($cont, array $strings)
+    private function filterContLabel($cont, array $strings): array|false
     {
         $langs = array_keys($strings);
 
@@ -275,7 +277,7 @@ class BuildJsonFiles extends Command
             $key = 'continent_' . $key;
         }
 
-        $textArray = array();
+        $textArray = [];
         foreach ($langs as $lang) {
             if (isset($strings[$lang][$key])) {
                 $textArray[$lang] = $strings[$lang][$key]['name'];
@@ -283,22 +285,16 @@ class BuildJsonFiles extends Command
                 $textArray[$lang] = $key;
             }
         }
-        $label = array(
-            'pos' => array((int) $cont->ZoneCenter->X, (int) $cont->ZoneCenter->Y),
+        $label = [
+            'pos' => [(int) $cont->ZoneCenter->X, (int) $cont->ZoneCenter->Y],
             'regionforce' => 0,
             'lmtype' => -1,
             'text' => $textArray,
-        );
-        return array($key, $label);
+        ];
+        return [$key, $label];
     }
 
-    /**
-     * @param CContLandMark $lm
-     * @param array $strings
-     *
-     * @return array
-     */
-    private function filterLabel(CContLandMark $lm, array $strings)
+    private function filterLabel(CContLandMark $lm, array $strings): array
     {
         /** @var RegionsHelper $regions */
         $regions = $this->getHelper('regions');
@@ -307,7 +303,7 @@ class BuildJsonFiles extends Command
 
         $key = strtolower($lm->TitleText);
 
-        $textArray = array();
+        $textArray = [];
         foreach ($langs as $lang) {
             if (isset($strings[$lang][$key]['name'])) {
                 $textArray[$lang] = $strings[$lang][$key]['name'];
@@ -318,13 +314,13 @@ class BuildJsonFiles extends Command
 
         $force = $regions->getRegionForce($lm->TitleText);
 
-        $label = array(
-            'pos' => array((int) $lm->Pos->X, (int) $lm->Pos->Y),
+        $label = [
+            'pos' => [(int) $lm->Pos->X, (int) $lm->Pos->Y],
             'regionforce' => $force,
             'lmtype' => $lm->Type,
             'text' => $textArray,
-        );
+        ];
 
-        return array($key, $label);
+        return [$key, $label];
     }
 }

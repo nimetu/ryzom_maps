@@ -17,9 +17,9 @@ class MockTileStorage implements TileStorageInterface
         $this->ext = $ext;
     }
 
-    public function set($z, $x, $y, $img) {}
+    public function set(int $z, int $x, int $y, \GdImage $img) {}
 
-    public function get($z, $x, $y)
+    public function get(int $z, int $x, int $y): ?\GdImage
     {
         $im = imagecreatetruecolor(self::TILE_SIZE, self::TILE_SIZE);
         $bg = imagecolorallocatealpha($im, 0, 0, 0, 127);
@@ -28,8 +28,6 @@ class MockTileStorage implements TileStorageInterface
         $hw = self::TILE_SIZE / 2;
         $hh = self::TILE_SIZE / 2;
 
-        $cx = $hw;
-        $cy = $hh;
         $text = sprintf('z=%d y=%d, x=%d', $z, $y, $x);
         $red = imagecolorallocate($im, 255, 0, 0);
         imagestring($im, 5, 2, 2, $text, $red);

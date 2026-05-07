@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -10,17 +12,11 @@
 
 namespace Bmsite\Maps;
 
-/**
- * Class ResourceLoader
- */
 class ResourceLoader
 {
-    private string $path;
-
-    public function __construct(string $path = __DIR__ . '/Resources')
-    {
-        $this->path = $path;
-    }
+    public function __construct(
+        private string $path = __DIR__ . '/Resources',
+    ) {}
 
     /**
      * Return full path + filename for requested file

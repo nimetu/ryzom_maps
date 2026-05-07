@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -10,130 +12,125 @@
 
 namespace Bmsite\Maps;
 
-/*
- * X/Y remapping
- *                              world map size
- * @zoom level  1 -- 1px ~ 512m (   27x27   )
- * @zoom level  2 -- 1px ~ 256m (   55x55   )
- * @zoom level  3 -- 1px ~ 128m (  110x110  )
- * @zoom level  4 -- 1px ~  64m (  221x221  )
- * @zoom level  5 -- 1px ~  32m (  442x442  )
- * @zoom level  6 -- 1px ~  16m (  885x885  )
- * @zoom level  7 -- 1px =   8m ( 1770x1770 )
- * @zoom level  8 -- 1px =   4m ( 3540x3540 )
- * @zoom level  9 -- 1px =   2m ( 7080x7080 )
- * @zoom level 10 -- 1px =   1m (14160x14160)
- * @zoom level 11 -- 1px = 0.5m (28320x28320)
- */
-
 use Bmsite\Maps\BaseTypes\Bounds;
 use Bmsite\Maps\BaseTypes\Point;
 use Bmsite\Maps\BaseTypes\Polygon;
 
-/**
- * Class MapProjection
- */
 class MapProjection
 {
-    /** @var Bounds[] */
-    protected $zones = array();
+    /** @var array<string, Bounds> */
+    protected array $zones = [];
 
-    /** @var Bounds[] */
-    protected $serverZones = array();
-
-    /** @var array[] */
-    protected $serverAreas = array();
-
-    /** @var int */
-    protected $baseZoom = 10;
-
-    /** @var float */
-    protected $baseScale = 1024;
+    /** @var array<string, Bounds> */
+    protected array $serverZones = [];
 
     /**
-     * @param array $zones
-     * @param int $baseZoom
+     * @var array<array{
+     *   name: string,
+     *   order: int,
+     *   polygon: Polygon,
+     *   areas?: array<array{
+     *     name: string,
+     *     order: int,
+     *     polygon: Polygon
+     *   }>
+     * }>
      */
-    public function setWorldZones(array $zones, $baseZoom = 10)
+    protected array $serverAreas = [];
+
+    protected int $baseZoom = 10;
+
+    protected float $baseScale = 1024;
+
+    /**
+     * Set world map continent coordinates.
+     *
+     * BaseZoom determines which zoom level should match server coordinates in 1:1 ratio.
+     *
+     * @param array<string, array{
+     *   array{float,float},
+     *   array{float,float}
+     * }> $zones
+     */
+    public function setWorldZones(array $zones, int $baseZoom = 10)
     {
         $this->baseZoom = $baseZoom;
-        $this->baseScale = pow(2, $this->baseZoom);
+        $this->baseScale = (int) pow(2, $this->baseZoom);
 
-        $this->zones = array();
+        $this->zones = [];
         foreach ($zones as $key => $pos) {
             $this->zones[$key] = new Bounds($pos[0][0], $pos[0][1], $pos[1][0], $pos[1][1]);
         }
     }
 
     /**
-     * @param array $zones
+     * @param array<string, array{
+     *   array{float,float},
+     *   array{float,float}
+     * }> $zones
      */
     public function setServerZones(array $zones)
     {
-        $this->serverZones = array();
+        $this->serverZones = [];
         foreach ($zones as $key => $pos) {
             $this->serverZones[$key] = new Bounds($pos[0][0], $pos[0][1], $pos[1][0], $pos[1][1]);
         }
     }
 
     /**
-     * @param array $areas
+     * @param array<string, array{
+     *   order: int,
+     *   points: float[],
+     *   areas?: array<string, array{
+     *     order: int,
+     *     points: float[],
+     *   }>,
+     * }> $areas
      */
     public function setServerAreas(array $areas)
     {
-        $this->serverAreas = array();
+        $this->serverAreas = [];
         foreach ($areas as $key => $area) {
-            $this->serverAreas[$key] = array(
+            $this->serverAreas[$key] = [
                 'name' => $key,
-                'order' => $area['order'],
+                'order' => (int) $area['order'],
                 'polygon' => new Polygon($area['points']),
-            );
+            ];
             if (!empty($area['areas'])) {
                 foreach ($area['areas'] as $subkey => $subarea) {
-                    $this->serverAreas[$key]['areas'][$subkey] = array(
+                    $this->serverAreas[$key]['areas'][$subkey] = [
                         'name' => $subkey,
-                        'order' => $subarea['order'],
+                        'order' => (int) $subarea['order'],
                         'polygon' => new Polygon($subarea['points']),
-                    );
+                    ];
                 }
             }
         }
     }
 
-    /**
-     * @param $zoom
-     *
-     * @return float
-     */
-    public function scale($zoom)
+    public function scale(int $zoom): float
     {
-        return pow(2, $zoom) / $this->baseScale;
+        return intval(pow(2, $zoom)) / $this->baseScale;
     }
 
     /**
-     * @param string $id
-     *
-     * @return Bounds|bool
      * @throws \InvalidArgumentException
      */
-    public function getZoneBounds($id)
+    public function getZoneBounds(string $id): Bounds
     {
-        if (!isset($this->zones[$id])) {
-            $zone = $this->projectZone($id);
-        } else {
-            $zone = $this->zones[$id];
+        if (isset($this->zones[$id])) {
+            return $this->zones[$id];
         }
 
-        return $zone;
+        return $this->projectZone($id);
     }
 
     /**
-     * @param string $zoneName
+     * Project server zone into world map
      *
      * @throws \InvalidArgumentException
-     * @return Bounds
      */
-    public function projectZone($zoneName)
+    public function projectZone(string $zoneName): Bounds
     {
         if (!isset($this->serverZones[$zoneName])) {
             throw new \InvalidArgumentException("Unknown server zone ({$zoneName})");
@@ -152,22 +149,18 @@ class MapProjection
     }
 
     /**
-     * Project latLng (server coords) into image coords
-     *
-     * @param Point $p
-     * @param int $zoom
+     * Project latLng (server coords) into world coords
      *
      * @throws \InvalidArgumentException
-     * @return Point|bool
      */
-    public function project(Point $p, $zoom = null)
+    public function project(Point $latlng, ?int $zoom = null): Point
     {
-        $parent = $this->findParentZone($p);
+        $parent = $this->findParentZone($latlng);
         if (!$parent) {
-            throw new \InvalidArgumentException("Coordinates outside known server zone ({$p})");
+            throw new \InvalidArgumentException("Coordinates outside known server zone ({$latlng})");
         }
 
-        $bb = $this->translate($p, $this->serverZones[$parent], $this->zones[$parent]);
+        $bb = $this->translate($latlng, $this->serverZones[$parent], $this->zones[$parent]);
         if ($zoom !== null) {
             $scale = $this->scale($zoom);
             $bb->x = $bb->x * $scale;
@@ -177,37 +170,32 @@ class MapProjection
     }
 
     /**
-     * Convert image coords at given zoom level into server coords.
+     * Convert world coords at zoom level into server coords.
      *
-     * Point in smaller area in overlaping zones
-     * (ie nexus/matis) is returned.
-     *
-     * @param Point $p
-     * @param ?int $zoom zoom level to use
+     * For overlaping zones (ie nexus/matis), zone with smaller area is returned.
      *
      * @throws \InvalidArgumentException
-     * @return Point|bool
      */
-    public function unproject(Point $p, $zoom = null)
+    public function unproject(Point $p, ?int $zoom = null): Point|false
     {
         if ($zoom !== null) {
             $scale = $this->scale($zoom);
-            $p->x = $p->x / $scale;
-            $p->y = $p->y / $scale;
+            $p->x /= $scale;
+            $p->y /= $scale;
         }
 
         $zone = false;
         $minsize = false;
         foreach ($this->zones as $k => $v) {
             if ($v->contains($p->x, $p->y)) {
-                $size = $v->getWidth() * $v->getHeight();
+                $size = $v->getArea();
                 if ($minsize === false || $size < $minsize) {
                     $minsize = $size;
                     $zone = $k;
                 }
             }
         }
-        if ($zone === false || empty($this->serverZones[$zone])) {
+        if ($zone === false || !array_key_exists($zone, $this->serverZones)) {
             // TODO: try to map into closest zone
             return false;
         }
@@ -216,17 +204,13 @@ class MapProjection
     }
 
     /**
-     * Return all regions where point lands
-     * Sorted by smallest
+     * Return all regions where point lands, sorted by smallest
      *
-     * @param Point $p
-     * @param int $closest
-     *
-     * @return array
+     * @return string[]
      */
-    public function getTargetRegions(Point $p, $closest = 0)
+    public function getTargetRegions(Point $p, int $distanceToClosest = 0): array
     {
-        $result = array();
+        $result = [];
         foreach ($this->serverZones as $id => $zone) {
             if ($zone->contains($p->x, $p->y)) {
                 $size = $zone->getSize();
@@ -235,14 +219,9 @@ class MapProjection
         }
         asort($result);
 
-        if (empty($result) && $closest > 0) {
+        if (empty($result) && $distanceToClosest > 0) {
             // TODO: find closest zone
         }
-
-        // always match grid
-        //if (empty($result)) {
-        //    $result['grid'] = 0;
-        //}
 
         return array_keys($result);
     }
@@ -254,22 +233,25 @@ class MapProjection
      * Returns sorted array of [key, order] where key is area name and order is type.
      * continent=0, region=1, capital=2, village=3, stable=4, place=5, street=6, outpost=7, unknown = 8
      *
-     * @param Point $point
+     * @template T of array{
+     *   key: string,
+     *   order: int,
+     * }
      *
-     * @return array[]
+     * @return T[]
      */
-    public function getTargetAreas(Point $point)
+    public function getTargetAreas(Point $point): array
     {
-        $match = array();
-        $sk = array();
+        $match = [];
+        $sk = [];
         foreach ($this->serverAreas as $area) {
             if ($area['polygon']->contains($point->x, $point->y)) {
-                $match[] = array('key' => $area['name'], 'order' => $area['order']);
+                $match[] = ['key' => $area['name'], 'order' => $area['order']];
                 $sk[] = $area['order'];
                 if (!empty($area['areas'])) {
                     foreach ($area['areas'] as $subarea) {
                         if ($subarea['polygon']->contains($point->x, $point->y)) {
-                            $match[] = array('key' => $subarea['name'], 'order' => $subarea['order']);
+                            $match[] = ['key' => $subarea['name'], 'order' => $subarea['order']];
                             $sk[] = $subarea['order'];
                         }
                     }
@@ -277,23 +259,22 @@ class MapProjection
             }
         }
 
+        /**
+         * mago analyze gives mixed-assignment warning without var types
+         * @var array $sk
+         * @var array $match
+         */
         array_multisort($sk, SORT_NUMERIC, SORT_DESC, $match);
-        // TODO: should return match = [ 0 => [zones...], 1 => [areas....] ] ? 'kitiniere' is in duplicate
 
-        /** @var array[] $match */
+        /** @var T[] $match */
         return $match;
     }
 
     /**
      * Find parent zone that is present in world map using server coords
-     *
-     * @param Point $point
-     *
-     * @return null|string
      */
-    protected function findParentZone(Point $point)
+    protected function findParentZone(Point $point): ?string
     {
-        /** @var string[] $regions */
         $regions = $this->getTargetRegions($point);
         foreach ($regions as $id) {
             if (isset($this->zones[$id])) {
@@ -305,18 +286,11 @@ class MapProjection
     }
 
     /**
-     * Translate point (pyr) from src (fyros)
-     * to dst (fyros in world map)
+     * Translate point (pyr) from src (fyros) to dst (fyros in world map)
      *
-     * All arrays are in [ [left,bottom], [right,top] ]
-     *
-     * @param Point $point
-     * @param Bounds $src
-     * @param Bounds $dst
-     *
-     * @return Point
+     * All arrays are in [ [left, bottom], [right, top] ]
      */
-    protected function translate(Point $point, Bounds $src, Bounds $dst)
+    protected function translate(Point $point, Bounds $src, Bounds $dst): Point
     {
         $px = ($point->x - $src->left) / $src->getWidth();
         $py = ($point->y - $src->top) / $src->getHeight();
@@ -327,14 +301,7 @@ class MapProjection
         return new Point($left, $top);
     }
 
-    /**
-     * @param Bounds $zone
-     * @param Bounds $src
-     * @param Bounds $dst
-     *
-     * @return Bounds
-     */
-    protected function translateZone(Bounds $zone, Bounds $src, Bounds $dst)
+    protected function translateZone(Bounds $zone, Bounds $src, Bounds $dst): Bounds
     {
         $tl = $this->translate(new Point($zone->left, $zone->top), $src, $dst);
         $br = $this->translate(new Point($zone->right, $zone->bottom), $src, $dst);

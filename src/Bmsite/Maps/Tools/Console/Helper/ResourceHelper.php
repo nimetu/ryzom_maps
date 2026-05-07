@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -12,13 +14,9 @@ namespace Bmsite\Maps\Tools\Console\Helper;
 
 use Symfony\Component\Console\Helper\Helper;
 
-/**
- * Class ResourceHelper
- * @package Bmsite\Maps\Tools\Console\Helper
- */
 class ResourceHelper extends Helper
 {
-    private $values = array();
+    private $values = [];
 
     /**
      * Returns the canonical name of this helper.
@@ -27,26 +25,17 @@ class ResourceHelper extends Helper
      *
      * @api
      */
-    public function getName()
+    public function getName(): string
     {
         return 'resource';
     }
 
-    /**
-     * @param string $key
-     * @param mixed $value
-     */
-    public function set($key, $value)
+    public function set(string $key, mixed $value)
     {
         $this->values[$key] = $value;
     }
 
-    /**
-     * @param string $key
-     *
-     * @return mixed
-     */
-    public function get($key)
+    public function get(string $key): mixed
     {
         return $this->values[$key];
     }

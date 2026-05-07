@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -11,23 +13,15 @@
 namespace Bmsite\Maps\StaticMap\Feature;
 
 use Bmsite\Maps\BaseTypes\Point;
-use Bmsite\Maps\MapProjection;
 
 /**
  * Class PointsCollection
  */
 class PointsCollection
 {
-    public $xy = array();
+    /** @var Point[] */
+    public array $xy = [];
 
-    /**
-     * @var MapProjection $proj
-     */
-    protected $proj;
-
-    /**
-     * @param Point $xy
-     */
     function addPoint(Point $xy)
     {
         $this->xy[] = $xy;

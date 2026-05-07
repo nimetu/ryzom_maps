@@ -9,6 +9,9 @@
  */
 namespace Bmsite\Maps\JavascriptApi;
 
+use PHPUnit\Framework\Attributes\CoversClass;
+
+#[CoversClass(JavascriptFactory::class)]
 class JavascriptFactoryTest extends \PHPUnit\Framework\TestCase
 {
     public function testDefault()

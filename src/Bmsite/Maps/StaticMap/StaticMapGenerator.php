@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -19,180 +21,139 @@ use Bmsite\Maps\StaticMap\Layer\LangTileLayer;
 use Bmsite\Maps\StaticMap\Layer\TileLayer;
 use Bmsite\Maps\Tiles\TileStorageInterface;
 
-/**
- * Class StaticMapGenerator
- */
 class StaticMapGenerator
 {
-    const BASE_ZOOM = 10;
+    const int BASE_ZOOM = 10;
 
     /**
      * Zoom range we allow from URL
      */
-    const MIN_ZOOM = 1;
-    const MAX_ZOOM = 12;
+    const int MIN_ZOOM = 1;
+    const int MAX_ZOOM = 12;
 
     /**
      * Zoom ranges for generated tile images
      */
-    /** @var int */
-    private $tileLayerMinZoom = 5;
-    /** @var int */
-    private $tileLayerMaxZoom = 10;
-    /** @var int */
-    private $textLayerMinZoom = 5;
-    /** @var int */
-    private $textLayerMaxZoom = 12;
+    private int $tileLayerMinZoom = 5;
 
-    /** @var bool */
-    private $debug = false;
+    private int $tileLayerMaxZoom = 10;
 
-    /** @var string */
-    private $format = 'jpg';
+    private int $textLayerMinZoom = 5;
 
-    /** @var ?string */
-    private $lang;
+    private int $textLayerMaxZoom = 12;
+
+    private bool $debug = false;
+
+    private string $format = 'jpg';
+
+    private ?string $lang = null;
 
     /** @var string[] */
-    private $languages = array('en', 'fr', 'de', 'es', 'ru');
+    private array $languages = ['en', 'fr', 'de', 'es', 'ru'];
 
-    /** @var int */
-    private $width = 256;
+    private int $width = 256;
 
-    /** @var int */
-    private $height = 256;
+    private int $height = 256;
 
-    /** @var Point|null */
-    private $center = null;
+    private ?Point $center = null;
 
-    /** @var int|null */
-    private $zoom = null;
+    private int $zoom = self::BASE_ZOOM;
 
-    /** @var int */
-    private $autoMaxZoom = 7;
+    private bool $autoZoom = true;
 
-    /** @var string */
-    private $mapmode = 'world';
+    private int $autoMaxZoom = 7;
 
-    /** @var string */
-    private $mapname = 'atys';
+    private string $mapmode = 'world';
 
-    /** @var bool */
-    private $drawCenterLines = false;
+    private string $mapname = 'atys';
+
+    private bool $drawCenterLines = false;
 
     /** @var Marker[] */
-    private $markers = array();
+    private array $markers = [];
 
     /** @var Polygon[] */
-    private $polys = array();
+    private array $polys = [];
 
-    /** @var Bounds */
-    public $viewport;
+    public Bounds $viewport;
 
-    /** @var Bounds */
-    public $bounds;
+    public ?Bounds $bounds = null;
 
-    /** @var int */
-    public $hMargin = 10;
+    public int $hMargin = 10;
 
-    /** @var int */
-    public $vMargin = 10;
+    public int $vMargin = 10;
 
-    /** @var \Bmsite\Maps\MapProjection */
-    private $proj;
-
-    /** @var TileStorageInterface */
-    private $tileStorage;
+    private MapProjection $proj;
 
     /**
      * @param TileStorageInterface $tileStorage
      */
-    public function __construct(TileStorageInterface $tileStorage)
-    {
-        $this->tileStorage = $tileStorage;
+    public function __construct(
+        private TileStorageInterface $tileStorage,
+    ) {
+        $this->viewport = new Bounds();
     }
 
-    /**
-     * @param bool $d
-     */
-    public function setDebug($d)
+    /** @mago-expect lint: no-boolean-flag-parameter */
+    public function setDebug(bool $state)
     {
-        $this->debug = $d;
+        $this->debug = $state;
     }
 
-    /**
-     * @return bool
-     */
-    public function getDebug()
+    public function getDebug(): bool
     {
         return $this->debug;
     }
 
-    /**
-     * @param MapProjection $proj
-     */
     public function setProjection(MapProjection $proj)
     {
         $this->proj = $proj;
     }
 
-    /**
-     * @param int $width
-     * @param int $height
-     */
-    public function setSize($width, $height)
+    public function setSize(int $width, int $height)
     {
         $this->width = $width;
         $this->height = $height;
     }
 
     /**
-     * @param int $zoom
+     * Set map zoom level, value between self::MIN_ZOOM and self::MAX_ZOOM
      */
-    public function setZoom($zoom)
+    public function setZoom(int $zoom)
     {
         $this->zoom = max(self::MIN_ZOOM, min((int) $zoom, self::MAX_ZOOM));
+        $this->autoZoom = false;
     }
 
-    /**
-     * @param int $zoom
-     */
-    public function setMaxZoom($zoom)
+    public function enableAutoZoom()
+    {
+        $this->autoZoom = true;
+    }
+
+    public function setMaxZoom(int $zoom)
     {
         $this->autoMaxZoom = $zoom;
     }
 
-    /**
-     * @return float
-     */
-    public function getZoomScale()
+    public function getZoomScale(): float
     {
         return $this->proj->scale($this->zoom);
     }
 
-    /**
-     * @param Point $p
-     */
     public function setCenter(Point $p)
     {
         $this->center = $p;
     }
 
-    /**
-     * @param string $format
-     */
-    public function setFormat($format)
+    public function setFormat(string $format)
     {
         $format = strtolower(trim($format));
-        if (in_array($format, array('png', 'jpg'), true)) {
+        if (in_array($format, ['png', 'jpg'], true)) {
             $this->format = $format;
         }
     }
 
-    /**
-     * @return string
-     */
-    public function getFormat()
+    public function getFormat(): string
     {
         return $this->format;
     }
@@ -200,50 +161,46 @@ class StaticMapGenerator
     /**
      * atys, atys_sp, atys_su, ...
      * lang/en, lang/fr, ...
-     *
-     * @param string $val
      */
-    public function setMapName($val)
+    public function setMapName(string $val)
     {
         $this->mapname = $val;
     }
 
-    /**
-     * @return string
-     */
-    public function getMapName()
+    public function getMapName(): string
     {
         return $this->mapname;
     }
 
     /**
-     * world, server
-     *
-     * @param string $val
+     * @param 'world'|'server' $val
      */
-    public function setMapMode($val)
+    public function setMapMode(string $val)
     {
         $this->mapmode = $val;
     }
 
-    /**
-     * @return string
-     */
-    public function getMapMode()
+    public function getMapMode(): string
     {
         return $this->mapmode;
     }
 
     /**
      * @param string $val 'auto' try to use browser language
-     *                    empty string disable text layer
+     *                    empty string or null disables text layer
      *                    otherwise 2-char supported language code
      */
-    public function setLanguage($val)
+    public function setLanguage(?string $val)
     {
+        if ($val === null) {
+            $this->lang = null;
+            return;
+        }
+
+        /** @var string $val */
         $val = strtolower($val);
         if ($val === 'auto') {
-            $this->lang = $this->getBrowserlanguage();
+            $this->lang = $this->getBrowserLanguage();
         } elseif (in_array($val, $this->languages, true)) {
             $this->lang = $val;
         } else {
@@ -251,37 +208,26 @@ class StaticMapGenerator
         }
     }
 
-    /**
-     * @param bool $val
-     */
-    public function setDrawCenterLines($val)
+    /** @mago-expect lint: no-boolean-flag-parameter */
+    public function setDrawCenterLines(bool $val)
     {
         $this->drawCenterLines = $val;
     }
 
     /**
-     * @return string
+     * If available, return first language from Accept-Language HTTP header
      */
-    public function getBrowserLanguage()
+    public function getBrowserLanguage(string $default = 'en'): string
     {
-        return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+        return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? $default, 0, 2);
     }
 
-    /**
-     * @param Point $p
-     */
     public function extend(Point $p)
     {
-        if ($this->bounds === null) {
-            $this->bounds = new Bounds($p->x, $p->y, $p->x, $p->y);
-        } else {
-            $this->bounds->extend($p->x, $p->y);
-        }
+        $this->bounds ??= new Bounds($p->x, $p->y, $p->x, $p->y);
+        $this->bounds->extend($p->x, $p->y);
     }
 
-    /**
-     * @param Marker $m
-     */
     public function addMarker(Marker $m)
     {
         // use ingame coords here
@@ -294,7 +240,7 @@ class StaticMapGenerator
     }
 
     /**
-     * @param array $markers
+     * @param Marker[] $markers
      */
     public function addMarkers(array $markers)
     {
@@ -303,9 +249,6 @@ class StaticMapGenerator
         }
     }
 
-    /**
-     * @param Polygon $p
-     */
     public function addPolygon(Polygon $p)
     {
         foreach ($p->xy as $pos) {
@@ -317,7 +260,7 @@ class StaticMapGenerator
     }
 
     /**
-     * @param array $polygons
+     * @param Polygon[] $polygons
      */
     public function addPolygons(array $polygons)
     {
@@ -327,58 +270,44 @@ class StaticMapGenerator
     }
 
     /**
-     * @return int
+     * If using auto zoom, then zoom becomes available after render()
      */
-    public function getZoom()
+    public function getZoom(): ?int
     {
-        return $this->zoom;
+        return $this->autoZoom ? null : $this->zoom;
     }
 
-    /**
-     * @return MapProjection
-     */
-    public function getProjection()
+    public function getProjection(): MapProjection
     {
         return $this->proj;
     }
 
     /**
-     * @return Bounds
+     * Viewport becomes available after render()
      */
-    public function getViewport()
+    public function getViewport(): Bounds
     {
         return $this->viewport;
     }
 
-    /**
-     * @return TileStorageInterface
-     */
-    public function getTileStorage()
+    public function getTileStorage(): TileStorageInterface
     {
         return $this->tileStorage;
     }
 
-    /**
-     * @return string
-     */
-    public function getContentType()
+    public function getContentType(): string
     {
-        switch ($this->format) {
-            case 'png':
-                $type = 'image/png';
-                break;
-            case 'jpg': // fall thru
-            default:
-                $type = 'image/jpeg';
-                break;
-        }
-        return $type;
+        return match ($this->format) {
+            'png' => 'image/png',
+            'jpg' => 'image/jpeg',
+            default => 'image/jpeg',
+        };
     }
 
     /**
-     * @return string
+     * Return rendered map as string
      */
-    public function render()
+    public function render(): string
     {
         $img = $this->_background();
 
@@ -392,16 +321,17 @@ class StaticMapGenerator
                 imagejpeg($img, null, 85);
                 break;
         }
-        imagedestroy($img);
-        return ob_get_clean();
+
+        return (string) ob_get_clean();
     }
 
-    /**
-     * @return int
-     */
-    private function getBoundsZoom()
+    private function getBoundsZoom(): int
     {
         $zoom = $this->autoMaxZoom;
+
+        if ($this->bounds === null) {
+            return $zoom;
+        }
 
         // area in pixels that markers/polygons occupy
         $w = $this->bounds->getWidth();
@@ -421,10 +351,9 @@ class StaticMapGenerator
     }
 
     /**
-     * @return \GdImage
      * @throws \RuntimeException
      */
-    protected function _background()
+    protected function _background(): \GdImage
     {
         $canvas = imagecreatetruecolor($this->width, $this->height);
         if ($canvas === false) {
@@ -446,7 +375,7 @@ class StaticMapGenerator
             $this->extend($this->center);
         }
 
-        if ($this->zoom === null) {
+        if ($this->autoZoom) {
             $this->zoom = $this->getBoundsZoom();
         }
 
@@ -470,13 +399,11 @@ class StaticMapGenerator
         return $canvas;
     }
 
-    /**
-     * @param resource $canvas
-     */
-    protected function draw($canvas)
+    protected function draw(\GdImage $canvas)
     {
-        if ($this->zoom === null) {
+        if ($this->autoZoom) {
             $this->zoom = $this->getBoundsZoom();
+            $this->autoZoom = false;
         }
 
         $layer = new TileLayer($this, $this->tileLayerMinZoom, $this->tileLayerMaxZoom);
@@ -484,7 +411,7 @@ class StaticMapGenerator
 
         if ($this->lang) {
             $textLayer = new LangTileLayer($this, $this->textLayerMinZoom, $this->textLayerMaxZoom);
-            $textLayer->setLanguage($this->lang);
+            $textLayer->setLanguage((string) $this->lang);
             $textLayer->draw($canvas, $this->viewport, $this->zoom);
         }
 
@@ -499,7 +426,7 @@ class StaticMapGenerator
         if ($this->drawCenterLines) {
             $halfWidth = intval($this->width / 2);
             $halfHeight = intval($this->height / 2);
-            $y = imagecolorallocatealpha($canvas, 255, 255, 50, 100);
+            $y = (int) imagecolorallocatealpha($canvas, 255, 255, 50, 100);
             imagesetthickness($canvas, 1);
             imageline($canvas, 0, $halfHeight, $this->width, $halfHeight, $y);
             imageline($canvas, $halfWidth, 0, $halfWidth, $this->height, $y);

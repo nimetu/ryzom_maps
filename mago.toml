@@ -30,8 +30,6 @@ literal-named-argument = { enabled = false }
 cyclomatic-complexity = { enabled = false }
 kan-defect = { enabled = false }
 halstead = { enabled = false }
-array-style = { enabled = false }
-strict-types = { enabled = false }
 no-empty-comment = { enabled = false }
 readable-literal = { enabled = false }
 assertion-style = { style = "this" }

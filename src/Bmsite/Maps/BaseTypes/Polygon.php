@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Date: 1/1/20
  * Time: 2:54 PM
@@ -7,13 +9,10 @@
 
 namespace Bmsite\Maps\BaseTypes;
 
-/**
- * Class Polygon
- */
 class Polygon
 {
     /** @var float[] */
-    public $points;
+    public array $points;
 
     /**
      * @param float[] $points
@@ -24,19 +23,16 @@ class Polygon
     }
 
     /**
-     * @return array
+     * @return float[]
      */
-    public function asArray()
+    public function asArray(): array
     {
         return $this->points;
     }
 
-    /**
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
-        $ret = array();
+        $ret = [];
         foreach ($this->points as $p) {
             $ret[] = sprintf('%.2f', $p);
         }
@@ -53,7 +49,7 @@ class Polygon
      *
      * @return bool
      */
-    public function contains($x, $y)
+    public function contains(float $x, float $y): bool
     {
         $nbPoints = count($this->points);
         if ($nbPoints < 6) {

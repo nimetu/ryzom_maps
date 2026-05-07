@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -13,58 +15,31 @@ namespace Bmsite\Maps\StaticMap\Feature;
 use Bmsite\Maps\BaseTypes\Color;
 use Bmsite\Maps\BaseTypes\Point;
 use Bmsite\Maps\StaticMap\StaticMapGenerator;
+use GdImage;
 
-/**
- * Class Polygon
- */
 class Polygon extends PointsCollection implements FeatureInterface
 {
-    public $weight;
+    public string $label = '';
 
-    /**
-     * @var Color
-     */
-    public $color;
+    public int $label_size = 0;
 
-    /**
-     * @var Color
-     */
-    public $fillcolor;
+    public Color $label_color;
 
-    /** @var string */
-    public $label;
+    public Color $label_outline;
 
-    /** @var int */
-    public $label_size;
+    private StaticMapGenerator $map;
 
-    /** @var Color */
-    public $label_color;
-
-    /** @var Color */
-    public $label_outline;
-
-    /** @var StaticMapGenerator */
-    private $map;
-
-    /** @var array|false */
-    private $bbox;
-
-    /**
-     * @param int $weight
-     * @param Color $color
-     * @param Color $fillcolor
-     */
-    function __construct($weight = 1, $color = null, $fillcolor = null)
-    {
-        $this->weight = $weight;
-        $this->color = $color ?: new Color(255, 255, 255);
+    function __construct(
+        public int $weight = 1,
+        public Color $color = new Color(255, 255, 255),
+        public ?Color $fillcolor = null,
+    ) {
+        //$this->color ??= new Color(255, 255, 255);
         $this->fillcolor = $fillcolor;
-        $this->xy = array();
-        $this->label = false;
-        $this->label_size = false;
-        $this->label_color = false;
-        $this->label_outline = false;
-        $this->bbox = false;
+        $this->xy = [];
+        $this->label_color = $color;
+        $this->label_color->a = 255;
+        $this->label_outline = new Color(0, 0, 0);
     }
 
     /**
@@ -75,8 +50,7 @@ class Polygon extends PointsCollection implements FeatureInterface
         $this->map = $map;
     }
 
-    /** {@inheritdoc} */
-    public function draw($canvas)
+    public function draw(GdImage $canvas)
     {
         $scale = $this->map->getZoomScale();
 
@@ -84,32 +58,33 @@ class Polygon extends PointsCollection implements FeatureInterface
         $xOffset = -$vp->left;
         $yOffset = -$vp->top;
 
-        $poly = array();
+        /** @var int[] */
+        $poly = [];
         $xCenter = 0;
         $yCenter = 0;
         foreach ($this->xy as $pos) {
             $x = $xOffset + ($pos->x * $scale);
             $y = $yOffset + ($pos->y * $scale);
 
-            $poly[] = $x;
-            $poly[] = $y;
+            $poly[] = (int) $x;
+            $poly[] = (int) $y;
 
             $xCenter += $x;
             $yCenter += $y;
         }
 
         // we need at least 2 points to draw a line
-        $nbPoints = count($poly) / 2;
+        $nbPoints = intdiv(count($poly), 2);
         if ($nbPoints < 2) {
-            return false;
+            return;
         }
 
-        $xCenter = $xCenter / $nbPoints;
-        $yCenter = $yCenter / $nbPoints;
+        $xCenter /= $nbPoints;
+        $yCenter /= $nbPoints;
 
         $color = $this->color->allocate($canvas);
 
-        if ($this->fillcolor) {
+        if ($this->fillcolor !== null) {
             if ($nbPoints === 2) {
                 // filled polygon needs at least 3 points
                 $poly[] = $poly[0];
@@ -121,8 +96,6 @@ class Polygon extends PointsCollection implements FeatureInterface
             imagesetthickness($canvas, $this->weight);
             imagepolygon($canvas, $poly, $color);
         } else {
-            imagesetthickness($canvas, $this->weight);
-
             imagesetthickness($canvas, $this->weight);
             for ($i = 0; $i < (count($poly) - 2); $i++) {
                 imageline($canvas, $poly[$i], $poly[$i + 1], $poly[$i + 2], $poly[$i + 3], $color);
@@ -137,25 +110,10 @@ class Polygon extends PointsCollection implements FeatureInterface
             }
             $label->setPos(new Point($xCenter, $yCenter));
 
-            if ($this->label_color) {
-                $label->setColor($this->label_color);
-            } else {
-                $color = $this->color;
-                $color->a = 255;
-                $label->setColor($color);
-            }
-
-            if ($this->label_outline) {
-                $label->setOutline($this->label_outline, 1);
-            } elseif ($this->label_color) {
-                $label->setOutline(new Color(0, 0, 0, $this->label_color->a), 1);
-            } else {
-                $label->setOutline(new Color(0, 0, 0), 1);
-            }
+            $label->setColor($this->label_color);
+            $label->setOutline($this->label_outline, 1);
 
             $label->draw($canvas);
         }
-
-        return true;
     }
 }

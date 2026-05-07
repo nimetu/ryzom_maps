@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -15,9 +17,6 @@ use Ryzom\Translation\Loader\WordsLoader;
 use Ryzom\Translation\StringsManager;
 use Symfony\Component\Console\Helper\Helper;
 
-/**
- * Class TranslateHelper
- */
 class TranslateHelper extends Helper
 {
     /**
@@ -27,17 +26,12 @@ class TranslateHelper extends Helper
      *
      * @api
      */
-    public function getName()
+    public function getName(): string
     {
         return 'translator';
     }
 
-    /**
-     * @param string $ryzomDataPath
-     *
-     * @return \Ryzom\Translation\StringsManager
-     */
-    public function load($ryzomDataPath)
+    public function load(string $ryzomDataPath): StringsManager
     {
         $bnp = new BnpFile($ryzomDataPath . '/gamedev.bnp');
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Created by JetBrains PhpStorm.
  * User: meelis
@@ -10,34 +12,19 @@
 
 namespace Bmsite\Maps\BaseTypes;
 
-/**
- * Class Point
- */
 class Point
 {
-    /** @var float */
-    public $x;
+    public float $x;
 
-    /** @var float */
-    public $y;
+    public float $y;
 
-    /**
-     * @param float $x
-     * @param float $y
-     */
-    public function __construct($x, $y)
+    public function __construct(float $x, float $y)
     {
         $this->x = $x;
         $this->y = $y;
     }
 
-    /**
-     * @param float $x
-     * @param float $y
-     *
-     * @return float
-     */
-    public function getDistance($x, $y)
+    public function getDistance(float $x, float $y): float
     {
         /** @var float $dx */
         $dx = pow(abs($this->x - $x), 2);
@@ -48,17 +35,14 @@ class Point
     }
 
     /**
-     * @return array
+     * @return array{float,float} [x, y]
      */
-    public function asArray()
+    public function asArray(): array
     {
-        return array($this->x, $this->y);
+        return [$this->x, $this->y];
     }
 
-    /**
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
         return sprintf('Point{%.2f,%.2f}', $this->x, $this->y);
     }

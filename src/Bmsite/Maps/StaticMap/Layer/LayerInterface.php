@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -11,23 +13,11 @@
 namespace Bmsite\Maps\StaticMap\Layer;
 
 use Bmsite\Maps\StaticMap\StaticMapGenerator;
+use GdImage;
 
-/**
- * Class LayerInterface
- */
 interface LayerInterface
 {
-    /**
-     * @param StaticMapGenerator $map
-     *
-     * @return void
-     */
     public function setMap(StaticMapGenerator $map);
 
-    /**
-     * @param resource $canvas
-     *
-     * @return void
-     */
-    public function draw($canvas);
+    public function draw(GdImage $canvas);
 }
