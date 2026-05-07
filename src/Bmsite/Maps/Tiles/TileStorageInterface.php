@@ -23,37 +23,25 @@ interface TileStorageInterface
     /**
      * @param string $mode world|server
      */
-    public function setMapMode($mode);
+    public function setMapMode(string $mode);
 
     /**
      * @param string $name atys|atys_sp|lang_en
      */
-    public function setMapName($name);
+    public function setMapName(string $name);
 
     /**
      * @param string $ext png|jpg
      */
-    public function setImageExt($ext);
+    public function setImageExt(string $ext);
 
     /**
-     * @param int $z
-     * @param int $x
-     * @param int $y
-     * @param resource $img
+     * @throws \RuntimeException if output directory does not exist and cannot be created
+     * @throws \InvalidArgumentException if image type is unknown
      */
-    public function set($z, $x, $y, $img);
+    public function set(int $z, int $x, int $y, \GdImage $img);
 
-    /**
-     * @param int $z
-     * @param int $x
-     * @param int $y
-     */
-    public function get($z, $x, $y);
+    public function get(int $z, int $x, int $y): ?\GdImage;
 
-    /**
-     * @param int $z
-     * @param int $x
-     * @param int $y
-     */
-    public function delete($z, $x, $y);
+    public function delete(int $z, int $x, int $y);
 }

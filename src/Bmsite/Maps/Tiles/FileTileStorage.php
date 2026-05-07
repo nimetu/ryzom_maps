@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Ryzom Maps
  *
@@ -58,33 +60,36 @@ class FileTileStorage implements TileStorageInterface
     }
 
     /** {@inheritdoc} */
-    public function set($z, $x, $y, $img)
+    public function set(int $z, int $x, int $y, \GdImage $img)
     {
         $file = $this->getFilename($z, $x, $y);
 
         $dir = dirname($file);
-        if (!file_exists($dir) && !mkdir($dir, 0775, true)) {
-            throw new \RuntimeException("Unable to create output directory {$file}");
+        /** @mago-expect lint:no-error-control-operator */
+        if (!file_exists($dir) && !@mkdir($dir, 0775, true)) {
+            throw new \RuntimeException("Unable to create output directory '{$file}'");
         }
+
+        match ($this->ext) {
+            'png' => imagepng($img, $file, 9),
+            'jpg' => imagejpeg($img, $file, 90),
+            default => throw new \InvalidArgumentException('Unknown image type'),
+        };
     }
 
     /** {@inheritdoc} */
-    public function get($z, $x, $y)
+    public function get(int $z, int $x, int $y): ?\GdImage
     {
         $file = $this->getFilename($z, $x, $y);
-        if (file_exists($file)) {
-            switch ($this->ext) {
-                case 'png':
-                    $out = imagecreatefrompng($file);
-                    break;
-                case 'jpg':
-                default:
-                    $out = imagecreatefromjpeg($file);
-                    break;
-            }
-            return $out;
+        if (!file_exists($file)) {
+            return null;
         }
-        return null;
+
+        return match ($this->ext) {
+            'png' => imagecreatefrompng($file),
+            'jpg' => imagecreatefromjpeg($file),
+            default => null,
+        };
     }
 
     /** {@inheritdoc} */
@@ -94,7 +99,7 @@ class FileTileStorage implements TileStorageInterface
         unlink($file);
     }
 
-    protected function getFilename(int $z, int $x, int $y, bool $mkdir = false): ?string
+    protected function getFilename(int $z, int $x, int $y): string
     {
         $file = $this->tiledir . "/{$this->mapmode}/{$this->mapname}/{$z}/{$x}";
         return $file . "/{$y}.{$this->ext}";
