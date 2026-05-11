@@ -70,11 +70,13 @@ class FileTileStorage implements TileStorageInterface
             return null;
         }
 
-        return match ($this->ext) {
+        $img = match ($this->ext) {
             'png' => imagecreatefrompng($file),
             'jpg' => imagecreatefromjpeg($file),
-            default => null,
+            default => false,
         };
+
+        return $img !== false ? $img : null;
     }
 
     /** {@inheritdoc} */

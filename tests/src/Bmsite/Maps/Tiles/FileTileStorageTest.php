@@ -39,8 +39,16 @@ class FileTileStorageTest extends \PHPUnit\Framework\TestCase
     public function testGetNonExistTile()
     {
         $path = __DIR__ . '/_files/tiles';
-        $ts = new FileTileStorage($path);
-        $this->assertNull($ts->get(0, 0, 0));
+		$ts = new FileTileStorage($path);
+        $this->assertNull($ts->get(0, 0, -1));
+	}
+
+    public function testGetInvalidTileFile()
+    {
+        $path = __DIR__ . '/_files/tiles';
+		$ts = new FileTileStorage($path);
+		// suppress php warning when trying to load invalid jpg file
+        $this->assertNull(@$ts->get(0, 0, 0));
     }
 
     public function testGetFilename()
