@@ -50,7 +50,9 @@ class BuildJsonFiles extends Command
      *
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
-     * @return int|null|void
+	 * @return int|null|void
+	 *
+	 * @mago-expect analysis:incompatible-return-type,missing-return-statement
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {

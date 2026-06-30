@@ -44,7 +44,6 @@ class TileLayer
         $this->debug = $map->getDebug();
     }
 
-    /** @mago-expect lint:no-boolean-flag-parameter */
     public function setDebug(bool $debug)
     {
         $this->debug = $debug;

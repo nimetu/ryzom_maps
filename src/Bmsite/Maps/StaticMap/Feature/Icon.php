@@ -80,7 +80,6 @@ class Icon implements FeatureInterface
         $this->size = [$width, $height];
     }
 
-    /** @mago-expect lint:no-boolean-flag-parameter */
     public function setOver(bool $b)
     {
         $this->over = $b;

@@ -94,7 +94,6 @@ class StaticMapGenerator
         $this->viewport = new Bounds();
     }
 
-    /** @mago-expect lint: no-boolean-flag-parameter */
     public function setDebug(bool $state)
     {
         $this->debug = $state;
@@ -208,7 +207,6 @@ class StaticMapGenerator
         }
     }
 
-    /** @mago-expect lint: no-boolean-flag-parameter */
     public function setDrawCenterLines(bool $val)
     {
         $this->drawCenterLines = $val;
