@@ -25,6 +25,8 @@ class Circle implements FeatureInterface
 
     private ?Point $pos = null;
 
+    private float $scale = 0;
+
     public function __construct(?Color $color = null)
     {
         $this->setColor($color);
@@ -49,6 +51,11 @@ class Circle implements FeatureInterface
     {
         $this->radiusHoriz = $h;
         $this->radiusVert = $v ?? $h;
+    }
+
+    public function setScale(float $scale)
+    {
+        $this->scale = $scale;
     }
 
     public function setMap(StaticMapGenerator $map)
@@ -76,7 +83,7 @@ class Circle implements FeatureInterface
         $c = $this->color->allocate($canvas);
 
         // at least 1px circle is drawed
-        $scale = $this->map?->getZoomScale() ?? 1;
+        $scale = $this->map?->getZoomScale() ?? $this->scale;
         $h = (int) max(1, $this->radiusHoriz * 2 * $scale);
         $v = (int) max(1, $this->radiusVert * 2 * $scale);
 

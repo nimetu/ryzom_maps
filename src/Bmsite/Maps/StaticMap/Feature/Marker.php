@@ -101,6 +101,7 @@ class Marker extends PointsCollection implements FeatureInterface
             $p = new Point(($point->x * $scale) + $xOffset, ($point->y * $scale) + $yOffset);
 
             if ($circle) {
+                $circle->setScale($scale);
                 $circle->setPos($p);
                 $circle->draw($canvas);
             }
