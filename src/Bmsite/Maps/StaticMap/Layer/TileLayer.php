@@ -40,7 +40,7 @@ class TileLayer
     ) {
         $this->proj = $map->getProjection();
         $this->mapname = $map->getMapName();
-        $this->tileExtension = $map->getFormat();
+        $this->tileExtension = 'jpg';
         $this->debug = $map->getDebug();
     }
 
